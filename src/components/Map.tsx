@@ -1,43 +1,39 @@
-import { useContext, useLayoutEffect, useRef } from 'react'
-import { PlacesContext } from '../context'
-import { Loader } from './Loader'
+import { useEffect } from 'react'
 import mapboxgl from 'mapbox-gl'
-import { MapContext } from '../context/map/MapContext'
+
+const initializeMap = () => {
+	mapboxgl.accessToken =
+		'pk.eyJ1IjoidmVybzkwMjYiLCJhIjoiY2xzbmEyMXpyMDIzNjJrcGJ6Zm44b3B6eCJ9.pLAc8loQc-pisha9eaGyUg'
+	return new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v12',
+		center: [-57.9631264226935, -34.94458453832025],
+		zoom: 14,
+	})
+}
+
+const addMarkers = (map: mapboxgl.Map) => {
+	new mapboxgl.Marker()
+		.setLngLat([-57.9631264226935, -34.94458453832025])
+		.setPopup(new mapboxgl.Popup().setHTML(`<h3>Edificio Farfalle</h3>`))
+		.addTo(map)
+}
 
 export function Map() {
-	const { isLoading, userLocation, farfalleLocation } =
-		useContext(PlacesContext)
-	const { setMap } = useContext(MapContext)
-	const mapDiv = useRef<HTMLDivElement>(null)
+	useEffect(() => {
+		const map = initializeMap()
+		addMarkers(map)
 
-	useLayoutEffect(() => {
-		if (!isLoading) {
-			const map = new mapboxgl.Map({
-				container: mapDiv.current!, // container ID
-				style: 'mapbox://styles/mapbox/streets-v12', // style URL
-				center: farfalleLocation, // starting position [lng, lat]
-				zoom: 14, // starting zoom
-			})
-			setMap(map)
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [isLoading])
+		return () => map.remove()
+	}, [])
 
-	if (isLoading) {
-		return <Loader />
-	}
 	return (
 		<div
-			ref={mapDiv}
+			id='map'
+			className='w-full lg:w-11/12 h-425 lg:h-200 rounded-xl mb-1'
 			style={{
-				height: '100vh',
-				width: '100vw',
-				position: 'fixed',
-				top: 0,
-				left: 0,
+				boxShadow: '10px 10px 5px 0px rgba(172,115,100,0.75)',
 			}}
-		>
-			{userLocation?.join(',')}
-		</div>
+		></div>
 	)
 }
