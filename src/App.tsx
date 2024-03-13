@@ -32,11 +32,11 @@ function App() {
 								path='edificioFarfalle/Departamentos'
 								element={<Departamentos />}
 							/>
-							<Route path='edificioFarfalle/Pb-A' element={<PbA />} />
-							<Route path='edificioFarfalle/Pb-B' element={<PbB />} />
-							<Route path='edificioFarfalle/1-A' element={<PrimeroA />} />
-							<Route path='edificioFarfalle/1-B' element={<PrimeroB />} />
-							<Route path='edificioFarfalle/2-B' element={<SegundoB />} />
+							<Route path='/Pb-A' element={<PbA />} />
+							<Route path='/Pb-B' element={<PbB />} />
+							<Route path='/1-A' element={<PrimeroA />} />
+							<Route path='/1-B' element={<PrimeroB />} />
+							<Route path='/2-B' element={<SegundoB />} />
 						</Routes>
 						<Footer />
 					</BrowserRouter>
