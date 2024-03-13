@@ -19,10 +19,7 @@ export function Nosotros(): JSX.Element {
 	}, [])
 
 	return (
-		<section
-			style={{ marginTop: '60px' }}
-			className='w-full flex flex-col sm:h-80v lg:h-70v'
-		>
+		<section className='w-full flex flex-col h-80v lg:h-70v mt-4 lg:mt-16'>
 			<h2 className='text-orange font-semibold text-center p-2 underline'>
 				NOSOTROS
 			</h2>
