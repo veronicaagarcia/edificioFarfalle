@@ -42,10 +42,7 @@ export function PbB() {
 		},
 	]
 	return (
-		<section
-			style={{ marginTop: '60px' }}
-			className='w-full flex flex-col sm:h-80v lg:h-90v overflow-scroll'
-		>
+		<section className='w-full flex mt-4 lg:mt-16 flex-col h-80v lg:h-90v overflow-scroll'>
 			<h2 className='text-orange font-semibold text-center p-2 underline'>
 				DEPARTAMENTO PB B
 			</h2>

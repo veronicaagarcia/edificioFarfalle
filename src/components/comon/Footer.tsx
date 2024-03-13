@@ -47,7 +47,7 @@ export function Footer() {
 					/>
 				</h5>
 			</Link>
-			<Link to='/Nosotros'>
+			<Link to='edificioFarfalle/Nosotros'>
 				<h5 className='text-white flex flex-col md:flex-row items-center hover:text-slate-600 text-xs sm:text-base'>
 					Encontranos
 					<MapIcon

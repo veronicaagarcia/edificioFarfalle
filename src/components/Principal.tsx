@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import { Card } from '@mui/material'
+import { useEffect, useState } from 'react'
+import { Card, CircularProgress } from '@mui/material'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 
 export function Principal() {
 	const [isClicked, setIsClicked] = useState(false)
 	const [showFullText, setShowFullText] = useState(false)
+	const [loading, setLoading] = useState(true)
 
 	const handleClick = () => {
 		setIsClicked(!isClicked)
@@ -14,6 +15,14 @@ export function Principal() {
 	const toggleFullText = () => {
 		setShowFullText(!showFullText)
 	}
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setLoading(false)
+		}, 1000)
+
+		return () => clearTimeout(timer)
+	}, [])
 
 	const itemData = [
 		{
@@ -66,89 +75,95 @@ export function Principal() {
 		},
 	]
 	return (
-		<section className='flex flex-col justify-center items-center overflow-y-auto  p-2 m-auto w-full'>
-			<h2 className='text-orange font-semibold text-center p-2 sm:mt-16 underline'>
+		<section className='flex flex-col justify-center items-center overflow-y-auto  p-2 m-auto w-full lg:mt-16'>
+			<h2 className='text-orange font-semibold text-center p-2 underline'>
 				ALQUILERES TEMPORARIOS
 			</h2>
-			<main className='w-full flex flex-col-reverse sm:flex-col sm:mt-5 items-center m-auto lg:pl-10 sm:overflow-y-auto sm:h-70v lg:h-50'>
-				{/* IMAGENES EN CHICO - VERTICAL*/}
-				<section className='w-fit h-full sm:hidden'>
-					<div
-						className={`p-1 cursor-pointer ${
-							isClicked
-								? 'fixed top-20 left-0 rounded-xl w-full h-full bg-black z-50 overflow-y-auto'
-								: 'relative'
-						}`}
-						style={{
-							width: isClicked ? '100vw' : '310px',
-							height: isClicked ? '80vh' : '400px',
-							margin: isClicked ? 'auto' : 'auto',
-						}}
-						onClick={handleClick}
-					>
-						<ImageList
-							sx={{
-								width: '100%',
-								height: '100%',
-							}}
-							variant='woven'
-							cols={3}
-							gap={8}
-						>
-							{itemData.map((item) => (
-								<ImageListItem key={item.img}>
-									<img
-										srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
-										src={`${item.img}?w=161&fit=crop&auto=format`}
-										alt={item.title}
-										loading='lazy'
-									/>
-								</ImageListItem>
-							))}
-						</ImageList>
-					</div>
-				</section>
-				{/* IMAGENES EN GRANDE - HORIZONTAL */}
-				<section className='w-fit h-full hidden sm:flex sm:mb-4'>
-					<div
-						className={`p-1 cursor-pointer ${
-							isClicked
-								? 'fixed top-20 left-0 rounded-xl w-full h-full bg-black z-50'
-								: 'relative'
-						}`}
-						style={{
-							width: isClicked ? '100vw' : '85vw',
-							height: isClicked ? '80vh' : '45vh',
-							margin: isClicked ? 'auto' : 'auto',
-							overflowX: 'auto',
-						}}
-						onClick={handleClick}
-					>
-						<ImageList
-							sx={{
-								display: 'flex',
-								flexWrap: 'nowrap',
-								width: 'max-content',
-								height: '100%',
-							}}
-							variant='quilted'
-							cols={5}
-							gap={4}
-						>
-							{itemData.map((item) => (
-								<ImageListItem key={item.img}>
-									<img
-										srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 1x`}
-										src={`${item.img}?w=161&fit=crop&auto=format`}
-										alt={item.title}
-										loading='lazy'
-										style={{ height: '100%' }}
-									/>
-								</ImageListItem>
-							))}
-						</ImageList>
-					</div>
-				</section>
+			<main className='w-full flex flex-col-reverse sm:flex-col items-center m-auto lg:pl-10 overflow-y-auto h-80v lg:h-75v'>
+				{loading ? (
+					<CircularProgress color='primary' />
+				) : (
+					<>
+						{/* IMAGENES EN CHICO - VERTICAL*/}
+						<section className='w-fit h-full sm:hidden'>
+							<div
+								className={`p-1 cursor-pointer ${
+									isClicked
+										? 'fixed top-20 left-0 rounded-xl w-full h-full bg-black z-50 overflow-y-auto'
+										: 'relative'
+								}`}
+								style={{
+									width: isClicked ? '100vw' : '310px',
+									height: isClicked ? '80vh' : '400px',
+									margin: isClicked ? 'auto' : 'auto',
+								}}
+								onClick={handleClick}
+							>
+								<ImageList
+									sx={{
+										width: '100%',
+										height: '100%',
+									}}
+									variant='woven'
+									cols={3}
+									gap={8}
+								>
+									{itemData.map((item) => (
+										<ImageListItem key={item.img}>
+											<img
+												srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
+												src={`${item.img}?w=161&fit=crop&auto=format`}
+												alt={item.title}
+												loading='lazy'
+											/>
+										</ImageListItem>
+									))}
+								</ImageList>
+							</div>
+						</section>
+						{/* IMAGENES EN GRANDE - HORIZONTAL */}
+						<section className='w-fit h-full hidden sm:flex sm:mb-4'>
+							<div
+								className={`p-1 cursor-pointer ${
+									isClicked
+										? 'fixed top-20 left-0 rounded-xl w-full h-full bg-black z-50'
+										: 'relative'
+								}`}
+								style={{
+									width: isClicked ? '100vw' : '85vw',
+									height: isClicked ? '80vh' : '45vh',
+									margin: isClicked ? 'auto' : 'auto',
+									overflowX: 'auto',
+								}}
+								onClick={handleClick}
+							>
+								<ImageList
+									sx={{
+										display: 'flex',
+										flexWrap: 'nowrap',
+										width: 'max-content',
+										height: '100%',
+									}}
+									variant='quilted'
+									cols={5}
+									gap={4}
+								>
+									{itemData.map((item) => (
+										<ImageListItem key={item.img}>
+											<img
+												srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 1x`}
+												src={`${item.img}?w=161&fit=crop&auto=format`}
+												alt={item.title}
+												loading='lazy'
+												style={{ height: '100%' }}
+											/>
+										</ImageListItem>
+									))}
+								</ImageList>
+							</div>
+						</section>
+					</>
+				)}
 				<section className='w-11/12 mx-auto lg:w-3/4  mb-7 sm:mb-0'>
 					<Card
 						className='cardShadow'

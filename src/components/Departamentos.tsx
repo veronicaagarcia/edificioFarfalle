@@ -14,8 +14,8 @@ import AppsRoundedIcon from '@mui/icons-material/AppsRounded'
 export function Departamentos() {
 	return (
 		<section
-			style={{ height: 'calc(100vh - 100px)', marginTop: '60px' }}
-			className='w-full flex flex-col overflow-auto'
+			style={{ height: 'calc(100vh - 100px)' }}
+			className='w-full flex flex-col overflow-auto mt-4 lg:mt-16'
 		>
 			<h2 className='text-orange font-semibold text-center p-2'>
 				DEPARTAMENTOS

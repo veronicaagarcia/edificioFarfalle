@@ -1,8 +1,24 @@
 import { PlayArrow } from '@mui/icons-material'
-import { IconButton, ImageList, ImageListItem } from '@mui/material'
+import {
+	CircularProgress,
+	IconButton,
+	ImageList,
+	ImageListItem,
+} from '@mui/material'
 import video from '../assets/videos/video.mp4'
+import { useEffect, useState } from 'react'
 
 export function PbA() {
+	const [loading, setLoading] = useState(true)
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setLoading(false)
+		}, 2000)
+
+		return () => clearTimeout(timer)
+	}, [])
+
 	const itemData = [
 		{
 			img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/518583833.jpg?k=17a40af84272443eecac8e49ae1a4cea7accfd3eea1e248e5c985923f7974b25&o=&hp=1',
@@ -42,54 +58,69 @@ export function PbA() {
 		},
 	]
 	return (
-		<section
-			style={{ marginTop: '60px' }}
-			className='w-full flex flex-col sm:h-80v lg:h-90v overflow-scroll'
-		>
+		<section className='w-full flex flex-col mt-4 lg:mt-16 h-80v lg:h-90v overflow-scroll'>
 			<h2 className='text-orange font-semibold text-center p-2 underline'>
 				DEPARTAMENTO PB A
 			</h2>
 			<div className='relative w-10/12 md:w-1/2 bg-orangeDark opacity-90 mx-auto pt-36 md:pt-64 rounded-xl overflow-hidden cursor-pointer'>
-				<video
-					className='absolute top-0 left-0 w-full h-full'
-					src={video}
-					controls
-				/>
-				<IconButton className='absolute top-40 left-40 translate-x-56 bg-orangeDark rounded-xl'>
-					<PlayArrow className='text-orange' />
-				</IconButton>
+				{loading ? (
+					<CircularProgress color='secondary' />
+				) : (
+					<>
+						<video
+							className='absolute top-0 left-0 w-full h-full'
+							src={video}
+							controls
+						/>
+						<IconButton className='absolute top-40 left-40 translate-x-56 bg-orangeDark rounded-xl'>
+							<PlayArrow className='text-orange' />
+						</IconButton>
+					</>
+				)}
 			</div>
 			<section className='mt-4 mb-8 m-auto rounded-xl hidden md:flex'>
-				<ImageList
-					sx={{ width: 770, height: 1000 }}
-					cols={3}
-					rowHeight={'auto'}
-				>
-					{itemData.map((item) => (
-						<ImageListItem key={item.img}>
-							<img
-								srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-								src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-								alt={item.title}
-								loading='lazy'
-							/>
-						</ImageListItem>
-					))}
-				</ImageList>
+				{loading ? (
+					<CircularProgress color='secondary' />
+				) : (
+					<ImageList
+						sx={{ width: 770, height: 1000 }}
+						cols={3}
+						rowHeight={'auto'}
+					>
+						{itemData.map((item) => (
+							<ImageListItem key={item.img}>
+								<img
+									srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+									src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+									alt={item.title}
+									loading='lazy'
+								/>
+							</ImageListItem>
+						))}
+					</ImageList>
+				)}
 			</section>
 			<section className='mt-4 mb-20 m-auto rounded-xl flex md:hidden'>
-				<ImageList sx={{ width: 300, height: 500 }} cols={2} rowHeight={'auto'}>
-					{itemData.map((item) => (
-						<ImageListItem key={item.img}>
-							<img
-								srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-								src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-								alt={item.title}
-								loading='lazy'
-							/>
-						</ImageListItem>
-					))}
-				</ImageList>
+				{loading ? (
+					<CircularProgress color='secondary' />
+				) : (
+					<ImageList
+						sx={{ width: 300, height: 500 }}
+						cols={2}
+						rowHeight={'auto'}
+					>
+						{itemData.map((item) => (
+							<ImageListItem key={item.img}>
+								<img
+									srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+									src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+									alt={item.title}
+									loading='lazy'
+								/>
+							</ImageListItem>
+						))}
+					</ImageList>
+				)}
 			</section>
 		</section>
 	)
