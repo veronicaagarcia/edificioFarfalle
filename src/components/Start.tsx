@@ -1,6 +1,7 @@
 import { Button, Container, Stack, Typography } from '@mui/material'
 import logoFarfalle from '../assets/logo.gif'
 import { useFarfalleStore } from '../store/farfalle'
+import fondo from '../assets/Frente-edificio.jpg'
 
 export function Start() {
 	const getStart = useFarfalleStore((state) => state.getStart)
@@ -8,7 +9,7 @@ export function Start() {
 		<main
 			className='h-full flex flex-col'
 			style={{
-				backgroundImage: `url('/edificioFarfalle/src/assets/Front.avif')`,
+				backgroundImage: `url(${fondo})`,
 				backgroundPosition: 'center',
 				backgroundSize: 'cover',
 				backgroundRepeat: 'no-repeat',
