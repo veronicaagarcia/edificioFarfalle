@@ -8,7 +8,8 @@ export function Start() {
 		<main
 			className='h-full flex flex-col'
 			style={{
-				backgroundImage: 'url("/edificioFarfalle/src/assets/Front.avif")',
+				backgroundImage:
+					'url("https://cf.bstatic.com/xdata/images/hotel/max1024x768/433392854.jpg?k=3ee6d04326997d3ed092a2a45e74d8213bc902d7cd903c623fa49a624cae0d18&o=&hp=1")',
 				backgroundPosition: 'center',
 				backgroundSize: 'cover',
 				backgroundRepeat: 'no-repeat',
