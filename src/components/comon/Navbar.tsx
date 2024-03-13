@@ -91,9 +91,9 @@ export function Navbar() {
 					className={`text-orangeDark hover:text-slate-600 ${
 						openClose ? 'justify-end pb-6 pt-6' : 'hidden'
 					}`}
-					activeClassName='font-bold shadow-sm'
+					activeClassName='font-bold shadow-sm border-2'
 					exact
-					to={'/'}
+					to={'/edificioFarfalle/'}
 				>
 					Principal
 				</NavLink>
@@ -103,7 +103,7 @@ export function Navbar() {
 					}`}
 					activeClassName='font-bold shadow-sm'
 					exact
-					to={'/Departamentos'}
+					to={'/edificioFarfalle/Departamentos'}
 				>
 					Departamentos
 				</NavLink>
@@ -113,7 +113,7 @@ export function Navbar() {
 					}`}
 					activeClassName='font-bold shadow-sm'
 					exact
-					to={'/Nosotros'}
+					to={'/edificioFarfalle/Nosotros'}
 				>
 					Nosotros
 				</NavLink>
@@ -124,7 +124,7 @@ export function Navbar() {
 					className='text-orangeDark hover:text-slate-600'
 					activeClassName='font-bold shadow-sm'
 					exact
-					to={'/'}
+					to={'/edificioFarfalle/'}
 				>
 					Principal
 				</NavLink>
@@ -132,7 +132,7 @@ export function Navbar() {
 					className='text-orangeDark hover:text-slate-600'
 					activeClassName='font-bold shadow-sm'
 					exact
-					to={'/Departamentos'}
+					to={'/edificioFarfalle/Departamentos'}
 				>
 					Departamentos
 				</NavLink>
@@ -140,7 +140,7 @@ export function Navbar() {
 					className='text-orangeDark hover:text-slate-600'
 					activeClassName='font-bold shadow-sm'
 					exact
-					to={'/Nosotros'}
+					to={'/edificioFarfalle/Nosotros'}
 				>
 					Nosotros
 				</NavLink>
