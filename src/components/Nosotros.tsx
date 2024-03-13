@@ -24,7 +24,7 @@ export function Nosotros(): JSX.Element {
 				NOSOTROS
 			</h2>
 			<Card
-				className='cardShadow h-200 p-2'
+				className='cardShadow h-425 p-2'
 				style={{
 					width: '75vw',
 					margin: 'auto',
@@ -54,7 +54,7 @@ export function Nosotros(): JSX.Element {
 					repellendus rem temporibus enim nemo!
 				</p>
 			</Card>
-			<div className='h-fit w-10/12 lg:w-3/5 m-auto flex flex-col items-center rounded-xl bg-creme p-2 opacity-90 mt-4 '>
+			<div className='h-425 w-10/12 lg:w-3/5 m-auto flex flex-col items-center rounded-xl bg-creme p-2 opacity-90 mt-4 '>
 				<h3 className='text-base text-orangeDark'>Ver en el mapa</h3>
 				{loading ? <CircularProgress color='inherit' /> : <Map />}
 				<p className='text-xs p-1'>1770 Calle 62, 1904 La Plata, Argentina</p>

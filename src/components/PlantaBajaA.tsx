@@ -63,20 +63,14 @@ export function PbA() {
 				DEPARTAMENTO PB A
 			</h2>
 			<div className='relative w-10/12 md:w-1/2 bg-orangeDark opacity-90 mx-auto pt-36 md:pt-64 rounded-xl overflow-hidden cursor-pointer'>
-				{loading ? (
-					<CircularProgress color='secondary' />
-				) : (
-					<>
-						<video
-							className='absolute top-0 left-0 w-full h-full'
-							src={video}
-							controls
-						/>
-						<IconButton className='absolute top-40 left-40 translate-x-56 bg-orangeDark rounded-xl'>
-							<PlayArrow className='text-orange' />
-						</IconButton>
-					</>
-				)}
+				<video
+					className='absolute top-0 left-0 w-full h-full'
+					src={video}
+					controls
+				/>
+				<IconButton className='absolute top-40 left-40 translate-x-56 bg-orangeDark rounded-xl'>
+					<PlayArrow className='text-orange' />
+				</IconButton>
 			</div>
 			<section className='mt-4 mb-8 m-auto rounded-xl hidden md:flex'>
 				{loading ? (
