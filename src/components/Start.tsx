@@ -8,7 +8,7 @@ export function Start() {
 		<main
 			className='h-full flex flex-col'
 			style={{
-				backgroundImage: `url('src/assets/Frente-edificio.jpg')`,
+				backgroundImage: `url('/edificioFarfalle/src/assets/Front.avif')`,
 				backgroundPosition: 'center',
 				backgroundSize: 'cover',
 				backgroundRepeat: 'no-repeat',
