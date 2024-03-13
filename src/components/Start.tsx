@@ -8,11 +8,13 @@ export function Start() {
 		<main
 			className='h-full flex flex-col'
 			style={{
-				backgroundImage: `url('src/assets/Front.avif')`,
-				width: 'inherit',
-				alignItems: 'center',
-				backgroundRepeat: 'no-repeat',
+				backgroundImage: `url('src/assets/Frente-edificio.jpg')`,
+				backgroundPosition: 'center',
 				backgroundSize: 'cover',
+				backgroundRepeat: 'no-repeat',
+				width: '100%',
+				height: '100vh',
+				backgroundColor: '#df964e',
 			}}
 		>
 			<Container
