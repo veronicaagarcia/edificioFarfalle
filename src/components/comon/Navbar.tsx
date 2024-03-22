@@ -1,8 +1,9 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { ReactNode } from 'react'
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Card, Typography, useMediaQuery } from '@mui/material'
-import logoFarfalle from '../../assets/logo.gif'
+import { Card, useMediaQuery } from '@mui/material'
+import logoFarfalle from '../../assets/222.png'
 import close from '../../assets/close.svg'
 import menu from '../../assets/menu.svg'
 
@@ -12,137 +13,226 @@ interface NavLinkProps {
 	activeClassName?: string
 	className?: string
 	children: ReactNode
+	onClick?: () => void
 }
 
 export function Navbar() {
+	const [isOpenDepartments, setIsOpenDepartments] = useState(false)
+	const [openCloseMenu, setOpenCloseMenu] = useState(false)
+	const isMobile = useMediaQuery('(max-width:640px)')
+
 	function NavLink({
 		to,
 		exact,
 		activeClassName,
 		className,
 		children,
+		onClick,
 	}: NavLinkProps) {
 		const location = useLocation()
 		const isActive = exact
 			? location.pathname === to
 			: location.pathname.startsWith(to)
 
+		const handleClick = () => {
+			if (onClick) {
+				onClick()
+			}
+			handleCloseDepartments()
+		}
 		return (
 			<Link
 				to={to}
 				className={`${className} ${isActive ? activeClassName : ''}`}
+				onClick={handleClick}
 			>
 				{children}
 			</Link>
 		)
 	}
 
-	const [openClose, setOpenClose] = useState(false)
-	const handleAsideOpenClose = () => {
-		setOpenClose(!openClose)
+	const handleOpenCloseMenu = () => {
+		setOpenCloseMenu(!openCloseMenu)
+		setIsOpenDepartments(false)
 	}
-
-	const isMobile = useMediaQuery('(max-width:640px)')
+	const handleCloseDepartments = () => {
+		setIsOpenDepartments(false)
+	}
 	return (
 		<Card
 			style={{
-				backgroundColor: 'var(--background-body)',
 				height: '60px',
 				width: '100%',
 				display: 'flex',
 				justifyContent: 'space-between',
-				position: 'fixed',
+				position: 'relative',
 				top: '0',
-				...(isMobile && {
-					position: 'relative',
-					overflow: 'visible',
-				}),
+				overflow: 'visible',
 			}}
 		>
-			<div className='flex items-center text-orange'>
+			<div className='flex items-center pt-2 text-orange w-2/12'>
 				<img
-					style={{ ...(isMobile && { width: '60px', height: '60px' }) }}
-					width={70}
-					height={70}
+					width={200}
+					height={170}
 					src={logoFarfalle}
 					alt='logo edificio Farfalle'
 				/>
-				<Typography component='h1'>FARFALLE</Typography>
+				{/* <h1 className='text-3xl'>Farfalle</h1> */}
 			</div>
-			{/* NAVBAR XS */}
+
 			<div
-				className={`sm:hidden h-fit flex flex-col self-end justify-center p-2 gap-2${
-					openClose
-						? 'w-36 h-fit z-20 absolute top-2 border-transparent rounded-xl right-0 p-2 shadow-sm bg-almostWhite'
-						: 'w-16 h-16'
+				className={`${
+					isMobile
+						? `h-fit flex flex-col self-end justify-center p-2 gap-2${
+								openCloseMenu
+									? 'w-36 h-fit z-20 absolute top-0 border-transparent rounded-xl right-0 p-5 shadow-sm bg-almostWhite pb-36 pt-5'
+									: 'w-16 h-16 my-auto mr-3'
+						  }`
+						: 'flex items-center w-8/12 justify-around p-4'
 				}`}
 			>
-				<button
-					className='h-fit mt-2 w-36 flex justify-end'
-					onClick={handleAsideOpenClose}
+				{' '}
+				{isMobile ? (
+					<button
+						className='h-fit mt-2 w-36 flex justify-end'
+						onClick={handleOpenCloseMenu}
+					>
+						{openCloseMenu ? (
+							<img src={close} className='h-4 ' />
+						) : (
+							<img src={menu} className='h-4' />
+						)}
+					</button>
+				) : (
+					''
+				)}
+				<NavLink
+					className={`${
+						isMobile
+							? `text-orangeDark hover:text-slate-600 ${
+									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
+							  }`
+							: 'text-orangeDark hover:text-slate-600 text-xl md:text-2xl lg:text-3xl'
+					}`}
+					activeClassName='font-bold'
+					exact
+					to={'/edificioFarfalle/'}
 				>
-					{openClose ? (
-						<img src={close} className='h-4 ' />
-					) : (
-						<img src={menu} className='h-4' />
+					Principal
+				</NavLink>
+				<NavLink
+					className={`${
+						isMobile
+							? `text-orangeDark hover:text-slate-600 ${
+									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
+							  }`
+							: 'text-orangeDark hover:text-slate-600 text-xl md:text-2xl lg:text-3xl'
+					}`}
+					activeClassName='font-bold'
+					exact
+					to={'/edificioFarfalle/Nosotros'}
+				>
+					Nosotros
+				</NavLink>
+				<div className='relative group'>
+					<button
+						className={`${
+							isMobile
+								? `text-orangeDark hover:text-slate-600 ${
+										openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
+								  }`
+								: 'focus:outline-none text-orangeDark hover:text-slate-600 text-xl md:text-2xl lg:text-3xl'
+						}`}
+						onClick={() => setIsOpenDepartments(!isOpenDepartments)}
+					>
+						Departamentos
+					</button>
+					{isOpenDepartments && (
+						<div
+							className={`${
+								isMobile
+									? 'absolute z-50 bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg left-0'
+									: 'w-44 mt-2 absolute z-10 bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg left-0'
+							}`}
+						>
+							<NavLink
+								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
+								activeClassName='font-bold'
+								exact
+								to='/edificioFarfalle/Departamentos/Pb-A'
+							>
+								Planta baja A
+							</NavLink>
+							<NavLink
+								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
+								activeClassName='font-bold'
+								exact
+								to='/edificioFarfalle/Departamentos/Pb-B'
+							>
+								Planta baja B
+							</NavLink>
+							<NavLink
+								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
+								activeClassName='font-bold'
+								exact
+								to='/edificioFarfalle/Departamentos/1-A'
+							>
+								Primero A
+							</NavLink>
+							<NavLink
+								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
+								activeClassName='font-bold'
+								exact
+								to='/edificioFarfalle/Departamentos/1-B'
+							>
+								Primero B
+							</NavLink>
+							<NavLink
+								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
+								activeClassName='font-bold'
+								exact
+								to='/edificioFarfalle/Departamentos/2-B'
+							>
+								Segundo B
+							</NavLink>
+							<NavLink
+								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
+								activeClassName='font-bold'
+								exact
+								to='/edificioFarfalle/ZonasComunes'
+							>
+								Zonas comunes
+							</NavLink>
+						</div>
 					)}
-				</button>
+				</div>
 				<NavLink
-					className={`text-orangeDark hover:text-slate-600 ${
-						openClose ? 'justify-end pb-6 pt-6' : 'hidden'
+					className={`${
+						isMobile
+							? `text-orangeDark hover:text-slate-600 ${
+									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
+							  }`
+							: 'text-orangeDark hover:text-slate-600 text-xl md:text-2xl lg:text-3xl'
 					}`}
-					activeClassName='font-bold shadow-sm border-2'
+					activeClassName='font-bold'
 					exact
-					to={'/edificioFarfalle/'}
+					to={'/edificioFarfalle/Servicios'}
 				>
-					Principal
+					Servicios
 				</NavLink>
 				<NavLink
-					className={`text-orangeDark hover:text-slate-600 ${
-						openClose ? 'justify-end pb-6' : 'hidden'
+					className={`${
+						isMobile
+							? `text-orangeDark hover:text-slate-600 ${
+									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
+							  }`
+							: 'text-orangeDark hover:text-slate-600 text-xl md:text-2xl lg:text-3xl'
 					}`}
-					activeClassName='font-bold shadow-sm'
+					activeClassName='font-bold'
 					exact
-					to={'/edificioFarfalle/Departamentos'}
+					to={'/edificioFarfalle/Contacto'}
 				>
-					Departamentos
-				</NavLink>
-				<NavLink
-					className={`text-orangeDark hover:text-slate-600 ${
-						openClose ? 'justify-end pb-6' : 'hidden'
-					}`}
-					activeClassName='font-bold shadow-sm'
-					exact
-					to={'/edificioFarfalle/Nosotros'}
-				>
-					Nosotros
-				</NavLink>
-			</div>
-			{/* NAVBAR CUANDO ESTOY EN MD */}
-			<div className='hidden sm:flex items-center w-2/3 justify-around p-4'>
-				<NavLink
-					className='text-orangeDark hover:text-slate-600'
-					activeClassName='font-bold shadow-sm'
-					exact
-					to={'/edificioFarfalle/'}
-				>
-					Principal
-				</NavLink>
-				<NavLink
-					className='text-orangeDark hover:text-slate-600'
-					activeClassName='font-bold shadow-sm'
-					exact
-					to={'/edificioFarfalle/Departamentos'}
-				>
-					Departamentos
-				</NavLink>
-				<NavLink
-					className='text-orangeDark hover:text-slate-600'
-					activeClassName='font-bold shadow-sm'
-					exact
-					to={'/edificioFarfalle/Nosotros'}
-				>
-					Nosotros
+					Contacto
 				</NavLink>
 			</div>
 		</Card>

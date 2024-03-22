@@ -1,23 +1,17 @@
-import { Button, Container, Stack, Typography } from '@mui/material'
+import { Button, Container, Stack } from '@mui/material'
 import logoFarfalle from '../assets/logo.gif'
 import { useFarfalleStore } from '../store/farfalle'
-
+import video from '../assets/videos/video.mp4'
 export function Start() {
 	const getStart = useFarfalleStore((state) => state.getStart)
 	return (
-		<main
-			className='h-full flex flex-col'
-			style={{
-				backgroundImage:
-					'url("https://cf.bstatic.com/xdata/images/hotel/max1024x768/433392854.jpg?k=3ee6d04326997d3ed092a2a45e74d8213bc902d7cd903c623fa49a624cae0d18&o=&hp=1")',
-				backgroundPosition: 'center',
-				backgroundSize: 'cover',
-				backgroundRepeat: 'no-repeat',
-				width: '100%',
-				height: '100vh',
-				backgroundColor: '#df964e',
-			}}
-		>
+		<main className='h-full flex flex-col'>
+			<div className='relative w-full h-screen flex'>
+				<video autoPlay muted loop className='w-full h-full object-cover z-0'>
+					<source src={video} type='video/mp4' />
+				</video>
+			</div>
+
 			<Container
 				maxWidth='xs'
 				sx={{
@@ -26,23 +20,25 @@ export function Start() {
 					margin: 'auto',
 					opacity: '0.8',
 					borderRadius: '30px',
+					position: 'absolute',
+					top: '50%',
+					left: '50%',
+					transform: 'translate(-50%, -50%)',
 				}}
 			>
 				<Stack
 					direction='row'
-					gap={2}
+					gap={1}
 					alignItems='center'
 					justifyContent='center'
 				>
 					<img
-						width={120}
-						height={120}
+						width={110}
+						height={110}
 						src={logoFarfalle}
 						alt='Logo edificio Farfalle'
 					/>
-					<Typography color='var(--black)' fontSize={25} component='h1'>
-						EDIFICIO FARFALLE
-					</Typography>
+					<h1 className='text-black text-5xl'>Edificio Farfalle</h1>
 				</Stack>
 				<div className='text-orange flex justify-center'>
 					<Button variant='outlined' color='inherit' onClick={getStart}>
