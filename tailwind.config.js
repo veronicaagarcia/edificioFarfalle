@@ -8,16 +8,20 @@ export default {
         current: "currentColor",
         white: "#fefdfd",
         gray: "#dfe0df",
-        orange: "#df964e",
-        creme: "#ffede8",
-        orangeDark:"#ac7364",
-        black: "#0e0e0e",
+        orange: "#fa9336",
+        creme: "#f2e2de",
+        orangeDark:"#a36c5e",
+        black: "#402e32",
         almostWhite: "#fefdfd"
       
       },
       height: {
+        '190': '190px',
         '200': '200px',
         '425': '425px',
+        '315': '315px',
+        '600': '600px',
+        '30v': '30vh',
         '50v': '50vh',
         '70v': '70vh',
         '75v': '75vh',
@@ -25,6 +29,22 @@ export default {
         '85v': '85vh',
         '90v': '90vh',
       },
+      width: {
+        '350':'350px',
+        '400': '400px',
+        '600': '600px',
+        '50v': '50vw',
+        '85v': '85vw',
+        '100v': '100vw'
+      },
+      maxHeight:{
+        '500': '500px',
+        '100': '100vh',
+      },
+      maxWidth:{
+        '340': '340px',
+        '100': '100vw',
+      }
     },
   },
   plugins: [],
