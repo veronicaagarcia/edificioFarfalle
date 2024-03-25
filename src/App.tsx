@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Navbar } from './components/comon/Navbar'
 import { Principal } from './components/Principal'
@@ -17,6 +18,7 @@ import './App.css'
 
 function App() {
 	const isStarted = useFarfalleStore((state) => state.isStarted)
+	const sectionTopRef = useRef(null)
 
 	return (
 		<Card style={{ width: '100vw', height: '100vh' }}>
@@ -25,9 +27,12 @@ function App() {
 			) : (
 				<main className='w-screen h-screen'>
 					<BrowserRouter>
-						<Navbar />
+						<Navbar sectionTopRef={sectionTopRef} />
 						<Routes>
-							<Route path='edificioFarfalle/' element={<Principal />} />
+							<Route
+								path='edificioFarfalle/'
+								element={<Principal sectionTopRef={sectionTopRef} />}
+							/>
 							<Route path='edificioFarfalle/Nosotros' element={<Nosotros />} />
 							<Route
 								path='edificioFarfalle/Departamentos/Pb-A'
