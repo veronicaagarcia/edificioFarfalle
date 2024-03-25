@@ -6,6 +6,7 @@ import { Card, useMediaQuery } from '@mui/material'
 import logoFarfalle from '../../assets/222.png'
 import close from '../../assets/close.svg'
 import menu from '../../assets/menu.svg'
+// import { Principal } from '../Principal'
 
 interface NavLinkProps {
 	to: string
@@ -16,10 +17,20 @@ interface NavLinkProps {
 	onClick?: () => void
 }
 
-export function Navbar() {
+interface NavbarProps {
+	sectionTopRef: React.MutableRefObject<null>
+}
+
+export function Navbar({ sectionTopRef }: NavbarProps) {
 	const [isOpenDepartments, setIsOpenDepartments] = useState(false)
 	const [openCloseMenu, setOpenCloseMenu] = useState(false)
 	const isMobile = useMediaQuery('(max-width:640px)')
+
+	// const location = useLocation()
+
+	// useEffect(() => {
+	// 	setOpenCloseMenu(false)
+	// }, [location])
 
 	function NavLink({
 		to,
@@ -58,8 +69,11 @@ export function Navbar() {
 	const handleCloseDepartments = () => {
 		setIsOpenDepartments(false)
 	}
+
 	return (
 		<Card
+			ref={sectionTopRef}
+			id='top'
 			style={{
 				height: '60px',
 				width: '100%',
@@ -70,6 +84,7 @@ export function Navbar() {
 				overflow: 'visible',
 			}}
 		>
+			{/* <Principal sectionTopRef={sectionTopRef} /> */}
 			<div className='flex items-center pt-2 text-orange w-2/12'>
 				<img
 					width={200}

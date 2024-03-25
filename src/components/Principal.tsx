@@ -1,10 +1,16 @@
-import { FaChevronDown } from 'react-icons/fa'
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 // import { CarouselImg } from './comon/Carousel'
 // import { useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-responsive-carousel/lib/styles/carousel.css'
-export function Principal() {
+import { useRef } from 'react'
+
+interface PrincipalProps {
+	sectionTopRef: React.MutableRefObject<HTMLDivElement | null>
+}
+
+export function Principal({ sectionTopRef }: PrincipalProps) {
 	const arrayPhotos = [
 		{
 			img: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/478872983.jpg?k=b3ae07da65bb39dd2956c82918cd3601bdccb9492362b36be85a842697949bb2&o=&hp=1',
@@ -47,9 +53,26 @@ export function Principal() {
 	// 	setShowThumbs(!openCloseImg)
 	// 	console.log(showThumbs)
 	// }
+	const sectionReservasRef = useRef<HTMLDivElement>(null)
+	// const sectionTopRef = useRef<HTMLDivElement>(null)
+
+	const handleClick = () => {
+		const sectionReservas = sectionReservasRef.current
+		if (sectionReservas) {
+			sectionReservas.scrollIntoView({ behavior: 'smooth' })
+		}
+	}
+
+	const handleToTop = () => {
+		const sectionTop = sectionTopRef.current
+		if (sectionTop) {
+			sectionTop.scrollIntoView({ behavior: 'smooth' })
+		}
+	}
+
 	return (
-		<div className=' min-h-screen flex flex-col items-center justify-arround overflow-y-auto'>
-			<h2 className='text-black text-center text-4xl mt-6 mb-3'>
+		<div className='min-h-screen flex flex-col items-center justify-arround overflow-y-auto'>
+			<h2 className='text-black text-center text-4xl mt-6 mb-4'>
 				Edificio Farfalle
 			</h2>
 			{/* <CarouselImg /> */}
@@ -116,10 +139,9 @@ export function Principal() {
 					// }
 				>
 					{arrayPhotos.map((item) => (
-						<div className=' w-full h-425'>
+						<div key={item.img} className=' w-full h-600'>
 							<img
-								key={item.img}
-								className={`aspect-video object-cover`}
+								className={`h-425 aspect-video object-cover`}
 								src={item.img}
 								alt={item.title}
 								loading='lazy'
@@ -128,12 +150,32 @@ export function Principal() {
 					))}
 				</Carousel>
 			</section>
-			<div className='absolute bottom-0 left-0 w-full text-white text-center mb-4 '>
+			<div className='mt-8 w-full text-white text-center mb-8 '>
 				<h2 className='text-black font-thin font-serif italic  text-base lg:text-lg mb-1'>
 					Consulte por reservas
 				</h2>
-				<FaChevronDown className='text-3xl text-orange animate-bounce mx-auto' />
+				<FaChevronDown
+					onClick={handleClick}
+					id='chevronDown'
+					className='text-3xl text-orange animate-bounce mx-auto cursor-pointer'
+				/>
 			</div>
+			<section
+				ref={sectionReservasRef}
+				id='reservas'
+				className=' w-full h-425 mt-20 relative overflow-y-scroll bg-gray'
+			>
+				<h3 className='text-center font-sans pt-12'>
+					ACA VA LOGICA DE CONSULTA DE RESERVAS
+				</h3>
+				<p className='text-center font-sans pt-12'>Produccion</p>
+				<div className='text-center mt-4'>
+					<FaChevronUp
+						onClick={handleToTop}
+						className='mt-8 text-3xl text-orange mx-auto cursor-pointer absolute bottom-0 w-full text-end '
+					/>
+				</div>
+			</section>
 		</div>
 	)
 }
