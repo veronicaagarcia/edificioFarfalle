@@ -2,14 +2,13 @@
 import { ReactNode } from 'react'
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Card, useMediaQuery } from '@mui/material'
+import { Card } from '@mui/material'
 import logoFarfalle from '../../assets/222.png'
 import close from '../../assets/close.svg'
 import menu from '../../assets/menu.svg'
-// import { Principal } from '../Principal'
 
 interface NavLinkProps {
-	to: string
+	to?: string
 	exact?: boolean
 	activeClassName?: string
 	className?: string
@@ -19,18 +18,11 @@ interface NavLinkProps {
 
 interface NavbarProps {
 	sectionTopRef: React.MutableRefObject<null>
+	isMobile: boolean
 }
 
-export function Navbar({ sectionTopRef }: NavbarProps) {
-	const [isOpenDepartments, setIsOpenDepartments] = useState(false)
+export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 	const [openCloseMenu, setOpenCloseMenu] = useState(false)
-	const isMobile = useMediaQuery('(max-width:640px)')
-
-	// const location = useLocation()
-
-	// useEffect(() => {
-	// 	setOpenCloseMenu(false)
-	// }, [location])
 
 	function NavLink({
 		to,
@@ -41,17 +33,18 @@ export function Navbar({ sectionTopRef }: NavbarProps) {
 		onClick,
 	}: NavLinkProps) {
 		const location = useLocation()
-		const isActive = exact
-			? location.pathname === to
-			: location.pathname.startsWith(to)
+		const isActive = to
+			? exact
+				? location.pathname === to
+				: location.pathname.startsWith(to)
+			: false
 
 		const handleClick = () => {
 			if (onClick) {
 				onClick()
 			}
-			handleCloseDepartments()
 		}
-		return (
+		return to ? (
 			<Link
 				to={to}
 				className={`${className} ${isActive ? activeClassName : ''}`}
@@ -59,15 +52,15 @@ export function Navbar({ sectionTopRef }: NavbarProps) {
 			>
 				{children}
 			</Link>
+		) : (
+			<span className={className} onClick={handleClick}>
+				{children}
+			</span>
 		)
 	}
 
 	const handleOpenCloseMenu = () => {
 		setOpenCloseMenu(!openCloseMenu)
-		setIsOpenDepartments(false)
-	}
-	const handleCloseDepartments = () => {
-		setIsOpenDepartments(false)
 	}
 
 	return (
@@ -75,35 +68,49 @@ export function Navbar({ sectionTopRef }: NavbarProps) {
 			ref={sectionTopRef}
 			id='top'
 			style={{
-				height: '60px',
+				height: isMobile ? '14vh' : '18vh',
 				width: '100%',
 				display: 'flex',
-				justifyContent: 'space-between',
+				flexDirection: 'column',
+				justifyContent: 'center',
 				position: 'relative',
 				top: '0',
 				overflow: 'visible',
 			}}
 		>
-			{/* <Principal sectionTopRef={sectionTopRef} /> */}
-			<div className='flex items-center pt-2 text-orange w-2/12'>
+			<div
+				className={`flex flex-col w-full h-full ${
+					isMobile
+						? `justify-center items-start`
+						: `items-center justify-center`
+				}`}
+			>
 				<img
-					width={200}
-					height={170}
+					className={`animate-pulse ${
+						isMobile ? `h-auto w-40 mb-5 -mt-4` : `h-auto w-200`
+					}`}
 					src={logoFarfalle}
-					alt='logo edificio Farfalle'
+					alt='Logo mariposa'
+					loading='lazy'
 				/>
-				{/* <h1 className='text-3xl'>Farfalle</h1> */}
+				<h1
+					className={`font-great-vibes ${
+						isMobile ? `-mt-16 ml-4 text-xl` : `-mt-16 text-3xl`
+					} pb-2`}
+				>
+					Edificio Farfalle
+				</h1>
 			</div>
 
 			<div
 				className={`${
 					isMobile
-						? `h-fit flex flex-col self-end justify-center p-2 gap-2${
+						? `h-fit absolute bottom-1/4 flex flex-col self-end justify-center p-2 gap-2${
 								openCloseMenu
-									? 'w-36 h-fit z-20 absolute top-0 border-transparent rounded-xl right-0 p-5 shadow-sm bg-almostWhite pb-36 pt-5'
+									? 'w-36 h-fit z-20 absolute top-0 border-transparent rounded-xl right-0 p-5 shadow-sm bg-creme pb-36 pt-5'
 									: 'w-16 h-16 my-auto mr-3'
 						  }`
-						: 'flex items-center w-8/12 justify-around p-4'
+						: 'flex items-center w-full bg-creme justify-around p-4 rounded-xl rounded-tl-none rounded-tr-none -mb-2 z-10'
 				}`}
 			>
 				{' '}
@@ -113,9 +120,9 @@ export function Navbar({ sectionTopRef }: NavbarProps) {
 						onClick={handleOpenCloseMenu}
 					>
 						{openCloseMenu ? (
-							<img src={close} className='h-4 ' />
+							<img src={close} className='h-4 ' loading='lazy' title='Cerrar' />
 						) : (
-							<img src={menu} className='h-4' />
+							<img src={menu} className='h-4' loading='lazy' title='Menú' />
 						)}
 					</button>
 				) : (
@@ -124,12 +131,12 @@ export function Navbar({ sectionTopRef }: NavbarProps) {
 				<NavLink
 					className={`${
 						isMobile
-							? `text-orangeDark hover:text-slate-600 ${
+							? `text-black hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-orangeDark hover:text-slate-600 text-xl md:text-2xl lg:text-3xl'
+							: 'text-black hover:text-orange text-lg'
 					}`}
-					activeClassName='font-bold'
+					activeClassName='text-orangeDark'
 					exact
 					to={'/edificioFarfalle/'}
 				>
@@ -138,98 +145,26 @@ export function Navbar({ sectionTopRef }: NavbarProps) {
 				<NavLink
 					className={`${
 						isMobile
-							? `text-orangeDark hover:text-slate-600 ${
+							? `text-black hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-orangeDark hover:text-slate-600 text-xl md:text-2xl lg:text-3xl'
+							: 'text-black hover:text-orange text-lg'
 					}`}
-					activeClassName='font-bold'
+					activeClassName='text-orangeDark'
 					exact
-					to={'/edificioFarfalle/Nosotros'}
+					to={'/edificioFarfalle/Departamentos'}
 				>
-					Nosotros
+					Departamentos
 				</NavLink>
-				<div className='relative group'>
-					<button
-						className={`${
-							isMobile
-								? `text-orangeDark hover:text-slate-600 ${
-										openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
-								  }`
-								: 'focus:outline-none text-orangeDark hover:text-slate-600 text-xl md:text-2xl lg:text-3xl'
-						}`}
-						onClick={() => setIsOpenDepartments(!isOpenDepartments)}
-					>
-						Departamentos
-					</button>
-					{isOpenDepartments && (
-						<div
-							className={`${
-								isMobile
-									? 'absolute z-50 bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg left-0'
-									: 'w-44 mt-2 absolute z-10 bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg left-0'
-							}`}
-						>
-							<NavLink
-								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
-								activeClassName='font-bold'
-								exact
-								to='/edificioFarfalle/Departamentos/Pb-A'
-							>
-								Planta baja A
-							</NavLink>
-							<NavLink
-								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
-								activeClassName='font-bold'
-								exact
-								to='/edificioFarfalle/Departamentos/Pb-B'
-							>
-								Planta baja B
-							</NavLink>
-							<NavLink
-								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
-								activeClassName='font-bold'
-								exact
-								to='/edificioFarfalle/Departamentos/1-A'
-							>
-								Primero A
-							</NavLink>
-							<NavLink
-								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
-								activeClassName='font-bold'
-								exact
-								to='/edificioFarfalle/Departamentos/1-B'
-							>
-								Primero B
-							</NavLink>
-							<NavLink
-								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
-								activeClassName='font-bold'
-								exact
-								to='/edificioFarfalle/Departamentos/2-B'
-							>
-								Segundo B
-							</NavLink>
-							<NavLink
-								className='block px-4 py-2 text-orangeDark hover:text-slate-600 text-lg md:text-xl lg:text-2xl'
-								activeClassName='font-bold'
-								exact
-								to='/edificioFarfalle/ZonasComunes'
-							>
-								Zonas comunes
-							</NavLink>
-						</div>
-					)}
-				</div>
 				<NavLink
 					className={`${
 						isMobile
-							? `text-orangeDark hover:text-slate-600 ${
+							? `text-black hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-orangeDark hover:text-slate-600 text-xl md:text-2xl lg:text-3xl'
+							: 'text-black hover:text-orange text-lg'
 					}`}
-					activeClassName='font-bold'
+					activeClassName='text-orangeDark'
 					exact
 					to={'/edificioFarfalle/Servicios'}
 				>
@@ -238,12 +173,12 @@ export function Navbar({ sectionTopRef }: NavbarProps) {
 				<NavLink
 					className={`${
 						isMobile
-							? `text-orangeDark hover:text-slate-600 ${
+							? `text-black hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-orangeDark hover:text-slate-600 text-xl md:text-2xl lg:text-3xl'
+							: 'text-black hover:text-orange text-lg'
 					}`}
-					activeClassName='font-bold'
+					activeClassName='text-orangeDark'
 					exact
 					to={'/edificioFarfalle/Contacto'}
 				>

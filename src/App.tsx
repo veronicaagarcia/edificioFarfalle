@@ -2,10 +2,10 @@ import { useRef } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Navbar } from './components/comon/Navbar'
 import { Principal } from './components/Principal'
-import { Nosotros } from './components/Nosotros'
+import { Departamentos } from './components/Departamentos'
 import { useFarfalleStore } from './store/farfalle'
 import { Start } from './components/Start'
-import { Card } from '@mui/material'
+import { Card, useMediaQuery } from '@mui/material'
 import { PbA } from './components/PlantaBajaA'
 import { PbB } from './components/PlantaBajaB'
 import { PrimeroA } from './components/PrimeroA'
@@ -19,6 +19,7 @@ import './App.css'
 function App() {
 	const isStarted = useFarfalleStore((state) => state.isStarted)
 	const sectionTopRef = useRef(null)
+	const isMobile = useMediaQuery('(max-width:640px)')
 
 	return (
 		<Card style={{ width: '100vw', height: '100vh' }}>
@@ -27,13 +28,21 @@ function App() {
 			) : (
 				<main className='w-screen h-screen'>
 					<BrowserRouter>
-						<Navbar sectionTopRef={sectionTopRef} />
+						<Navbar sectionTopRef={sectionTopRef} isMobile={isMobile} />
 						<Routes>
 							<Route
 								path='edificioFarfalle/'
-								element={<Principal sectionTopRef={sectionTopRef} />}
+								element={
+									<Principal
+										sectionTopRef={sectionTopRef}
+										isMobile={isMobile}
+									/>
+								}
 							/>
-							<Route path='edificioFarfalle/Nosotros' element={<Nosotros />} />
+							<Route
+								path='edificioFarfalle/Departamentos'
+								element={<Departamentos />}
+							/>
 							<Route
 								path='edificioFarfalle/Departamentos/Pb-A'
 								element={<PbA />}

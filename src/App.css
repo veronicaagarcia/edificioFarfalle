@@ -7,9 +7,4 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: var(--background-body);
-	/* font-family: 'serif', italic; */
-	font-family: 'Great Vibes', cursive;
-}
-.cardShadow {
-	border: 3px groove rgba(172, 115, 100, 0.75);
 }

@@ -1,13 +1,34 @@
-import { Button, Container, Stack } from '@mui/material'
-import logoFarfalle from '../assets/logo.gif'
+import { useState } from 'react'
+import { Container, Stack, CircularProgress } from '@mui/material'
+import logoFarfalle from '../assets/logoMove.gif'
 import { useFarfalleStore } from '../store/farfalle'
-import video from '../assets/videos/video.mp4'
+import video from '../assets/videos/start.mp4'
+
 export function Start() {
 	const getStart = useFarfalleStore((state) => state.getStart)
+	const [videoLoaded, setVideoLoaded] = useState(false)
+
+	const handleVideoLoad = () => {
+		// Cuando el video se carga completamente, actualizamos el estado
+		setVideoLoaded(true)
+	}
+
 	return (
 		<main className='h-full flex flex-col'>
 			<div className='relative w-full h-screen flex'>
-				<video autoPlay muted loop className='w-full h-full object-cover z-0'>
+				{/* Mostramos el indicador de carga mientras el video se está cargando */}
+				{!videoLoaded && (
+					<div className='absolute inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50'>
+						<CircularProgress color='primary' />
+					</div>
+				)}
+				<video
+					autoPlay
+					muted
+					loop
+					className='w-full h-full object-cover z-0'
+					onLoadedData={handleVideoLoad} // Manejador de evento cuando el video se carga
+				>
 					<source src={video} type='video/mp4' />
 				</video>
 			</div>
@@ -15,10 +36,13 @@ export function Start() {
 			<Container
 				maxWidth='xs'
 				sx={{
-					backgroundColor: 'var(--background-body)',
-					padding: '10px',
+					height: 'fit-content',
+					backgroundColor: '#fefdfd',
+					paddingTop: '5px',
+					paddingBottom: '5px',
+					paddingLeft: '0',
 					margin: 'auto',
-					opacity: '0.8',
+					opacity: '0.7',
 					borderRadius: '30px',
 					position: 'absolute',
 					top: '50%',
@@ -27,23 +51,35 @@ export function Start() {
 				}}
 			>
 				<Stack
-					direction='row'
-					gap={1}
+					direction='column'
+					gap={0}
 					alignItems='center'
 					justifyContent='center'
 				>
 					<img
-						width={110}
-						height={110}
+						width={100}
+						height={100}
 						src={logoFarfalle}
 						alt='Logo edificio Farfalle'
+						loading='lazy'
 					/>
-					<h1 className='text-black text-5xl'>Edificio Farfalle</h1>
+					<h1 className='text-black text-5xl mb-2 font-great-vibes'>
+						Edificio Farfalle
+					</h1>
 				</Stack>
-				<div className='text-orange flex justify-center'>
-					<Button variant='outlined' color='inherit' onClick={getStart}>
+				<div className='text-orange flex justify-center mt-2'>
+					{/* <Button variant='outlined' color='inherit' onClick={getStart}>
 						Conocer
-					</Button>
+					</Button> */}
+					<button
+						onClick={getStart}
+						className='group relative inline-flex mb-2 h-10 items-center justify-center overflow-hidden rounded-md bg-black px-4 font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
+					>
+						<span className='text-base font-lato'>Ingresar</span>
+						<div className='absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]'>
+							<div className='relative h-full w-8 bg-white/20'></div>
+						</div>
+					</button>
 				</div>
 			</Container>
 		</main>

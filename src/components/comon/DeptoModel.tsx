@@ -2,6 +2,10 @@ import { useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { VideoModel } from './VideoModel'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft'
+import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
 
 export function DeptoModel({
 	numVideos,
@@ -15,6 +19,7 @@ export function DeptoModel({
 	videoSizeMultiplier: number
 }) {
 	const videoComponents: JSX.Element[] = []
+	const [isImageBig, setIsImageBig] = useState<boolean>(false)
 	for (let i = 0; i < numVideos; i++) {
 		if (i < videoNames.length) {
 			const videoName = videoNames[i]
@@ -32,126 +37,112 @@ export function DeptoModel({
 		null
 	)
 
-	const [isImageBig, setIsImageBig] = useState<boolean>(false)
-
 	const handleImageClick = (index: number) => {
 		setSelectedImageIndex(index)
 		setIsImageBig(true)
 	}
 
-	const handleCloseImage = () => {
+	const handleNextImage = () => {
+		setSelectedImageIndex((prevIndex) => {
+			if (prevIndex !== null && prevIndex < imageNames.length - 1) {
+				return prevIndex + 1
+			}
+			return prevIndex
+		})
+	}
+
+	const handlePrevImage = () => {
+		setSelectedImageIndex((prevIndex) => {
+			if (prevIndex !== null && prevIndex > 0) {
+				return prevIndex - 1
+			}
+			return prevIndex
+		})
+	}
+
+	// Combine images and videos into one array
+	const carouselItems = [
+		...imageNames.map((imageName, index) => (
+			<div
+				key={index}
+				className='cursor-pointer w-full h-full mb-16 '
+				onClick={() => handleImageClick(index)}
+			>
+				<img
+					src={imageName}
+					alt={`Imagen ${index}`}
+					className='max-w-255 max-h-500 h-auto cursor-pointer rounded-xl hover:shadow-lg'
+					loading='lazy'
+				/>
+			</div>
+		)),
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		...videoComponents.filter((video) => !isImageBig), // Filtrar videos cuando isImageBig es true
+	]
+
+	const handleExitFullscreen = () => {
 		setIsImageBig(false)
 	}
 
 	return (
-		<div className='w-full flex flex-col justify-center items-center mb-2 p-4'>
-			<section className='w-full h-fit flex flex-col justify-center items-center'>
-				<h3 className='font-serif italic text-base md:text-lg self-start text-black'>
-					Video tour
-				</h3>
-				<div className=' py-20 w-full flex flex-wrap h-fit overflow-y-auto gap-1'>
-					{videoComponents}
-				</div>
-			</section>
-			<section className='w-full h-fit flex flex-col justify-center items-center'>
-				<h3 className='font-serif italic text-base md:text-lg self-start text-black'>
-					Galeria de fotos
-				</h3>
-				<div className='relative h-fit mb-8 overflow-x-scroll md:overflow-x-hidden'>
-					<div className='max-w-full overflow-x-auto mx-auto w-350 sm:w-10/12 lg:w-full'>
+		<>
+			<section className='w-full h-full flex flex-col justify-center items-center'>
+				<div className='relative h-full overflow-x-scroll md:overflow-x-hidden w-full bg-transparent rounded-3xl shadow-2xl'>
+					<div className='max-w-full h-full bg-transparent overflow-x-auto mx-auto w-full '>
 						<Carousel
 							autoPlay={true}
 							infiniteLoop
 							interval={4000}
-							showArrows={true}
+							showArrows={false}
 							showStatus={false}
-							showIndicators={true}
+							showIndicators={!isImageBig}
 							showThumbs={true}
 							selectedItem={selectedImageIndex || 0}
 							thumbWidth={90}
 							centerMode={true}
 							onChange={(index) => setSelectedImageIndex(index)}
-							className='mx-auto w-11/12 max-w-screen-xl mt-2'
-							renderArrowPrev={(onClickHandler, hasPrev, label) =>
-								hasPrev && (
-									<button
-										type='button'
-										onClick={onClickHandler}
-										title={label}
-										className='absolute z-10 left-0 top-1/2 transform -translate-y-1/2 cursor-pointer rounded-xl'
-									>
-										<svg
-											xmlns='http://www.w3.org/2000/svg'
-											className='h-8 w-8 text-orangeDark border-2 p-1 hover:text-opacity-25'
-											fill='none'
-											viewBox='0 0 24 24'
-											stroke='currentColor'
-										>
-											<path
-												strokeLinecap='round'
-												strokeLinejoin='round'
-												strokeWidth={2}
-												d='M15 19l-7-7 7-7'
-											/>
-										</svg>
-									</button>
-								)
-							}
-							renderArrowNext={(onClickHandler, hasNext, label) =>
-								hasNext && (
-									<button
-										type='button'
-										onClick={onClickHandler}
-										title={label}
-										className='absolute z-10 right-0 top-1/2 transform -translate-y-1/2 cursor-pointer rounded-xl'
-									>
-										<svg
-											xmlns='http://www.w3.org/2000/svg'
-											className='h-8 w-8 text-orangeDark border-2 p-1 hover:text-opacity-25'
-											fill='none'
-											viewBox='0 0 24 24'
-											stroke='currentColor'
-										>
-											<path
-												strokeLinecap='round'
-												strokeLinejoin='round'
-												strokeWidth={2}
-												d='M9 5l7 7-7 7'
-											/>
-										</svg>
-									</button>
-								)
-							}
+							className='mx-auto bg-creme p-4 rounded-3xl  h-auto w-full max-w-screen-xl '
 						>
-							{imageNames.map((imageName, index) => (
-								<div
-									key={index}
-									className='cursor-pointer'
-									onClick={() => handleImageClick(index)}
-								>
-									<img
-										src={imageName}
-										alt={`Imagen ${index}`}
-										className='max-w-340 max-h-500 cursor-pointer border-2 border-orange rounded-xl hover:shadow-lg'
-									/>
-								</div>
-							))}
+							{carouselItems}
 						</Carousel>
 					</div>
 				</div>
 			</section>
+
 			{isImageBig && (
-				<div
-					className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50'
-					onClick={handleCloseImage}
-				>
-					<img
-						src={imageNames[selectedImageIndex || 0]}
-						alt={`Imagen ${selectedImageIndex}`}
-						className='max-w-100 max-h-100 border-orange border-2 rounded-xl hover:shadow-lg'
-					/>
+				<div className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-80 z-50'>
+					<div className='absolute inset-0 flex items-center justify-between p-4'>
+						<button
+							className='text-white text-2xl font-bold'
+							onClick={handlePrevImage}
+							disabled={selectedImageIndex === null || selectedImageIndex === 0}
+						>
+							<FontAwesomeIcon icon={faArrowLeft} />
+						</button>
+						<img
+							src={imageNames[selectedImageIndex || 0]}
+							className='max-w-100 w-5/12 h-auto max-h-90 border-creme border-2 rounded-xl hover:shadow-lg bg-black'
+							loading='lazy'
+						/>
+						<button
+							className='text-white text-2xl font-bold'
+							onClick={handleNextImage}
+							disabled={
+								selectedImageIndex === null ||
+								selectedImageIndex === imageNames.length - 1
+							}
+						>
+							<FontAwesomeIcon icon={faArrowRight} />
+						</button>
+					</div>
+					<button
+						className='absolute top-4 right-4 text-white text-2xl'
+						onClick={handleExitFullscreen}
+					>
+						<FontAwesomeIcon icon={faTimes} />
+					</button>
 				</div>
 			)}
-		</div>
+		</>
 	)
 }

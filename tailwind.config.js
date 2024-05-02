@@ -5,7 +5,6 @@ export default {
     extend: {
       colors: {
         transparent: "transparent",
-        current: "currentColor",
         white: "#fefdfd",
         gray: "#dfe0df",
         orange: "#fa9336",
@@ -15,11 +14,15 @@ export default {
         almostWhite: "#fefdfd"
       
       },
+      fontFamily: {
+        'great-vibes': ['Great Vibes', 'cursive'],
+        'lato': ['Lato', 'sans-serif'],
+      },
       height: {
         '190': '190px',
         '200': '200px',
+        '260': '260px',
         '425': '425px',
-        '315': '315px',
         '600': '600px',
         '30v': '30vh',
         '50v': '50vh',
@@ -30,6 +33,7 @@ export default {
         '90v': '90vh',
       },
       width: {
+        '200': '200px',
         '350':'350px',
         '400': '400px',
         '600': '600px',
@@ -39,12 +43,12 @@ export default {
       },
       maxHeight:{
         '500': '500px',
-        '100': '100vh',
+        '90': '90vh',
       },
       maxWidth:{
-        '340': '340px',
+        '255': '255px',
         '100': '100vw',
-      }
+      },
     },
   },
   plugins: [],
