@@ -1,13 +1,13 @@
 import { DeptoModel } from './comon/DeptoModel'
-import puerta from '../assets/videos/pbb/1puerta.mp4'
-import living from '../assets/videos/pbb/2living.mp4'
-import tv from '../assets/videos/pbb/3tv.mp4'
-import cocina from '../assets/videos/pbb/4cocina.mp4'
-import cocina2 from '../assets/videos/pbb/5cocina.mp4'
-import habitacion from '../assets/videos/pbb/6habitacion.mp4'
-import bano from '../assets/videos/pbb/7bano.mp4'
-import bano2 from '../assets/videos/pbb/8bano.mp4'
-import lavadero from '../assets/videos/pbb/9lavadero.mp4'
+// import puerta from '../assets/videos/pbb/1puerta.mp4'
+// import living from '../assets/videos/pbb/2living.mp4'
+// import tv from '../assets/videos/pbb/3tv.mp4'
+// import cocina from '../assets/videos/pbb/4cocina.mp4'
+// import cocina2 from '../assets/videos/pbb/5cocina.mp4'
+// import habitacion from '../assets/videos/pbb/6habitacion.mp4'
+// import bano from '../assets/videos/pbb/7bano.mp4'
+// import bano2 from '../assets/videos/pbb/8bano.mp4'
+// import lavadero from '../assets/videos/pbb/9lavadero.mp4'
 import { Footer } from './comon/Footer'
 
 export function PbB() {
@@ -61,19 +61,19 @@ export function PbB() {
 				</section>
 				<div className='w-full pt-1 md:w-7/12 h-fit'>
 					<DeptoModel
-						numVideos={9}
-						videoNames={[
-							puerta,
-							living,
-							tv,
-							cocina,
-							cocina2,
-							habitacion,
-							bano,
-							bano2,
-							lavadero,
-						]}
-						videoSizeMultiplier={1}
+						// numVideos={9}
+						// videoNames={[
+						// 	puerta,
+						// 	living,
+						// 	tv,
+						// 	cocina,
+						// 	cocina2,
+						// 	habitacion,
+						// 	bano,
+						// 	bano2,
+						// 	lavadero,
+						// ]}
+						// videoSizeMultiplier={1}
 						imageNames={imageNames}
 					/>
 				</div>

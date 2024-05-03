@@ -1,5 +1,5 @@
 import { DeptoModel } from './comon/DeptoModel'
-import completo from '../assets/videos/pba/Completo.mp4'
+// import completo from '../assets/videos/pba/Completo.mp4'
 import { Footer } from './comon/Footer'
 
 export function PbA() {
@@ -52,9 +52,9 @@ export function PbA() {
 				</section>
 				<div className='w-full pt-1 md:w-7/12 h-fit'>
 					<DeptoModel
-						numVideos={1}
-						videoNames={[completo]}
-						videoSizeMultiplier={1}
+						// numVideos={1}
+						// videoNames={[completo]}
+						// videoSizeMultiplier={1}
 						imageNames={imageNames}
 					/>
 				</div>

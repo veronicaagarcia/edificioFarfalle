@@ -1,37 +1,37 @@
 import { useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import { VideoModel } from './VideoModel'
+// import { VideoModel } from './VideoModel'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft'
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
 
 export function DeptoModel({
-	numVideos,
-	videoNames,
+	// numVideos,
+	// videoNames,
 	imageNames,
-	videoSizeMultiplier,
-}: {
-	numVideos: number
-	videoNames: string[]
+}: // videoSizeMultiplier,
+{
+	// numVideos: number
+	// videoNames: string[]
 	imageNames: string[]
-	videoSizeMultiplier: number
+	// videoSizeMultiplier: number
 }) {
-	const videoComponents: JSX.Element[] = []
+	// const videoComponents: JSX.Element[] = []
 	const [isImageBig, setIsImageBig] = useState<boolean>(false)
-	for (let i = 0; i < numVideos; i++) {
-		if (i < videoNames.length) {
-			const videoName = videoNames[i]
-			videoComponents.push(
-				<VideoModel
-					key={i}
-					video={videoName}
-					videoSizeMultiplier={videoSizeMultiplier}
-				/>
-			)
-		}
-	}
+	// for (let i = 0; i < numVideos; i++) {
+	// 	if (i < videoNames.length) {
+	// 		const videoName = videoNames[i]
+	// 		videoComponents.push(
+	// 			<VideoModel
+	// 				key={i}
+	// 				video={videoName}
+	// 				videoSizeMultiplier={videoSizeMultiplier}
+	// 			/>
+	// 		)
+	// 	}
+	// }
 
 	const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
 		null
@@ -77,7 +77,7 @@ export function DeptoModel({
 			</div>
 		)),
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		...videoComponents.filter((video) => !isImageBig), // Filtrar videos cuando isImageBig es true
+		// ...videoComponents.filter((video) => !isImageBig), // Filtrar videos cuando isImageBig es true
 	]
 
 	const handleExitFullscreen = () => {

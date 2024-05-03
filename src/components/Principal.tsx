@@ -4,7 +4,6 @@ import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-responsive-carousel/lib/styles/carousel.css'
 import Swal from 'sweetalert2'
-import video from '../assets/videos/principal/dron1.mp4'
 import video2 from '../assets/videos/principal/dron2.mp4'
 
 interface PrincipalProps {
@@ -188,7 +187,7 @@ export function Principal({ sectionTopRef, isMobile }: PrincipalProps) {
 					showIndicators={false}
 					onChange={handleVideosLoad} // Se ejecuta cuando se cambia de video
 				>
-					{[video2, video, video2, video].map((item, index) => (
+					{[video2, video2].map((item, index) => (
 						<div key={index} className='w-full h-425'>
 							<VideoLazyLoad src={item} type='video/mp4' />
 						</div>
