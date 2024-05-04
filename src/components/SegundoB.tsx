@@ -1,14 +1,14 @@
 import { DeptoModel } from './comon/DeptoModel'
-// import puerta from '../assets/videos/2b/1Puerta.mp4'
-// import entrada from '../assets/videos/2b/2Entrando.mp4'
-// import living from '../assets/videos/2b/3Living.mp4'
-// import livingFrente from '../assets/videos/2b/4LivingFrente.mp4'
-// import livingCocina from '../assets/videos/2b/5LivingCocina.mp4'
-// import cocina from '../assets/videos/2b/6Cocina.mp4'
-// import habitacionEntrada from '../assets/videos/2b/7EntrandoHabitacion.mp4'
-// import habitacion from '../assets/videos/2b/8Habitacion.mp4'
-// import bano from '../assets/videos/2b/9Bano.mp4'
-// import lavadero from '../assets/videos/2b/10Lavadero.mp4'
+import puerta from '../assets/videos/2b/1Puerta.mp4'
+import entrada from '../assets/videos/2b/2Entrando.mp4'
+import living from '../assets/videos/2b/3Living.mp4'
+import livingFrente from '../assets/videos/2b/4LivingFrente.mp4'
+import livingCocina from '../assets/videos/2b/5LivingCocina.mp4'
+import cocina from '../assets/videos/2b/6Cocina.mp4'
+import habitacionEntrada from '../assets/videos/2b/7EntrandoHabitacion.mp4'
+import habitacion from '../assets/videos/2b/8Habitacion.mp4'
+import bano from '../assets/videos/2b/9Bano.mp4'
+import lavadero from '../assets/videos/2b/10Lavadero.mp4'
 import { Footer } from './comon/Footer'
 
 export function SegundoB() {
@@ -71,20 +71,20 @@ export function SegundoB() {
 				</section>
 				<div className='w-full pt-1 md:w-7/12 h-fit'>
 					<DeptoModel
-						// numVideos={10}
-						// videoNames={[
-						// 	puerta,
-						// 	entrada,
-						// 	living,
-						// 	livingFrente,
-						// 	livingCocina,
-						// 	cocina,
-						// 	habitacionEntrada,
-						// 	habitacion,
-						// 	bano,
-						// 	lavadero,
-						// ]}
-						// videoSizeMultiplier={1}
+						numVideos={10}
+						videoNames={[
+							puerta,
+							entrada,
+							living,
+							livingFrente,
+							livingCocina,
+							cocina,
+							habitacionEntrada,
+							habitacion,
+							bano,
+							lavadero,
+						]}
+						videoSizeMultiplier={1}
 						imageNames={imageNames}
 					/>
 				</div>

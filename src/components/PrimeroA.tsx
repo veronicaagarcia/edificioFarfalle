@@ -1,11 +1,11 @@
 import { DeptoModel } from './comon/DeptoModel'
-// import entrada from '../assets/videos/1a/1Entrada.mp4'
-// import cocina from '../assets/videos/1a/2Cocina.mp4'
-// import living from '../assets/videos/1a/3Living.mp4'
-// import pasillo from '../assets/videos/1a/4Pasillo.mp4'
-// import habitacion from '../assets/videos/1a/5Habitacion.mp4'
-// import bano from '../assets/videos/1a/6Bano.mp4'
-// import lavadero from '../assets/videos/1a/7Lavadero.mp4'
+import entrada from '../assets/videos/1a/1Entrada.mp4'
+import cocina from '../assets/videos/1a/2Cocina.mp4'
+import living from '../assets/videos/1a/3Living.mp4'
+import pasillo from '../assets/videos/1a/4Pasillo.mp4'
+import habitacion from '../assets/videos/1a/5Habitacion.mp4'
+import bano from '../assets/videos/1a/6Bano.mp4'
+import lavadero from '../assets/videos/1a/7Lavadero.mp4'
 import { Footer } from './comon/Footer'
 
 export function PrimeroA() {
@@ -59,17 +59,17 @@ export function PrimeroA() {
 				</section>
 				<div className='w-full pt-1 md:w-7/12 h-fit'>
 					<DeptoModel
-						// numVideos={7}
-						// videoNames={[
-						// 	entrada,
-						// 	cocina,
-						// 	living,
-						// 	pasillo,
-						// 	habitacion,
-						// 	bano,
-						// 	lavadero,
-						// ]}
-						// videoSizeMultiplier={1}
+						numVideos={7}
+						videoNames={[
+							entrada,
+							cocina,
+							living,
+							pasillo,
+							habitacion,
+							bano,
+							lavadero,
+						]}
+						videoSizeMultiplier={1}
 						imageNames={imageNames}
 					/>
 				</div>

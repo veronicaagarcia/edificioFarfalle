@@ -1,9 +1,11 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useState } from 'react'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-responsive-carousel/lib/styles/carousel.css'
 import Swal from 'sweetalert2'
+import { VideoLazyLoad } from './comon/VideoLazyLoad'
+import video from '../assets/videos/principal/dron1.mp4'
 import video2 from '../assets/videos/principal/dron2.mp4'
 
 interface PrincipalProps {
@@ -180,14 +182,14 @@ export function Principal({ sectionTopRef, isMobile }: PrincipalProps) {
 					className={`w-full h-260`}
 					autoPlay
 					infiniteLoop
-					interval={300000}
+					interval={7000}
 					showArrows={false}
 					showThumbs={false}
 					showStatus={false}
 					showIndicators={false}
 					onChange={handleVideosLoad} // Se ejecuta cuando se cambia de video
 				>
-					{[video2, video2].map((item, index) => (
+					{[video, video2].map((item, index) => (
 						<div key={index} className='w-full h-425'>
 							<VideoLazyLoad src={item} type='video/mp4' />
 						</div>
@@ -349,51 +351,5 @@ export function Principal({ sectionTopRef, isMobile }: PrincipalProps) {
 				</div>
 			</section>
 		</div>
-	)
-}
-
-function VideoLazyLoad({ src, type }: { src: string; type: string }) {
-	const videoRef = useRef<HTMLVideoElement>(null)
-
-	useEffect(() => {
-		const options = {
-			root: null,
-			rootMargin: '0px',
-			threshold: 0.1,
-		}
-
-		const callback: IntersectionObserverCallback = (entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					const video = videoRef.current
-					if (video) {
-						video.load()
-					}
-				}
-			})
-		}
-
-		const observer = new IntersectionObserver(callback, options)
-		const target = videoRef.current
-		if (target) {
-			observer.observe(target)
-		}
-
-		return () => {
-			if (target) {
-				observer.unobserve(target)
-			}
-		}
-	}, [])
-
-	return (
-		<video
-			ref={videoRef}
-			autoPlay
-			muted
-			className='block mx-auto w-full h-425 object-cover z-0 object-center'
-		>
-			<source src={src} type={type} />
-		</video>
 	)
 }
