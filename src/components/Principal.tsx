@@ -23,6 +23,7 @@ export function Principal({ sectionTopRef, isMobile }: PrincipalProps) {
 	const [email, setEmail] = useState('')
 	const [formError, setFormError] = useState('')
 	const [minCheckOutDate, setMinCheckOutDate] = useState('')
+	const [currentIndex, setCurrentIndex] = useState(0) // Estado para controlar el índice actual del video
 
 	const handleClick = () => {
 		const sectionReservas = sectionReservasRef.current
@@ -38,10 +39,10 @@ export function Principal({ sectionTopRef, isMobile }: PrincipalProps) {
 		}
 	}
 
-	const handleVideosLoad = () => {
-		// Se ejecuta cuando todos los videos se han cargado
-		setVideosLoaded(true)
-	}
+	// const handleVideosLoad = () => {
+	// 	// Se ejecuta cuando todos los videos se han cargado
+	// 	setVideosLoaded(true)
+	// }
 
 	const handleCheckInChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const selectedDate = new Date(event.target.value)
@@ -165,6 +166,12 @@ export function Principal({ sectionTopRef, isMobile }: PrincipalProps) {
 		}
 	}
 
+	const handleVideoChange = (index: number) => {
+		setVideosLoaded(true)
+		// Actualiza el índice actual del video
+		setCurrentIndex(index)
+	}
+
 	return (
 		<div className='flex flex-col items-center justify-around'>
 			<section
@@ -187,7 +194,8 @@ export function Principal({ sectionTopRef, isMobile }: PrincipalProps) {
 					showThumbs={false}
 					showStatus={false}
 					showIndicators={false}
-					onChange={handleVideosLoad} // Se ejecuta cuando se cambia de video
+					selectedItem={currentIndex}
+					onChange={handleVideoChange} // Se ejecuta cuando se cambia de video
 				>
 					{[video, video2].map((item, index) => (
 						<div key={index} className='w-full h-425'>
