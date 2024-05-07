@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Container, Stack, CircularProgress } from '@mui/material'
 import logoFarfalle from '../assets/logoMove.gif'
 import { useFarfalleStore } from '../store/farfalle'
-import video from '../assets/videos/start.mp4'
+import video from '../assets/videos/Comunes/Cartel.mp4'
 
 export function Start() {
 	const getStart = useFarfalleStore((state) => state.getStart)

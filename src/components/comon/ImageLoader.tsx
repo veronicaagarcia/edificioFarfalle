@@ -12,6 +12,11 @@ function ImageLoader({ src, alt }: ImageLoaderProps) {
 		setLoading(false)
 	}
 
+	const handleError = (error: unknown) => {
+		console.error('Error loading image:', error)
+		setLoading(false) // Para indicar que la carga ha terminado
+	}
+
 	return (
 		<div className='relative w-full h-full'>
 			{loading && (
@@ -23,6 +28,7 @@ function ImageLoader({ src, alt }: ImageLoaderProps) {
 				src={src}
 				alt={alt}
 				onLoad={handleLoad}
+				onError={handleError}
 				className={`w-full h-auto ${loading ? 'hidden' : 'block'}`}
 			/>
 		</div>
