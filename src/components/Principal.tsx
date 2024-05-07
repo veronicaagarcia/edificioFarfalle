@@ -5,8 +5,8 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-responsive-carousel/lib/styles/carousel.css'
 import Swal from 'sweetalert2'
 import { VideoLazyLoad } from './comon/VideoLazyLoad'
-import video from '../assets/videos/Comunes/Cartel.mp4'
-import video2 from '../assets/videos/Comunes/Cartel.mp4'
+import video from '../assets/videos/principal/dron1.mp4'
+import video2 from '../assets/videos/principal/dron2.mp4'
 
 interface PrincipalProps {
 	sectionTopRef: React.MutableRefObject<HTMLDivElement | null>

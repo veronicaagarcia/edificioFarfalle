@@ -77,7 +77,7 @@ export function DeptoModel({
 			</div>
 		)),
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		...videoComponents.filter((video) => !isImageBig), // Filtrar videos cuando isImageBig es true
+		...videoComponents.filter((_video) => !isImageBig), // Filtrar videos cuando isImageBig es true
 	]
 
 	const handleExitFullscreen = () => {
