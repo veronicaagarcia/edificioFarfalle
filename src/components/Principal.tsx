@@ -152,16 +152,16 @@ export function Principal({ sectionTopRef, isMobile }: PrincipalProps) {
 				// Hubo un error al enviar el correo electrónico
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
-					text: 'Error al enviar el correo electrónico',
+					title: 'Error al enviar su consulta',
+					text: 'A la brevedad lo estaremos solucionando, disculpe las molestias.',
 				})
 			}
 		} catch (error) {
 			console.error('Error al enviar la solicitud:', error)
 			Swal.fire({
 				icon: 'error',
-				title: 'Oops...',
-				text: 'Error al enviar la solicitud',
+				title: 'Error al enviar su consulta',
+				text: 'A la brevedad lo estaremos solucionando, disculpe las molestias.',
 			})
 		}
 	}
