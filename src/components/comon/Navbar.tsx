@@ -1,8 +1,8 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import { ReactNode } from 'react'
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useState, ReactNode } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Card } from '@mui/material'
+import { FaCalendarCheck } from 'react-icons/fa'
 import logoFarfalle from '../../assets/222.png'
 import close from '../../assets/close.svg'
 import menu from '../../assets/menu.svg'
@@ -19,9 +19,14 @@ interface NavLinkProps {
 interface NavbarProps {
 	sectionTopRef: React.MutableRefObject<null>
 	isMobile: boolean
+	sectionReservasRef: React.MutableRefObject<HTMLDivElement | null>
 }
 
-export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
+export function Navbar({
+	sectionTopRef,
+	isMobile,
+	sectionReservasRef,
+}: NavbarProps) {
 	const [openCloseMenu, setOpenCloseMenu] = useState(false)
 
 	function NavLink({
@@ -61,6 +66,17 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 
 	const handleOpenCloseMenu = () => {
 		setOpenCloseMenu(!openCloseMenu)
+	}
+
+	const navigate = useNavigate()
+
+	const handleReservasClick = () => {
+		navigate('/edificioFarfalle/')
+		setTimeout(() => {
+			if (sectionReservasRef.current) {
+				sectionReservasRef.current.scrollIntoView({ behavior: 'smooth' })
+			}
+		}, 100) // Ajusta el tiempo de espera según sea necesario
 	}
 
 	return (
@@ -113,7 +129,6 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 						: 'flex items-center w-full bg-creme justify-around p-4 rounded-xl rounded-tl-none rounded-tr-none -mb-2 z-10'
 				}`}
 			>
-				{' '}
 				{isMobile ? (
 					<button
 						className='h-fit mt-2 w-36 flex justify-end'
@@ -128,6 +143,22 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 				) : (
 					''
 				)}
+				<NavLink
+					className={`${
+						isMobile
+							? `text-black hover:text-orange ${
+									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
+							  }`
+							: 'text-black hover:text-orange text-lg'
+					}`}
+					activeClassName='text-orangeDark'
+					onClick={handleReservasClick}
+				>
+					<FaCalendarCheck
+						className='mr-2 cursor-pointer'
+						title='Consultar disponibilidad'
+					/>
+				</NavLink>
 				<NavLink
 					className={`${
 						isMobile

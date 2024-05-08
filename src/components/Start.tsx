@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Container, Stack, CircularProgress } from '@mui/material'
 import logoFarfalle from '../assets/logoMove.gif'
 import { useFarfalleStore } from '../store/farfalle'
-import video from '../assets/videos/startFinal.mp4'
+import video from '../assets/videos/theStart.mp4'
 
 export function Start() {
 	const getStart = useFarfalleStore((state) => state.getStart)
@@ -37,12 +37,11 @@ export function Start() {
 						<CircularProgress color='primary' />
 					</div>
 				)}
-				{/* Usamos el reproductor de video de Google Drive */}
+
 				<video
 					id='farfalleVideo'
 					src={video}
 					autoPlay
-					muted
 					loop
 					className='w-full h-full object-cover z-0'
 					onLoadedData={handleVideoLoad} // Manejador de evento cuando el video se carga

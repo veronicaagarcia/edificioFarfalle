@@ -19,6 +19,7 @@ import './App.css'
 function App() {
 	const isStarted = useFarfalleStore((state) => state.isStarted)
 	const sectionTopRef = useRef(null)
+	const sectionReservasRef = useRef<HTMLDivElement>(null)
 	const isMobile = useMediaQuery('(max-width:640px)')
 
 	return (
@@ -28,13 +29,18 @@ function App() {
 			) : (
 				<main className='w-screen h-screen'>
 					<BrowserRouter>
-						<Navbar sectionTopRef={sectionTopRef} isMobile={isMobile} />
+						<Navbar
+							sectionTopRef={sectionTopRef}
+							isMobile={isMobile}
+							sectionReservasRef={sectionReservasRef}
+						/>
 						<Routes>
 							<Route
 								path='edificioFarfalle/'
 								element={
 									<Principal
 										sectionTopRef={sectionTopRef}
+										sectionReservasRef={sectionReservasRef}
 										isMobile={isMobile}
 									/>
 								}

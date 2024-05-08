@@ -19,13 +19,13 @@ export function Footer() {
 		>
 			<div className='w-full md:w-10/12 mx-auto flex items-center justify-between'>
 				<div className='flex flex-col md:flex-row justify-between w-2/3 py-1 md:py-0'>
-					<div className='text-xs'>
+					<div className='text-xs w-1/3 md:justify-evenly hidden md:flex'>
 						<FontAwesomeIcon icon={faLocationDot} /> Calle 62, nº 1770, La Plata
 					</div>
-					<div className='text-xs hidden md:flex'>
+					<div className='text-xs w-1/3 md:justify-evenly hidden md:flex'>
 						<FontAwesomeIcon icon={faPhone} /> +5492216342322
 					</div>
-					<div className='text-xs'>
+					<div className='text-xs w-full md:w-1/3 flex justify-evenly'>
 						<FontAwesomeIcon icon={faEnvelope} /> farfalle@gmail.com
 					</div>
 				</div>

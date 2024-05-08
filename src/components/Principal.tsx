@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -11,10 +11,14 @@ import video2 from '../assets/videos/principal/dron2.mp4'
 interface PrincipalProps {
 	sectionTopRef: React.MutableRefObject<HTMLDivElement | null>
 	isMobile: boolean
+	sectionReservasRef: React.MutableRefObject<HTMLDivElement | null>
 }
 
-export function Principal({ sectionTopRef, isMobile }: PrincipalProps) {
-	const sectionReservasRef = useRef<HTMLDivElement>(null)
+export function Principal({
+	sectionTopRef,
+	isMobile,
+	sectionReservasRef,
+}: PrincipalProps) {
 	const [videosLoaded, setVideosLoaded] = useState(false)
 	const [checkIn, setCheckIn] = useState('')
 	const [checkOut, setCheckOut] = useState('')
