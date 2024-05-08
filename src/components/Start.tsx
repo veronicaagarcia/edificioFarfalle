@@ -1,42 +1,42 @@
-// import { useState } from 'react'
-import { Container, Stack } from '@mui/material'
+import { useState, useEffect } from 'react'
+import { CircularProgress, Container, Stack } from '@mui/material'
 import logoFarfalle from '../assets/logoMove.gif'
 import { useFarfalleStore } from '../store/farfalle'
 import video from '../assets/videos/principal/dron2.mp4'
 
 export function Start() {
 	const getStart = useFarfalleStore((state) => state.getStart)
-	// const [videoLoaded, setVideoLoaded] = useState(false)
+	const [videoLoaded, setVideoLoaded] = useState(false)
 
-	// const handleVideoLoad = () => {
-	// 	// Cuando el video se carga completamente, actualizamos el estado
-	// 	setVideoLoaded(true)
-	// }
+	const handleVideoLoad = () => {
+		// Cuando el video se carga completamente, actualizamos el estado
+		setVideoLoaded(true)
+	}
 
-	// useEffect(() => {
-	// 	const player = document.getElementById(
-	// 		'farfalleVideo'
-	// 	) as HTMLIFrameElement | null
+	useEffect(() => {
+		const player = document.getElementById(
+			'farfalleVideo'
+		) as HTMLIFrameElement | null
 
-	// 	if (player) {
-	// 		setTimeout(() => {
-	// 			player.contentWindow?.postMessage(
-	// 				'{"event":"command","func":"playVideo","args":""}',
-	// 				'*'
-	// 			)
-	// 		}, 1000) // Esperar 1000 milisegundos (1 segundos) antes de iniciar la reproducción
-	// 	}
-	// }, [])
+		if (player) {
+			setTimeout(() => {
+				player.contentWindow?.postMessage(
+					'{"event":"command","func":"playVideo","args":""}',
+					'*'
+				)
+			}, 1000) // Esperar 1000 milisegundos (1 segundos) antes de iniciar la reproducción
+		}
+	}, [])
 
 	return (
 		<main className='h-full flex flex-col'>
 			<div className='relative w-full h-screen flex'>
 				{/* Mostramos el indicador de carga mientras el video se está cargando */}
-				{/* {!videoLoaded && (
+				{!videoLoaded && (
 					<div className='absolute inset-0 flex items-center justify-center w-full h-full bg-orangeDark bg-opacity-50'>
 						<CircularProgress color='inherit' />
 					</div>
-				)} */}
+				)}
 
 				<video
 					id='farfalleVideo'
@@ -44,7 +44,7 @@ export function Start() {
 					autoPlay
 					loop
 					className='w-full h-full object-cover z-0'
-					// onLoadedData={handleVideoLoad} // Manejador de evento cuando el video se carga
+					onLoadedData={handleVideoLoad} // Manejador de evento cuando el video se carga
 				></video>
 			</div>
 
