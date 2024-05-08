@@ -43,6 +43,7 @@ export function Start() {
 					src={video}
 					autoPlay
 					loop
+					muted
 					className='w-full h-full object-cover z-0'
 					onLoadedData={handleVideoLoad} // Manejador de evento cuando el video se carga
 				></video>
