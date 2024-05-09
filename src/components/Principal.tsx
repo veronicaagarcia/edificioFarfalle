@@ -190,7 +190,9 @@ export function Principal({
 					</div>
 				)}
 				<Carousel
-					className={`w-full h-260`}
+					className={`w-full h-260 ${
+						isMobile ? 'max-w-screen-sm mx-auto' : ''
+					}`}
 					autoPlay
 					infiniteLoop
 					interval={7000}
@@ -222,7 +224,7 @@ export function Principal({
 			</p>
 			<p
 				className={`text-justify text-black text-opacity-90 ${
-					isMobile ? `px-2 pb-2 text-xs` : `px-12 pb-3 text-base`
+					isMobile ? `px-3 pb-2 text-xs` : `px-12 pb-3 text-base`
 				}`}
 			>
 				Nuestros departamentos están completamente amueblados y equipados con
@@ -253,9 +255,9 @@ export function Principal({
 							className='bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4'
 						>
 							<div className='mb-4 flex flex-col sm:flex-row sm:justify-between mx-auto '>
-								<div className='w-1/3 flex-shrink mb-4'>
+								<div className='w-full sm:w-1/3 flex-shrink mb-4 sm:mb-0 flex justify-center items-center sm:flex-col sm:items-start'>
 									<label
-										className='text-gray-700 text-xs md:text-base font-bold mb-2'
+										className='text-gray-700 text-xs md:text-base font-bold mb-2 mr-2'
 										htmlFor='check-in'
 									>
 										Check-in
@@ -268,9 +270,9 @@ export function Principal({
 										onChange={handleCheckInChange}
 									/>
 								</div>
-								<div className='w-1/3 flex-shrink mb-4'>
+								<div className='w-full sm:w-1/3 flex-shrink sm:mb-0 flex justify-center items-center sm:flex-col sm:items-start'>
 									<label
-										className='text-gray-700 text-xs md:text-base font-bold mb-2'
+										className='text-gray-700 text-xs md:text-base font-bold mb-2 mr-2'
 										htmlFor='check-out'
 									>
 										Check-out
@@ -299,6 +301,7 @@ export function Principal({
 										type='number'
 										min='1'
 										max='5'
+										inputMode='numeric'
 										value={adultos}
 										onChange={handleAdultosChange}
 									/>
@@ -316,6 +319,7 @@ export function Principal({
 										type='number'
 										min='0'
 										max='4'
+										inputMode='numeric'
 										value={ninos}
 										onChange={handleNinosChange}
 									/>
@@ -341,7 +345,7 @@ export function Principal({
 							)}
 							<div className='flex items-center justify-center'>
 								<button
-									className='bg-orangeDark hover:bg-orange text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline mt-6 text-xs md:text-base'
+									className='group relative inline-flex mb-2 h-10 items-center justify-center overflow-hidden rounded-md bg-orangeDark px-4 font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
 									type='button'
 									onClick={handleConsultarDisponibilidad}
 								>

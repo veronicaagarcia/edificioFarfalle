@@ -29,7 +29,7 @@ export function Departamentos() {
 					blanqueria de una semana).
 				</p>
 				<div className='mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 px-8 mb-20 '>
-					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-96 border-2 border-creme transition duration-300 transform hover:scale-105'>
+					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-fit max-h-96 border-2 border-creme transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={pba} alt='PB A' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
@@ -47,7 +47,7 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-96 border-2 border-creme transition duration-300 transform hover:scale-105'>
+					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-fit max-h-96 border-2 border-creme transition duration-300 transform hover:scale-105'>
 						<ImageLoader
 							src={pbb}
 							alt='PB B'
@@ -70,7 +70,7 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-96 border-2 border-creme transition duration-300 transform hover:scale-105'>
+					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-fit max-h-96 border-2 border-creme transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={primeroa} alt='1 A' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
@@ -88,7 +88,7 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-96 border-2 border-creme transition duration-300 transform hover:scale-105'>
+					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-fit max-h-96 border-2 border-creme transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={primerob} alt='1 B' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
@@ -106,7 +106,7 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-96 border-2 border-creme transition duration-300 transform hover:scale-105'>
+					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-fit max-h-96 border-2 border-creme transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={segundob} alt='2 B' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>

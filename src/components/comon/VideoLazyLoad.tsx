@@ -39,7 +39,7 @@ export function VideoLazyLoad({ src, type }: { src: string; type: string }) {
 			ref={videoRef}
 			autoPlay
 			muted
-			className='block mx-auto w-full h-425 object-cover z-0 object-center'
+			className='w-full h-full object-cover block mx-auto z-0 object-center'
 		>
 			<source src={src} type={type} />
 		</video>

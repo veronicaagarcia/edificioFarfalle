@@ -45,6 +45,7 @@ export function Navbar({
 			: false
 
 		const handleClick = () => {
+			setOpenCloseMenu(false)
 			if (onClick) {
 				onClick()
 			}
@@ -77,6 +78,7 @@ export function Navbar({
 				sectionReservasRef.current.scrollIntoView({ behavior: 'smooth' })
 			}
 		}, 100) // Ajusta el tiempo de espera según sea necesario
+		setOpenCloseMenu(false)
 	}
 
 	return (

@@ -166,7 +166,7 @@ export function Contacto() {
 					<button
 						type='button'
 						onClick={handleSubmit}
-						className='group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-black px-6 font-medium text-neutral-50 w-32 mx-auto'
+						className='group relative inline-flex mb-2 h-10 items-center justify-center overflow-hidden rounded-md bg-orangeDark px-4 font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
 					>
 						<span className='absolute h-0 w-0 rounded-full bg-orangeDark transition-all duration-300 group-hover:h-56 group-hover:w-32'></span>
 						<span className='relative'>Enviar</span>

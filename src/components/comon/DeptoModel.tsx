@@ -65,7 +65,7 @@ export function DeptoModel({
 		...imageNames.map((imageName, index) => (
 			<div
 				key={index}
-				className='cursor-pointer w-full h-full mb-16 '
+				className='cursor-pointer w-11/12 md:w-full h-full mb-16'
 				onClick={() => handleImageClick(index)}
 			>
 				<img
@@ -111,7 +111,7 @@ export function DeptoModel({
 
 			{isImageBig && (
 				<div className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-80 z-50'>
-					<div className='absolute inset-0 flex items-center justify-between p-4'>
+					<div className='absolute inset-0 flex items-center justify-between p-1'>
 						<button
 							className='text-white text-2xl font-bold'
 							onClick={handlePrevImage}
@@ -121,7 +121,7 @@ export function DeptoModel({
 						</button>
 						<img
 							src={imageNames[selectedImageIndex || 0]}
-							className='max-w-100 w-5/12 h-auto max-h-90 border-creme border-2 rounded-xl hover:shadow-lg bg-black'
+							className='max-w-100 w-11/12 md:w-5/12 h-auto max-h-90 border-creme border-2 rounded-xl hover:shadow-lg bg-black mx-1'
 							loading='lazy'
 						/>
 						<button

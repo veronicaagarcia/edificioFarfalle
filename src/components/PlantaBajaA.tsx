@@ -9,7 +9,6 @@ export function PbA() {
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1tTE_iQgReJ_2KRTDe7cfGX3M7CdQ42cD',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=182dKtwes3VI1-n9XbOBFfs6kKLv-XcOC',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1q6fWRsYrZfX8n83q-qU2RB5T7ZnF6znF',
-
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Lj1YCFKLMjAkY_5B9zurQj5YIOruWIHA',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1t1uEhsQ1jVgD3vrsAqecHcnVo_YEKjiu',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1IKN2uA9tfhwGcl7V4T_rnkPZQY0Lw1Gj',
