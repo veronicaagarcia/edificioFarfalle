@@ -4,12 +4,12 @@ import logoFarfalle from '../assets/logoMove.gif'
 import { useFarfalleStore } from '../store/farfalle'
 import VolumeUpIcon from '@mui/icons-material/VolumeUp'
 import VolumeOffIcon from '@mui/icons-material/VolumeOff'
-import video from '../assets/videos/videoStart.mp4'
 
 export function Start() {
 	const getStart = useFarfalleStore((state) => state.getStart)
 	const [videoLoaded, setVideoLoaded] = useState(false)
 	const [isMuted, setIsMuted] = useState(true)
+	const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/theStart.mp4'
 
 	const handleVideoLoad = () => {
 		setVideoLoaded(true)
