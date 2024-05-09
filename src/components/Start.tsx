@@ -40,13 +40,14 @@ export function Start() {
 				)}
 				<video
 					id='farfalleVideo'
-					src={video}
 					autoPlay
 					loop
 					muted={isMuted}
 					className='w-full h-full object-cover z-0'
 					onLoadedData={handleVideoLoad}
-				></video>
+				>
+					<source src={video} type='video/mp4' />
+				</video>
 				<div className='absolute top-2 text-black left-0 z-50'>
 					<IconButton onClick={toggleMute} color='inherit'>
 						{isMuted ? <VolumeOffIcon /> : <VolumeUpIcon />}
