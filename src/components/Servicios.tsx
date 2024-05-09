@@ -14,15 +14,45 @@ import { faClipboardCheck } from '@fortawesome/free-solid-svg-icons/faClipboardC
 import { Footer } from './comon/Footer'
 
 export function Servicios() {
+	const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/zcomunes.mp4'
 	return (
 		<section className='w-full h-screen flex flex-col overflow-auto  font-thin font-serif italic text-black pb-32'>
 			<div className='w-11/12 mx-auto h-fit my-4 md:my-16 md:pl-6 p-4 bg-creme'>
-				<h3 className='text-base text-center pt-6 w-full px-6 md:px-28 text-black'>
+				{/* <h3 className='text-base text-center pt-6 w-full px-6 md:px-28 text-black'>
 					Nuestros departamentos están completamente amueblados y equipados con
 					todas las comodidades necesarias para una estadía confortable y
 					placentera.
 				</h3>
-				<hr className='hidden lg:flex my-5 w-9/12 mx-auto text-orangeDark' />
+				<hr className='hidden lg:flex my-5 w-9/12 mx-auto text-orangeDark' /> */}
+
+				<div className='relative h-96  '>
+					{/* Video como fondo */}
+					<video
+						className='absolute top-0 left-0 w-full md:w-4/12 h-96 object-cover z-0'
+						autoPlay
+						loop
+					>
+						<source src={video} type='video/mp4' />
+					</video>
+					<div className='absolute top-0 left-0 w-full h-full bg-black opacity-40 z-10'></div>
+					{/* Contenido superpuesto */}
+					<div className='absolute w-9/12 md:w-1/2 top-2 md:top-24 right-10 md:right-24 z-20 text-white text-center'>
+						<h3 className='text-xl p-4 border-2 md:text-2xl font-bold mb-4'>
+							Nuestros departamentos están completamente amueblados y equipados
+							con todas las comodidades necesarias para una estadía confortable
+							y placentera.
+						</h3>
+					</div>
+					{/* <video
+						className='absolute top-0 right-0 w-4/12 h-96 object-cover z-0'
+						autoPlay
+						muted
+						loop
+					>
+						<source src={video} type='video/mp4' />
+					</video> */}
+				</div>
+
 				<ul className='w-full h-auto mx-auto mt-4 mb-20 flex flex-col justify-center sm:flex-row sm:justify-between'>
 					<div className='w-full h-full md:h-600 sm:w-1/4 flex flex-col m-auto'>
 						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-5 mb-1'>

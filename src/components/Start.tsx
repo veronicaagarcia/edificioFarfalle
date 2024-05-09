@@ -48,7 +48,7 @@ export function Start() {
 				>
 					<source src={video} type='video/mp4' />
 				</video>
-				<div className='absolute top-2 text-black left-0 z-50'>
+				<div className='absolute top-2 text-orange left-0 z-50'>
 					<IconButton onClick={toggleMute} color='inherit'>
 						{isMuted ? <VolumeOffIcon /> : <VolumeUpIcon />}
 					</IconButton>

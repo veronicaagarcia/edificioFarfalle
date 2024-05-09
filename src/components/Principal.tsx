@@ -5,8 +5,6 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-responsive-carousel/lib/styles/carousel.css'
 import Swal from 'sweetalert2'
 import { VideoLazyLoad } from './comon/VideoLazyLoad'
-import video from '../assets/videos/principal/dron1.mp4'
-import video2 from '../assets/videos/principal/dron2.mp4'
 
 interface PrincipalProps {
 	sectionTopRef: React.MutableRefObject<HTMLDivElement | null>
@@ -28,6 +26,9 @@ export function Principal({
 	const [formError, setFormError] = useState('')
 	const [minCheckOutDate, setMinCheckOutDate] = useState('')
 	const [currentIndex, setCurrentIndex] = useState(0) // Estado para controlar el índice actual del video
+	const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/dron1.mp4'
+	const video1 = `https://newfarfalle.s3.sa-east-1.amazonaws.com/Veronica+Garcia's+V%C3%ADdeo+-+May+9%2C+2024.mp4`
+	const video2 = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/dron2.mp4'
 
 	const handleClick = () => {
 		const sectionReservas = sectionReservasRef.current
@@ -203,7 +204,7 @@ export function Principal({
 					selectedItem={currentIndex}
 					onChange={handleVideoChange} // Se ejecuta cuando se cambia de video
 				>
-					{[video, video2].map((item, index) => (
+					{[video, video1, video2].map((item, index) => (
 						<div key={index} className='w-full h-425'>
 							<VideoLazyLoad src={item} type='video/mp4' />
 						</div>

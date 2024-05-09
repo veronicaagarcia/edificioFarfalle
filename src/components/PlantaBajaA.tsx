@@ -1,8 +1,8 @@
 import { DeptoModel } from './comon/DeptoModel'
-import completo from '../assets/videos/pba/Completo.mp4'
 import { Footer } from './comon/Footer'
 
 export function PbA() {
+	const completo = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/Completo.mp4'
 	const imageNames = [
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Ki8P47TmBeMxRH-UJTI24huCM0wjCGeh',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1btivKot0vCI1Zaq9FDLCW2DSoSbkXHZC',
