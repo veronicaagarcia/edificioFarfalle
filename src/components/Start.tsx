@@ -4,7 +4,7 @@ import logoFarfalle from '../assets/logoMove.gif'
 import { useFarfalleStore } from '../store/farfalle'
 import VolumeUpIcon from '@mui/icons-material/VolumeUp'
 import VolumeOffIcon from '@mui/icons-material/VolumeOff'
-import video from '../assets/videos/start(3).mp4'
+import video from '../assets/videos/videoStart.mp4'
 
 export function Start() {
 	const getStart = useFarfalleStore((state) => state.getStart)
