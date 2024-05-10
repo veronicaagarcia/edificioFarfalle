@@ -182,7 +182,7 @@ export function Principal({
 			<section
 				className={`${
 					isMobile ? ` h-72` : ` h-72 `
-				} relative w-full max-w-full overflow-hidden`}
+				} relative w-full max-w-full overflow-hidden max-h-72`}
 			>
 				{!videosLoaded && (
 					// Indicador de carga mientras los videos se están cargando
@@ -205,7 +205,7 @@ export function Principal({
 					onChange={handleVideoChange} // Se ejecuta cuando se cambia de video
 				>
 					{[video, video1, video2].map((item, index) => (
-						<div key={index} className='w-full h-425'>
+						<div key={index} className='w-full h-72 max-h-72'>
 							<VideoLazyLoad src={item} type='video/mp4' />
 						</div>
 					))}
