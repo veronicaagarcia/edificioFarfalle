@@ -86,9 +86,9 @@ export function DeptoModel({
 
 	return (
 		<>
-			<section className='w-full h-full flex flex-col justify-center items-center'>
-				<div className='relative h-full overflow-x-scroll md:overflow-x-hidden w-full bg-transparent rounded-3xl shadow-2xl'>
-					<div className='max-w-full h-full bg-transparent overflow-x-auto mx-auto w-full '>
+			<section className='w-full h-full flex flex-col justify-center items-center border-2 border-nav rounded-3xl'>
+				<div className='relative h-full overflow-x-scroll md:overflow-x-hidden w-full bg-transparent  rounded-3xl shadow-2xl'>
+					<div className='max-w-full h-full bg-transparent overflow-x-auto mx-auto w-full  '>
 						<Carousel
 							autoPlay={true}
 							infiniteLoop
@@ -101,7 +101,7 @@ export function DeptoModel({
 							thumbWidth={90}
 							centerMode={true}
 							onChange={(index) => setSelectedImageIndex(index)}
-							className='mx-auto bg-creme p-4 rounded-3xl  h-auto w-full max-w-screen-xl '
+							className='mx-auto bg-creme p-4 rounded-3xl  h-auto w-full max-w-screen-xl  '
 						>
 							{carouselItems}
 						</Carousel>

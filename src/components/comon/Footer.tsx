@@ -15,7 +15,7 @@ export function Footer() {
 	}
 	return (
 		<section
-			className={`w-full h-fit static bottom-0 -mb-6 px-1 md:px-2 py-2 md:py-4 flex font-thin font-serif italic text-black bg-gradient-to-b from-almostWhite to-orangeDark`}
+			className={`w-full h-fit static bottom-0 -mb-6 px-1 md:px-2 py-2 md:py-4 flex font-thin font-serif italic text-black bg-gradient-to-b via-creme from-almostWhite to-nav`}
 		>
 			<div className='w-full md:w-10/12 mx-auto flex items-center justify-between'>
 				<div className='flex flex-col md:flex-row justify-between w-2/3 py-1 md:py-0'>

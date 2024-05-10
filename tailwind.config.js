@@ -11,7 +11,8 @@ export default {
         creme: "#f2e2de",
         orangeDark:"#a36c5e",
         black: "#402e32",
-        almostWhite: "#fefdfd"
+        almostWhite: "#fefdfd",
+        nav: "#865d95"
       
       },
       fontFamily: {

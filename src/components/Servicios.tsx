@@ -35,10 +35,10 @@ export function Servicios() {
 					>
 						<source src={video} type='video/mp4' />
 					</video>
-					<div className='absolute top-0 left-0 w-full h-full bg-black opacity-40 z-10'></div>
+					<div className='absolute top-0 left-0 w-full h-full rounded-lg bg-black opacity-40 z-10'></div>
 					{/* Contenido superpuesto */}
 					<div className='absolute w-9/12 md:w-1/2 top-2 md:top-24 right-10 md:right-24 z-20 text-white text-center'>
-						<h3 className='text-xl p-4 border-2 md:text-2xl font-bold mb-4'>
+						<h3 className=' text-base p-8 md:p-4 border-2 border-nav md:text-2xl font-bold mb-4 rounded-lg'>
 							Nuestros departamentos están completamente amueblados y equipados
 							con todas las comodidades necesarias para una estadía confortable
 							y placentera.
@@ -56,7 +56,7 @@ export function Servicios() {
 
 				<ul className='w-full h-auto mx-auto mt-4 mb-20 flex flex-col justify-center sm:flex-row sm:justify-between'>
 					<div className='w-full h-full md:h-600 sm:w-1/4 flex flex-col m-auto'>
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-5 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-5 mb-1'>
 							<FontAwesomeIcon
 								icon={faSquareParking}
 								color='inherit'
@@ -64,18 +64,18 @@ export function Servicios() {
 							/>
 							<p className='pl-2'>Estacionamiento</p>
 						</li>
-						<ul className='text-black text-start text-xs w-full font-thin'>
+						<ul className='text-black text-center md:text-start text-xs w-full font-thin'>
 							<li>
 								Estacionamiento gratuito dentro del edificio ( un auto por
 								depto)
 							</li>
 						</ul>
 
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
 							<FontAwesomeIcon icon={faKitchenSet} color='inherit' size='xl' />
 							<p className='pl-2'>Cocina</p>
 						</li>
-						<ul className='text-black text-start text-xs w-full font-thin'>
+						<ul className='text-black text-center md:text-start text-xs w-full font-thin'>
 							<li>Horno/ hornalla</li>
 							<li>
 								Electrodomésticos (pava eléctrica, tostadora, heladera y
@@ -88,39 +88,39 @@ export function Servicios() {
 							</li>
 							<li>Cesto de basura</li>
 						</ul>
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
 							<FontAwesomeIcon icon={faBath} color='inherit' size='xl' />
 							<p className='pl-2'>Baño</p>
 						</li>
-						<ul className='text-black text-start text-xs w-full font-thin'>
+						<ul className='text-black text-center md:text-start text-xs w-full font-thin'>
 							<li>Ducha</li>
 							<li>Bidet</li>
 							<li>Papel higiénico</li>
 							<li>Jabón</li>
 							<li>Cesto de basura</li>
 						</ul>
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
 							<DeckRoundedIcon color='inherit' />
 							<p className='pl-2'>Exteriores </p>
 						</li>
-						<ul className='text-black text-start text-xs w-full font-thin'>
+						<ul className='text-black text-center md:text-start text-xs w-full font-thin'>
 							<li>Patio común</li>
 							<li>Cocheras</li>
 						</ul>
 					</div>
 					<div className='w-full h-full md:h-600 sm:w-1/4 flex flex-col m-auto'>
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-10 md:mt-5 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-10 md:mt-5 mb-1'>
 							<WifiRoundedIcon color='inherit' />
 							<p className='pl-2'>Internet</p>
 						</li>
-						<ul className='text-black text-xs text-start w-full font-thin'>
+						<ul className='text-black text-xs text-center md:text-start w-full font-thin'>
 							<li>Wifi gratuito en departamentos</li>
 						</ul>
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
 							<BedRoundedIcon color='inherit' />
 							<p className='pl-2'>Habitación</p>
 						</li>
-						<ul className='text-black text-xs text-start w-full font-thin'>
+						<ul className='text-black text-xs text-center md:text-start w-full font-thin'>
 							<li>Cama matrimonial</li>
 							<li>Placard</li>
 							<li>Aire acondicionado</li>
@@ -128,11 +128,11 @@ export function Servicios() {
 							<li>Veladores</li>
 							<li>Mesa de luz</li>
 						</ul>
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
 							<WeekendRoundedIcon color='inherit' />
 							<p className='pl-2'>Living/comedor</p>
 						</li>
-						<ul className='text-black text-xs text-start w-full font-thin'>
+						<ul className='text-black text-xs text-center md:text-start w-full font-thin'>
 							<li>Sofa cama con carrión (para 2 personas)</li>
 							<li>Aire acondicionado</li>
 							<li>TV por cable</li>
@@ -140,7 +140,7 @@ export function Servicios() {
 						</ul>
 					</div>
 					<div className='w-full h-full md:h-600 sm:w-1/4 flex flex-col m-auto'>
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-10 md:mt-5 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-10 md:mt-5 mb-1'>
 							<FontAwesomeIcon
 								icon={faClipboardCheck}
 								color='inherit'
@@ -149,10 +149,10 @@ export function Servicios() {
 
 							<p className='pl-2'>Check in</p>
 						</li>
-						<ul className='text-black text-xs text-start w-full font-thin'>
+						<ul className='text-black text-xs text-center md:text-start w-full font-thin'>
 							<li>A partir de las 14:00 hs</li>
 						</ul>
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
 							<FontAwesomeIcon
 								icon={faCalendarCheck}
 								color='inherit'
@@ -160,31 +160,31 @@ export function Servicios() {
 							/>
 							<p className='pl-2'>Check Out</p>
 						</li>
-						<ul className='text-black text-xs text-start w-full font-thin'>
+						<ul className='text-black text-xs text-center md:text-start w-full font-thin'>
 							<li>10:00 hs</li>
 						</ul>
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
 							<AppsRoundedIcon color='inherit' />
 							<p className='pl-2'>General</p>
 						</li>
-						<ul className='text-black text-xs text-start w-full font-thin'>
+						<ul className='text-black text-xs text-center md:text-start w-full font-thin'>
 							<li>Prohibido fumar dentro de los departamentos</li>
 							<li>Zona fumadores (zonas comunes del edificio)</li>
 							<li>Calefacción (Termotanque o Calefón)</li>
 							<li>No se admiten mascotas</li>
 						</ul>
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
 							<FontAwesomeIcon icon={faVideo} color='inherit' size='lg' />
 							<p className='pl-2'>Seguridad</p>
 						</li>
-						<ul className='text-black text-start text-xs w-full font-thin'>
+						<ul className='text-black text-center md:text-start text-xs w-full font-thin'>
 							<li>Cámaras de seguridad en zonas comunes</li>
 						</ul>
-						<li className='font-semibold text-xs md:text-base flex justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold text-xs md:text-base flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
 							<RecordVoiceOverRoundedIcon color='inherit' />
 							<p className='pl-2'>Idiomas</p>
 						</li>
-						<ul className='text-black text-xs text-start w-full font-thin'>
+						<ul className='text-black text-xs text-center md:text-start w-full font-thin'>
 							<li>Español</li>
 							<li>Inglés</li>
 						</ul>

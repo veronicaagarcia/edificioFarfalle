@@ -125,10 +125,10 @@ export function Navbar({
 					isMobile
 						? `h-fit absolute bottom-1/4 flex flex-col self-end justify-center p-2 gap-2${
 								openCloseMenu
-									? 'w-36 h-fit z-20 absolute top-0 border-transparent rounded-xl right-0 p-5 shadow-sm bg-creme pb-36 pt-5'
+									? 'w-36 h-fit z-20 absolute top-0 border-transparent rounded-xl right-0 p-5 shadow-sm bg-nav pb-36 pt-5'
 									: 'w-16 h-16 my-auto mr-3'
 						  }`
-						: 'flex items-center w-full bg-creme justify-around p-4 rounded-xl rounded-tl-none rounded-tr-none -mb-2 z-10'
+						: 'flex items-center w-full bg-nav justify-around p-4 rounded-xl rounded-tl-none rounded-tr-none -mb-2 z-10'
 				}`}
 			>
 				{isMobile ? (
@@ -148,12 +148,12 @@ export function Navbar({
 				<NavLink
 					className={`${
 						isMobile
-							? `text-black hover:text-orange ${
+							? `text-white hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-black hover:text-orange text-lg'
+							: 'text-white hover:text-orange text-lg'
 					}`}
-					activeClassName='text-orangeDark'
+					activeClassName='text-slate-950'
 					onClick={handleReservasClick}
 				>
 					<FaCalendarCheck
@@ -164,12 +164,12 @@ export function Navbar({
 				<NavLink
 					className={`${
 						isMobile
-							? `text-black hover:text-orange ${
+							? `text-white hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-black hover:text-orange text-lg'
+							: 'text-white hover:text-orange text-lg'
 					}`}
-					activeClassName='text-orangeDark'
+					activeClassName='text-slate-950'
 					exact
 					to={'/edificioFarfalle/'}
 				>
@@ -178,12 +178,12 @@ export function Navbar({
 				<NavLink
 					className={`${
 						isMobile
-							? `text-black hover:text-orange ${
+							? `text-white hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-black hover:text-orange text-lg'
+							: 'text-white hover:text-orange text-lg'
 					}`}
-					activeClassName='text-orangeDark'
+					activeClassName='text-slate-950'
 					exact
 					to={'/edificioFarfalle/Departamentos'}
 				>
@@ -192,12 +192,12 @@ export function Navbar({
 				<NavLink
 					className={`${
 						isMobile
-							? `text-black hover:text-orange ${
+							? `text-white hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-black hover:text-orange text-lg'
+							: 'text-white hover:text-orange text-lg'
 					}`}
-					activeClassName='text-orangeDark'
+					activeClassName='text-slate-950'
 					exact
 					to={'/edificioFarfalle/Servicios'}
 				>
@@ -206,12 +206,12 @@ export function Navbar({
 				<NavLink
 					className={`${
 						isMobile
-							? `text-black hover:text-orange ${
+							? `text-white hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-black hover:text-orange text-lg'
+							: 'text-white hover:text-orange text-lg'
 					}`}
-					activeClassName='text-orangeDark'
+					activeClassName='text-slate-950'
 					exact
 					to={'/edificioFarfalle/Contacto'}
 				>

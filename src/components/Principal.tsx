@@ -205,7 +205,12 @@ export function Principal({
 					onChange={handleVideoChange} // Se ejecuta cuando se cambia de video
 				>
 					{[video, video1, video2].map((item, index) => (
-						<div key={index} className='w-full h-72 max-h-72'>
+						<div
+							key={index}
+							className={`w-full h-72 max-h-72 transition-shadow ${
+								currentIndex === index ? 'shadow-lg' : 'shadow-none'
+							}`}
+						>
 							<VideoLazyLoad src={item} type='video/mp4' />
 						</div>
 					))}

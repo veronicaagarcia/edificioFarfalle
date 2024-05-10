@@ -97,8 +97,8 @@ export function Contacto() {
 
 	return (
 		<section className='w-full h-screen flex flex-col overflow-y-scroll pt-4 lg:pt-16 pb-32 font-thin font-serif italic text-black'>
-			<div className='flex flex-col md:flex-row w-full h-fit p-2'>
-				<div className='w-10/12 md:w-1/3 mx-auto mt-8 h-80 flex flex-col justify-evenly'>
+			<div className='flex flex-col md:flex-row w-full h-fit p-2 bg-creme '>
+				<div className='w-10/12 md:w-1/3 mx-auto h-80 flex flex-col justify-evenly'>
 					<Card className=' m-auto p-2 rounded-full w-72 hover:shadow-2xl'>
 						<Link
 							to='https://api.whatsapp.com/send?phone=542216342322&text=Hola%20Mat%C3%ADas!%20Quero%20m%C3%A1s%20info%20sobre%20el%20alquiler%20temporario.'
@@ -136,7 +136,7 @@ export function Contacto() {
 				<form
 					method='post'
 					action='/api/enviar-email'
-					className='bg-creme rounded-xl p-4 ml-8 w-10/12 md:w-1/3 h-96 mr-32 mb-4 flex flex-col justify-evenly'
+					className='bg-creme rounded-xl p-4 ml-8 w-10/12 md:w-1/3  border-2 border-nav h-80 mr-32 mb-4 flex flex-col justify-evenly'
 				>
 					<input
 						className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
@@ -166,9 +166,8 @@ export function Contacto() {
 					<button
 						type='button'
 						onClick={handleSubmit}
-						className='group relative inline-flex mb-2 h-10 items-center justify-center overflow-hidden rounded-md bg-orangeDark px-4 font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
+						className='group relative inline-flex mb-2 h-10 w-1/2  mx-auto items-center justify-center overflow-hidden rounded-md bg-orangeDark px-4 font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
 					>
-						<span className='absolute h-0 w-0 rounded-full bg-orangeDark transition-all duration-300 group-hover:h-56 group-hover:w-32'></span>
 						<span className='relative'>Enviar</span>
 					</button>
 				</form>
