@@ -30,6 +30,7 @@ export function Servicios() {
 					<video
 						className='absolute top-0 left-0 w-full md:w-4/12 h-96 object-cover z-0'
 						autoPlay
+						playsInline
 						loop
 					>
 						<source src={video} type='video/mp4' />

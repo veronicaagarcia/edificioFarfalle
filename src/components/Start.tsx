@@ -42,6 +42,7 @@ export function Start() {
 					id='farfalleVideo'
 					autoPlay
 					loop
+					playsInline
 					muted={isMuted}
 					className='w-full h-full object-cover z-0'
 					onLoadedData={handleVideoLoad}
