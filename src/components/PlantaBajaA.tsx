@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { DeptoModel } from './comon/DeptoModel'
 import { Footer } from './comon/Footer'
+import { Gallery } from './comon/Gallery'
 
 export function PbA() {
 	const completo = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/Completo.mp4'
@@ -13,13 +15,18 @@ export function PbA() {
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1t1uEhsQ1jVgD3vrsAqecHcnVo_YEKjiu',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1IKN2uA9tfhwGcl7V4T_rnkPZQY0Lw1Gj',
 	]
+	const [selectedImage, setSelectedImage] = useState<number | null>(null)
+
+	const handleImageClick = (index: number) => {
+		setSelectedImage(index)
+	}
 
 	return (
 		<div className='w-full h-screen pb-32 pt-8 overflow-y-auto mb-4'>
 			<div className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 p-4'>
 				<section className='w-full lg:w-1/3 h-fit mb-24 flex flex-col px-5 pt-2'>
 					<ul className='list-disc list-inside text-sm text-black  p-4 '>
-						<h2 className='font-bold font-serif pt-6 italic text-base md:text-lg text-center  text-orangeDark'>
+						<h2 className='font-bold font-serif italic text-base md:text-lg text-center text-orangeDark'>
 							Planta Baja A
 						</h2>
 						<h3 className='text-base text-center md:text-lg font-extralight text-black opacity-80'>
@@ -50,14 +57,24 @@ export function PbA() {
 					</ul>
 				</section>
 				<div className='w-full pt-1 md:w-7/12 h-fit'>
-					<DeptoModel
+					<Gallery imageNames={imageNames} onClick={handleImageClick} />
+					{/* <DeptoModel
 						numVideos={1}
 						videoNames={[completo]}
 						videoSizeMultiplier={1}
 						imageNames={imageNames}
-					/>
+					/> */}
 				</div>
 			</div>
+			{selectedImage !== null && (
+				<DeptoModel
+					numVideos={1}
+					videoNames={[completo]}
+					videoSizeMultiplier={1}
+					imageNames={imageNames}
+					onClose={() => setSelectedImage(null)} // Esta función cerrará el modelo
+				/>
+			)}
 			<Footer />
 		</div>
 	)

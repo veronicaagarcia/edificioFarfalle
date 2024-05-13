@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { DeptoModel } from './comon/DeptoModel'
 import puerta from '../assets/videos/1b/1Puerta.mp4'
 import living from '../assets/videos/1b/2Living.mp4'
@@ -8,16 +9,17 @@ import bano from '../assets/videos/1b/6Bano.mp4'
 import entrada from '../assets/videos/1b/EntradaLiving.mp4'
 import lavadero from '../assets/videos/1b/7Lavadero.mp4'
 import { Footer } from './comon/Footer'
+import Gallery from './comon/Gallery'
 
 export function PrimeroB() {
 	const imageNames = [
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1KIxahCHwxffbHGRUFwJiJvBvM6R96IiI',
+		// 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1KIxahCHwxffbHGRUFwJiJvBvM6R96IiI',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1a4JiYbN0BAbJ-NQ-ZeQ75F2P5dhFn7Dc',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1O2KRplTXvn4oOtQRJXOBeIYGj5xgM57D',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1KYH9A4kJjzB753fZtrd1IEoafVBQGeKX',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1q3iDT5rkKuJl9jhE0LtI8JKUY-f2VZvZ',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1fKV-HX5-NzkM-Wy25E9aJwZ3qWDhgBA9',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1AbMg8rTKBxaE9qQNN6Y7m9ETqreun7GP',
+		// 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1fKV-HX5-NzkM-Wy25E9aJwZ3qWDhgBA9',
+		// 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1AbMg8rTKBxaE9qQNN6Y7m9ETqreun7GP',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1tPNdmdMXjBj2kia__heymh3eIQhNSRek',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1F5dRFP1hsCfm8Bbv-7b1aQhZmKODNMHh',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1EFbzk-IV04Os4JwAn1lS7FM66_9zBwsP',
@@ -29,12 +31,18 @@ export function PrimeroB() {
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=133t5GEH37WlaBW-Lf65J72EnAqVl7Zvf',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1lpMBfSk8jk6uGI4wIHo5Bs1DiUBeZ-eF',
 	]
+	const [selectedImage, setSelectedImage] = useState<number | null>(null)
+
+	const handleImageClick = (index: number) => {
+		setSelectedImage(index)
+	}
+
 	return (
 		<div className='w-full h-screen pb-32 pt-8 overflow-y-auto mb-4'>
 			<div className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 p-4'>
 				<section className='w-full lg:w-1/3 h-fit mb-24 flex flex-col px-5 pt-2'>
 					<ul className='list-disc list-inside text-sm text-black  p-4 '>
-						<h2 className='font-bold font-serif pt-6 italic text-base md:text-lg text-center  text-orangeDark'>
+						<h2 className='font-bold font-serif italic text-base md:text-lg text-center  text-orangeDark'>
 							Primero B
 						</h2>
 						<h3 className='text-base text-center md:text-lg font-extralight text-black opacity-80'>
@@ -65,7 +73,8 @@ export function PrimeroB() {
 					</ul>
 				</section>
 				<div className='w-full pt-1 md:w-7/12 h-fit'>
-					<DeptoModel
+					<Gallery imageNames={imageNames} onClick={handleImageClick} />
+					{/* <DeptoModel
 						numVideos={8}
 						videoNames={[
 							puerta,
@@ -79,9 +88,27 @@ export function PrimeroB() {
 						]}
 						videoSizeMultiplier={1}
 						imageNames={imageNames}
-					/>
+					/> */}
 				</div>
 			</div>
+			{selectedImage !== null && (
+				<DeptoModel
+					numVideos={8}
+					videoNames={[
+						puerta,
+						living,
+						tv,
+						cocina,
+						habitacion,
+						bano,
+						entrada,
+						lavadero,
+					]}
+					videoSizeMultiplier={1}
+					imageNames={imageNames}
+					onClose={() => setSelectedImage(null)} // Esta función cerrará el modelo
+				/>
+			)}
 			<Footer />
 		</div>
 	)

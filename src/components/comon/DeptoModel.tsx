@@ -6,17 +6,20 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft'
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
+import { Footer } from './Footer'
 
 export function DeptoModel({
 	numVideos,
 	videoNames,
 	imageNames,
 	videoSizeMultiplier,
+	onClose,
 }: {
 	numVideos: number
 	videoNames: string[]
 	imageNames: string[]
 	videoSizeMultiplier: number
+	onClose: () => void // Propiedad para manejar el cierre del componente
 }) {
 	const videoComponents: JSX.Element[] = []
 	const [isImageBig, setIsImageBig] = useState<boolean>(false)
@@ -65,13 +68,13 @@ export function DeptoModel({
 		...imageNames.map((imageName, index) => (
 			<div
 				key={index}
-				className='cursor-pointer w-11/12 md:w-full h-full mb-16'
+				className='cursor-pointer w-11/12 md:w-full h-full mb-16 flex justify-center items-center'
 				onClick={() => handleImageClick(index)}
 			>
 				<img
 					src={imageName}
 					alt={`Imagen ${index}`}
-					className='max-w-255 max-h-500 h-auto cursor-pointer rounded-xl hover:shadow-lg'
+					className='max-w-255 max-h-500 mx-auto h-auto cursor-pointer hover:shadow-lg border-2 border-creme'
 					loading='lazy'
 				/>
 			</div>
@@ -86,9 +89,15 @@ export function DeptoModel({
 
 	return (
 		<>
-			<section className='w-full h-full flex flex-col justify-center items-center border-2 border-nav rounded-3xl'>
-				<div className='relative h-full overflow-x-scroll md:overflow-x-hidden w-full bg-transparent  rounded-3xl shadow-2xl'>
-					<div className='max-w-full h-full bg-transparent overflow-x-auto mx-auto w-full  '>
+			<section className='w-full overflow-y-hidden h-screen mb-8 border-2 flex flex-col justify-center items-center z-50 absolute top-0 left-0'>
+				<button
+					className='close-button text-base bg-nav p-2 text-white w-full'
+					onClick={onClose}
+				>
+					Cerrar
+				</button>
+				<div className='relative h-screen overflow-x-scroll md:overflow-x-hidden w-full bg-transparent shadow-2xl'>
+					<div className='max-w-full h-screen mx-auto w-full self-center'>
 						<Carousel
 							autoPlay={true}
 							infiniteLoop
@@ -98,20 +107,21 @@ export function DeptoModel({
 							showIndicators={!isImageBig}
 							showThumbs={true}
 							selectedItem={selectedImageIndex || 0}
-							thumbWidth={90}
+							thumbWidth={70}
 							centerMode={true}
 							onChange={(index) => setSelectedImageIndex(index)}
-							className='mx-auto bg-creme p-4 rounded-3xl  h-auto w-full max-w-screen-xl  '
+							className='mx-auto bg-white px-0 md:px-80 p-4 w-full max-w-screen-xl pb-24 '
 						>
 							{carouselItems}
 						</Carousel>
 					</div>
+					<Footer />
 				</div>
 			</section>
 
 			{isImageBig && (
 				<div className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-80 z-50'>
-					<div className='absolute inset-0 flex items-center justify-between p-1'>
+					<div className='absolute inset-0 flex items-center justify-between md:justify-around p-1'>
 						<button
 							className='text-white text-2xl font-bold'
 							onClick={handlePrevImage}
@@ -121,7 +131,7 @@ export function DeptoModel({
 						</button>
 						<img
 							src={imageNames[selectedImageIndex || 0]}
-							className='max-w-100 w-11/12 md:w-5/12 h-auto max-h-90 border-creme border-2 rounded-xl hover:shadow-lg bg-black mx-1'
+							className='max-w-100 w-11/12 md:w-5/12 h-auto max-h-90 border-creme border-2 hover:shadow-lg bg-black mx-1'
 							loading='lazy'
 						/>
 						<button

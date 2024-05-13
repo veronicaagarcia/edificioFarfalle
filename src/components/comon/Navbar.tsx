@@ -43,6 +43,20 @@ export function Navbar({
 				? location.pathname === to
 				: location.pathname.startsWith(to)
 			: false
+		const departamentosRoutes = [
+			'/edificioFarfalle/Departamentos/Pb-A',
+			'/edificioFarfalle/Departamentos/Pb-B',
+			'/edificioFarfalle/Departamentos/1-A',
+			'/edificioFarfalle/Departamentos/1-B',
+			'/edificioFarfalle/Departamentos/2-B',
+		]
+
+		const isDepartamentosActive = departamentosRoutes.some(
+			(route) => location.pathname === route
+		)
+		const isLinkActive =
+			(isActive && !isDepartamentosActive) ||
+			(to === '/edificioFarfalle/Departamentos' && isDepartamentosActive)
 
 		const handleClick = () => {
 			setOpenCloseMenu(false)
@@ -53,7 +67,7 @@ export function Navbar({
 		return to ? (
 			<Link
 				to={to}
-				className={`${className} ${isActive ? activeClassName : ''}`}
+				className={`${className} ${isLinkActive ? activeClassName : ''}`}
 				onClick={handleClick}
 			>
 				{children}
@@ -153,7 +167,7 @@ export function Navbar({
 							  }`
 							: 'text-white hover:text-orange text-lg'
 					}`}
-					activeClassName='text-slate-950'
+					activeClassName='text-amber-600'
 					onClick={handleReservasClick}
 				>
 					<FaCalendarCheck
@@ -169,7 +183,7 @@ export function Navbar({
 							  }`
 							: 'text-white hover:text-orange text-lg'
 					}`}
-					activeClassName='text-slate-950'
+					activeClassName='text-amber-600'
 					exact
 					to={'/edificioFarfalle/'}
 				>
@@ -183,7 +197,7 @@ export function Navbar({
 							  }`
 							: 'text-white hover:text-orange text-lg'
 					}`}
-					activeClassName='text-slate-950'
+					activeClassName='text-amber-600'
 					exact
 					to={'/edificioFarfalle/Departamentos'}
 				>
@@ -197,7 +211,7 @@ export function Navbar({
 							  }`
 							: 'text-white hover:text-orange text-lg'
 					}`}
-					activeClassName='text-slate-950'
+					activeClassName='text-amber-600'
 					exact
 					to={'/edificioFarfalle/Servicios'}
 				>
@@ -211,7 +225,7 @@ export function Navbar({
 							  }`
 							: 'text-white hover:text-orange text-lg'
 					}`}
-					activeClassName='text-slate-950'
+					activeClassName='text-amber-600'
 					exact
 					to={'/edificioFarfalle/Contacto'}
 				>

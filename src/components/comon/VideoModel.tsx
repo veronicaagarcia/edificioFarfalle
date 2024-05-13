@@ -60,14 +60,14 @@ export function VideoModel({ video, videoSizeMultiplier }: Video) {
 
 	return (
 		<div
-			className='relative bg-creme opacity-90 mx-auto cursor-pointer rounded-xl border-2 border-creme w-full h-full'
+			className='relative bg-creme opacity-90 mx-auto cursor-pointer border-2 border-creme w-full h-full'
 			style={{
 				...containerStyle,
 				transform: `scale(${videoSizeMultiplier})`,
 			}}
 		>
 			<video
-				className='absolute rounded-xl top-0 left-0 w-full h-full object-contain object-center'
+				className='absolute top-0 left-0 w-full h-full object-contain object-center'
 				ref={videoRef}
 				src={video}
 				controls

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { DeptoModel } from './comon/DeptoModel'
 import entrada from '../assets/videos/1a/1Entrada.mp4'
 import cocina from '../assets/videos/1a/2Cocina.mp4'
@@ -7,6 +8,7 @@ import habitacion from '../assets/videos/1a/5Habitacion.mp4'
 import bano from '../assets/videos/1a/6Bano.mp4'
 import lavadero from '../assets/videos/1a/7Lavadero.mp4'
 import { Footer } from './comon/Footer'
+import Gallery from './comon/Gallery'
 
 export function PrimeroA() {
 	const imageNames = [
@@ -22,12 +24,18 @@ export function PrimeroA() {
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1UJhYWduvfwL20iuSwPdetir6eImdTFi6',
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1KZGSUfsfL_U9xnKvtqMKw0soXe2h6jro',
 	]
+	const [selectedImage, setSelectedImage] = useState<number | null>(null)
+
+	const handleImageClick = (index: number) => {
+		setSelectedImage(index)
+	}
+
 	return (
 		<div className='w-full h-screen pb-32 pt-8 overflow-y-auto mb-4'>
 			<div className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 p-4'>
 				<section className='w-full lg:w-1/3 h-fit mb-24 flex flex-col px-5 pt-2'>
 					<ul className='list-disc list-inside text-sm text-black  p-4 '>
-						<h2 className='font-bold font-serif pt-6 italic text-base md:text-lg text-center  text-orangeDark'>
+						<h2 className='font-bold font-serif italic text-base md:text-lg text-center  text-orangeDark'>
 							Primero A
 						</h2>
 						<h3 className='text-base text-center md:text-lg font-extralight text-black opacity-80'>
@@ -58,7 +66,8 @@ export function PrimeroA() {
 					</ul>
 				</section>
 				<div className='w-full pt-1 md:w-7/12 h-fit'>
-					<DeptoModel
+					<Gallery imageNames={imageNames} onClick={handleImageClick} />
+					{/* <DeptoModel
 						numVideos={7}
 						videoNames={[
 							entrada,
@@ -71,9 +80,26 @@ export function PrimeroA() {
 						]}
 						videoSizeMultiplier={1}
 						imageNames={imageNames}
-					/>
+					/> */}
 				</div>
 			</div>
+			{selectedImage !== null && (
+				<DeptoModel
+					numVideos={7}
+					videoNames={[
+						entrada,
+						cocina,
+						living,
+						pasillo,
+						habitacion,
+						bano,
+						lavadero,
+					]}
+					videoSizeMultiplier={1}
+					imageNames={imageNames}
+					onClose={() => setSelectedImage(null)} // Esta función cerrará el modelo
+				/>
+			)}
 			<Footer />
 		</div>
 	)
