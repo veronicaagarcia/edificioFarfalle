@@ -352,6 +352,7 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa' // Importa los
 import { RiStarSmileFill } from 'react-icons/ri'
 import booking from '../../assets/booking.png'
 import airbnb from '../../assets/aibnb.png'
+import { Link } from 'react-router-dom'
 
 const StarRating = ({
 	score,
@@ -443,7 +444,13 @@ const BookingRatingChart = () => {
 				</span>
 			</h2>
 			<StarRating score={score} maxScore={maxScore} />
-			<img src={booking} className='w-20 h-auto rounded-lg mt-4' />
+			<Link
+				to='https://www.booking.com/hotel/ar/farfalle.es-ar.html#tab-reviews'
+				target='_blanck'
+				title='Ver reseñas'
+			>
+				<img src={booking} className='w-20 h-auto rounded-lg mt-4' />
+			</Link>
 		</div>
 	)
 }
@@ -494,7 +501,13 @@ const AirbnbRatingChart = () => {
 				</span>
 			</h2>
 			<StarRating score={score} maxScore={maxScore} />
-			<img src={airbnb} className='w-12 h-auto rounded-lg mt-4' />
+			<Link
+				to='https://es-l.airbnb.com/rooms/54102302/reviews?adults=1&children=0&enable_m3_private_room=true&infants=0&pets=0&search_mode=regular_search&check_in=2024-05-20&check_out=2024-05-25&source_impression_id=p3_1715699031_Nw6dgILYkxqsos2D&previous_page_section_name=1000&federated_search_id=8006342d-5149-4a1a-bf03-1ebed305d08a'
+				target='_blanck'
+				title='Ver reseñas'
+			>
+				<img src={airbnb} className='w-12 h-auto rounded-lg mt-4' />
+			</Link>
 		</div>
 	)
 }
@@ -511,7 +524,7 @@ export function RatingCharts() {
 					<AirbnbRatingChart />
 				</div>
 				<p className='pt-2 text-xs text-center w-full font-extralight text-gray'>
-					Reviews score 13 mayo 2024
+					Reviews score 14 mayo 2024
 				</p>
 			</div>
 		</>

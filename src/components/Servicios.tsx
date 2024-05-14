@@ -18,15 +18,8 @@ export function Servicios() {
 	const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/zcomunes.mp4'
 	return (
 		<section className='w-full h-screen flex flex-col overflow-auto  font-thin font-serif italic text-black pb-32'>
-			<div className='w-11/12 mx-auto h-fit my-4 md:my-16 md:pl-6 p-4 bg-creme'>
-				{/* <h3 className='text-base text-center pt-6 w-full px-6 md:px-28 text-black'>
-					Nuestros departamentos están completamente amueblados y equipados con
-					todas las comodidades necesarias para una estadía confortable y
-					placentera.
-				</h3>
-				<hr className='hidden lg:flex my-5 w-9/12 mx-auto text-orangeDark' /> */}
-
-				<div className='relative h-96  '>
+			<div className='w-11/12 mx-auto h-fit my-4 md:my-16 md:pl-6 p-4 bg-creme '>
+				<div className='relative h-96'>
 					{/* Video como fondo */}
 					<video
 						className='absolute top-0 left-0 w-full md:w-4/12 h-96 object-cover z-0'
