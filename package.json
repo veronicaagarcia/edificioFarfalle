@@ -23,6 +23,7 @@
 		"@mui/types": "^7.2.14",
 		"@types/react-router-dom": "5.3.3",
 		"chart.js": "^4.4.2",
+		"emailjs-com": "^3.2.0",
 		"mapbox-gl": "^3.1.2",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
