@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { CircularProgress } from '@mui/material'
 import { Map } from './comon/Map'
 import InstagramIcon from '@mui/icons-material/Instagram'
-import MapIcon from '@mui/icons-material/Map'
+import LocationOnIcon from '@mui/icons-material/LocationOn'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
 import { Card } from '@mui/material'
@@ -107,14 +107,14 @@ export function Contacto() {
 
 	return (
 		<section className='w-full h-screen flex flex-col overflow-y-scroll pt-4 lg:pt-16 pb-32 font-thin font-serif italic text-black bg-creme opacity-90'>
-			<div className='flex flex-col md:flex-row justify-center w-full h-fit py-2 pr-14 '>
-				<div className='w-10/12 md:w-1/3 h-52 flex flex-col justify-between mt-4 md:mt-0'>
+			<div className='flex flex-col md:flex-row justify-start w-full h-fit py-2 pr-14 relative'>
+				<div className='w-10/12 md:w-1/3 h-52 flex flex-col justify-between mt-4 md:mt-0 -ml-1 md:ml-0'>
 					<Card
 						style={{
 							backgroundColor: '#402e32',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-1 px-2 rounded-full w-48 hover:rounded-tr-full hover:rounded-br-full hover:opacity-90 hover:w-96 hover:shadow-2xl opacity-75'
+						className='py-0 md:py-1 px-0 md:px-2 rounded-none md:rounded-full w-12 md:w-48 md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
 						onMouseEnter={() => handleMouseEnter('Contactanos')}
 						onMouseLeave={handleMouseLeave}
 					>
@@ -123,9 +123,11 @@ export function Contacto() {
 							target='_blanck'
 						>
 							<h5 className='text-white hover:text-green-700 text-lg items-center sm:text-lg flex justify-center'>
-								{hovered === 'Contactanos'
-									? 'Estamos para asesorarte'
-									: 'Contactanos'}
+								<span className='hidden md:block'>
+									{hovered === 'Contactanos'
+										? 'Estamos para asesorarte'
+										: 'Contactanos'}
+								</span>
 								<WhatsAppIcon
 									color='success'
 									className='pl-2'
@@ -139,7 +141,7 @@ export function Contacto() {
 							backgroundColor: '#402e32',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-1 px-2 rounded-full w-48 hover:rounded-tr-full hover:rounded-br-full hover:opacity-90 hover:w-96 hover:shadow-2xl opacity-75'
+						className='py-0 md:py-1 px-0 md:px-2 rounded-none md:rounded-full w-12 md:w-48 md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
 						onMouseEnter={() => handleMouseEnter('Seguinos')}
 						onMouseLeave={handleMouseLeave}
 					>
@@ -148,7 +150,9 @@ export function Contacto() {
 							target='_blanck'
 						>
 							<h5 className='text-white hover:text-pink-700 text-lg sm:text-lg flex items-center justify-center'>
-								{hovered === 'Seguinos' ? 'Estamos en instagram' : 'Seguinos'}
+								<span className='hidden md:block'>
+									{hovered === 'Seguinos' ? 'Estamos en instagram' : 'Seguinos'}
+								</span>
 								<InstagramIcon
 									className='pl-2'
 									color='error'
@@ -162,7 +166,7 @@ export function Contacto() {
 							backgroundColor: '#402e32',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-1 px-2 rounded-full w-48 hover:rounded-tr-full hover:rounded-br-full hover:opacity-90 hover:w-96 hover:shadow-2xl opacity-75'
+						className='py-0 md:py-1 px-0 md:px-2 rounded-none md:rounded-full w-12 md:w-48 md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
 						onMouseEnter={() => handleMouseEnter('Encontranos')}
 						onMouseLeave={handleMouseLeave}
 					>
@@ -171,18 +175,23 @@ export function Contacto() {
 							className='flex justify-center items-center text-center mx-auto'
 						>
 							<h5 className='text-white hover:text-blue-500 text-lg flex justify-center items-center text-center'>
-								{hovered === 'Encontranos' ? 'Ver en el mapa' : 'Encontranos'}
-								<MapIcon className='pl-2' color='info' fontSize='large' />
+								<span className='hidden md:block'>
+									{hovered === 'Encontranos' ? 'Ver en el mapa' : 'Encontranos'}
+								</span>
+								<LocationOnIcon
+									className='pl-2'
+									color='info'
+									fontSize='large'
+								/>
 							</h5>
 						</button>
 					</Card>
-
 					<Card
 						style={{
 							backgroundColor: '#402e32',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-1 px-2 rounded-full w-48 hover:rounded-tr-full hover:rounded-br-full hover:opacity-90 hover:w-96 hover:shadow-2xl opacity-75'
+						className='py-0 md:py-1 px-0 md:px-2 rounded-none md:rounded-full w-12 md:w-48 md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
 						onMouseEnter={() => handleMouseEnter('Escribinos')}
 						onMouseLeave={handleMouseLeave}
 					>
@@ -192,9 +201,11 @@ export function Contacto() {
 							rel='noopener noreferrer'
 						>
 							<h5 className='text-white hover:text-nav text-lg flex justify-center items-center text-center'>
-								{hovered === 'Escribinos'
-									? 'A farfalle@gmail.com'
-									: 'Escribinos'}
+								<span className='hidden md:block'>
+									{hovered === 'Escribinos'
+										? 'A farfalle@gmail.com'
+										: 'Escribinos'}
+								</span>
 								<EmailOutlinedIcon
 									className='pl-2'
 									fontSize='large'
@@ -209,7 +220,7 @@ export function Contacto() {
 						backgroundColor: '#fefdfd',
 						transition: 'background-color 0.3s',
 					}}
-					className='py-1 px-2 h-72 rounded-full w-9/12 mx-auto md:w-1/2 hover:opacity-90 hover:shadow-2xl shadow-black opacity-85'
+					className='py-1 px-2 h-72 rounded-full w-9/12 mx-auto md:w-2/5 hover:opacity-90 hover:shadow-2xl shadow-black opacity-85 absolute top-0 right-4 md:right-52'
 				>
 					<form
 						method='post'
@@ -244,7 +255,7 @@ export function Contacto() {
 						<button
 							type='button'
 							onClick={handleSubmit}
-							className='group relative inline-flex mb-2 h-10 w-1/3  mx-auto items-center justify-center overflow-hidden rounded-md bg-black px-4 font-medium text-white transition hover:text-orange'
+							className='group relative inline-flex mb-4 h-10 items-center justify-center overflow-hidden rounded-md bg-orangeDark font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
 						>
 							<span className='relative'>Enviar</span>
 						</button>
@@ -289,12 +300,9 @@ export function Contacto() {
 						</button>
 					</form> */}
 			</div>
-			<div className='h-fit md:h-600 w-11/12 text-black mx-auto flex flex-col items-center rounded-xl mt-10 mb-4'>
-				{/* <h3 className='text-base text-start w-full pl-16 text-black font-semibold font-serif italic'>
-					Ver en el mapa
-				</h3> */}
+			<div className='h-fit md:h-600 w-10/12 text-black mx-auto flex flex-col items-center rounded-xl mt-32 mb-4 '>
 				<div className='flex flex-col md:flex-row justify-between mx-auto items-center w-full h-fit'>
-					<div className='w-full md:w-1/2 mb-4'>
+					<div className='w-11/12 md:w-1/2 mb-4'>
 						{loading ? <CircularProgress color='inherit' /> : <Map />}
 					</div>
 					<div className='text-xs w-full md:w-1/2 p-1 px-5 font-thin font-serif text-black italic mb-4'>

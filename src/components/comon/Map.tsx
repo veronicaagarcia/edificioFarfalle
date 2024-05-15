@@ -38,7 +38,7 @@ export function Map() {
 	return (
 		<div
 			id='map'
-			className='w-full lg:w-11/12 h-425 lg:h-200 rounded-xl mb-1'
+			className='w-full lg:w-11/12 h-200 md:h-425 lg:h-200 rounded-xl mb-1'
 			style={{
 				boxShadow: '10px 5px 5px 0px rgba(172,115,100,0.75)',
 			}}

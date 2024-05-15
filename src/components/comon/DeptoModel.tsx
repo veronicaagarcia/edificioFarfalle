@@ -131,7 +131,7 @@ export function DeptoModel({
 						</button>
 						<img
 							src={imageNames[selectedImageIndex || 0]}
-							className='max-w-100 w-11/12 md:w-5/12 h-auto max-h-90 border-creme border-2 hover:shadow-lg bg-black mx-1'
+							className='max-w-100 w-10/12 md:w-5/12 h-auto max-h-90 border-creme border-2 hover:shadow-lg bg-black mx-1'
 							loading='lazy'
 						/>
 						<button

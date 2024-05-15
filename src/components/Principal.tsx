@@ -254,13 +254,13 @@ export function Principal({
 					id='reservas'
 					className='mx-auto bg-creme py-20 px-2 md:p-20'
 				>
-					<div className='max-w-lg mx-auto mt-10'>
+					<div className='max-w-lg mx-auto mt-10 '>
 						<form
 							method='post'
 							action='/api/enviar-correo'
-							className='bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4'
+							className='bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4 hover:shadow-2xl '
 						>
-							<div className='mb-4 flex flex-col sm:flex-row sm:justify-between mx-auto '>
+							<div className='mb-4 flex justify-between mx-auto '>
 								<div className='w-full sm:w-1/3 flex-shrink mb-4 sm:mb-0 flex justify-center items-center sm:flex-col sm:items-start'>
 									<label
 										className='text-gray-700 text-xs md:text-base font-bold mb-2 mr-2'
@@ -276,7 +276,7 @@ export function Principal({
 										onChange={handleCheckInChange}
 									/>
 								</div>
-								<div className='w-full sm:w-1/3 flex-shrink sm:mb-0 flex justify-center items-center sm:flex-col sm:items-start'>
+								<div className='w-full sm:w-1/3 flex-shrink mb-4 sm:mb-0 flex justify-center items-center sm:flex-col sm:items-start'>
 									<label
 										className='text-gray-700 text-xs md:text-base font-bold mb-2 mr-2'
 										htmlFor='check-out'
