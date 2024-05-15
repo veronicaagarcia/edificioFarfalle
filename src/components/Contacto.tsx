@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import emailjs from 'emailjs-com'
 import { CircularProgress } from '@mui/material'
 import { Map } from './comon/Map'
 import InstagramIcon from '@mui/icons-material/Instagram'
@@ -56,39 +57,34 @@ export function Contacto() {
 			setEmailError('Por favor ingrese un correo electrónico válido')
 			return
 		}
-		try {
-			const response = await fetch('http://localhost:5000/api/enviar-email', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					nombre: nombre,
-					email: email,
-					message: message,
-				}),
-			})
 
-			if (response.ok) {
-				// El correo electrónico se envió correctamente
-				Swal.fire({
-					position: 'center',
-					icon: 'success',
-					title:
-						'Enviado con éxito. A la brevedad nos estaremos comunicando con usted.',
-					showConfirmButton: false,
-					timer: 3000,
-				})
-			} else {
-				// Hubo un error al enviar el correo electrónico
-				Swal.fire({
-					icon: 'error',
-					title: 'Error al enviar su consulta',
-					text: 'A la brevedad lo estaremos solucionando, disculpe las molestias.',
-				})
-			}
+		// Enviar correo electrónico usando EmailJS
+		try {
+			await emailjs.send(
+				'service_ow5tu5w', // Reemplaza 'YOUR_SERVICE_ID' con tu Service ID de EmailJS
+				'template_p80tkf5', // Reemplaza 'YOUR_TEMPLATE_ID' con tu Template ID de EmailJS
+				{
+					from_name: email,
+					to_email: 'veroagarcia90@gmail.com', // Cambia esto por la dirección de correo electrónico a la que deseas enviar el mensaje
+					nombre: nombre,
+					message: message,
+					email: email,
+				},
+				'0DIH_YtJhCdbknU0z' // Reemplaza 'YOUR_USER_ID' con tu User ID (que ahora seria publick_key) de EmailJS
+			)
+			console.log('Correo electrónico enviado con éxito')
+			// Mostrar mensaje de éxito al usuario usando Swal.fire
+			Swal.fire({
+				position: 'center',
+				icon: 'success',
+				title:
+					'Enviado con éxito. A la brevedad nos estaremos comunicando con usted.',
+				showConfirmButton: false,
+				timer: 3000,
+			})
 		} catch (error) {
-			console.error('Error al enviar la solicitud:', error)
+			console.error('Error al enviar el correo electrónico:', error)
+			// Mostrar mensaje de error al usuario usando Swal.fire
 			Swal.fire({
 				icon: 'error',
 				title: 'Error al enviar su consulta',

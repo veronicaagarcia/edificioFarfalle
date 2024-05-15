@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import emailjs from 'emailjs-com'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -123,50 +124,117 @@ export function Principal({
 		return re.test(email)
 	}
 
+	// const handleConsultarDisponibilidad = async () => {
+	// 	// Configurar la clave de API de SendGrid
+	// 	// Verificar si process.env.API_KEY_SENDGRID está definido y no es null
+	// 	if (process.env.API_KEY_SENDGRID) {
+	// 		// Configurar la clave de API de SendGrid
+	// 		sgMail.setApiKey(process.env.API_KEY_SENDGRID)
+	// 	} else {
+	// 		console.error('La clave de API de SendGrid no está definida')
+	// 		// Manejar el caso donde la clave de API no está definida
+	// 	}
+
+	// 	// Configurar el contenido del correo electrónico
+	// 	const msg = {
+	// 		from: `${email}`,
+	// 		to: 'veroagarcia90@gmail.com',
+	// 		subject: 'Consulta de disponibilidad',
+	// 		text: `Check-in: ${checkIn}\nCheck-out: ${checkOut}\nAdultos: ${adultos}\nNiños: ${ninos}\nConsulta de: ${email}`,
+	// 	}
+
+	// 	try {
+	// 		await sgMail.send(msg);
+	// 		console.log('Correo electrónico enviado con éxito');
+	// 		alert('Correo electrónico enviado con éxito');
+	// 	} catch (error) {
+	// 		console.error('Error al enviar el correo electrónico:', error);
+	// 		alert('Error al enviar el correo electrónico');
+	// 	}
+
+	// 	if (!validateForm()) {
+	// 		return;
+	// 	}
+
+	// 	try {
+	// 		const response = await fetch('http://localhost:5000/api/enviar-correo', {
+	// 			method: 'POST',
+	// 			headers: {
+	// 				'Content-Type': 'application/json',
+	// 			},
+	// 			body: JSON.stringify({
+	// 				checkIn: checkIn,
+	// 				checkOut: checkOut,
+	// 				adultos: adultos,
+	// 				ninos: ninos,
+	// 				email: email,
+	// 			}),
+	// 		})
+
+	// 		if (response.ok) {
+	// 			// El correo electrónico se envió correctamente
+	// 			Swal.fire({
+	// 				position: 'center',
+	// 				icon: 'success',
+	// 				title:
+	// 					'Enviado con éxito. A la brevedad nos estaremos comunicando con usted.',
+	// 				showConfirmButton: false,
+	// 				timer: 3000,
+	// 			})
+	// 		} else {
+	// 			// Hubo un error al enviar el correo electrónico
+	// 			Swal.fire({
+	// 				icon: 'error',
+	// 				title: 'Error al enviar su consulta',
+	// 				text: 'A la brevedad lo estaremos solucionando, disculpe las molestias.',
+	// 			})
+	// 		}
+	// 	} catch (error) {
+	// 		console.error('Error al enviar la solicitud:', error)
+	// 		Swal.fire({
+	// 			icon: 'error',
+	// 			title: 'Error al enviar su consulta',
+	// 			text: 'A la brevedad lo estaremos solucionando, disculpe las molestias.',
+	// 		})
+	// 	}
+	// }
+
 	const handleConsultarDisponibilidad = async () => {
-		// Validar el formulario antes de enviarlo
+		// Validar el formulario antes de enviar el correo electrónico
 		if (!validateForm()) {
 			return
 		}
+
+		// Enviar correo electrónico usando EmailJS
 		try {
-			const response = await fetch('http://localhost:5000/api/enviar-correo', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
+			await emailjs.send(
+				'service_ow5tu5w', // Reemplaza 'YOUR_SERVICE_ID' con tu Service ID de EmailJS
+				'template_6c857kn', // Reemplaza 'YOUR_TEMPLATE_ID' con tu Template ID de EmailJS
+				{
+					from_name: email,
+					to_email: 'veroagarcia90@gmail.com', // Cambia esto por la dirección de correo electrónico a la que deseas enviar el mensaje
 					checkIn: checkIn,
 					checkOut: checkOut,
 					adultos: adultos,
 					ninos: ninos,
 					email: email,
-				}),
+				},
+				'0DIH_YtJhCdbknU0z' // Reemplaza 'YOUR_USER_ID' con tu User ID (que ahora seria publick_key) de EmailJS
+			)
+			console.log('Correo electrónico enviado con éxito')
+			// Mostrar mensaje de éxito al usuario usando Swal.fire
+			Swal.fire({
+				icon: 'success',
+				title: 'Éxito',
+				text: 'El correo electrónico se ha enviado correctamente.',
 			})
-
-			if (response.ok) {
-				// El correo electrónico se envió correctamente
-				Swal.fire({
-					position: 'center',
-					icon: 'success',
-					title:
-						'Enviado con éxito. A la brevedad nos estaremos comunicando con usted.',
-					showConfirmButton: false,
-					timer: 3000,
-				})
-			} else {
-				// Hubo un error al enviar el correo electrónico
-				Swal.fire({
-					icon: 'error',
-					title: 'Error al enviar su consulta',
-					text: 'A la brevedad lo estaremos solucionando, disculpe las molestias.',
-				})
-			}
 		} catch (error) {
-			console.error('Error al enviar la solicitud:', error)
+			console.error('Error al enviar el correo electrónico:', error)
+			// Mostrar mensaje de error al usuario usando Swal.fire
 			Swal.fire({
 				icon: 'error',
-				title: 'Error al enviar su consulta',
-				text: 'A la brevedad lo estaremos solucionando, disculpe las molestias.',
+				title: 'Error',
+				text: 'Ha ocurrido un error al enviar el correo electrónico. Por favor, inténtelo de nuevo más tarde.',
 			})
 		}
 	}
