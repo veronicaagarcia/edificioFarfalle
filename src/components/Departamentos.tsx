@@ -14,7 +14,7 @@ export function Departamentos() {
 	const segundob =
 		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1nf45gVY0cK6zaRouyXB4lfusLG_xpqfI'
 	return (
-		<section className='pt-12 pb-32 h-screen overflow-y-scroll'>
+		<section className='pt-12 pb-32 h-min-screen h-full overflow-y-scroll'>
 			<div className='container mx-auto px-5'>
 				<h2 className='text-xl font-semibold text-black text-center mb-8'>
 					Nuestros Departamentos

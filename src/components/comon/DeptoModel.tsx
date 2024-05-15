@@ -110,7 +110,7 @@ export function DeptoModel({
 							thumbWidth={70}
 							centerMode={true}
 							onChange={(index) => setSelectedImageIndex(index)}
-							className='mx-auto bg-white px-0 md:px-80 p-4 w-full max-w-screen-xl pb-24 '
+							className='mx-auto bg-white px-0 md:px-80 p-4 w-full max-w-screen-xl pb-24 min-h-screen'
 						>
 							{carouselItems}
 						</Carousel>

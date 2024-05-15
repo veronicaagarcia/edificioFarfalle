@@ -50,7 +50,7 @@ export function PrimeroB() {
 						</h3>
 
 						<li>Cama matrimonial</li>
-						<li>Sofá cama con carroñ para 2 personas</li>
+						<li>Sofá cama con carrión para 2 personas</li>
 						<li>Placard</li>
 						<li>Baño privado (Ducha, bidet, papel higiénico, jabón)</li>
 						<li>Tender</li>

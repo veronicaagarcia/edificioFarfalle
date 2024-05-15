@@ -27,6 +27,25 @@ export function Principal({
 	const [formError, setFormError] = useState('')
 	const [minCheckOutDate, setMinCheckOutDate] = useState('')
 	const [currentIndex, setCurrentIndex] = useState(0) // Estado para controlar el índice actual del video
+	const today = new Date()
+	const year = today.getFullYear()
+	let month = (today.getMonth() + 1).toString() // Convertir a string
+	let day = today.getDate().toString() // Convertir a string
+
+	// Formatear el día y el mes para que siempre tengan 2 dígitos
+	if (month.length === 1) {
+		month = `0${month}`
+	}
+	if (day.length === 1) {
+		day = `0${day}`
+	}
+
+	// Construir la fecha mínima seleccionable en el formato YYYY-MM-DD
+	const minDate = `${year}-${month}-${day}`
+
+	// Usar esta fecha mínima en los campos de fecha
+	const [minCheckInDate] = useState(minDate)
+
 	const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/dron1.mp4'
 	const video1 = `https://newfarfalle.s3.sa-east-1.amazonaws.com/Veronica+Garcia's+V%C3%ADdeo+-+May+9%2C+2024.mp4`
 	const video2 = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/dron2.mp4'
@@ -225,16 +244,16 @@ export function Principal({
 			// Mostrar mensaje de éxito al usuario usando Swal.fire
 			Swal.fire({
 				icon: 'success',
-				title: 'Éxito',
-				text: 'El correo electrónico se ha enviado correctamente.',
+				title: 'Consulta enviada con éxito',
+				text: 'A la brevedad nos estaremos comunicando con usted.',
 			})
 		} catch (error) {
 			console.error('Error al enviar el correo electrónico:', error)
 			// Mostrar mensaje de error al usuario usando Swal.fire
 			Swal.fire({
 				icon: 'error',
-				title: 'Error',
-				text: 'Ha ocurrido un error al enviar el correo electrónico. Por favor, inténtelo de nuevo más tarde.',
+				title: 'Error al enviar su consulta',
+				text: 'A la brevedad lo estaremos solucionando, disculpe las molestias e inténtelo de nuevo más tarde.',
 			})
 		}
 	}
@@ -342,6 +361,7 @@ export function Principal({
 										type='date'
 										value={checkIn}
 										onChange={handleCheckInChange}
+										min={minCheckInDate} // Establece la fecha mínima seleccionable como el día actual
 									/>
 								</div>
 								<div className='w-full sm:w-1/3 flex-shrink mb-4 sm:mb-0 flex justify-center items-center sm:flex-col sm:items-start'>
