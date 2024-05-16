@@ -23,6 +23,9 @@ export function Principal({
 	const [checkOut, setCheckOut] = useState('')
 	const [adultos, setAdultos] = useState('')
 	const [ninos, setNinos] = useState('')
+	const [departamento, setDepartamento] = useState(
+		'No seleccionó ningún departamento en particular'
+	)
 	const [email, setEmail] = useState('')
 	const [formError, setFormError] = useState('')
 	const [minCheckOutDate, setMinCheckOutDate] = useState('')
@@ -59,6 +62,7 @@ export function Principal({
 
 	const handleToTop = () => {
 		const sectionTop = sectionTopRef.current
+
 		if (sectionTop) {
 			sectionTop.scrollIntoView({ behavior: 'smooth' })
 		}
@@ -236,6 +240,7 @@ export function Principal({
 					checkOut: checkOut,
 					adultos: adultos,
 					ninos: ninos,
+					departamento: departamento,
 					email: email,
 				},
 				'0DIH_YtJhCdbknU0z' // Reemplaza 'YOUR_USER_ID' con tu User ID (que ahora seria publick_key) de EmailJS
@@ -244,16 +249,28 @@ export function Principal({
 			// Mostrar mensaje de éxito al usuario usando Swal.fire
 			Swal.fire({
 				icon: 'success',
+				iconColor: '#fa9336',
 				title: 'Consulta enviada con éxito',
 				text: 'A la brevedad nos estaremos comunicando con usted.',
+				customClass: {
+					confirmButton:
+						'bg-orange hover:bg-orangeDark border-2 text-lg py-2 px-4 rounded-xl text-white',
+				},
+				buttonsStyling: false,
 			})
 		} catch (error) {
 			console.error('Error al enviar el correo electrónico:', error)
 			// Mostrar mensaje de error al usuario usando Swal.fire
 			Swal.fire({
 				icon: 'error',
+				iconColor: '#865d95',
 				title: 'Error al enviar su consulta',
 				text: 'A la brevedad lo estaremos solucionando, disculpe las molestias e inténtelo de nuevo más tarde.',
+				customClass: {
+					confirmButton:
+						'bg-orange hover:bg-orangeDark border-2 text-lg py-2 px-4 rounded-xl text-white',
+				},
+				buttonsStyling: false,
 			})
 		}
 	}
@@ -341,10 +358,10 @@ export function Principal({
 					id='reservas'
 					className='mx-auto bg-creme py-20 px-2 md:p-20'
 				>
-					<div className='max-w-lg mx-auto mt-10 '>
+					<div className='max-w-lg mx-auto mt-6'>
 						<form
-							method='post'
-							action='/api/enviar-correo'
+							// method='post'
+							// action='/api/enviar-correo'
 							className='bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4 hover:shadow-2xl '
 						>
 							<div className='mb-4 flex justify-between mx-auto '>
@@ -422,6 +439,28 @@ export function Principal({
 							<div className='mb-4'>
 								<label
 									className='text-gray-700 text-xs md:text-base font-bold mb-2'
+									htmlFor='departamento'
+								>
+									Departamento
+								</label>
+								<select
+									className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline cursor-pointer'
+									id='departamento'
+									value={departamento}
+									onChange={(e) => setDepartamento(e.target.value)}
+								>
+									<option value='todos'>Sin preferencias</option>
+									<option value='Pb-A'>Planta Baja A</option>
+									<option value='Pb-B'>Planta Baja B</option>
+									<option value='1-A'>Primero A</option>
+									<option value='1-B'>Primero B</option>
+									<option value='2-B'>Segundo B</option>
+								</select>
+							</div>
+
+							<div className='mb-4'>
+								<label
+									className='text-gray-700 text-xs md:text-base font-bold mb-2'
 									htmlFor='email'
 								>
 									Correo Electrónico
@@ -439,7 +478,7 @@ export function Principal({
 							)}
 							<div className='flex items-center justify-center'>
 								<button
-									className='group relative inline-flex mb-2 h-10 items-center justify-center overflow-hidden rounded-md bg-orangeDark px-4 font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
+									className='group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orangeDark px-4 font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
 									type='button'
 									onClick={handleConsultarDisponibilidad}
 								>

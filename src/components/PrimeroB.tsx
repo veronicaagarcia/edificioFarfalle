@@ -12,34 +12,104 @@ import { Footer } from './comon/Footer'
 import Gallery from './comon/Gallery'
 
 export function PrimeroB() {
-	const imageNames = [
-		// 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1KIxahCHwxffbHGRUFwJiJvBvM6R96IiI',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1a4JiYbN0BAbJ-NQ-ZeQ75F2P5dhFn7Dc',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1O2KRplTXvn4oOtQRJXOBeIYGj5xgM57D',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1KYH9A4kJjzB753fZtrd1IEoafVBQGeKX',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1q3iDT5rkKuJl9jhE0LtI8JKUY-f2VZvZ',
-		// 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1fKV-HX5-NzkM-Wy25E9aJwZ3qWDhgBA9',
-		// 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1AbMg8rTKBxaE9qQNN6Y7m9ETqreun7GP',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1tPNdmdMXjBj2kia__heymh3eIQhNSRek',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1F5dRFP1hsCfm8Bbv-7b1aQhZmKODNMHh',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1EFbzk-IV04Os4JwAn1lS7FM66_9zBwsP',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1VnHUOHVGlFb1T97xEBIWvABb-VPEd0Zh',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1yDN6wOsHtC4r-EQpC7QUiepFyJf1SAXC',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1nj1dM7B3-7pZFTsEfrVxkY0exenvaY48',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1mL7MkKwzA_wdumFFqL-u89c961GwbtYm',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1dX75r9w2jlqr1zdH04kxSnTrTKZApqJj',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=133t5GEH37WlaBW-Lf65J72EnAqVl7Zvf',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1lpMBfSk8jk6uGI4wIHo5Bs1DiUBeZ-eF',
-	]
-	const [selectedImage, setSelectedImage] = useState<number | null>(null)
+	interface Media {
+		type: 'image' | 'video'
+		url: string
+	}
 
-	const handleImageClick = (index: number) => {
-		setSelectedImage(index)
+	const media: Media[] = [
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1VnHUOHVGlFb1T97xEBIWvABb-VPEd0Zh',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1EFbzk-IV04Os4JwAn1lS7FM66_9zBwsP',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1fKV-HX5-NzkM-Wy25E9aJwZ3qWDhgBA9',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1q3iDT5rkKuJl9jhE0LtI8JKUY-f2VZvZ',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1KYH9A4kJjzB753fZtrd1IEoafVBQGeKX',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1O2KRplTXvn4oOtQRJXOBeIYGj5xgM57D',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1a4JiYbN0BAbJ-NQ-ZeQ75F2P5dhFn7Dc',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1lpMBfSk8jk6uGI4wIHo5Bs1DiUBeZ-eF',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=133t5GEH37WlaBW-Lf65J72EnAqVl7Zvf',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1dX75r9w2jlqr1zdH04kxSnTrTKZApqJj',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1mL7MkKwzA_wdumFFqL-u89c961GwbtYm',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1nj1dM7B3-7pZFTsEfrVxkY0exenvaY48',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1F5dRFP1hsCfm8Bbv-7b1aQhZmKODNMHh',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1tPNdmdMXjBj2kia__heymh3eIQhNSRek',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1yDN6wOsHtC4r-EQpC7QUiepFyJf1SAXC',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1KIxahCHwxffbHGRUFwJiJvBvM6R96IiI',
+		},
+
+		// Añade más imágenes aquí...
+		{ type: 'video', url: puerta },
+		{ type: 'video', url: living },
+		{ type: 'video', url: tv },
+		{ type: 'video', url: bano },
+		{ type: 'video', url: cocina },
+		{ type: 'video', url: habitacion },
+		{ type: 'video', url: entrada },
+		{ type: 'video', url: lavadero },
+		// Añade más videos aquí...
+	]
+
+	const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(
+		null
+	)
+
+	const handleMediaClick = (index: number) => {
+		setSelectedMediaIndex(index === selectedMediaIndex ? null : index)
+	}
+
+	const handleCloseModal = () => {
+		setSelectedMediaIndex(null)
 	}
 
 	return (
 		<div className='w-full h-screen pb-32 pt-8 overflow-y-auto mb-4'>
-			<div className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 p-4'>
+			<div className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 py-4'>
 				<section className='w-full lg:w-1/3 h-fit mb-24 flex flex-col px-5 pt-2'>
 					<ul className='list-disc list-inside text-sm text-black  p-4 '>
 						<h2 className='font-bold font-serif italic text-base md:text-lg text-center  text-orangeDark'>
@@ -73,25 +143,10 @@ export function PrimeroB() {
 					</ul>
 				</section>
 				<div className='w-full pt-1 md:w-7/12 h-fit'>
-					<Gallery imageNames={imageNames} onClick={handleImageClick} />
-					{/* <DeptoModel
-						numVideos={8}
-						videoNames={[
-							puerta,
-							living,
-							tv,
-							cocina,
-							habitacion,
-							bano,
-							entrada,
-							lavadero,
-						]}
-						videoSizeMultiplier={1}
-						imageNames={imageNames}
-					/> */}
+					<Gallery media={media} onClick={handleMediaClick} />
 				</div>
 			</div>
-			{selectedImage !== null && (
+			{selectedMediaIndex !== null && (
 				<DeptoModel
 					numVideos={8}
 					videoNames={[
@@ -105,8 +160,11 @@ export function PrimeroB() {
 						lavadero,
 					]}
 					videoSizeMultiplier={1}
-					imageNames={imageNames}
-					onClose={() => setSelectedImage(null)} // Esta función cerrará el modelo
+					imageNames={media
+						.filter((item) => item.type === 'image')
+						.map((item) => item.url)}
+					onClose={handleCloseModal}
+					initialIndex={selectedMediaIndex}
 				/>
 			)}
 			<Footer />

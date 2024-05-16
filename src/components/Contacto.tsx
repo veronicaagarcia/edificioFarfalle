@@ -17,6 +17,7 @@ export function Contacto() {
 	const [nombre, setNombre] = useState('')
 	const [loading, setLoading] = useState(true)
 	const [emailError, setEmailError] = useState('')
+	const [messageError, setMessageError] = useState('')
 	const [hovered, setHovered] = useState<string | null>(null)
 
 	const openGoogleMaps = () => {
@@ -58,6 +59,12 @@ export function Contacto() {
 			return
 		}
 
+		if (message.trim() === '') {
+			// Mostrar un mensaje de error al usuario
+			setMessageError('Por favor ingrese su mensaje')
+			return // Salir de la función si el campo de mensaje está vacío
+		}
+
 		// Enviar correo electrónico usando EmailJS
 		try {
 			await emailjs.send(
@@ -77,18 +84,30 @@ export function Contacto() {
 			Swal.fire({
 				position: 'center',
 				icon: 'success',
-				title:
-					'Enviado con éxito. A la brevedad nos estaremos comunicando con usted.',
-				showConfirmButton: false,
-				timer: 3000,
+				iconColor: '#fa9336',
+				title: 'Consulta enviada con éxito',
+				text: 'A la brevedad nos estaremos comunicando con usted.',
+				// showConfirmButton: false,
+				// timer: 3000,
+				customClass: {
+					confirmButton:
+						'bg-orange hover:bg-orangeDark border-2 text-lg py-2 px-4 rounded-xl text-white',
+				},
+				buttonsStyling: false,
 			})
 		} catch (error) {
 			console.error('Error al enviar el correo electrónico:', error)
 			// Mostrar mensaje de error al usuario usando Swal.fire
 			Swal.fire({
 				icon: 'error',
+				iconColor: '#865d95',
 				title: 'Error al enviar su consulta',
 				text: 'A la brevedad lo estaremos solucionando, disculpe las molestias.',
+				customClass: {
+					confirmButton:
+						'bg-orange hover:bg-orangeDark border-2 text-lg py-2 px-4 rounded-xl text-white',
+				},
+				buttonsStyling: false,
 			})
 		}
 	}
@@ -219,8 +238,8 @@ export function Contacto() {
 					className='py-1 px-2 h-72 rounded-full w-9/12 mx-auto md:w-2/5 hover:opacity-90 hover:shadow-2xl shadow-black opacity-85 absolute top-0 right-4 md:right-52'
 				>
 					<form
-						method='post'
-						action='/api/enviar-email'
+						// method='post'
+						// action='/api/enviar-email'
 						className='p-4 mx-auto w-11/12 h-80 flex flex-col justify-evenly'
 					>
 						<input
@@ -239,6 +258,9 @@ export function Contacto() {
 							onChange={handleMessageChange}
 							placeholder='Envía tu consulta aquí...'
 						/>
+						{messageError && (
+							<p className='text-red-900 text-sm'>{messageError}</p>
+						)}
 						<input
 							className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 							id='email'

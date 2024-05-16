@@ -4,26 +4,65 @@ import { Footer } from './comon/Footer'
 import { Gallery } from './comon/Gallery'
 
 export function PbA() {
+	interface Media {
+		type: 'image' | 'video'
+		url: string
+	}
 	const completo = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/Completo.mp4'
-	const imageNames = [
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Ki8P47TmBeMxRH-UJTI24huCM0wjCGeh',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1btivKot0vCI1Zaq9FDLCW2DSoSbkXHZC',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1tTE_iQgReJ_2KRTDe7cfGX3M7CdQ42cD',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=182dKtwes3VI1-n9XbOBFfs6kKLv-XcOC',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1q6fWRsYrZfX8n83q-qU2RB5T7ZnF6znF',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Lj1YCFKLMjAkY_5B9zurQj5YIOruWIHA',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1t1uEhsQ1jVgD3vrsAqecHcnVo_YEKjiu',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1IKN2uA9tfhwGcl7V4T_rnkPZQY0Lw1Gj',
-	]
-	const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
-	const handleImageClick = (index: number) => {
-		setSelectedImage(index)
+	const media: Media[] = [
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Ki8P47TmBeMxRH-UJTI24huCM0wjCGeh',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Lj1YCFKLMjAkY_5B9zurQj5YIOruWIHA',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=182dKtwes3VI1-n9XbOBFfs6kKLv-XcOC',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1IKN2uA9tfhwGcl7V4T_rnkPZQY0Lw1Gj',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1tTE_iQgReJ_2KRTDe7cfGX3M7CdQ42cD',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1btivKot0vCI1Zaq9FDLCW2DSoSbkXHZC',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1q6fWRsYrZfX8n83q-qU2RB5T7ZnF6znF',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1t1uEhsQ1jVgD3vrsAqecHcnVo_YEKjiu',
+		},
+		// Añade más imágenes aquí...
+		{ type: 'video', url: completo },
+		// Añade más videos aquí...
+	]
+
+	const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(
+		null
+	)
+
+	const handleMediaClick = (index: number) => {
+		setSelectedMediaIndex(index === selectedMediaIndex ? null : index)
+	}
+
+	const handleCloseModal = () => {
+		setSelectedMediaIndex(null)
 	}
 
 	return (
 		<div className='w-full h-screen pb-32 pt-8 overflow-y-auto mb-4'>
-			<div className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 p-4'>
+			<div className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 py-4'>
 				<section className='w-full lg:w-1/3 h-fit mb-24 flex flex-col px-5 pt-2'>
 					<ul className='list-disc list-inside text-sm text-black  p-4 '>
 						<h2 className='font-bold font-serif italic text-base md:text-lg text-center text-orangeDark'>
@@ -57,22 +96,19 @@ export function PbA() {
 					</ul>
 				</section>
 				<div className='w-full pt-1 md:w-7/12 h-fit'>
-					<Gallery imageNames={imageNames} onClick={handleImageClick} />
-					{/* <DeptoModel
-						numVideos={1}
-						videoNames={[completo]}
-						videoSizeMultiplier={1}
-						imageNames={imageNames}
-					/> */}
+					<Gallery media={media} onClick={handleMediaClick} />
 				</div>
 			</div>
-			{selectedImage !== null && (
+			{selectedMediaIndex !== null && (
 				<DeptoModel
 					numVideos={1}
 					videoNames={[completo]}
 					videoSizeMultiplier={1}
-					imageNames={imageNames}
-					onClose={() => setSelectedImage(null)} // Esta función cerrará el modelo
+					imageNames={media
+						.filter((item) => item.type === 'image')
+						.map((item) => item.url)}
+					onClose={handleCloseModal}
+					initialIndex={selectedMediaIndex}
 				/>
 			)}
 			<Footer />

@@ -11,28 +11,83 @@ import { Footer } from './comon/Footer'
 import Gallery from './comon/Gallery'
 
 export function PrimeroA() {
-	const imageNames = [
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=18ooD5HDkYSEzR4RLcsWR2ge56vnnWDdY',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Q-P5qwl-lBzIsnWOLjdWLCGM7WZyozfo',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=13JNpzvHgPy0cEzWauVfdz_Tch-wKRYhT',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1lRdnsKM3J4Hct2aeEkssGBRKyzsOm1YQ',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=16ueGOfVyB7OD42OuZfsfCEzuqKwC3D_q',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Y36_aRoXdiR4petI6epdV9F-Mdm1hZjf',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1uc32KS-nfAInPIglI7ckrLRlwcYaChIN',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1swjgDBjnUUNi92chr9utDUcQ0UV04B7C',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1rUW1qZU4omkP8Ss6yQb9ltXwmjIoKU7k',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1UJhYWduvfwL20iuSwPdetir6eImdTFi6',
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1KZGSUfsfL_U9xnKvtqMKw0soXe2h6jro',
-	]
-	const [selectedImage, setSelectedImage] = useState<number | null>(null)
+	interface Media {
+		type: 'image' | 'video'
+		url: string
+	}
 
-	const handleImageClick = (index: number) => {
-		setSelectedImage(index)
+	const media: Media[] = [
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=16ueGOfVyB7OD42OuZfsfCEzuqKwC3D_q',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1lRdnsKM3J4Hct2aeEkssGBRKyzsOm1YQ',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1KZGSUfsfL_U9xnKvtqMKw0soXe2h6jro',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1UJhYWduvfwL20iuSwPdetir6eImdTFi6',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1rUW1qZU4omkP8Ss6yQb9ltXwmjIoKU7k',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1swjgDBjnUUNi92chr9utDUcQ0UV04B7C',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1uc32KS-nfAInPIglI7ckrLRlwcYaChIN',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Y36_aRoXdiR4petI6epdV9F-Mdm1hZjf',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=13JNpzvHgPy0cEzWauVfdz_Tch-wKRYhT',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Q-P5qwl-lBzIsnWOLjdWLCGM7WZyozfo',
+		},
+		{
+			type: 'image',
+			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=18ooD5HDkYSEzR4RLcsWR2ge56vnnWDdY',
+		},
+
+		// Añade más imágenes aquí...
+		{ type: 'video', url: entrada },
+		{ type: 'video', url: cocina },
+		{ type: 'video', url: living },
+		{ type: 'video', url: pasillo },
+		{ type: 'video', url: habitacion },
+		{ type: 'video', url: bano },
+		{ type: 'video', url: lavadero },
+		// Añade más videos aquí...
+	]
+
+	const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(
+		null
+	)
+
+	const handleMediaClick = (index: number) => {
+		setSelectedMediaIndex(index === selectedMediaIndex ? null : index)
+	}
+
+	const handleCloseModal = () => {
+		setSelectedMediaIndex(null)
 	}
 
 	return (
 		<div className='w-full h-screen pb-32 pt-8 overflow-y-auto mb-4'>
-			<div className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 p-4'>
+			<div className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 py-4'>
 				<section className='w-full lg:w-1/3 h-fit mb-24 flex flex-col px-5 pt-2'>
 					<ul className='list-disc list-inside text-sm text-black  p-4 '>
 						<h2 className='font-bold font-serif italic text-base md:text-lg text-center  text-orangeDark'>
@@ -66,24 +121,10 @@ export function PrimeroA() {
 					</ul>
 				</section>
 				<div className='w-full pt-1 md:w-7/12 h-fit'>
-					<Gallery imageNames={imageNames} onClick={handleImageClick} />
-					{/* <DeptoModel
-						numVideos={7}
-						videoNames={[
-							entrada,
-							cocina,
-							living,
-							pasillo,
-							habitacion,
-							bano,
-							lavadero,
-						]}
-						videoSizeMultiplier={1}
-						imageNames={imageNames}
-					/> */}
+					<Gallery media={media} onClick={handleMediaClick} />
 				</div>
 			</div>
-			{selectedImage !== null && (
+			{selectedMediaIndex !== null && (
 				<DeptoModel
 					numVideos={7}
 					videoNames={[
@@ -96,8 +137,11 @@ export function PrimeroA() {
 						lavadero,
 					]}
 					videoSizeMultiplier={1}
-					imageNames={imageNames}
-					onClose={() => setSelectedImage(null)} // Esta función cerrará el modelo
+					imageNames={media
+						.filter((item) => item.type === 'image')
+						.map((item) => item.url)}
+					onClose={handleCloseModal}
+					initialIndex={selectedMediaIndex}
 				/>
 			)}
 			<Footer />
