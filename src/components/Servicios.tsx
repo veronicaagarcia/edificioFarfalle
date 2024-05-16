@@ -11,7 +11,7 @@ import { faBath } from '@fortawesome/free-solid-svg-icons/faBath'
 import { faVideo } from '@fortawesome/free-solid-svg-icons/faVideo'
 import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons/faCalendarCheck'
 import { faClipboardCheck } from '@fortawesome/free-solid-svg-icons/faClipboardCheck'
-import { Footer } from './comon/Footer'
+// import { Footer } from './comon/Footer'
 import { RatingCharts } from './comon/RatingChart'
 
 export function Servicios() {
@@ -189,7 +189,7 @@ export function Servicios() {
 				</h3> */}
 				<RatingCharts />
 			</div>
-			<Footer />
+			{/* <Footer /> */}
 		</section>
 	)
 }

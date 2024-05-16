@@ -14,7 +14,7 @@ export function Footer() {
 		)
 	}
 	return (
-		<footer className='w-full py-1 flex-shrink-0 bg-gradient-to-b from-almostWhite to-nav fixed bottom-0'>
+		<footer className='w-full  flex-shrink-0 bg-gradient-to-b from-almostWhite to-nav fixed bottom-0'>
 			<div className='container mx-auto px-4'>
 				<div className='flex flex-col md:flex-row justify-between items-center'>
 					<div className='flex flex-col md:flex-row w-full md:w-2/3'>

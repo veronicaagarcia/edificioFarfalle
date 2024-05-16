@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { DeptoModel } from './comon/DeptoModel'
-import { Footer } from './comon/Footer'
+// import { Footer } from './comon/Footer'
 import { Gallery } from './comon/Gallery'
 
 export function PbA() {
@@ -111,7 +111,7 @@ export function PbA() {
 					initialIndex={selectedMediaIndex}
 				/>
 			)}
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	)
 }

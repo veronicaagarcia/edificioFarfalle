@@ -1,16 +1,6 @@
 import { useState } from 'react'
 import { DeptoModel } from './comon/DeptoModel'
-import puerta from '../assets/videos/2b/1Puerta.mp4'
-import entrada from '../assets/videos/2b/2Entrando.mp4'
-import living from '../assets/videos/2b/3Living.mp4'
-import livingFrente from '../assets/videos/2b/4LivingFrente.mp4'
-import livingCocina from '../assets/videos/2b/5LivingCocina.mp4'
-import cocina from '../assets/videos/2b/6Cocina.mp4'
-import habitacionEntrada from '../assets/videos/2b/7EntrandoHabitacion.mp4'
-import habitacion from '../assets/videos/2b/8Habitacion.mp4'
-import bano from '../assets/videos/2b/9Bano.mp4'
-import lavadero from '../assets/videos/2b/10Lavadero.mp4'
-import { Footer } from './comon/Footer'
+// import { Footer } from './comon/Footer'
 import Gallery from './comon/Gallery'
 
 export function SegundoB() {
@@ -18,6 +8,7 @@ export function SegundoB() {
 		type: 'image' | 'video'
 		url: string
 	}
+	const completo = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/2B.mp4'
 
 	const media: Media[] = [
 		{
@@ -75,16 +66,8 @@ export function SegundoB() {
 		},
 
 		// Añade más imágenes aquí...
-		{ type: 'video', url: puerta },
-		{ type: 'video', url: entrada },
-		{ type: 'video', url: living },
-		{ type: 'video', url: livingFrente },
-		{ type: 'video', url: livingCocina },
-		{ type: 'video', url: cocina },
-		{ type: 'video', url: habitacionEntrada },
-		{ type: 'video', url: habitacion },
-		{ type: 'video', url: bano },
-		{ type: 'video', url: lavadero },
+		{ type: 'video', url: completo },
+
 		// Añade más videos aquí...
 	]
 	const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(
@@ -140,19 +123,8 @@ export function SegundoB() {
 			</div>
 			{selectedMediaIndex !== null && (
 				<DeptoModel
-					numVideos={10}
-					videoNames={[
-						puerta,
-						entrada,
-						living,
-						livingFrente,
-						livingCocina,
-						cocina,
-						habitacionEntrada,
-						habitacion,
-						bano,
-						lavadero,
-					]}
+					numVideos={1}
+					videoNames={[completo]}
 					videoSizeMultiplier={1}
 					imageNames={media
 						.filter((item) => item.type === 'image')
@@ -161,7 +133,7 @@ export function SegundoB() {
 					initialIndex={selectedMediaIndex}
 				/>
 			)}
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	)
 }

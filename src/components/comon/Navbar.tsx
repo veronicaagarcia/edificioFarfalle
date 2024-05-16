@@ -2,6 +2,7 @@
 import { useState, ReactNode } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Card } from '@mui/material'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import { FaCalendarCheck } from 'react-icons/fa'
 import logoFarfalle from '../../assets/222.png'
 import close from '../../assets/close.svg'
@@ -118,7 +119,7 @@ export function Navbar({
 				}`}
 			>
 				<img
-					className={`animate-pulse ${
+					className={`animate-pulse -mt-2 ${
 						isMobile ? `h-auto w-40 mb-5 -mt-4` : `h-auto w-200`
 					}`}
 					src={logoFarfalle}
@@ -142,7 +143,7 @@ export function Navbar({
 									? 'w-36 h-fit z-50 absolute top-0 border-transparent rounded-tl-xl rounded-bl-xl right-0 p-5 shadow-sm bg-nav pb-36 pt-5'
 									: 'w-16 h-16 my-auto mr-3'
 						  }`
-						: 'flex items-center w-full bg-nav justify-around p-4 rounded-xl rounded-tl-none rounded-tr-none -mb-2 z-10'
+						: 'flex items-center w-full bg-nav justify-around p-2 rounded-xl rounded-tl-none rounded-tr-none -mb-2 z-10'
 				}`}
 			>
 				{isMobile ? (
@@ -151,7 +152,12 @@ export function Navbar({
 						onClick={handleOpenCloseMenu}
 					>
 						{openCloseMenu ? (
-							<img src={close} className='h-4 ' loading='lazy' title='Cerrar' />
+							<img
+								src={close}
+								className='h-4 mb-14'
+								loading='lazy'
+								title='Cerrar'
+							/>
 						) : (
 							<img src={menu} className='h-4' loading='lazy' title='Menú' />
 						)}
@@ -165,7 +171,7 @@ export function Navbar({
 							? `text-white hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-orange text-lg'
+							: 'text-white hover:text-orange text-base'
 					}`}
 					activeClassName='text-amber-600'
 					onClick={handleReservasClick}
@@ -181,7 +187,7 @@ export function Navbar({
 							? `text-white hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-orange text-lg'
+							: 'text-white hover:text-orange text-base'
 					}`}
 					activeClassName='text-amber-600'
 					exact
@@ -195,7 +201,7 @@ export function Navbar({
 							? `text-white hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-orange text-lg'
+							: 'text-white hover:text-orange text-base'
 					}`}
 					activeClassName='text-amber-600'
 					exact
@@ -209,7 +215,7 @@ export function Navbar({
 							? `text-white hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-orange text-lg'
+							: 'text-white hover:text-orange text-base'
 					}`}
 					activeClassName='text-amber-600'
 					exact
@@ -223,7 +229,7 @@ export function Navbar({
 							? `text-white hover:text-orange ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-orange text-lg'
+							: 'text-white hover:text-orange text-base'
 					}`}
 					activeClassName='text-amber-600'
 					exact
@@ -231,6 +237,20 @@ export function Navbar({
 				>
 					Contacto
 				</NavLink>
+				<a
+					href='https://api.whatsapp.com/send?phone=542216342322&text=Hola%20Mat%C3%ADas!%20Quero%20m%C3%A1s%20info%20sobre%20el%20alquiler%20temporario.'
+					target='_blank'
+					rel='noopener noreferrer'
+					className={`${
+						isMobile
+							? `text-white hover:text-green-900 ${
+									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
+							  }`
+							: 'text-white hover:text-green-900 text-base'
+					}`}
+				>
+					<WhatsAppIcon fontSize='small' />
+				</a>
 			</div>
 		</Card>
 	)

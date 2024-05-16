@@ -1,14 +1,6 @@
 import { useState } from 'react'
 import { DeptoModel } from './comon/DeptoModel'
-import puerta from '../assets/videos/1b/1Puerta.mp4'
-import living from '../assets/videos/1b/2Living.mp4'
-import tv from '../assets/videos/1b/3LivingTv.mp4'
-import cocina from '../assets/videos/1b/4Cocina.mp4'
-import habitacion from '../assets/videos/1b/5Habitacion.mp4'
-import bano from '../assets/videos/1b/6Bano.mp4'
-import entrada from '../assets/videos/1b/EntradaLiving.mp4'
-import lavadero from '../assets/videos/1b/7Lavadero.mp4'
-import { Footer } from './comon/Footer'
+// import { Footer } from './comon/Footer'
 import Gallery from './comon/Gallery'
 
 export function PrimeroB() {
@@ -16,7 +8,7 @@ export function PrimeroB() {
 		type: 'image' | 'video'
 		url: string
 	}
-
+	const completo = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/1B.mp4'
 	const media: Media[] = [
 		{
 			type: 'image',
@@ -84,14 +76,8 @@ export function PrimeroB() {
 		},
 
 		// Añade más imágenes aquí...
-		{ type: 'video', url: puerta },
-		{ type: 'video', url: living },
-		{ type: 'video', url: tv },
-		{ type: 'video', url: bano },
-		{ type: 'video', url: cocina },
-		{ type: 'video', url: habitacion },
-		{ type: 'video', url: entrada },
-		{ type: 'video', url: lavadero },
+		{ type: 'video', url: completo },
+
 		// Añade más videos aquí...
 	]
 
@@ -148,17 +134,8 @@ export function PrimeroB() {
 			</div>
 			{selectedMediaIndex !== null && (
 				<DeptoModel
-					numVideos={8}
-					videoNames={[
-						puerta,
-						living,
-						tv,
-						cocina,
-						habitacion,
-						bano,
-						entrada,
-						lavadero,
-					]}
+					numVideos={1}
+					videoNames={[completo]}
 					videoSizeMultiplier={1}
 					imageNames={media
 						.filter((item) => item.type === 'image')
@@ -167,7 +144,7 @@ export function PrimeroB() {
 					initialIndex={selectedMediaIndex}
 				/>
 			)}
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	)
 }

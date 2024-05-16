@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import ImageLoader from './comon/ImageLoader'
-import { Footer } from './comon/Footer'
+// import { Footer } from './comon/Footer'
 
 export function Departamentos() {
 	const pba =
@@ -126,7 +126,7 @@ export function Departamentos() {
 					</div>
 				</div>
 			</div>
-			<Footer />
+			{/* <Footer /> */}
 		</section>
 	)
 }
