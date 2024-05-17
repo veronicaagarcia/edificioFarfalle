@@ -80,10 +80,11 @@ const ImageUploader = ({ media, onClick }: GalleryProps) => {
 							/>
 						) : (
 							<video
-								src={item.url}
 								className='w-full h-full object-contain object-center cursor-pointer'
 								controls
-							/>
+							>
+								<source src={item.url} type='video/mp4' />
+							</video>
 						)}
 					</ImageListItem>
 				))}
