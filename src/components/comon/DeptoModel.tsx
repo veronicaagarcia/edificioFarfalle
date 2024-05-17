@@ -223,11 +223,12 @@ export function DeptoModel({
 						</button>
 						{imageNames[selectedImageIndex].endsWith('.mp4') ? (
 							<video
-								src={imageNames[selectedImageIndex]}
 								className='max-w-100 w-10/12 md:w-5/12 h-auto max-h-90 border-creme border-2 hover:shadow-lg bg-black mx-1'
 								controls // Agregar el atributo controls para mostrar los controles del video
 								autoPlay
-							/>
+							>
+								<source src={imageNames[selectedImageIndex]} type='video/mp4' />
+							</video>
 						) : (
 							<img
 								src={imageNames[selectedImageIndex]}
