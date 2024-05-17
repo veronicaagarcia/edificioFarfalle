@@ -82,6 +82,8 @@ const ImageUploader = ({ media, onClick }: GalleryProps) => {
 							<video
 								className='w-full h-full object-contain object-center cursor-pointer'
 								controls
+								autoPlay
+								playsInline
 							>
 								<source src={item.url} type='video/mp4' />
 							</video>
