@@ -108,7 +108,6 @@
 
 // export default Gallery
 
-import React from 'react'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 import { styled } from '@mui/material/styles'
