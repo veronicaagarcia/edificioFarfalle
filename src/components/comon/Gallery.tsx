@@ -48,6 +48,67 @@
 
 // export default Gallery
 
+// import ImageList from '@mui/material/ImageList'
+// import ImageListItem from '@mui/material/ImageListItem'
+// import { styled } from '@mui/material/styles'
+
+// interface Media {
+// 	type: 'image' | 'video'
+// 	url: string
+// }
+
+// interface GalleryProps {
+// 	media: Media[]
+// 	onClick: (index: number) => void
+// }
+
+// const ImageUploader = ({ media, onClick }: GalleryProps) => {
+// 	return (
+// 		<div className='mt-16'>
+// 			<StyledImageList cols={3} rowHeight={200}>
+// 				{media.map((item, index) => (
+// 					<ImageListItem key={index} onClick={() => onClick(index)}>
+// 						{item.type === 'image' ? (
+// 							<img
+// 								src={item.url}
+// 								style={{
+// 									width: '100%',
+// 									height: '100%',
+// 									objectFit: 'cover',
+// 									cursor: 'pointer',
+// 								}}
+// 							/>
+// 						) : (
+// 							<video
+// 								className='w-full h-full object-contain object-center cursor-pointer'
+// 								controls
+// 							>
+// 								<source src={item.url} type='video/mp4' />
+// 							</video>
+// 						)}
+// 					</ImageListItem>
+// 				))}
+// 			</StyledImageList>
+// 		</div>
+// 	)
+// }
+
+// export function Gallery({ media, onClick }: GalleryProps) {
+// 	return <ImageUploader media={media} onClick={onClick} />
+// }
+
+// const StyledImageList = styled(ImageList)({
+// 	width: '100%',
+// 	height: 'auto',
+// 	display: 'flex',
+// 	flexWrap: 'wrap',
+// 	justifyContent: 'center',
+// 	overflow: 'hidden',
+// })
+
+// export default Gallery
+
+import React from 'react'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 import { styled } from '@mui/material/styles'
@@ -64,6 +125,7 @@ interface GalleryProps {
 
 const ImageUploader = ({ media, onClick }: GalleryProps) => {
 	const isMobile = /Mobi|Android/i.test(navigator.userAgent)
+
 	return (
 		<div className='mt-16'>
 			<StyledImageList cols={3} rowHeight={200}>
@@ -82,8 +144,10 @@ const ImageUploader = ({ media, onClick }: GalleryProps) => {
 						) : (
 							<video
 								className='w-full h-full object-contain object-center cursor-pointer'
-								controls={!isMobile} // Disable controls for mobile
-								autoPlay={isMobile}
+								controls
+								controlsList={
+									isMobile ? 'nodownload' : 'nodownload nodfullscreen'
+								}
 							>
 								<source src={item.url} type='video/mp4' />
 							</video>
