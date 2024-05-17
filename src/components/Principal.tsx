@@ -443,19 +443,24 @@ export function Principal({
 								>
 									Departamento
 								</label>
-								<select
-									className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline cursor-pointer'
-									id='departamento'
-									value={departamento}
-									onChange={(e) => setDepartamento(e.target.value)}
-								>
-									<option value='todos'>Sin preferencias</option>
-									<option value='Pb-A'>Planta Baja A</option>
-									<option value='Pb-B'>Planta Baja B</option>
-									<option value='1-A'>Primero A</option>
-									<option value='1-B'>Primero B</option>
-									<option value='2-B'>Segundo B</option>
-								</select>
+								<div className='relative inline-block w-full'>
+									<select
+										className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline cursor-pointer bg-white'
+										id='departamento'
+										value={departamento}
+										onChange={(e) => setDepartamento(e.target.value)}
+									>
+										<option value='todos'>Sin preferencias</option>
+										<option value='Pb-A'>Planta Baja A</option>
+										<option value='Pb-B'>Planta Baja B</option>
+										<option value='1-A'>Primero A</option>
+										<option value='1-B'>Primero B</option>
+										<option value='2-B'>Segundo B</option>
+									</select>
+									<div className='pointer-events-none absolute inset-y-0 right-0 flex text-xs items-center px-2 text-gray-600'>
+										▼
+									</div>
+								</div>
 							</div>
 
 							<div className='mb-4'>
