@@ -63,6 +63,7 @@ interface GalleryProps {
 }
 
 const ImageUploader = ({ media, onClick }: GalleryProps) => {
+	const isMobile = /Mobi|Android/i.test(navigator.userAgent)
 	return (
 		<div className='mt-16'>
 			<StyledImageList cols={3} rowHeight={200}>
@@ -81,9 +82,8 @@ const ImageUploader = ({ media, onClick }: GalleryProps) => {
 						) : (
 							<video
 								className='w-full h-full object-contain object-center cursor-pointer'
-								controls
-								autoPlay
-								playsInline
+								controls={!isMobile} // Disable controls for mobile
+								autoPlay={isMobile}
 							>
 								<source src={item.url} type='video/mp4' />
 							</video>
