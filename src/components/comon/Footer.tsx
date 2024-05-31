@@ -27,7 +27,7 @@ export function Footer() {
 						</div>
 						<div className='text-xs w-full md:w-1/3 md:justify-center items-center hidden md:flex'>
 							<FontAwesomeIcon icon={faEnvelope} className='pr-1' />{' '}
-							farfalle@gmail.com
+							matias.zocco@osde.com.ar
 						</div>
 					</div>
 					<div className='flex w-full md:w-1/3 justify-evenly'>

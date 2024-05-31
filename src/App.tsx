@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import HelmetWrapper from './components/comon/HelmetWrapper'
 import { Navbar } from './components/comon/Navbar'
 import { Principal } from './components/Principal'
 import { Departamentos } from './components/Departamentos'
@@ -24,6 +25,10 @@ function App() {
 
 	return (
 		<Card style={{ width: '100vw', height: '100vh' }}>
+			<HelmetWrapper
+				title='Edificio Farfalle, Alquileres Temporales'
+				description='Descubre una amplia selección de departamentos para alquiler temporal. Encuentra el lugar perfecto para tu estadía con nuestras detalladas imágenes y descripciones. Alquila tu próximo hogar con facilidad y disfruta de ubicaciones exclusivas y confortables. ¡Explora nuestras opciones y reserva hoy mismo!'
+			/>
 			{!isStarted ? (
 				<Start />
 			) : (

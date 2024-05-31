@@ -79,7 +79,6 @@ export function Contacto() {
 				},
 				'0DIH_YtJhCdbknU0z' // Reemplaza 'YOUR_USER_ID' con tu User ID (que ahora seria publick_key) de EmailJS
 			)
-			console.log('Correo electrónico enviado con éxito')
 			// Mostrar mensaje de éxito al usuario usando Swal.fire
 			Swal.fire({
 				position: 'center',
@@ -211,14 +210,14 @@ export function Contacto() {
 						onMouseLeave={handleMouseLeave}
 					>
 						<a
-							href='mailto:farfalle@gmail.com'
+							href='mailto:matias.zocco@osde.com.ar'
 							target='_blank'
 							rel='noopener noreferrer'
 						>
 							<h5 className='text-white hover:text-nav text-lg flex justify-center items-center text-center'>
 								<span className='hidden md:block'>
 									{hovered === 'Escribinos'
-										? 'A farfalle@gmail.com'
+										? 'A matias.zocco@osde.com.ar'
 										: 'Escribinos'}
 								</span>
 								<EmailOutlinedIcon
@@ -279,44 +278,6 @@ export function Contacto() {
 						</button>
 					</form>
 				</Card>
-				{/* <form
-						method='post'
-						action='/api/enviar-email'
-						className='bg-creme shadow-2xl shadow-creme rounded-xl p-4 ml-8 w-10/12 md:w-1/2 h-80 mb-4 flex flex-col justify-evenly'
-					>
-						<input
-							className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-							id='nombre'
-							type='text'
-							value={nombre}
-							onChange={handleNombreChange}
-							placeholder='Nombre'
-						/>
-
-						<textarea
-							className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-							id='message'
-							value={message}
-							onChange={handleMessageChange}
-							placeholder='Envía tu consulta aquí...'
-						/>
-						<input
-							className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-							id='email'
-							type='email'
-							value={email}
-							onChange={handleEmailChange}
-							placeholder='Correo electrónico'
-						/>
-						{emailError && <p className='text-red-900 text-sm'>{emailError}</p>}
-						<button
-							type='button'
-							onClick={handleSubmit}
-							className='group relative inline-flex mb-2 h-10 w-1/2  mx-auto items-center justify-center overflow-hidden rounded-md bg-orangeDark px-4 font-medium text-creme transition hover:bg-orange hover:scale-110'
-						>
-							<span className='relative'>Enviar</span>
-						</button>
-					</form> */}
 			</div>
 			<div className='h-fit md:h-600 w-10/12 text-black mx-auto flex flex-col items-center rounded-xl mt-32 mb-4 '>
 				<div className='flex flex-col md:flex-row justify-between mx-auto items-center w-full h-fit'>
@@ -342,7 +303,6 @@ export function Contacto() {
 					</div>
 				</div>
 			</div>
-			{/* <Footer /> */}
 		</section>
 	)
 }
