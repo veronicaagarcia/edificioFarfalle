@@ -176,7 +176,7 @@ export function RatingCharts() {
 					<AirbnbRatingChart />
 				</div>
 				<p className='pt-2 text-xs text-center w-full font-extralight text-gray'>
-					Reviews score 14 mayo 2024
+					Reviews score 31 mayo 2024
 				</p>
 			</div>
 		</>

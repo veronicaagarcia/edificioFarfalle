@@ -120,7 +120,7 @@ export function Contacto() {
 	}
 
 	return (
-		<section className='w-11/12 mx-auto h-screen flex flex-col overflow-y-scroll pt-4 lg:pt-16 pb-28 font-thin font-serif italic text-black bg-creme opacity-90'>
+		<section className='w-11/12 mx-auto h-screen flex flex-col overflow-y-auto pt-4 lg:pt-16 pb-28 font-thin font-serif italic text-black bg-creme opacity-90'>
 			<div className='flex flex-col md:flex-row justify-start w-full h-fit py-2 pr-14 relative'>
 				<div className='w-10/12 md:w-1/3 h-52 flex flex-col justify-between mt-4 md:mt-0 -ml-1 md:ml-0'>
 					<Card

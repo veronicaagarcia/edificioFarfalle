@@ -11,7 +11,6 @@ import { faBath } from '@fortawesome/free-solid-svg-icons/faBath'
 import { faVideo } from '@fortawesome/free-solid-svg-icons/faVideo'
 import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons/faCalendarCheck'
 import { faClipboardCheck } from '@fortawesome/free-solid-svg-icons/faClipboardCheck'
-// import { Footer } from './comon/Footer'
 import { RatingCharts } from './comon/RatingChart'
 
 export function Servicios() {
@@ -184,12 +183,8 @@ export function Servicios() {
 						</ul>
 					</div>
 				</ul>
-				{/* <h3 className='text-center font-semibold text-lg md:text-xl text-orange mb-2'>
-					Reviews
-				</h3> */}
 				<RatingCharts />
 			</div>
-			{/* <Footer /> */}
 		</section>
 	)
 }

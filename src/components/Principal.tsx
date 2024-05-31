@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import emailjs from 'emailjs-com'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
-import { Carousel } from 'react-responsive-carousel'
+// import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-responsive-carousel/lib/styles/carousel.css'
 import Swal from 'sweetalert2'
-import { VideoLazyLoad } from './comon/VideoLazyLoad'
+// import { VideoLazyLoad } from './comon/VideoLazyLoad'
 
 interface PrincipalProps {
 	sectionTopRef: React.MutableRefObject<HTMLDivElement | null>
@@ -18,7 +18,7 @@ export function Principal({
 	isMobile,
 	sectionReservasRef,
 }: PrincipalProps) {
-	const [videosLoaded, setVideosLoaded] = useState(false)
+	// const [videosLoaded, setVideosLoaded] = useState(false)
 	const [checkIn, setCheckIn] = useState('')
 	const [checkOut, setCheckOut] = useState('')
 	const [adultos, setAdultos] = useState('')
@@ -29,7 +29,7 @@ export function Principal({
 	const [email, setEmail] = useState('')
 	const [formError, setFormError] = useState('')
 	const [minCheckOutDate, setMinCheckOutDate] = useState('')
-	const [currentIndex, setCurrentIndex] = useState(0) // Estado para controlar el índice actual del video
+	// const [currentIndex, setCurrentIndex] = useState(0) // Estado para controlar el índice actual del video
 	const today = new Date()
 	const year = today.getFullYear()
 	let month = (today.getMonth() + 1).toString() // Convertir a string
@@ -49,9 +49,10 @@ export function Principal({
 	// Usar esta fecha mínima en los campos de fecha
 	const [minCheckInDate] = useState(minDate)
 
-	const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/dron1.mp4'
-	const video1 = `https://newfarfalle.s3.sa-east-1.amazonaws.com/Veronica+Garcia's+V%C3%ADdeo+-+May+9%2C+2024.mp4`
-	const video2 = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/dron2.mp4'
+	const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/principal.mp4'
+	// const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/dron1.mp4'
+	// const video1 = `https://newfarfalle.s3.sa-east-1.amazonaws.com/Veronica+Garcia's+V%C3%ADdeo+-+May+9%2C+2024.mp4`
+	// const video2 = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/dron2.mp4'
 
 	const handleClick = () => {
 		const sectionReservas = sectionReservasRef.current
@@ -67,11 +68,6 @@ export function Principal({
 			sectionTop.scrollIntoView({ behavior: 'smooth' })
 		}
 	}
-
-	// const handleVideosLoad = () => {
-	// 	// Se ejecuta cuando todos los videos se han cargado
-	// 	setVideosLoaded(true)
-	// }
 
 	const handleCheckInChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const selectedDate = new Date(event.target.value)
@@ -215,11 +211,11 @@ export function Principal({
 		}
 	}
 
-	const handleVideoChange = (index: number) => {
-		setVideosLoaded(true)
-		// Actualiza el índice actual del video
-		setCurrentIndex(index)
-	}
+	// const handleVideoChange = (index: number) => {
+	// 	setVideosLoaded(true)
+	// 	// Actualiza el índice actual del video
+	// 	setCurrentIndex(index)
+	// }
 
 	return (
 		<div className='flex flex-col items-center justify-around'>
@@ -228,13 +224,21 @@ export function Principal({
 					isMobile ? ` h-72` : ` h-72 `
 				} relative w-full max-w-full overflow-hidden max-h-72`}
 			>
-				{!videosLoaded && (
+				{/* {!videosLoaded && (
 					// Indicador de carga mientras los videos se están cargando
 					<div className='absolute inset-0 flex items-center justify-center w-full h-full bg-orangeDark bg-opacity-50'>
 						<p className='text-white'>Cargando...</p>
 					</div>
-				)}
-				<Carousel
+				)} */}
+				<video
+					className='w-full object-cover object-center h-72 max-h-72 transition-shadow'
+					autoPlay
+					playsInline
+					loop
+				>
+					<source src={video} type='video/mp4' />
+				</video>
+				{/* <Carousel
 					className={`w-full h-260 ${
 						isMobile ? 'max-w-screen-sm mx-auto' : ''
 					}`}
@@ -258,7 +262,7 @@ export function Principal({
 							<VideoLazyLoad src={item} type='video/mp4' />
 						</div>
 					))}
-				</Carousel>
+				</Carousel> */}
 			</section>
 			<p
 				className={`text-justify text-black text-opacity-90 pb-3 ${
