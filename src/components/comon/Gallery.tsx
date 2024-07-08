@@ -30,11 +30,24 @@ const ImageUploader = ({ media, onClick }: GalleryProps) => {
 								}}
 							/>
 						) : (
+							// <video
+							// 	className='flex w-full h-full object-contain object-center cursor-pointer'
+							// 	controls
+							// >
+							// 	<source src={item.url} type='video/mp4' />
+							// </video>
 							<video
-								className='flex w-full h-full object-contain object-center cursor-pointer'
+								className='w-full h-full cursor-pointer'
 								controls
+								style={{
+									objectFit: 'contain',
+									display: 'block',
+									maxWidth: '100%',
+									height: '100%',
+								}}
 							>
 								<source src={item.url} type='video/mp4' />
+								Tu navegador no soporta la reproducción de videos.
 							</video>
 						)}
 					</ImageListItem>

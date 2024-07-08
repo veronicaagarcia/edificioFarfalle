@@ -120,7 +120,7 @@ export function Contacto() {
 
 	return (
 		<section className='w-10/12 mx-auto h-screen flex flex-col overflow-y-auto pt-4 lg:pt-16 pb-28 font-thin font-serif italic text-black bg-creme opacity-95'>
-			<p className='px-8 md:px-16 mb-8'>
+			<p className='px-8 md:px-16 mb-8 text-justify'>
 				En Edificio Farfalle, estamos siempre a su disposición para responder
 				cualquier consulta o necesidad que pueda tener. Puede contactarnos a
 				través de los siguientes medios:
