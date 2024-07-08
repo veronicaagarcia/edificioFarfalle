@@ -51,7 +51,7 @@ const StarRating = ({
 }
 
 const BookingRatingChart = () => {
-	const score = 9.9
+	const score = 9.4
 	const maxScore = 10
 
 	useEffect(() => {
@@ -90,7 +90,7 @@ const BookingRatingChart = () => {
 	return (
 		<div className='flex flex-col justify-center items-center'>
 			<h2 className='text-xs md:text-base text-blue-700'>
-				Excepcional - Booking
+				Fantástico - Booking
 				<span className='pl-2 text-xs md:text-base text-blue-700'>
 					{score.toFixed(1)}
 				</span>
@@ -176,7 +176,7 @@ export function RatingCharts() {
 					<AirbnbRatingChart />
 				</div>
 				<p className='pt-2 text-xs text-center w-full font-extralight text-gray'>
-					Reviews score 31 mayo 2024
+					Reviews score 8 julio 2024
 				</p>
 			</div>
 		</>

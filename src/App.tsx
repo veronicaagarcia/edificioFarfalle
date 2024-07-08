@@ -12,7 +12,6 @@ import { PbB } from './components/PlantaBajaB'
 import { PrimeroA } from './components/PrimeroA'
 import { PrimeroB } from './components/PrimeroB'
 import { SegundoB } from './components/SegundoB'
-// import { ZonasComunes } from './components/ZonasComunes'
 import { Servicios } from './components/Servicios'
 import { Contacto } from './components/Contacto'
 import './App.css'
@@ -74,10 +73,6 @@ function App() {
 								path='edificioFarfalle/Departamentos/2-B'
 								element={<SegundoB />}
 							/>
-							{/* <Route
-								path='edificioFarfalle/ZonasComunes'
-								element={<ZonasComunes />}
-							/> */}
 							<Route
 								path='edificioFarfalle/Servicios'
 								element={<Servicios />}

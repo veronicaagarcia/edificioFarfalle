@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { IconButton } from '@mui/material'
-// import { PlayArrow } from '@mui/icons-material'
 
 interface Video {
 	video: string
@@ -73,9 +72,7 @@ export function VideoModel({ video, videoSizeMultiplier }: Video) {
 				controls
 			/>
 			<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-				<IconButton>
-					{/* <PlayArrow className='text-orange bg-creme p-1 rounded-full' /> */}
-				</IconButton>
+				<IconButton></IconButton>
 			</div>
 		</div>
 	)

@@ -9,7 +9,6 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
 import { Card } from '@mui/material'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
-// import { Footer } from './comon/Footer'
 
 export function Contacto() {
 	const [message, setMessage] = useState('')
@@ -72,7 +71,7 @@ export function Contacto() {
 				'template_p80tkf5', // Reemplaza 'YOUR_TEMPLATE_ID' con tu Template ID de EmailJS
 				{
 					from_name: email,
-					to_email: 'veroagarcia90@gmail.com', // Cambia esto por la dirección de correo electrónico a la que deseas enviar el mensaje
+					to_email: 'edificiofarfalle@gmail.com', // Cambia esto por la dirección de correo electrónico a la que deseas enviar el mensaje
 					nombre: nombre,
 					message: message,
 					email: email,
@@ -120,9 +119,14 @@ export function Contacto() {
 	}
 
 	return (
-		<section className='w-11/12 mx-auto h-screen flex flex-col overflow-y-auto pt-4 lg:pt-16 pb-28 font-thin font-serif italic text-black bg-creme opacity-90'>
+		<section className='w-10/12 mx-auto h-screen flex flex-col overflow-y-auto pt-4 lg:pt-16 pb-28 font-thin font-serif italic text-black bg-creme opacity-95'>
+			<p className='px-8 md:px-16 mb-8'>
+				En Edificio Farfalle, estamos siempre a su disposición para responder
+				cualquier consulta o necesidad que pueda tener. Puede contactarnos a
+				través de los siguientes medios:
+			</p>
 			<div className='flex flex-col md:flex-row justify-start w-full h-fit py-2 pr-14 relative'>
-				<div className='w-10/12 md:w-1/3 h-52 flex flex-col justify-between mt-4 md:mt-0 -ml-1 md:ml-0'>
+				<div className='w-10/12 md:w-1/3 h-60 md:h-72 flex flex-col justify-between mt-4 md:mt-0 -ml-1 md:ml-0'>
 					<Card
 						style={{
 							backgroundColor: '#402e32',
@@ -136,17 +140,17 @@ export function Contacto() {
 							to='https://api.whatsapp.com/send?phone=542216342322&text=Hola%20Mat%C3%ADas!%20Quero%20m%C3%A1s%20info%20sobre%20el%20alquiler%20temporario.'
 							target='_blanck'
 						>
-							<h5 className='text-white hover:text-green-700 text-lg items-center sm:text-lg flex justify-center'>
+							<h5 className='text-white hover:text-green-700 text-lg items-center sm:text-lg flex justify-start pl-2'>
+								<WhatsAppIcon
+									color='success'
+									className='pr-2'
+									fontSize='large'
+								/>
 								<span className='hidden md:block'>
 									{hovered === 'Contactanos'
 										? 'Estamos para asesorarte'
 										: 'Contactanos'}
 								</span>
-								<WhatsAppIcon
-									color='success'
-									className='pl-2'
-									fontSize='large'
-								/>
 							</h5>
 						</Link>
 					</Card>
@@ -163,15 +167,15 @@ export function Contacto() {
 							to='https://www.instagram.com/edificiofarfalle/'
 							target='_blanck'
 						>
-							<h5 className='text-white hover:text-pink-700 text-lg sm:text-lg flex items-center justify-center'>
-								<span className='hidden md:block'>
-									{hovered === 'Seguinos' ? 'Estamos en instagram' : 'Seguinos'}
-								</span>
+							<h5 className='text-white hover:text-pink-700 text-lg sm:text-lg flex items-center justify-start pl-2'>
 								<InstagramIcon
-									className='pl-2'
+									className='pr-2'
 									color='error'
 									fontSize='large'
 								/>
+								<span className='hidden md:block'>
+									{hovered === 'Seguinos' ? 'Estamos en instagram' : 'Seguinos'}
+								</span>
 							</h5>
 						</Link>
 					</Card>
@@ -186,17 +190,17 @@ export function Contacto() {
 					>
 						<button
 							onClick={openGoogleMaps}
-							className='flex justify-center items-center text-center mx-auto'
+							className='flex justify-start items-center'
 						>
-							<h5 className='text-white hover:text-blue-500 text-lg flex justify-center items-center text-center'>
-								<span className='hidden md:block'>
-									{hovered === 'Encontranos' ? 'Ver en el mapa' : 'Encontranos'}
-								</span>
+							<h5 className='text-white hover:text-blue-500 text-lg sm:text-lg flex items-center justify-start pl-2'>
 								<LocationOnIcon
-									className='pl-2'
+									className='pr-2'
 									color='info'
 									fontSize='large'
 								/>
+								<span className='hidden md:block'>
+									{hovered === 'Encontranos' ? 'Ver en el mapa' : 'Encontranos'}
+								</span>
 							</h5>
 						</button>
 					</Card>
@@ -210,21 +214,21 @@ export function Contacto() {
 						onMouseLeave={handleMouseLeave}
 					>
 						<a
-							href='mailto:matias.zocco@osde.com.ar'
+							href='mailto:edificiofarfalle@gmail.com'
 							target='_blank'
 							rel='noopener noreferrer'
 						>
-							<h5 className='text-white hover:text-nav text-lg flex justify-center items-center text-center'>
-								<span className='hidden md:block'>
-									{hovered === 'Escribinos'
-										? 'A matias.zocco@osde.com.ar'
-										: 'Escribinos'}
-								</span>
+							<h5 className='text-white hover:text-nav text-lg sm:text-lg flex items-center justify-start pl-2'>
 								<EmailOutlinedIcon
-									className='pl-2'
+									className='pr-2'
 									fontSize='large'
 									color='secondary'
 								/>
+								<span className='hidden md:block'>
+									{hovered === 'Escribinos'
+										? 'A edificiofarfalle@gmail.com'
+										: 'Escribinos'}
+								</span>
 							</h5>
 						</a>
 					</Card>
@@ -234,13 +238,9 @@ export function Contacto() {
 						backgroundColor: '#fefdfd',
 						transition: 'background-color 0.3s',
 					}}
-					className='py-1 px-2 h-72 rounded-full w-9/12 mx-auto md:w-2/5 hover:opacity-90 hover:shadow-2xl shadow-black opacity-85 absolute top-0 right-4 md:right-52'
+					className='py-1 px-2 h-72 rounded-full w-9/12 mx-auto md:w-1/2 hover:opacity-90 hover:shadow-2xl shadow-black opacity-85 absolute top-0 right-4 md:right-20'
 				>
-					<form
-						// method='post'
-						// action='/api/enviar-email'
-						className='p-4 mx-auto w-11/12 h-80 flex flex-col justify-evenly'
-					>
+					<form className='p-4 mx-auto w-11/12 h-80 flex flex-col justify-evenly'>
 						<input
 							className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 							id='nombre'
@@ -272,9 +272,12 @@ export function Contacto() {
 						<button
 							type='button'
 							onClick={handleSubmit}
-							className='group relative inline-flex mb-4 h-10 items-center justify-center overflow-hidden rounded-md bg-orangeDark font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
+							className='group relative inline-flex mb-4 h-10 items-center justify-center overflow-hidden rounded-md bg-orange md:bg-black px-4 font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
 						>
-							<span className='relative'>Enviar</span>
+							<span className='relative text-base font-lato'>Enviar</span>
+							<div className='absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]'>
+								<div className='relative h-full w-8 bg-white/20'></div>
+							</div>
 						</button>
 					</form>
 				</Card>

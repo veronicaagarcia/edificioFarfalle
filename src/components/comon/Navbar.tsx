@@ -1,6 +1,6 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { useState, ReactNode } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { Card } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import { FaCalendarCheck } from 'react-icons/fa'
@@ -8,7 +8,7 @@ import logoFarfalle from '../../assets/222.png'
 import close from '../../assets/close.svg'
 import menu from '../../assets/menu.svg'
 
-interface NavLinkProps {
+interface NavLinksProps {
 	to?: string
 	exact?: boolean
 	activeClassName?: string
@@ -30,14 +30,14 @@ export function Navbar({
 }: NavbarProps) {
 	const [openCloseMenu, setOpenCloseMenu] = useState(false)
 
-	function NavLink({
+	function NavLinks({
 		to,
 		exact,
 		activeClassName,
 		className,
 		children,
 		onClick,
-	}: NavLinkProps) {
+	}: NavLinksProps) {
 		const location = useLocation()
 		const isActive = to
 			? exact
@@ -66,13 +66,13 @@ export function Navbar({
 			}
 		}
 		return to ? (
-			<Link
+			<NavLink
 				to={to}
-				className={`${className} ${isLinkActive ? activeClassName : ''}`}
+				className={`${className} ${isLinkActive && activeClassName}`}
 				onClick={handleClick}
 			>
 				{children}
-			</Link>
+			</NavLink>
 		) : (
 			<span className={className} onClick={handleClick}>
 				{children}
@@ -140,10 +140,10 @@ export function Navbar({
 					isMobile
 						? `h-fit absolute bottom-1/4 flex flex-col self-end justify-center p-2 gap-2${
 								openCloseMenu
-									? 'w-36 h-fit z-50 absolute top-0 border-transparent rounded-tl-xl rounded-bl-xl right-0 p-5 shadow-sm bg-nav pb-36 pt-5'
+									? 'w-36 h-fit z-50 absolute top-0 border-transparent rounded-tl-xl rounded-bl-xl right-0 p-5 shadow-sm bg-gradient-to-b from-nav to-black pb-36 pt-5'
 									: 'w-16 h-16 my-auto mr-3'
 						  }`
-						: 'flex items-center w-full bg-nav justify-around p-2 rounded-xl rounded-tl-none rounded-tr-none -mb-2 z-10'
+						: 'flex items-center w-full bg-gradient-to-b from-nav to-black justify-around py-4 px-10 rounded-xl rounded-tl-none rounded-tr-none -mb-2 z-10'
 				}`}
 			>
 				{isMobile ? (
@@ -165,7 +165,7 @@ export function Navbar({
 				) : (
 					''
 				)}
-				<NavLink
+				<NavLinks
 					className={`${
 						isMobile
 							? `text-white hover:text-orange ${
@@ -173,15 +173,15 @@ export function Navbar({
 							  }`
 							: 'text-white hover:text-orange text-base'
 					}`}
-					activeClassName='text-amber-600'
+					activeClassName='text-orange'
 					onClick={handleReservasClick}
 				>
 					<FaCalendarCheck
 						className='mr-2 cursor-pointer'
 						title='Consultar disponibilidad'
 					/>
-				</NavLink>
-				<NavLink
+				</NavLinks>
+				<NavLinks
 					className={`${
 						isMobile
 							? `text-white hover:text-orange ${
@@ -189,13 +189,13 @@ export function Navbar({
 							  }`
 							: 'text-white hover:text-orange text-base'
 					}`}
-					activeClassName='text-amber-600'
+					activeClassName='text-orange'
 					exact
 					to={'/edificioFarfalle/'}
 				>
 					Principal
-				</NavLink>
-				<NavLink
+				</NavLinks>
+				<NavLinks
 					className={`${
 						isMobile
 							? `text-white hover:text-orange ${
@@ -203,13 +203,13 @@ export function Navbar({
 							  }`
 							: 'text-white hover:text-orange text-base'
 					}`}
-					activeClassName='text-amber-600'
+					activeClassName='text-orange'
 					exact
 					to={'/edificioFarfalle/Departamentos'}
 				>
 					Departamentos
-				</NavLink>
-				<NavLink
+				</NavLinks>
+				<NavLinks
 					className={`${
 						isMobile
 							? `text-white hover:text-orange ${
@@ -217,13 +217,13 @@ export function Navbar({
 							  }`
 							: 'text-white hover:text-orange text-base'
 					}`}
-					activeClassName='text-amber-600'
+					activeClassName='text-orange'
 					exact
 					to={'/edificioFarfalle/Servicios'}
 				>
 					Servicios
-				</NavLink>
-				<NavLink
+				</NavLinks>
+				<NavLinks
 					className={`${
 						isMobile
 							? `text-white hover:text-orange ${
@@ -231,12 +231,12 @@ export function Navbar({
 							  }`
 							: 'text-white hover:text-orange text-base'
 					}`}
-					activeClassName='text-amber-600'
+					activeClassName='text-orange'
 					exact
 					to={'/edificioFarfalle/Contacto'}
 				>
 					Contacto
-				</NavLink>
+				</NavLinks>
 				<a
 					href='https://api.whatsapp.com/send?phone=542216342322&text=Hola%20Mat%C3%ADas!%20Quero%20m%C3%A1s%20info%20sobre%20el%20alquiler%20temporario.'
 					target='_blank'

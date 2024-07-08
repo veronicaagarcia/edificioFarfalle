@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { DeptoModel } from './comon/DeptoModel'
-// import { Footer } from './comon/Footer'
 import Gallery from './comon/Gallery'
 
 export function SegundoB() {
@@ -65,10 +64,7 @@ export function SegundoB() {
 			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1CfLav5VVdlJJcLLzR_h0pkBBzzuJXWoE',
 		},
 
-		// Añade más imágenes aquí...
 		{ type: 'video', url: completo },
-
-		// Añade más videos aquí...
 	]
 	const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(
 		null
@@ -84,16 +80,15 @@ export function SegundoB() {
 
 	return (
 		<div className='w-full h-screen pb-32 pt-8 overflow-y-auto mb-4'>
+			<h2 className='font-bold font-serif italic text-base md:text-lg text-center text-orangeDark mt-4'>
+				Segundo B
+			</h2>
+			<h3 className='text-base text-center md:text-lg font-extralight text-black opacity-80 mb-4'>
+				80m²
+			</h3>
 			<div className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 py-4'>
-				<section className='w-full lg:w-1/3 h-fit mb-24 flex flex-col px-5 pt-2'>
-					<ul className='list-disc list-inside text-sm text-black  p-4 '>
-						<h2 className='font-bold font-serif italic text-base md:text-lg text-center  text-orangeDark'>
-							Segundo B
-						</h2>
-						<h3 className='text-base text-center md:text-lg font-extralight text-black opacity-80'>
-							80m²
-						</h3>
-
+				<section className='w-full md:w-1/2 lg:w-1/3 h-fit mb-24 flex flex-col px-5 pt-2'>
+					<ul className='list-disc list-inside text-sm py-4 px-6 text-white bg-gradient-to-b from-nav to-black rounded-md'>
 						<li>Cama matrimonial</li>
 						<li>Sofá cama con carrión para 2 personas</li>
 						<li>Placard</li>
@@ -133,7 +128,6 @@ export function SegundoB() {
 					initialIndex={selectedMediaIndex}
 				/>
 			)}
-			{/* <Footer /> */}
 		</div>
 	)
 }

@@ -31,20 +31,12 @@ export function Servicios() {
 					<div className='absolute top-0 left-0 w-full h-full rounded-lg bg-black opacity-40 z-10'></div>
 					{/* Contenido superpuesto */}
 					<div className='absolute w-9/12 md:w-1/2 top-2 md:top-24 right-10 md:right-24 z-20 text-white text-center'>
-						<h3 className=' text-base p-8 md:p-4 border-2 border-nav md:text-2xl font-bold mb-4 rounded-lg'>
+						<h3 className='text-base p-8 md:p-6 border-2 border-nav md:text-xl lg:text-2xl font-bold mb-4 rounded-lg'>
 							Nuestros departamentos están completamente amueblados y equipados
 							con todas las comodidades necesarias para una estadía confortable
 							y placentera.
 						</h3>
 					</div>
-					{/* <video
-						className='absolute top-0 right-0 w-4/12 h-96 object-cover z-0'
-						autoPlay
-						muted
-						loop
-					>
-						<source src={video} type='video/mp4' />
-					</video> */}
 				</div>
 
 				<ul className='w-full h-auto mx-auto mt-4 mb-20 flex flex-col justify-center sm:flex-row sm:justify-between'>
