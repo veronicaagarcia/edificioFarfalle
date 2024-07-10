@@ -14,12 +14,13 @@ import { PrimeroB } from './components/PrimeroB'
 import { SegundoB } from './components/SegundoB'
 import { Servicios } from './components/Servicios'
 import { Contacto } from './components/Contacto'
+import { Reservas } from './components/Reservas'
 import './App.css'
 
 function App() {
 	const isStarted = useFarfalleStore((state) => state.isStarted)
 	const sectionTopRef = useRef(null)
-	const sectionReservasRef = useRef<HTMLDivElement>(null)
+	// const sectionReservasRef = useRef<HTMLDivElement>(null)
 	const isMobile = useMediaQuery('(max-width:640px)')
 
 	return (
@@ -36,15 +37,15 @@ function App() {
 						<Navbar
 							sectionTopRef={sectionTopRef}
 							isMobile={isMobile}
-							sectionReservasRef={sectionReservasRef}
+							// sectionReservasRef={sectionReservasRef}
 						/>
 						<Routes>
 							<Route
 								path='edificioFarfalle/'
 								element={
 									<Principal
-										sectionTopRef={sectionTopRef}
-										sectionReservasRef={sectionReservasRef}
+										// sectionTopRef={sectionTopRef}
+										// sectionReservasRef={sectionReservasRef}
 										isMobile={isMobile}
 									/>
 								}
@@ -78,6 +79,7 @@ function App() {
 								element={<Servicios />}
 							/>
 							<Route path='edificioFarfalle/Contacto' element={<Contacto />} />
+							<Route path='edificioFarfalle/Reservas' element={<Reservas />} />
 						</Routes>
 					</BrowserRouter>
 				</main>

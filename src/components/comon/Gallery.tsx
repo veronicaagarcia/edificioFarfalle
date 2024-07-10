@@ -45,6 +45,12 @@ const ImageUploader = ({ media, onClick }: GalleryProps) => {
 									maxWidth: '100%',
 									height: '100%',
 								}}
+								playsInline
+								//  para evitar que el navegador móvil intente reproducir el video en pantalla completa automáticamente
+								preload='metadata'
+								onError={(e) => {
+									console.error('Error al reproducir el video:', e)
+								}}
 							>
 								<source src={item.url} type='video/mp4' />
 								Tu navegador no soporta la reproducción de videos.

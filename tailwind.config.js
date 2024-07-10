@@ -6,14 +6,16 @@ export default {
       colors: {
         transparent: "transparent",
         white: "#fefdfd",
-        gray: "#dfe0df",
+        gray: "#cccccc",
         orange: "#fa9336",
-        creme: "#f2e2de",
-        orangeDark:"#a36c5e",
+        orangeSoft:'#ff9e65',
+        creme: "#fff7ef",
+        orangeDark: "#a36c5e",
         black: "#402e32",
         almostWhite: "#fefdfd",
-        nav: "#865d95"
-      
+        nav: "#ffac92",
+        footer: "#402e32",
+        footerLine: "#d3d3d3",
       },
       fontFamily: {
         'great-vibes': ['Great Vibes', 'cursive'],

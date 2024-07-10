@@ -9,6 +9,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
 import { Card } from '@mui/material'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { Footer } from './comon/Footer'
 
 export function Contacto() {
 	const [message, setMessage] = useState('')
@@ -119,126 +120,31 @@ export function Contacto() {
 	}
 
 	return (
-		<section className='w-10/12 mx-auto h-screen flex flex-col overflow-y-auto pt-4 lg:pt-16 pb-28 font-thin font-serif italic text-black bg-creme opacity-95'>
-			<p className='px-8 md:px-16 mb-8 text-justify'>
-				En Edificio Farfalle, estamos siempre a su disposición para responder
-				cualquier consulta o necesidad que pueda tener. Puede contactarnos a
-				través de los siguientes medios:
+		<section className='pt-12 pb-32 h-min-screen h-full overflow-y-scroll'>
+			<h2 className='text-2xl md:text-3xl text-center text-orangeSoft text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 font-bold'>
+				Contáctanos
+			</h2>
+			<p className='text-justify text-black text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 text-base md:text-lg'>
+				En <strong className='text-nav'>Edificio Farfalle</strong>, estamos
+				siempre a su disposición para responder cualquier consulta o necesidad
+				que pueda tener. Puede contactarnos a través de los siguientes medios:
 			</p>
-			<div className='flex flex-col md:flex-row justify-start w-full h-fit py-2 pr-14 relative'>
-				<div className='w-10/12 md:w-1/3 h-60 md:h-72 flex flex-col justify-between mt-4 md:mt-0 -ml-1 md:ml-0'>
-					<Card
-						style={{
-							backgroundColor: '#402e32',
-							transition: 'background-color 0.3s',
-						}}
-						className='py-0 md:py-1 px-0 md:px-2 rounded-none md:rounded-full w-12 md:w-48 md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
-						onMouseEnter={() => handleMouseEnter('Contactanos')}
-						onMouseLeave={handleMouseLeave}
-					>
-						<Link
-							to='https://api.whatsapp.com/send?phone=542216342322&text=Hola%20Mat%C3%ADas!%20Quero%20m%C3%A1s%20info%20sobre%20el%20alquiler%20temporario.'
-							target='_blanck'
-						>
-							<h5 className='text-white hover:text-green-700 text-lg items-center sm:text-lg flex justify-start pl-2'>
-								<WhatsAppIcon
-									color='success'
-									className='pr-2'
-									fontSize='large'
-								/>
-								<span className='hidden md:block'>
-									{hovered === 'Contactanos'
-										? 'Estamos para asesorarte'
-										: 'Contactanos'}
-								</span>
-							</h5>
-						</Link>
-					</Card>
-					<Card
-						style={{
-							backgroundColor: '#402e32',
-							transition: 'background-color 0.3s',
-						}}
-						className='py-0 md:py-1 px-0 md:px-2 rounded-none md:rounded-full w-12 md:w-48 md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
-						onMouseEnter={() => handleMouseEnter('Seguinos')}
-						onMouseLeave={handleMouseLeave}
-					>
-						<Link
-							to='https://www.instagram.com/edificiofarfalle/'
-							target='_blanck'
-						>
-							<h5 className='text-white hover:text-pink-700 text-lg sm:text-lg flex items-center justify-start pl-2'>
-								<InstagramIcon
-									className='pr-2'
-									color='error'
-									fontSize='large'
-								/>
-								<span className='hidden md:block'>
-									{hovered === 'Seguinos' ? 'Estamos en instagram' : 'Seguinos'}
-								</span>
-							</h5>
-						</Link>
-					</Card>
-					<Card
-						style={{
-							backgroundColor: '#402e32',
-							transition: 'background-color 0.3s',
-						}}
-						className='py-0 md:py-1 px-0 md:px-2 rounded-none md:rounded-full w-12 md:w-48 md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
-						onMouseEnter={() => handleMouseEnter('Encontranos')}
-						onMouseLeave={handleMouseLeave}
-					>
-						<button
-							onClick={openGoogleMaps}
-							className='flex justify-start items-center'
-						>
-							<h5 className='text-white hover:text-blue-500 text-lg sm:text-lg flex items-center justify-start pl-2'>
-								<LocationOnIcon
-									className='pr-2'
-									color='info'
-									fontSize='large'
-								/>
-								<span className='hidden md:block'>
-									{hovered === 'Encontranos' ? 'Ver en el mapa' : 'Encontranos'}
-								</span>
-							</h5>
-						</button>
-					</Card>
-					<Card
-						style={{
-							backgroundColor: '#402e32',
-							transition: 'background-color 0.3s',
-						}}
-						className='py-0 md:py-1 px-0 md:px-2 rounded-none md:rounded-full w-12 md:w-48 md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
-						onMouseEnter={() => handleMouseEnter('Escribinos')}
-						onMouseLeave={handleMouseLeave}
-					>
-						<a
-							href='mailto:edificiofarfalle@gmail.com'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<h5 className='text-white hover:text-nav text-lg sm:text-lg flex items-center justify-start pl-2'>
-								<EmailOutlinedIcon
-									className='pr-2'
-									fontSize='large'
-									color='secondary'
-								/>
-								<span className='hidden md:block'>
-									{hovered === 'Escribinos'
-										? 'A edificiofarfalle@gmail.com'
-										: 'Escribinos'}
-								</span>
-							</h5>
-						</a>
-					</Card>
-				</div>
+			<div
+				className='flex justify-center w-full h-fit pl-6 md:pl-56 py-10 relative'
+				style={{
+					backgroundImage:
+						'url("https://images.unsplash.com/photo-1720180320321-2a3d719d14f8?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+					height: '370px',
+				}}
+			>
 				<Card
 					style={{
-						backgroundColor: '#fefdfd',
+						backgroundColor: '#402e32',
 						transition: 'background-color 0.3s',
 					}}
-					className='py-1 px-2 h-72 rounded-full w-9/12 mx-auto md:w-1/2 hover:opacity-90 hover:shadow-2xl shadow-black opacity-85 absolute top-0 right-4 md:right-20'
+					className=' py-1 px-2 h-72 rounded-full mx-auto w-2/3 md:w-1/2 hover:opacity-90 hover:shadow-2xl shadow-black opacity-85'
 				>
 					<form className='p-4 mx-auto w-11/12 h-80 flex flex-col justify-evenly'>
 						<input
@@ -272,7 +178,7 @@ export function Contacto() {
 						<button
 							type='button'
 							onClick={handleSubmit}
-							className='group relative inline-flex mb-4 h-10 items-center justify-center overflow-hidden rounded-md bg-orange md:bg-black px-4 font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
+							className='group relative inline-flex mb-4 h-10 items-center justify-center overflow-hidden rounded-md bg-orange md:bg-nav px-4 font-medium text-neutral-200 transition hover:bg-orange hover:scale-110'
 						>
 							<span className='relative text-base font-lato'>Enviar</span>
 							<div className='absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]'>
@@ -281,31 +187,170 @@ export function Contacto() {
 						</button>
 					</form>
 				</Card>
+				<div className='w-1/3 md:w-1/2 h-60 md:h-72 flex flex-col justify-around -ml-1 mt-4 md:mt-0'>
+					<Card
+						style={{
+							backgroundColor: '#402e32',
+							transition: 'background-color 0.3s',
+						}}
+						className='py-0  px-0  rounded-none md:rounded-full w-20  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
+						onMouseEnter={() => handleMouseEnter('Contactanos')}
+						onMouseLeave={handleMouseLeave}
+					>
+						<Link
+							to='https://api.whatsapp.com/send?phone=542216342322&text=Hola%20Mat%C3%ADas!%20Quero%20m%C3%A1s%20info%20sobre%20el%20alquiler%20temporario.'
+							target='_blanck'
+						>
+							<h5 className='text-white hover:text-green-700 text-lg items-center sm:text-lg flex justify-start pl-2'>
+								<WhatsAppIcon
+									color='success'
+									className='pr-2'
+									fontSize='large'
+								/>
+								<span className='hidden md:block'>
+									{hovered === 'Contactanos'
+										? 'Contactanos, estamos para asesorarte'
+										: ' '}
+								</span>
+							</h5>
+						</Link>
+					</Card>
+					<Card
+						style={{
+							backgroundColor: '#402e32',
+							transition: 'background-color 0.3s',
+						}}
+						className='py-0  px-0  rounded-none md:rounded-full w-16  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
+						onMouseEnter={() => handleMouseEnter('Seguinos')}
+						onMouseLeave={handleMouseLeave}
+					>
+						<Link
+							to='https://www.instagram.com/edificiofarfalle/'
+							target='_blanck'
+						>
+							<h5 className='text-white hover:text-pink-700 text-lg sm:text-lg flex items-center justify-start pl-2'>
+								<InstagramIcon
+									className='pr-2'
+									color='error'
+									fontSize='large'
+								/>
+								<span className='hidden md:block'>
+									{hovered === 'Seguinos'
+										? 'Seguinos, estamos en instagram'
+										: ' '}
+								</span>
+							</h5>
+						</Link>
+					</Card>
+					<Card
+						style={{
+							backgroundColor: '#402e32',
+							transition: 'background-color 0.3s',
+						}}
+						className='py-0  px-0  rounded-none md:rounded-full w-14  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
+						onMouseEnter={() => handleMouseEnter('Encontranos')}
+						onMouseLeave={handleMouseLeave}
+					>
+						<button
+							onClick={openGoogleMaps}
+							className='flex justify-start items-center'
+						>
+							<h5 className='text-white hover:text-blue-500 text-lg sm:text-lg flex items-center justify-start pl-2'>
+								<LocationOnIcon
+									className='pr-2'
+									color='info'
+									fontSize='large'
+								/>
+								<span className='hidden md:block'>
+									{hovered === 'Encontranos' ? 'Ver en el mapa' : ' '}
+								</span>
+							</h5>
+						</button>
+					</Card>
+					<Card
+						style={{
+							backgroundColor: '#402e32',
+							transition: 'background-color 0.3s',
+						}}
+						className='py-0  px-0  rounded-none md:rounded-full w-12  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
+						onMouseEnter={() => handleMouseEnter('Escribinos')}
+						onMouseLeave={handleMouseLeave}
+					>
+						<a
+							href='mailto:edificiofarfalle@gmail.com'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<h5 className='text-white hover:text-nav text-lg sm:text-lg flex items-center justify-start pl-2'>
+								<EmailOutlinedIcon
+									className='pr-2'
+									fontSize='large'
+									color='secondary'
+								/>
+								<span className='hidden md:block'>
+									{hovered === 'Escribinos'
+										? 'Escribinos a edificiofarfalle@gmail.com'
+										: ' '}
+								</span>
+							</h5>
+						</a>
+					</Card>
+				</div>
 			</div>
-			<div className='h-fit md:h-600 w-10/12 text-black mx-auto flex flex-col items-center rounded-xl mt-32 mb-4 '>
+			<h3 className='text-xl mt-4 md:mt-8 font-semibold text-orangeSoft text-center mb-8'>
+				Nuestra Ubicación
+			</h3>
+			<p className='text-justify text-black text-opacity-90 mb-12 px-3 md:px-28 text-base md:text-lg mt-4 '>
+				El Farfalle ofrece alojamiento confortable en el corazón de La Plata,
+				ideal tanto para turistas como para viajeros de negocios. Nuestra
+				ubicación estratégica te permite acceder fácilmente a los principales
+				puntos de interés de la ciudad:
+			</p>
+			<div className='h-fit w-10/12 text-black mx-auto flex flex-col items-center rounded-xl mt-8 mb-12'>
 				<div className='flex flex-col md:flex-row justify-between mx-auto items-center w-full h-fit'>
-					<div className='w-11/12 md:w-1/2 mb-4'>
+					<div className='w-11/12 md:w-1/2'>
 						{loading ? <CircularProgress color='inherit' /> : <Map />}
 					</div>
-					<div className='text-xs w-full md:w-1/2 p-1 px-5 font-thin font-serif text-black italic mb-4'>
-						<p className='text-base text-orange p-2'>
-							1770 Calle 62, 1904 La Plata, Argentina.
+					<div className='text-xs w-full md:w-1/2 p-1 px-5 text-black text-opacity-90 mb-4 text-justify'>
+						<p className='text-base'>
+							Dirección:{' '}
+							<span className='text-nav'>
+								{' '}
+								1770 Calle 62, 1900 La Plata, Argentina
+							</span>
 						</p>
-						<br />
+
 						<p>
-							El Farfalle ofrece alojamiento en La Plata, a 5,1 km del estadio
-							Ciudad de La Plata, a 5,9 km del Museo de la Plata y a 3,7 km de
-							la catedral de La Plata.
+							▪ A 5,1 km del Estadio Ciudad de La Plata, donde puedes disfrutar
+							de eventos deportivos y conciertos.
 						</p>
-						<br />
+
 						<p>
-							El hipódromo Roberto José Mouras está a 31 km del departamento. El
-							aeropuerto Jorge Newbery es el más cercano y está a 66 km del
-							Farfalle.
+							▪ A 5,9 km del Museo de la Plata, un destino imprescindible para
+							los amantes de la ciencia y la historia.
+						</p>
+
+						<p>
+							▪ A 3,7 km de la majestuosa Catedral de La Plata, un ícono
+							arquitectónico y religioso.
+						</p>
+						<p>
+							▪ Hipódromo Roberto José Mouras: Situado a 31 km, ideal para los
+							amantes de las carreras de caballos.
+						</p>
+						<p>
+							▪ Centro Comercial Paseo Rocha: A solo 10 minutos en coche, donde
+							puedes disfrutar de tiendas, restaurantes y entretenimiento.
+						</p>
+						<p>
+							▪ El Aeropuerto Jorge Newbery es el más cercano, a 66 km de El
+							Farfalle. Ofrecemos servicios de traslado desde y hacia el
+							aeropuerto bajo petición para tu comodidad.
 						</p>
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</section>
 	)
 }

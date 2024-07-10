@@ -1,10 +1,25 @@
-:root {
-	--background-body: #202020;
-	--orange: #df964e;
-	--black: #0e0e0e;
-}
 body {
 	margin: 0;
 	padding: 0;
-	background-color: var(--background-body);
+}
+@keyframes typewriter {
+	from {
+		width: 0;
+	}
+	to {
+		width: 102%;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.animate-typewriter {
+	animation: typewriter 4s steps(40) 1s 1 normal both;
 }

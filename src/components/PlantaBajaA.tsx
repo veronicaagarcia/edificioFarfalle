@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { DeptoModel } from './comon/DeptoModel'
 import { Gallery } from './comon/Gallery'
+import { DeptoIcons } from './comon/DeptoIcons'
+import { Footer } from './comon/Footer'
 
 export function PbA() {
 	interface Media {
@@ -59,37 +61,91 @@ export function PbA() {
 
 	return (
 		<div className='w-full h-screen pb-32 pt-8 overflow-y-auto mb-4'>
-			<h2 className='font-bold font-serif italic text-base md:text-lg text-center text-orangeDark mt-4'>
+			<h2 className='text-2xl md:text-3xl text-center text-orangeSoft text-opacity-90 mb-2 px-3 md:px-28 pt-2 md:pt-3 font-bold'>
 				Planta Baja A
 			</h2>
-			<h3 className='text-base text-center md:text-lg font-extralight text-black opacity-80 mb-4'>
+			<h3 className='text-base text-center md:text-lg font-semibold text-black opacity-80 mb-4'>
 				50m²
 			</h3>
-			<div className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 py-4'>
+			<div
+				className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 py-4'
+				style={{
+					backgroundImage:
+						'url("https://images.unsplash.com/photo-1670160942428-22ecf8aae0b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI2fHxhYnN0cmFjdCUyMGJhY2tncm91bmQlMjBibGFuY29zfGVufDB8MXwwfHx8Mg%3D%3D")',
+
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+				}}
+			>
 				<section className='w-full md:w-1/2 lg:w-1/3 h-fit mb-24 flex flex-col px-5 pt-2'>
-					<ul className='list-disc list-inside text-sm py-4 px-6 text-white bg-gradient-to-b from-nav to-black rounded-md'>
-						<li>Cama matrimonial</li>
-						<li>Sofá cama con carrión para 2 personas</li>
-						<li>Placard</li>
-						<li>Baño privado (Ducha, bidet, papel higiénico, jabón)</li>
-						<li>Patio interno</li>
-						<li>Tender</li>
-						<li>Mesa y sillas (para 4 personas)</li>
-						<li>Aire Acondicionado (frío/calor) en habitación y comedor</li>
-						<li>Heladera</li>
-						<li>Horno/hornallas</li>
-						<li>Electrodomésticos (pava eléctrica, tostadora y microondas)</li>
-						<li>Utensilios de cocina (cubiertos, platos, vasos, ollas)</li>
-						<li>
+					<ul className='list-disc list-inside text-sm md:text-base py-4 px-6 text-black opacity-90'>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Cama matrimonial
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Sofá cama con carrión para
+							2 personas
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Placard
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2 mb-4'>•</span>Baño privado (Ducha,
+							bidet, papel higiénico, jabón)
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Patio interno
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Tender
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Mesa y sillas (para 4
+							personas)
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2 mb-4'>•</span>Aire Acondicionado
+							(frío/calor) en habitación y comedor
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Heladera
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Horno/hornallas
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2 mb-4'>•</span>Electrodomésticos
+							(pava eléctrica, tostadora y microondas)
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2 mb-4'>•</span>Utensilios de cocina
+							(cubiertos, platos, vasos, ollas)
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2 mb-4'>•</span>
 							Elementos de limpieza (Detergente, esponja, virulana, ballerina,
 							trapo de piso, balde)
 						</li>
-						<li>Calefón</li>
-						<li>Cesto de basura (Cocina y baño)</li>
-						<li>Blanquería (toalla/toallón por persona y ropa de cama)</li>
-						<li>Wifi gratuito</li>
-						<li>TV por cable</li>
-						<li>Té y café de cortesía</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Calefón
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Cesto de basura (Cocina y
+							baño)
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2 mb-4'>•</span>Blanquería
+							(toalla/toallón por persona y ropa de cama)
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Wifi gratuito
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>TV por cable
+						</li>
+						<li className='flex items-center'>
+							<span className='text-nav mr-2'>•</span>Té y café de cortesía
+						</li>
 					</ul>
 				</section>
 				<div className='w-full pt-1 md:w-7/12 h-fit'>
@@ -108,6 +164,8 @@ export function PbA() {
 					initialIndex={selectedMediaIndex}
 				/>
 			)}
+			<DeptoIcons />
+			<Footer />
 		</div>
 	)
 }

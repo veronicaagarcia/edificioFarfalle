@@ -29,11 +29,11 @@ const StarRating = ({
 			// Si es la última estrella y la fracción no es un número entero,
 			// entonces consideramos el porcentaje restante
 			const remainingPercentage = (fraction % 1) * 100
-			if (remainingPercentage >= 70) {
+			if (remainingPercentage >= 90) {
 				// Si el porcentaje restante es 70% o más, usamos el icono de estrella llena
 				stars.push(<FaStar key={i} className='w-6 h-6 text-yellow-500' />)
 			} else if (remainingPercentage >= 1) {
-				// Si el porcentaje restante está entre 1% y 69%, usamos el icono de estrella a la mitad
+				// Si el porcentaje restante está entre 1 y 90, usamos el icono de estrella a la mitad
 				stars.push(
 					<FaStarHalfAlt key={i} className='w-6 h-6 text-yellow-500' />
 				)
@@ -167,7 +167,7 @@ const AirbnbRatingChart = () => {
 export function RatingCharts() {
 	return (
 		<>
-			<div className='w-full mx-auto h-fit bg-black opacity-60 rounded-lg p-2'>
+			<div className='w-full mx-auto h-fit bg-black rounded-lg opacity-80 p-2'>
 				<h3 className='text-center font-semibold text-lg md:text-xl text-white mb-2'>
 					Reseñas
 				</h3>
@@ -176,7 +176,7 @@ export function RatingCharts() {
 					<AirbnbRatingChart />
 				</div>
 				<p className='pt-2 text-xs text-center w-full font-extralight text-gray'>
-					Reviews score 8 julio 2024
+					Reviews score 10 julio 2024
 				</p>
 			</div>
 		</>

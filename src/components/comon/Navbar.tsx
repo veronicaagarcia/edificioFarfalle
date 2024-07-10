@@ -1,9 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { useState, ReactNode } from 'react'
-import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { Card } from '@mui/material'
-import WhatsAppIcon from '@mui/icons-material/WhatsApp'
-import { FaCalendarCheck } from 'react-icons/fa'
 import logoFarfalle from '../../assets/222.png'
 import close from '../../assets/close.svg'
 import menu from '../../assets/menu.svg'
@@ -20,14 +18,9 @@ interface NavLinksProps {
 interface NavbarProps {
 	sectionTopRef: React.MutableRefObject<null>
 	isMobile: boolean
-	sectionReservasRef: React.MutableRefObject<HTMLDivElement | null>
 }
 
-export function Navbar({
-	sectionTopRef,
-	isMobile,
-	sectionReservasRef,
-}: NavbarProps) {
+export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 	const [openCloseMenu, setOpenCloseMenu] = useState(false)
 
 	function NavLinks({
@@ -84,18 +77,6 @@ export function Navbar({
 		setOpenCloseMenu(!openCloseMenu)
 	}
 
-	const navigate = useNavigate()
-
-	const handleReservasClick = () => {
-		navigate('/edificioFarfalle/')
-		setTimeout(() => {
-			if (sectionReservasRef.current) {
-				sectionReservasRef.current.scrollIntoView({ behavior: 'smooth' })
-			}
-		}, 100) // Ajusta el tiempo de espera según sea necesario
-		setOpenCloseMenu(false)
-	}
-
 	return (
 		<Card
 			ref={sectionTopRef}
@@ -120,7 +101,7 @@ export function Navbar({
 			>
 				<img
 					className={`animate-pulse -mt-2 ${
-						isMobile ? `h-auto w-40 mb-5 -mt-4` : `h-auto w-200`
+						isMobile ? `h-auto w-44 mb-5 -mt-4 -ml-2` : `h-auto w-200`
 					}`}
 					src={logoFarfalle}
 					alt='Logo mariposa'
@@ -128,7 +109,7 @@ export function Navbar({
 				/>
 				<h1
 					className={`font-great-vibes ${
-						isMobile ? `-mt-16 ml-4 text-xl` : `-mt-16 text-3xl`
+						isMobile ? `-mt-16 ml-4 text-2xl` : `-mt-16 text-4xl`
 					} pb-2`}
 				>
 					Edificio Farfalle
@@ -140,10 +121,10 @@ export function Navbar({
 					isMobile
 						? `h-fit absolute bottom-1/4 flex flex-col self-end justify-center p-2 gap-2${
 								openCloseMenu
-									? 'w-36 h-fit z-50 absolute top-0 border-transparent rounded-tl-xl rounded-bl-xl right-0 p-5 shadow-sm bg-gradient-to-b from-nav to-black pb-36 pt-5'
+									? 'w-36 h-fit z-50 absolute top-0 border-transparent rounded-tl-xl rounded-bl-xl right-0 p-5 shadow-sm bg-nav pb-36 pt-5'
 									: 'w-16 h-16 my-auto mr-3'
 						  }`
-						: 'flex items-center w-full bg-gradient-to-b from-nav to-black justify-around py-4 px-10 rounded-xl rounded-tl-none rounded-tr-none -mb-2 z-10'
+						: 'flex items-center w-full bg-nav justify-around py-4 px-10  -mb-2 z-10'
 				}`}
 			>
 				{isMobile ? (
@@ -168,89 +149,77 @@ export function Navbar({
 				<NavLinks
 					className={`${
 						isMobile
-							? `text-white hover:text-orange ${
+							? `text-white hover:text-black ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-orange text-base'
+							: 'text-white hover:text-black text-lg font-semibold'
 					}`}
-					activeClassName='text-orange'
-					onClick={handleReservasClick}
-				>
-					<FaCalendarCheck
-						className='mr-2 cursor-pointer'
-						title='Consultar disponibilidad'
-					/>
-				</NavLinks>
-				<NavLinks
-					className={`${
-						isMobile
-							? `text-white hover:text-orange ${
-									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
-							  }`
-							: 'text-white hover:text-orange text-base'
-					}`}
-					activeClassName='text-orange'
+					activeClassName='text-black'
 					exact
 					to={'/edificioFarfalle/'}
 				>
-					Principal
+					Inicio
 				</NavLinks>
+				<p className='hidden sm:block text-white text-xl font-semibold'>|</p>
 				<NavLinks
 					className={`${
 						isMobile
-							? `text-white hover:text-orange ${
+							? `text-white hover:text-black ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-orange text-base'
+							: 'text-white hover:text-black text-lg font-semibold'
 					}`}
-					activeClassName='text-orange'
+					activeClassName='text-black'
 					exact
 					to={'/edificioFarfalle/Departamentos'}
 				>
 					Departamentos
 				</NavLinks>
+				<p className='hidden sm:block text-white text-xl font-semibold'>|</p>
 				<NavLinks
 					className={`${
 						isMobile
-							? `text-white hover:text-orange ${
+							? `text-white hover:text-black ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-orange text-base'
+							: 'text-white hover:text-black text-lg font-semibold'
 					}`}
-					activeClassName='text-orange'
+					activeClassName='text-black'
 					exact
 					to={'/edificioFarfalle/Servicios'}
 				>
 					Servicios
 				</NavLinks>
+				<p className='hidden sm:block text-white text-xl font-semibold'>|</p>
 				<NavLinks
 					className={`${
 						isMobile
-							? `text-white hover:text-orange ${
+							? `text-white hover:text-black ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-orange text-base'
+							: 'text-white hover:text-black text-lg font-semibold'
 					}`}
-					activeClassName='text-orange'
+					activeClassName='text-black'
 					exact
 					to={'/edificioFarfalle/Contacto'}
 				>
 					Contacto
 				</NavLinks>
-				<a
-					href='https://api.whatsapp.com/send?phone=542216342322&text=Hola%20Mat%C3%ADas!%20Quero%20m%C3%A1s%20info%20sobre%20el%20alquiler%20temporario.'
-					target='_blank'
-					rel='noopener noreferrer'
+				<p className='hidden sm:block text-white text-xl font-semibold'>|</p>
+				<NavLinks
 					className={`${
 						isMobile
-							? `text-white hover:text-green-900 ${
+							? `text-white hover:text-black ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-green-900 text-base'
+							: 'text-white hover:text-black text-lg font-semibold'
 					}`}
+					activeClassName='text-black'
+					exact
+					to={'/edificioFarfalle/Reservas'}
 				>
-					<WhatsAppIcon fontSize='small' />
-				</a>
+					Reservas
+				</NavLinks>
 			</div>
 		</Card>
 	)
