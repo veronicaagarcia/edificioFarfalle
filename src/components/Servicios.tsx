@@ -18,13 +18,13 @@ export function Servicios() {
 	return (
 		<section className='w-full h-screen flex flex-col overflow-auto font-thin font-serif italic text-black pb-32'>
 			<div
-				className='w-11/12 mx-auto h-fit pb-12 my-4 md:my-16 md:pl-6 p-4 md:rounded-lg '
-				style={{
-					backgroundImage:
-						'url("https://images.unsplash.com/photo-1671716784499-a3d26826d844?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}
+				className='w-11/12 mx-auto h-fit pb-12 my-4 md:my-16 md:pl-6 p-4 md:rounded-lg bg-creme'
+				// style={{
+				// 	backgroundImage:
+				// 		'url("https://images.unsplash.com/photo-1671716784499-a3d26826d844?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+				// 	backgroundSize: 'cover',
+				// 	backgroundPosition: 'center',
+				// }}
 			>
 				<div className='relative h-96'>
 					{/* Video como fondo */}
@@ -33,6 +33,7 @@ export function Servicios() {
 						autoPlay
 						playsInline
 						loop
+						muted
 					>
 						<source src={video} type='video/mp4' />
 					</video>

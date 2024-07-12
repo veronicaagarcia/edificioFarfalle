@@ -167,7 +167,7 @@ const AirbnbRatingChart = () => {
 export function RatingCharts() {
 	return (
 		<>
-			<div className='w-full mx-auto h-fit bg-black rounded-lg opacity-80 p-2'>
+			<div className='w-full mx-auto h-fit bg-slate-950 opacity-95 rounded-lg  p-2'>
 				<h3 className='text-center font-semibold text-lg md:text-xl text-white mb-2'>
 					Reseñas
 				</h3>

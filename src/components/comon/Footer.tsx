@@ -1,9 +1,9 @@
 export function Footer() {
 	return (
-		<footer className='bg-footer text-white py-3 w-full h-fit -mb-6'>
-			<div className='container mx-auto px-4'>
+		<footer className=' bg-slate-950 opacity-95 text-white py-3 w-full h-fit -mb-6'>
+			<div className='container mx-auto px-4 '>
 				<div className='flex flex-wrap justify-between'>
-					<div className='w-full sm:w-1/2 md:w-1/4 mb-4'>
+					<div className='w-full sm:w-1/2 md:w-1/4 mb-3'>
 						<h2 className=' text-base font-semibold mb-2'>Sobre Nosotros</h2>
 						<p className=' text-sm'>
 							Edificio Farfalle ofrece alojamiento cómodo y moderno en La Plata.
@@ -13,7 +13,7 @@ export function Footer() {
 						</p>
 					</div>
 
-					<div className='w-full sm:w-1/2 md:w-1/5 mb-4'>
+					<div className='w-full sm:w-1/2 md:w-1/5 mb-3'>
 						<h2 className='text-base font-semibold mb-2'>Contacto</h2>
 						<p className=' text-sm'>1770 Calle 62, 1900 La Plata, Argentina</p>
 						<p className=' text-sm'>Teléfono: +54 221 634-2322</p>
@@ -21,12 +21,12 @@ export function Footer() {
 						<p className=' text-sm'>Instagram: @edificiofarfalle</p>
 					</div>
 
-					<div className='w-full sm:w-1/2 md:w-1/5 mb-4'>
+					<div className='w-full sm:w-1/2 md:w-1/5 mb-3'>
 						<h2 className='text-base font-semibold mb-2'>Enlaces Rápidos</h2>
 						<ul className=' text-sm'>
 							<li>
 								<a
-									href='edificioFarfalle/'
+									href='/edificioFarfalle/'
 									className='text-white hover:underline'
 								>
 									Inicio
@@ -34,7 +34,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='edificioFarfalle/Departamentos'
+									href='/edificioFarfalle/Departamentos'
 									className='text-white hover:underline'
 								>
 									Departamentos
@@ -42,7 +42,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='edificioFarfalle/Servicios'
+									href='/edificioFarfalle/Servicios'
 									className='text-white hover:underline'
 								>
 									Servicios
@@ -50,7 +50,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='edificioFarfalle/Contacto'
+									href='/edificioFarfalle/Contacto'
 									className='text-white hover:underline'
 								>
 									Contacto
@@ -58,7 +58,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='edificioFarfalle/Reservas'
+									href='/edificioFarfalle/Reservas'
 									className='text-white hover:underline'
 								>
 									Reservas
@@ -67,7 +67,7 @@ export function Footer() {
 						</ul>
 					</div>
 
-					<div className='w-full sm:w-1/2 md:w-1/4 mb-4'>
+					<div className='w-full sm:w-1/2 md:w-1/4 mb-3'>
 						<h2 className='text-base font-semibold mb-2'>Cómo Llegar</h2>
 						<p className=' text-sm'>
 							Haz clic en el botón a continuación para obtener direcciones hacia

@@ -16,7 +16,7 @@ export function Departamentos() {
 	return (
 		<section className='pt-12 pb-32 h-min-screen h-full overflow-y-scroll'>
 			<div className='container mx-auto lg:px-24'>
-				<h2 className='text-2xl md:text-3xl text-center text-orangeSoft text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 font-bold'>
+				<h2 className='text-2xl md:text-3xl text-center font-bold text-orange mb-8 px-3 md:px-28 pt-2 md:pt-3'>
 					Nuestros Departamentos
 				</h2>
 				<p className='text-justify text-black text-opacity-90 mb-2 px-8  pt-2 md:pt-3 text-base md:text-lg'>
@@ -24,7 +24,9 @@ export function Departamentos() {
 					alojamiento perfectas para quienes buscan una estancia acogedora y
 					completamente equipada. Nuestros departamentos, con capacidad para
 					hasta 4 personas, están diseñados para{' '}
-					<strong className='text-nav'>proporcionar el máximo confort </strong>
+					<strong className='text-orange'>
+						proporcionar el máximo confort{' '}
+					</strong>
 					durante su visita.
 				</p>
 				<p className='text-justify text-black text-opacity-90 mb-8 px-8 pt-2 md:pt-3 text-base md:text-lg'>
@@ -32,7 +34,7 @@ export function Departamentos() {
 					(aplicable para estancias mínimas de una semana), garantizando así la
 					frescura y limpieza que nuestros huéspedes merecen.
 				</p>
-				<h3 className='text-lg md:mt-4 font-semibold text-orangeDark text-start px-8 mb-8'>
+				<h3 className='text-lg md:mt-4 font-bold text-black text-start px-8 mb-8'>
 					Galería de Imágenes y Videos
 				</h3>
 				<p className='text-justify text-black text-opacity-90 mb-12 px-8 text-base md:text-lg'>
@@ -46,7 +48,7 @@ export function Departamentos() {
 						<ImageLoader src={pba} alt='PB A' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
-								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orangeDark opacity-60 p-2 rounded-br-lg'>
+								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orange opacity-60 p-2 rounded-br-lg'>
 									Planta Baja A
 								</h3>
 							</div>
@@ -67,7 +69,7 @@ export function Departamentos() {
 						<ImageLoader src={pbb} alt='PB B' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
-								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orangeDark opacity-60 p-2 rounded-br-lg'>
+								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orange opacity-60 p-2 rounded-br-lg'>
 									Planta Baja B
 								</h3>
 							</div>
@@ -88,7 +90,7 @@ export function Departamentos() {
 						<ImageLoader src={primeroa} alt='1 A' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
-								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orangeDark opacity-60 p-2 rounded-br-lg'>
+								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orange opacity-60 p-2 rounded-br-lg'>
 									Primero A
 								</h3>
 							</div>
@@ -109,7 +111,7 @@ export function Departamentos() {
 						<ImageLoader src={primerob} alt='1 B' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
-								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orangeDark opacity-60 p-2 rounded-br-lg'>
+								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orange opacity-60 p-2 rounded-br-lg'>
 									Primero B
 								</h3>
 							</div>
@@ -130,7 +132,7 @@ export function Departamentos() {
 						<ImageLoader src={segundob} alt='2 B' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
-								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orangeDark opacity-60 p-2 rounded-br-lg'>
+								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orange opacity-60 p-2 rounded-br-lg'>
 									Segundo B
 								</h3>
 							</div>

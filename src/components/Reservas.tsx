@@ -173,54 +173,60 @@ export function Reservas() {
 	}
 	return (
 		<section className='pt-12 pb-32 h-min-screen h-full overflow-y-scroll'>
-			<h2 className='text-2xl md:text-3xl text-center text-orangeSoft text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 font-bold'>
+			<h2 className='text-2xl md:text-3xl text-center text-orange text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 font-bold'>
 				Reservas
 			</h2>
 			<p className='text-justify text-black text-opacity-90 text-base md:text-lg px-3 md:px-28 mb-4 md:mb-12'>
 				¡Gracias por elegir
-				<strong className='text-nav'> Edificio Farfalle</strong> para tu
+				<strong className='text-orange'> Edificio Farfalle</strong> para tu
 				estancia en La Plata! Para consultar la disponibilidad de nuestros
 				departamentos y realizar una reserva, por favor completa el siguiente
 				formulario.
 			</p>
 			<section
-				className='flex flex-col md:flex-row mb-4 md:mb-12 px-1 md:px-10 py-5'
-				style={{
-					backgroundImage:
-						'url("https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}
+				className='flex flex-col md:flex-row mb-4 md:mb-12 px-1 md:px-10 py-5 '
+				// style={{
+				// 	backgroundImage:
+				// 		'url("https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+				// 	backgroundSize: 'cover',
+				// 	backgroundPosition: 'center',
+				// }}
 			>
 				<div className='container mx-auto w-11/12 md:w-1/2 mb-8 md:mb-0'>
-					<h3 className='text-lg md:text-xl font-semibold text-orangeDark text-center mb-4'>
+					<h3 className='text-lg md:text-xl font-bold text-orange text-center mb-4'>
 						¿Cómo Funciona?
 					</h3>
 					<p className='text-justify text-black text-opacity-90 pb-3 px-3 pt-2 text-base md:px-5 md:pt-3 md:text-lg'>
-						<strong className='text-nav'>1. </strong>
-						<strong className=' font-bold'>Selecciona tus Fechas: </strong>Elige
-						las fechas de entrada y salida que deseas para tu estancia.
+						<strong className='text-black'>1. </strong>
+						<strong className='text-orange font-bold'>
+							Selecciona tus Fechas:{' '}
+						</strong>
+						Elige las fechas de entrada y salida que deseas para tu estancia.
 					</p>
 					<p className='text-justify text-black text-opacity-90 pb-3 px-3 pt-2 text-base md:px-5 md:pt-3 md:text-lg'>
-						<strong className='text-nav'>2. </strong>
-						<strong className=' font-bold'>
+						<strong className='text-black'>2. </strong>
+						<strong className=' text-orange font-bold'>
 							Indica el Número de Personas:{' '}
 						</strong>
 						Especifica cuántas personas se alojarán con nosotros.
 					</p>
 					<p className='text-justify text-black text-opacity-90 pb-3 px-3 pt-2 text-base md:px-5 md:pt-3 md:text-lg'>
-						<strong className='text-nav'>3. </strong>
-						<strong className=' font-bold'>Elige tu Departamento: </strong>
+						<strong className='text-black'>3. </strong>
+						<strong className=' text-orange font-bold'>
+							Elige tu Departamento:{' '}
+						</strong>
 						Selecciona el departamento en el que estás interesado.
 					</p>
 					<p className='text-justify text-black text-opacity-90 pb-3 px-3 pt-2 text-base md:px-5 md:pt-3 md:text-lg'>
-						<strong className='text-nav'>4. </strong>
-						<strong className=' font-bold'>Envía tu Solicitud: </strong>Haz clic
-						en el botón "Consultar Disponibilidad".
+						<strong className='text-black'>4. </strong>
+						<strong className=' text-orange font-bold'>
+							Envía tu Solicitud:{' '}
+						</strong>
+						Haz clic en el botón "Consultar Disponibilidad".
 					</p>
 					<p className='text-justify text-black text-opacity-90 pb-3 px-3 pt-2 text-base md:px-5 md:pt-3 md:text-lg'>
-						<strong className='text-nav'>5. </strong>
-						<strong className=' font-bold'>
+						<strong className='text-black'>5. </strong>
+						<strong className=' text-orange font-bold'>
 							Respuesta de Disponibilidad:{' '}
 						</strong>
 						Una vez que envíes el formulario, nuestro equipo revisará la
@@ -234,7 +240,7 @@ export function Reservas() {
 					id='reservas'
 				>
 					<div className='max-w-lg mx-auto'>
-						<form className='bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 hover:shadow-2xl '>
+						<form className='bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 hover:shadow-2xl border-2 border-black'>
 							<div className='mb-4 flex items-center justify-between'>
 								<div className='w-1/3'>
 									<label
@@ -374,7 +380,7 @@ export function Reservas() {
 			<p className='text-black text-opacity-90 text-base text-center md:text-lg px-3 md:px-28 mb-12'>
 				Nos aseguraremos de que tu estancia en Edificio Farfalle sea cómoda y
 				placentera.
-				<strong className='text-nav'>
+				<strong className='text-orange'>
 					{' '}
 					¡Esperamos darte la bienvenida pronto!
 				</strong>

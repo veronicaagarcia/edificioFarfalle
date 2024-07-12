@@ -28,15 +28,14 @@ export function Principal({ isMobile }: PrincipalProps) {
 				<div className='absolute bottom-0 left-0 w-full h-2 bg-gradient-to-t from-almostWhite to-transparent'></div>
 			</section>
 			<h2
-				className={`text-center text-black animate-typewriter overflow-hidden border-r-4 border-r-orange-500 mb-8 ${
+				className={`text-center text-black text-opacity-90 animate-typewriter overflow-hidden border-r-4 border-r-orange-500 mb-8 ${
 					isMobile
 						? `px-3 pt-2 text-lg whitespace-wrap`
 						: `whitespace-nowrap px-28 pt-3 text-xl`
 				}`}
 			>
-				Bienvenidos a{' '}
-				<strong className='text-orangeSoft'>Edificio Farfalle</strong>, tu lugar
-				en la ciudad de La Plata
+				Bienvenidos a <strong className='text-orange'>Edificio Farfalle</strong>
+				, tu lugar en la ciudad de La Plata
 			</h2>
 			<p
 				className={`text-justify text-black text-opacity-90 mb-8 ${
@@ -51,9 +50,9 @@ export function Principal({ isMobile }: PrincipalProps) {
 				amueblados y equipados con todas las comodidades necesarias para una
 				estadía confortable, buscando brindar calidad y confort en nuestro
 				servicio para que la estadía sea placentera y te sientas{' '}
-				<strong className='text-nav'>como en casa</strong>.
+				<strong className='text-orange'>como en casa</strong>.
 			</p>
-			<h2 className='text-xl md:mt-4 font-semibold text-orangeSoft text-center mb-8'>
+			<h2 className='text-xl md:mt-4 font-bold text-orange text-center mb-8'>
 				¿Por qué elegirnos?
 			</h2>
 			<p
@@ -61,7 +60,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 					isMobile ? `px-3 pt-2 text-base` : `px-28 pt-3 text-lg`
 				}`}
 			>
-				<strong className='text-nav'>
+				<strong className='font-bold'>
 					Ubicación Privilegiada y tranquila:
 				</strong>{' '}
 				Situado en una zona residencial tranquila de La Plata, Edificio Farfalle
@@ -74,7 +73,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 					isMobile ? `px-3 pt-2 text-base` : `px-28 pt-3 text-lg`
 				}`}
 			>
-				<strong className='text-nav'>Comodidad y Modernidad:</strong> Nuestros
+				<strong className='font-bold'>Comodidad y Modernidad:</strong> Nuestros
 				departamentos están diseñados para ofrecer el máximo confort con
 				instalaciones modernas y elegantes. Cada unidad está completamente
 				equipada con todo lo que necesitas para sentirte como en casa,
@@ -85,7 +84,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 					isMobile ? `px-3 pt-2 text-base` : `px-28 pt-3 text-lg`
 				}`}
 			>
-				<strong className='text-nav'>Estacionamiento Disponible:</strong> Para
+				<strong className='font-bold'>Estacionamiento Disponible:</strong> Para
 				aquellos que viajan en coche, ofrecemos opciones de estacionamiento
 				seguras y convenientes, eliminando el estrés de buscar un lugar para
 				aparcar.
@@ -95,7 +94,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 					isMobile ? `px-3 pt-2 text-base` : `px-28 pt-3 text-lg`
 				}`}
 			>
-				<strong className='text-nav'>Entorno Familiar y Seguro: </strong>{' '}
+				<strong className='font-bold'>Entorno Familiar y Seguro: </strong>{' '}
 				Nuestra ubicación en una zona residencial garantiza un entorno seguro y
 				familiar, perfecto para huéspedes de todas las edades.
 			</p>
@@ -104,7 +103,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 					isMobile ? `px-3 pt-2 text-base` : `px-28 pt-3 text-lg`
 				}`}
 			>
-				<strong className='text-nav'>
+				<strong className='font-bold'>
 					Fácil Acceso al Transporte Público:{' '}
 				</strong>{' '}
 				Aunque no estamos en el centro de la ciudad, estamos bien conectados con
@@ -117,7 +116,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 					isMobile ? `px-3 pt-2 text-base` : `px-28 pt-3 text-lg`
 				}`}
 			>
-				<strong className='text-nav'>Relación Calidad-Precio: </strong>{' '}
+				<strong className='font-bold'>Relación Calidad-Precio: </strong>{' '}
 				Ofrecemos tarifas competitivas y un excelente valor por tu dinero,
 				asegurando que recibas una experiencia de alta calidad sin romper el
 				banco.
@@ -127,7 +126,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 					isMobile ? `px-3 pt-2 text-base` : `px-28 pt-3 text-lg`
 				}`}
 			>
-				<strong className='text-nav'>Atmósfera Agradable: </strong> Con un
+				<strong className='font-bold'>Atmósfera Agradable: </strong> Con un
 				diseño interior acogedor y una atmósfera cálida, nuestros departamentos
 				están pensados para que te sientas relajado y a gusto desde el momento
 				en que entras.
@@ -137,12 +136,12 @@ export function Principal({ isMobile }: PrincipalProps) {
 					isMobile ? `px-3 pt-2 text-base` : `px-28 pt-3 text-lg`
 				}`}
 			>
-				<strong className='text-nav'>Servicio Personalizado:</strong> Nos
+				<strong className='font-bold'>Servicio Personalizado:</strong> Nos
 				enorgullece ofrecer atención personalizada para asegurar que tu estancia
 				sea lo más placentera posible. Nuestro personal está siempre dispuesto a
 				ayudarte con cualquier necesidad o consulta que puedas tener.
 			</p>
-			<h2 className='text-xl md:mt-4 font-semibold text-orangeSoft text-center mb-8'>
+			{/* <h2 className='text-xl md:mt-4 font-semibold text-orangeSoft text-center mb-8'>
 				Consulta por Ofertas Especiales
 			</h2>
 			<ul className='list-disc list-inside text-sm md:text-base py-4 px-6 text-black opacity-90'>
@@ -172,8 +171,8 @@ export function Principal({ isMobile }: PrincipalProps) {
 					especial. Si ya te has hospedado con nosotros, disfruta de tarifas
 					reducidas en tu próxima estancia.
 				</li>
-			</ul>
-			<h2 className='text-xl md:mt-4 font-semibold text-orangeSoft text-center mb-8'>
+			</ul> */}
+			<h2 className='text-xl md:mt-4 font-bold text-orange text-center mb-8'>
 				Opiniones y Valoraciones
 			</h2>
 			<p
@@ -188,7 +187,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 			</p>
 			<div className='flex flex-col md:flex-row'>
 				<div className='w-full md:w-1/2 '>
-					<h3 className='text-lg md:mt-4 font-semibold text-orangeDark text-start px-3 sm:px-28 mb-8'>
+					<h3 className='text-lg md:mt-4 font-bold text-black text-start px-3 sm:px-28 mb-8'>
 						Booking
 					</h3>
 					<p
@@ -204,7 +203,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 					</p>
 				</div>
 				<div className='w-full md:w-1/2 '>
-					<h3 className='text-lg md:mt-4 font-semibold text-orangeDark text-start px-3 sm:px-28 mb-8'>
+					<h3 className='text-lg md:mt-4 font-bold text-black text-start px-3 sm:px-28 mb-8'>
 						Airbnb
 					</h3>
 					<p
@@ -221,20 +220,20 @@ export function Principal({ isMobile }: PrincipalProps) {
 			</div>
 			<div
 				className='p-6 relative mb-8'
-				style={{
-					backgroundImage:
-						'url("https://images.unsplash.com/photo-1543157145-f78c636d023d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fGFic3RyYWN0JTIwYmFja2dyb3VuZCUyMGJsYW5jb3N8ZW58MHwwfDB8fHwy")',
+				// style={{
+				// 	backgroundImage:
+				// 		'url("https://images.unsplash.com/photo-1543157145-f78c636d023d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fGFic3RyYWN0JTIwYmFja2dyb3VuZCUyMGJsYW5jb3N8ZW58MHwwfDB8fHwy")',
 
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}
+				// 	backgroundSize: 'cover',
+				// 	backgroundPosition: 'center',
+				// }}
 			>
 				<div className='absolute top-0 left-0 w-full h-2 bg-gradient-to-b from-almostWhite to-transparent'></div>
 				<RatingCharts />
 				<div className='absolute bottom-0 left-0 w-full h-2 bg-gradient-to-t from-almostWhite to-transparent'></div>
 			</div>
 
-			<h2 className='text-xl font-semibold text-orangeSoft text-center mb-8'>
+			<h2 className='text-xl font-bold text-orange text-center mb-8'>
 				Comparte Tu Experiencia
 			</h2>
 			<p
@@ -264,7 +263,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 				</a>
 				.
 			</p>
-			<h3 className='text-lg md:mt-4 font-semibold text-orangeDark text-start px-3 sm:px-28 mb-8'>
+			<h3 className='text-lg md:mt-4 font-bold text-black text-start px-3 sm:px-28 mb-8'>
 				Reserva Hoy
 			</h3>
 			<p

@@ -121,30 +121,30 @@ export function Contacto() {
 
 	return (
 		<section className='pt-12 pb-32 h-min-screen h-full overflow-y-scroll'>
-			<h2 className='text-2xl md:text-3xl text-center text-orangeSoft text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 font-bold'>
+			<h2 className='text-2xl md:text-3xl text-center text-orange text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 font-bold'>
 				Contáctanos
 			</h2>
 			<p className='text-justify text-black text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 text-base md:text-lg'>
-				En <strong className='text-nav'>Edificio Farfalle</strong>, estamos
+				En <strong className='text-orange'>Edificio Farfalle</strong>, estamos
 				siempre a su disposición para responder cualquier consulta o necesidad
 				que pueda tener. Puede contactarnos a través de los siguientes medios:
 			</p>
 			<div
-				className='flex justify-center w-full h-fit pl-6 md:pl-56 py-10 relative'
-				style={{
-					backgroundImage:
-						'url("https://images.unsplash.com/photo-1720180320321-2a3d719d14f8?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-					height: '370px',
-				}}
+				className='flex justify-center w-full h-fit pl-3 md:pl-28 bg-creme py-10 relative'
+				// style={{
+				// 	backgroundImage:
+				// 		'url("https://images.unsplash.com/photo-1720180320321-2a3d719d14f8?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+				// 	backgroundSize: 'cover',
+				// 	backgroundPosition: 'center',
+				// 	height: '370px',
+				// }}
 			>
 				<Card
 					style={{
-						backgroundColor: '#402e32',
+						backgroundColor: '#000000',
 						transition: 'background-color 0.3s',
 					}}
-					className=' py-1 px-2 h-72 rounded-full mx-auto w-2/3 md:w-1/2 hover:opacity-90 hover:shadow-2xl shadow-black opacity-85'
+					className=' py-1 px-2 h-72 rounded-full mx-auto w-2/3 md:w-1/2 hover:shadow-2xl shadow-black '
 				>
 					<form className='p-4 mx-auto w-11/12 h-80 flex flex-col justify-evenly'>
 						<input
@@ -190,10 +190,10 @@ export function Contacto() {
 				<div className='w-1/3 md:w-1/2 h-60 md:h-72 flex flex-col justify-around -ml-1 mt-4 md:mt-0'>
 					<Card
 						style={{
-							backgroundColor: '#402e32',
+							backgroundColor: '#000000',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0  px-0  rounded-none md:rounded-full w-20  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
+						className='py-0  px-0  rounded-none md:rounded-full w-20  md:hover:rounded-tr-full md:hover:rounded-br-full  md:hover:w-96 md:hover:shadow-2xl '
 						onMouseEnter={() => handleMouseEnter('Contactanos')}
 						onMouseLeave={handleMouseLeave}
 					>
@@ -217,10 +217,10 @@ export function Contacto() {
 					</Card>
 					<Card
 						style={{
-							backgroundColor: '#402e32',
+							backgroundColor: '#000000',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0  px-0  rounded-none md:rounded-full w-16  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
+						className='py-0  px-0  rounded-none md:rounded-full w-16  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:w-96 md:hover:shadow-2xl'
 						onMouseEnter={() => handleMouseEnter('Seguinos')}
 						onMouseLeave={handleMouseLeave}
 					>
@@ -244,10 +244,10 @@ export function Contacto() {
 					</Card>
 					<Card
 						style={{
-							backgroundColor: '#402e32',
+							backgroundColor: '#000000',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0  px-0  rounded-none md:rounded-full w-14  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
+						className='py-0  px-0  rounded-none md:rounded-full w-14  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:w-96 md:hover:shadow-2xl'
 						onMouseEnter={() => handleMouseEnter('Encontranos')}
 						onMouseLeave={handleMouseLeave}
 					>
@@ -269,10 +269,10 @@ export function Contacto() {
 					</Card>
 					<Card
 						style={{
-							backgroundColor: '#402e32',
+							backgroundColor: '#000000',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0  px-0  rounded-none md:rounded-full w-12  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:opacity-90 md:hover:w-96 md:hover:shadow-2xl md:opacity-75'
+						className='py-0  px-0  rounded-none md:rounded-full w-12  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:w-96 md:hover:shadow-2xl '
 						onMouseEnter={() => handleMouseEnter('Escribinos')}
 						onMouseLeave={handleMouseLeave}
 					>
@@ -297,7 +297,7 @@ export function Contacto() {
 					</Card>
 				</div>
 			</div>
-			<h3 className='text-xl mt-4 md:mt-8 font-semibold text-orangeSoft text-center mb-8'>
+			<h3 className='text-xl mt-4 md:mt-8 font-bold text-orange text-center mb-8'>
 				Nuestra Ubicación
 			</h3>
 			<p className='text-justify text-black text-opacity-90 mb-12 px-3 md:px-28 text-base md:text-lg mt-4 '>
@@ -312,9 +312,9 @@ export function Contacto() {
 						{loading ? <CircularProgress color='inherit' /> : <Map />}
 					</div>
 					<div className='text-xs w-full md:w-1/2 p-1 px-5 text-black text-opacity-90 mb-4 text-justify'>
-						<p className='text-base'>
+						<p className='text-base font-bold'>
 							Dirección:{' '}
-							<span className='text-nav'>
+							<span className='text-orange'>
 								{' '}
 								1770 Calle 62, 1900 La Plata, Argentina
 							</span>
