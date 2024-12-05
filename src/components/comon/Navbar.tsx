@@ -82,7 +82,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 			ref={sectionTopRef}
 			id='top'
 			style={{
-				height: isMobile ? '14vh' : '18vh',
+				height: isMobile ? '18vh' : '22vh',
 				width: '100%',
 				display: 'flex',
 				flexDirection: 'column',
@@ -101,14 +101,14 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 			>
 				<img
 					className={`animate-pulse -mt-2 ${
-						isMobile ? `h-auto w-44 mb-5 -mt-4 -ml-2` : `h-auto w-200`
+						isMobile ? `h-auto w-44 mb-5 -mt-4 -ml-2` : `h-auto w-[220px] -mt-10`
 					}`}
 					src={logoFarfalle}
 					alt='Logo mariposa'
 					loading='lazy'
 				/>
 				<h1
-					className={`font-great-vibes ${
+					className={`font-great-vibes text-black ${
 						isMobile ? `-mt-16 ml-4 text-2xl` : `-mt-16 text-4xl`
 					} pb-2`}
 				>
@@ -121,10 +121,10 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 					isMobile
 						? `h-fit absolute bottom-1/4 flex flex-col self-end justify-center p-2 gap-2${
 								openCloseMenu
-									? 'w-36 h-fit z-50 absolute top-0 border-transparent rounded-tl-xl rounded-bl-xl right-0 p-5 shadow-sm bg-orange pb-36 pt-5'
+									? 'w-36 h-screen z-50 absolute top-0 border-transparent rounded-tl-xl rounded-bl-xl right-0 p-5 shadow-sm bg-orange pb-36 pt-5'
 									: 'w-16 h-16 my-auto mr-3'
 						  }`
-						: 'flex items-center w-full bg-orange justify-around py-4 px-10  -mb-2 z-10'
+						: 'flex items-center w-full bg-gradient-to-b from-orange to-nav justify-around py-6 px-10  -mb-2 z-10'
 				}`}
 			>
 				{isMobile ? (
@@ -152,7 +152,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 							? `text-white hover:text-black ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-black text-lg font-semibold'
+							: 'text-white hover:scale-110 hover:drop-shadow-lg text-lg font-semibold'
 					}`}
 					activeClassName='text-black'
 					exact
@@ -167,7 +167,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 							? `text-white hover:text-black ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-black text-lg font-semibold'
+							: 'text-white hover:scale-110 hover:drop-shadow-lg text-lg font-semibold'
 					}`}
 					activeClassName='text-black'
 					exact
@@ -182,7 +182,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 							? `text-white hover:text-black ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-black text-lg font-semibold'
+							: 'text-white hover:scale-110 hover:drop-shadow-lg text-lg font-semibold'
 					}`}
 					activeClassName='text-black'
 					exact
@@ -197,7 +197,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 							? `text-white hover:text-black ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-black text-lg font-semibold'
+							: 'text-white hover:scale-110 hover:drop-shadow-lg text-lg font-semibold'
 					}`}
 					activeClassName='text-black'
 					exact
@@ -212,7 +212,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
 							? `text-white hover:text-black ${
 									openCloseMenu ? 'justify-end pb-6 pt-6' : 'hidden'
 							  }`
-							: 'text-white hover:text-black text-lg font-semibold'
+							: 'text-white hover:scale-110 hover:drop-shadow-lg text-lg font-semibold'
 					}`}
 					activeClassName='text-black'
 					exact

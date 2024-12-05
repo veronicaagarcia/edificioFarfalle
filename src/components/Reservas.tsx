@@ -1,8 +1,53 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import emailjs from 'emailjs-com'
 import Swal from 'sweetalert2'
 import { Footer } from './comon/Footer'
+import AOS from 'aos'
+import 'aos/dist/aos.css';
+
 export function Reservas() {
+
+	const animatedRefs = useRef<(HTMLHeadingElement | null)[]>([])
+	
+	useEffect(() => {
+		AOS.init({
+		duration: 1000,
+		easing: 'ease-in-out',
+		once: false,
+		offset: 100,
+		})
+	
+		const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('aos-animate')
+			} else {
+				entry.target.classList.remove('aos-animate')
+			}
+			})
+		},
+		{
+			root: null,
+			rootMargin: '0px',
+			threshold: 0.1
+		}
+		)
+		animatedRefs.current.forEach((ref) => {
+		if (ref) {
+			observer.observe(ref)
+		}
+		})
+	
+		return () => {
+		animatedRefs.current.forEach((ref) => {
+			if (ref) {
+			observer.unobserve(ref)
+			}
+		})
+		}
+	}, [])
+
 	const [checkIn, setCheckIn] = useState('')
 	const [checkOut, setCheckOut] = useState('')
 	const [adultos, setAdultos] = useState('')
@@ -172,63 +217,66 @@ export function Reservas() {
 		}
 	}
 	return (
-		<section className='pt-12 pb-32 h-min-screen h-full overflow-y-scroll'>
-			<h2 className='text-2xl md:text-3xl text-center text-orange text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 font-bold'>
+		<section className='h-full w-full pt-12'>
+			<h2 ref={(el) => (animatedRefs.current[0] = el)}
+          data-aos="fade-up" 
+          data-aos-duration="1000"
+          data-aos-offset="200"  className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-nav text-center mb-8'>
 				Reservas
 			</h2>
-			<p className='text-justify text-black text-opacity-90 text-base md:text-lg px-3 md:px-28 mb-4 md:mb-12'>
+			<p className='text-justify text-black text-opacity-90 text-base md:text-lg px-3 md:px-28 mb-8 md:mb-20'>
 				¡Gracias por elegir
-				<strong className='text-orange'> Edificio Farfalle</strong> para tu
+				<span className='text-orange italic'> Edificio Farfalle</span> para tu
 				estancia en La Plata! Para consultar la disponibilidad de nuestros
 				departamentos y realizar una reserva, por favor completa el siguiente
 				formulario.
 			</p>
 			<section
-				className='flex flex-col md:flex-row mb-4 md:mb-12 px-1 md:px-10 py-5 '
-				// style={{
-				// 	backgroundImage:
-				// 		'url("https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-				// 	backgroundSize: 'cover',
-				// 	backgroundPosition: 'center',
-				// }}
+				className='flex flex-col md:flex-row mb-4 md:mb-12 py-10 md:p-20 px-3 md:px-28'
+				style={{
+					backgroundImage:
+						'url("https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+				}}
 			>
-				<div className='container mx-auto w-11/12 md:w-1/2 mb-8 md:mb-0'>
-					<h3 className='text-lg md:text-xl font-bold text-orange text-center mb-4'>
+				<div className='container mx-auto w-11/12 md:w-[60%] lg:w-1/2 mb-8 md:mb-0'>
+					<h3 className='text-lg md:text-xl font-bold text-black text-center mb-4'>
 						¿Cómo Funciona?
 					</h3>
-					<p className='text-justify text-black text-opacity-90 pb-3 px-3 pt-2 text-base md:px-5 md:pt-3 md:text-lg'>
-						<strong className='text-black'>1. </strong>
-						<strong className='text-orange font-bold'>
+					<p className='text-justify text-black text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg'>
+						<span className='text-black'>1. </span>
+						<span className='text-orange font-bold'>
 							Selecciona tus Fechas:{' '}
-						</strong>
+						</span>
 						Elige las fechas de entrada y salida que deseas para tu estancia.
 					</p>
-					<p className='text-justify text-black text-opacity-90 pb-3 px-3 pt-2 text-base md:px-5 md:pt-3 md:text-lg'>
-						<strong className='text-black'>2. </strong>
-						<strong className=' text-orange font-bold'>
+					<p className='text-justify text-black text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg'>
+						<span className='text-black'>2. </span>
+						<span className=' text-orange font-bold'>
 							Indica el Número de Personas:{' '}
-						</strong>
+						</span>
 						Especifica cuántas personas se alojarán con nosotros.
 					</p>
-					<p className='text-justify text-black text-opacity-90 pb-3 px-3 pt-2 text-base md:px-5 md:pt-3 md:text-lg'>
-						<strong className='text-black'>3. </strong>
-						<strong className=' text-orange font-bold'>
+					<p className='text-justify text-black text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg'>
+						<span className='text-black'>3. </span>
+						<span className=' text-orange font-bold'>
 							Elige tu Departamento:{' '}
-						</strong>
+						</span>
 						Selecciona el departamento en el que estás interesado.
 					</p>
-					<p className='text-justify text-black text-opacity-90 pb-3 px-3 pt-2 text-base md:px-5 md:pt-3 md:text-lg'>
-						<strong className='text-black'>4. </strong>
-						<strong className=' text-orange font-bold'>
+					<p className='text-justify text-black text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg'>
+						<span className='text-black'>4. </span>
+						<span className=' text-orange font-bold'>
 							Envía tu Solicitud:{' '}
-						</strong>
+						</span>
 						Haz clic en el botón "Consultar Disponibilidad".
 					</p>
-					<p className='text-justify text-black text-opacity-90 pb-3 px-3 pt-2 text-base md:px-5 md:pt-3 md:text-lg'>
-						<strong className='text-black'>5. </strong>
-						<strong className=' text-orange font-bold'>
+					<p className='text-justify text-black text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg'>
+						<span className='text-black'>5. </span>
+						<span className=' text-orange font-bold'>
 							Respuesta de Disponibilidad:{' '}
-						</strong>
+						</span>
 						Una vez que envíes el formulario, nuestro equipo revisará la
 						disponibilidad de los departamentos en las fechas solicitadas. Te
 						responderemos a la brevedad para confirmar si hay disponibilidad y
@@ -236,11 +284,11 @@ export function Reservas() {
 					</p>
 				</div>
 				<section
-					className='w-11/12 md:w-1/2 h-fit relative m-auto'
+					className='w-11/12 md:w-[40%] lg:w-1/2 h-fit relative m-auto md:-mr-12 xl:m-auto'
 					id='reservas'
 				>
 					<div className='max-w-lg mx-auto'>
-						<form className='bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 hover:shadow-2xl border-2 border-black'>
+						<form className='bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 hover:shadow-2xl  border-black'>
 							<div className='mb-4 flex items-center justify-between'>
 								<div className='w-1/3'>
 									<label
@@ -377,13 +425,13 @@ export function Reservas() {
 					</div>
 				</section>
 			</section>
-			<p className='text-black text-opacity-90 text-base text-center md:text-lg px-3 md:px-28 mb-12'>
+			<p className='text-black text-opacity-90 text-base text-center md:text-lg px-3 md:px-28 my-8 md:my-20'>
 				Nos aseguraremos de que tu estancia en Edificio Farfalle sea cómoda y
 				placentera.
-				<strong className='text-orange'>
+				<span className='text-orange'>
 					{' '}
 					¡Esperamos darte la bienvenida pronto!
-				</strong>
+				</span>
 			</p>
 			<Footer />
 		</section>

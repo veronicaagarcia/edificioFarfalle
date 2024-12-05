@@ -16,15 +16,15 @@ import { Footer } from './comon/Footer'
 export function Servicios() {
 	const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/zcomunes.mp4'
 	return (
-		<section className='w-full h-screen flex flex-col overflow-auto font-thin font-serif italic text-black pb-32'>
+		<section className='w-full h-full flex flex-col font-thin font-serif italic text-black'>
 			<div
-				className='w-11/12 mx-auto h-fit pb-12 my-4 md:my-16 md:pl-6 p-4 md:rounded-lg bg-creme'
-				// style={{
-				// 	backgroundImage:
-				// 		'url("https://images.unsplash.com/photo-1671716784499-a3d26826d844?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-				// 	backgroundSize: 'cover',
-				// 	backgroundPosition: 'center',
-				// }}
+				className='w-11/12 mx-auto h-fit pb-12 my-4 md:my-16 md:pb-48 md:pl-6 p-4 md:rounded-lg bg-creme'
+				style={{
+					backgroundImage:
+						'url("https://images.unsplash.com/photo-1671716784499-a3d26826d844?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+				}}
 			>
 				<div className='relative h-96'>
 					{/* Video como fondo */}
@@ -41,7 +41,7 @@ export function Servicios() {
 					{/* Contenido superpuesto */}
 					<div className='absolute top-0 left-0 w-full h-full flex items-center justify-center md:justify-end'>
 						<div className='w-9/12 md:w-1/2 md:mr-24 text-white text-center z-20'>
-							<h3 className='text-base p-6 sm:p-12 md:p-14 border-2 border-nav md:text-xl lg:text-2xl font-bold mb-4 rounded-lg'>
+							<h3 className='text-base p-6 sm:p-12 md:p-14 border-2 border-nav md:text-xl lg:text-2xl font-medium mb-4 rounded-lg'>
 								Nuestros departamentos están completamente amueblados y
 								equipados con todas las comodidades necesarias para una estadía
 								confortable y placentera.
@@ -50,7 +50,7 @@ export function Servicios() {
 					</div>
 				</div>
 
-				<ul className='w-full h-fit mx-auto mt-4 mb-20 flex flex-col justify-center sm:flex-row sm:justify-between'>
+				<ul className='w-full h-fit mx-auto mt-4 mb-20 flex flex-col justify-center sm:flex-row sm:justify-between pt-8'>
 					<div className='w-full h-auto md:h-600 sm:w-1/4 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90'>
 						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 md:mt-5 mb-1'>
 							<FontAwesomeIcon

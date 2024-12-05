@@ -20,7 +20,7 @@ const ImageUploader = ({ media, onClick }: GalleryProps) => {
 					<ImageListItem key={index} onClick={() => onClick(index)}>
 						{item.type === 'image' ? (
 							<img
-								className='transform transition-transform duration-300 hover:scale-105 hover:shadow-lg'
+								className='transform transition-transform duration-300 hover:scale-105 hover:shadow-lg rounded-md mr-12'
 								src={item.url}
 								style={{
 									width: '100%',
@@ -37,7 +37,7 @@ const ImageUploader = ({ media, onClick }: GalleryProps) => {
 							// 	<source src={item.url} type='video/mp4' />
 							// </video>
 							<video
-								className='w-full h-full cursor-pointer'
+								className='w-full h-full cursor-pointer rounded-md'
 								controls
 								style={{
 									objectFit: 'contain',
@@ -70,6 +70,7 @@ export function Gallery({ media, onClick }: GalleryProps) {
 const StyledImageList = styled(ImageList)({
 	width: '100%',
 	height: 'auto',
+	minHeight: '60vh',
 	display: 'flex',
 	flexWrap: 'wrap',
 	justifyContent: 'center',

@@ -31,24 +31,26 @@ export function Start() {
 	}, [])
 
 	return (
-		<main className='h-full flex flex-col'>
+		<main className='h-full flex flex-col border-none rounded-none'>
 			<div className='relative w-full h-screen flex'>
 				{!videoLoaded && (
 					<div className='absolute inset-0 flex items-center justify-center w-full h-full bg-orangeDark bg-opacity-50'>
 						<CircularProgress color='inherit' />
 					</div>
 				)}
+				<div className="w-full h-full overflow-hidden relative bg-slate-950 border-none rounded-none">
 				<video
 					id='farfalleVideo'
 					autoPlay
 					loop
 					playsInline
 					muted={isMuted}
-					className='w-full h-full object-cover z-0'
+					className='w-full h-full object-cover z-0 absolute md:-top-16'
 					onLoadedData={handleVideoLoad}
 				>
 					<source src={video} type='video/mp4' />
 				</video>
+				</div>
 				<div className='absolute top-2 text-orange left-0 z-50'>
 					<IconButton onClick={toggleMute} color='inherit'>
 						{isMuted ? <VolumeOffIcon /> : <VolumeUpIcon />}
@@ -70,6 +72,7 @@ export function Start() {
 					top: '50%',
 					left: '50%',
 					transform: 'translate(-50%, -50%)',
+					width: '95%'
 				}}
 			>
 				<Stack

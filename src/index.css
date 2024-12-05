@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add this to ensure AOS animations work properly */
+[data-aos] {
+  pointer-events: none;
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+[data-aos="fade-up"] {
+  transform: translate3d(0, 20px, 0);
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translate3d(0, 0, 0);
+}

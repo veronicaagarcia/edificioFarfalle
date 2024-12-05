@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import emailjs from 'emailjs-com'
 import { CircularProgress } from '@mui/material'
 import { Map } from './comon/Map'
@@ -10,6 +10,8 @@ import { Card } from '@mui/material'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { Footer } from './comon/Footer'
+import AOS from 'aos'
+import 'aos/dist/aos.css';
 
 export function Contacto() {
 	const [message, setMessage] = useState('')
@@ -18,7 +20,47 @@ export function Contacto() {
 	const [loading, setLoading] = useState(true)
 	const [emailError, setEmailError] = useState('')
 	const [messageError, setMessageError] = useState('')
-	const [hovered, setHovered] = useState<string | null>(null)
+
+	const animatedRefs = useRef<(HTMLHeadingElement | null)[]>([])
+	
+	useEffect(() => {
+		AOS.init({
+		duration: 1000,
+		easing: 'ease-in-out',
+		once: false,
+		offset: 100,
+		})
+	
+		const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('aos-animate')
+			} else {
+				entry.target.classList.remove('aos-animate')
+			}
+			})
+		},
+		{
+			root: null,
+			rootMargin: '0px',
+			threshold: 0.1
+		}
+		)
+		animatedRefs.current.forEach((ref) => {
+		if (ref) {
+			observer.observe(ref)
+		}
+		})
+	
+		return () => {
+		animatedRefs.current.forEach((ref) => {
+			if (ref) {
+			observer.unobserve(ref)
+			}
+		})
+		}
+	}, [])
 
 	const openGoogleMaps = () => {
 		window.open(
@@ -111,40 +153,35 @@ export function Contacto() {
 		}
 	}
 
-	const handleMouseEnter = (text: string) => {
-		setHovered(text)
-	}
-
-	const handleMouseLeave = () => {
-		setHovered(null)
-	}
-
 	return (
-		<section className='pt-12 pb-32 h-min-screen h-full overflow-y-scroll'>
-			<h2 className='text-2xl md:text-3xl text-center text-orange text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 font-bold'>
+		<section className='pt-12 w-full h-full '>
+			<h2 ref={(el) => (animatedRefs.current[0] = el)}
+          data-aos="fade-up" 
+          data-aos-duration="1000"
+          data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-nav text-center mb-8'>
 				Contáctanos
 			</h2>
 			<p className='text-justify text-black text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 text-base md:text-lg'>
-				En <strong className='text-orange'>Edificio Farfalle</strong>, estamos
+				En <span className='text-orange italic'>Edificio Farfalle</span>, estamos
 				siempre a su disposición para responder cualquier consulta o necesidad
 				que pueda tener. Puede contactarnos a través de los siguientes medios:
 			</p>
 			<div
-				className='flex justify-center w-full h-fit pl-3 md:pl-28 bg-creme py-10 relative'
-				// style={{
-				// 	backgroundImage:
-				// 		'url("https://images.unsplash.com/photo-1720180320321-2a3d719d14f8?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-				// 	backgroundSize: 'cover',
-				// 	backgroundPosition: 'center',
-				// 	height: '370px',
-				// }}
+				className='flex justify-center self-center m-auto items-center w-full h-fit relative mb-8 md:mb-20'
+				style={{
+					backgroundImage:
+						'url("https://images.unsplash.com/photo-1720180320321-2a3d719d14f8?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+					height: '600px',
+				}}
 			>
 				<Card
 					style={{
-						backgroundColor: '#000000',
+						backgroundColor: 'transparent',
 						transition: 'background-color 0.3s',
 					}}
-					className=' py-1 px-2 h-72 rounded-full mx-auto w-2/3 md:w-1/2 hover:shadow-2xl shadow-black '
+					className=' py-1 px-2 h-fit rounded-full mx-auto w-2/3 md:w-1/2 hover:shadow-2xl shadow-black '
 				>
 					<form className='p-4 mx-auto w-11/12 h-80 flex flex-col justify-evenly'>
 						<input
@@ -187,117 +224,90 @@ export function Contacto() {
 						</button>
 					</form>
 				</Card>
-				<div className='w-1/3 md:w-1/2 h-60 md:h-72 flex flex-col justify-around -ml-1 mt-4 md:mt-0'>
+				<div className='w-1/5 md:w-1/3 xl:w-[25%] h-60 md:h-72 flex flex-col justify-around mt-4 md:mt-0'>
 					<Card
 						style={{
-							backgroundColor: '#000000',
+							backgroundColor: 'transparent',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0  px-0  rounded-none md:rounded-full w-20  md:hover:rounded-tr-full md:hover:rounded-br-full  md:hover:w-96 md:hover:shadow-2xl '
-						onMouseEnter={() => handleMouseEnter('Contactanos')}
-						onMouseLeave={handleMouseLeave}
+						className='py-0 hover:shadow-md hover:shadow-white hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
 					>
 						<Link
 							to='https://api.whatsapp.com/send?phone=542216342322&text=Hola%20Mat%C3%ADas!%20Quero%20m%C3%A1s%20info%20sobre%20el%20alquiler%20temporario.'
 							target='_blanck'
 						>
-							<h5 className='text-white hover:text-green-700 text-lg items-center sm:text-lg flex justify-start pl-2'>
+							<h5 className='items-center flex justify-start'>
 								<WhatsAppIcon
 									color='success'
-									className='pr-2'
 									fontSize='large'
 								/>
-								<span className='hidden md:block'>
-									{hovered === 'Contactanos'
-										? 'Contactanos, estamos para asesorarte'
-										: ' '}
-								</span>
 							</h5>
 						</Link>
 					</Card>
 					<Card
 						style={{
-							backgroundColor: '#000000',
+							backgroundColor: 'transparent',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0  px-0  rounded-none md:rounded-full w-16  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:w-96 md:hover:shadow-2xl'
-						onMouseEnter={() => handleMouseEnter('Seguinos')}
-						onMouseLeave={handleMouseLeave}
+						className='py-0 hover:shadow-md hover:shadow-white hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
 					>
 						<Link
 							to='https://www.instagram.com/edificiofarfalle/'
 							target='_blanck'
 						>
-							<h5 className='text-white hover:text-pink-700 text-lg sm:text-lg flex items-center justify-start pl-2'>
+							<h5 className='items-center flex justify-start'>
 								<InstagramIcon
-									className='pr-2'
 									color='error'
 									fontSize='large'
 								/>
-								<span className='hidden md:block'>
-									{hovered === 'Seguinos'
-										? 'Seguinos, estamos en instagram'
-										: ' '}
-								</span>
 							</h5>
 						</Link>
 					</Card>
 					<Card
 						style={{
-							backgroundColor: '#000000',
+							backgroundColor: 'transparent',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0  px-0  rounded-none md:rounded-full w-14  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:w-96 md:hover:shadow-2xl'
-						onMouseEnter={() => handleMouseEnter('Encontranos')}
-						onMouseLeave={handleMouseLeave}
+						className='py-0 hover:shadow-md hover:shadow-white hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
 					>
 						<button
 							onClick={openGoogleMaps}
 							className='flex justify-start items-center'
 						>
-							<h5 className='text-white hover:text-blue-500 text-lg sm:text-lg flex items-center justify-start pl-2'>
+							<h5 className='items-center flex justify-start'>
 								<LocationOnIcon
-									className='pr-2'
 									color='info'
 									fontSize='large'
 								/>
-								<span className='hidden md:block'>
-									{hovered === 'Encontranos' ? 'Ver en el mapa' : ' '}
-								</span>
 							</h5>
 						</button>
 					</Card>
 					<Card
 						style={{
-							backgroundColor: '#000000',
+							backgroundColor: 'transparent',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0  px-0  rounded-none md:rounded-full w-12  md:hover:rounded-tr-full md:hover:rounded-br-full md:hover:w-96 md:hover:shadow-2xl '
-						onMouseEnter={() => handleMouseEnter('Escribinos')}
-						onMouseLeave={handleMouseLeave}
+						className='py-0 hover:shadow-md hover:shadow-white hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2  '
 					>
 						<a
 							href='mailto:edificiofarfalle@gmail.com'
 							target='_blank'
 							rel='noopener noreferrer'
 						>
-							<h5 className='text-white hover:text-nav text-lg sm:text-lg flex items-center justify-start pl-2'>
+							<h5 className='items-center flex justify-start'>
 								<EmailOutlinedIcon
-									className='pr-2'
 									fontSize='large'
 									color='secondary'
 								/>
-								<span className='hidden md:block'>
-									{hovered === 'Escribinos'
-										? 'Escribinos a edificiofarfalle@gmail.com'
-										: ' '}
-								</span>
 							</h5>
 						</a>
 					</Card>
 				</div>
 			</div>
-			<h3 className='text-xl mt-4 md:mt-8 font-bold text-orange text-center mb-8'>
+			<h3 ref={(el) => (animatedRefs.current[1] = el)}
+          data-aos="fade-up" 
+          data-aos-duration="1000"
+          data-aos-offset="200"  className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-nav text-center mb-8'>
 				Nuestra Ubicación
 			</h3>
 			<p className='text-justify text-black text-opacity-90 mb-12 px-3 md:px-28 text-base md:text-lg mt-4 '>
@@ -306,13 +316,13 @@ export function Contacto() {
 				ubicación estratégica te permite acceder fácilmente a los principales
 				puntos de interés de la ciudad:
 			</p>
-			<div className='h-fit w-10/12 text-black mx-auto flex flex-col items-center rounded-xl mt-8 mb-12'>
+			<div className='h-fit w-10/12 text-black mx-auto flex flex-col items-center rounded-xl mt-8 mb-12 md:mb-20'>
 				<div className='flex flex-col md:flex-row justify-between mx-auto items-center w-full h-fit'>
 					<div className='w-11/12 md:w-1/2'>
 						{loading ? <CircularProgress color='inherit' /> : <Map />}
 					</div>
 					<div className='text-xs w-full md:w-1/2 p-1 px-5 text-black text-opacity-90 mb-4 text-justify'>
-						<p className='text-base font-bold'>
+						<p className='text-base font-medium mb-4'>
 							Dirección:{' '}
 							<span className='text-orange'>
 								{' '}
