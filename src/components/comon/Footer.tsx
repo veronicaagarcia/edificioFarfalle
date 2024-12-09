@@ -18,7 +18,7 @@ export function Footer() {
 						<ul className=' text-sm'>
 							<li>
 								<a
-									href='/edificioFarfalle/'
+									href='/'
 									className='text-white hover:underline'
 								>
 									Inicio
@@ -26,7 +26,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='/edificioFarfalle/Departamentos'
+									href='/Departamentos'
 									className='text-white hover:underline'
 								>
 									Departamentos
@@ -34,7 +34,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='/edificioFarfalle/Servicios'
+									href='/Servicios'
 									className='text-white hover:underline'
 								>
 									Servicios
@@ -42,7 +42,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='/edificioFarfalle/Contacto'
+									href='/Contacto'
 									className='text-white hover:underline'
 								>
 									Contacto
@@ -50,7 +50,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='/edificioFarfalle/Reservas'
+									href='/Reservas'
 									className='text-white hover:underline'
 								>
 									Reservas
