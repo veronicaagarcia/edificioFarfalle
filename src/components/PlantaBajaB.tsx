@@ -13,48 +13,21 @@ export function PbB() {
 	const completo = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/videoPBB.mp4'
 
 	const media: Media[] = [
-		{
-			type: 'image',
-			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1g3uejMDVzxAe06iEThoT63p9hs08B6Df',
-		},
-		{
-			type: 'image',
-			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1ARYcN4X-wtmyv9k1XdCQQZiDMCYDvirF',
-		},
-		{
-			type: 'image',
-			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1b4pu_FJ-z_JE51hN2cFXq61bzBy-NO2H',
-		},
-		{
-			type: 'image',
-			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1jliDWV2-U3UzPZXR07bq0orf0dPF34df',
-		},
-		{
-			type: 'image',
-			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1YmfujBudLCj7qCh9MbBjDmR4BxgNP0MK',
-		},
-		{
-			type: 'image',
-			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1XGz-IGdIelNE6CSrZVMh10MB3dTB8V2s',
-		},
-		{
-			type: 'image',
-			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1sbh9WRMvI4Is9tOlMzSsH-m57Tu4uNcK',
-		},
-		{
-			type: 'image',
-			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1fSvGvz3igiPNguf0WrJ3A08hGmzTzJ15',
-		},
-		{
-			type: 'image',
-			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1_gkdoJ7TgUaV4GOrM_7O54Dve0ktmDtZ',
-		},
-		{
-			type: 'image',
-			url: 'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Jky_AsLIf42iTxN0xYT8BeDexYIQSDRm',
-		},
-
 		{ type: 'video', url: completo },
+		{
+			type: 'image',
+			url: '/images/PbB/1.jpg', 
+		},
+		{ type: 'image', url: '/images/PbB/2.jpg' },
+		{ type: 'image', url: '/images/PbB/3.jpg' },
+		{ type: 'image', url: '/images/PbB/4.jpg' },
+		// { type: 'image', url: '/images/PbB/5.jpg' },
+		// { type: 'image', url: '/images/PbB/6.jpg' },
+		{ type: 'image', url: '/images/PbB/7.jpg' },
+		{ type: 'image', url: '/images/PbB/8.jpg' },
+		{ type: 'image', url: '/images/PbB/9.jpg' },
+		{ type: 'image', url: '/images/PbB/10.jpg' },
+		
 	]
 
 	const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(
@@ -71,24 +44,20 @@ export function PbB() {
 
 	return (
 		<div className='w-full h-screen pt-12 overflow-y-scroll scrollbar-hide'>
-			<h2 className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-nav text-center mb-8'>
-				Planta Baja B
-			</h2>
-			<h3 className='text-base text-center md:text-lg font-bold text-black opacity-80 mb-4'>
-				50m²
-			</h3>
-			<div
-				className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 py-4'
-				style={{
-					backgroundImage:
-						'url("https://images.unsplash.com/photo-1670160942428-22ecf8aae0b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI2fHxhYnN0cmFjdCUyMGJhY2tncm91bmQlMjBibGFuY29zfGVufDB8MXwwfHx8Mg%3D%3D")',
+			<div className='py-8 md:py-12 xl:py-16 2xl:py-20'>
 
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}
+				<h2 className='text-lg md:text-xl font-mono font-medium uppercase text-nav text-center'>
+					Planta Baja B
+				</h2>
+				<h3 className='text-base text-center md:text-lg font-bold text-black opacity-80'>
+					50m²
+				</h3>
+			</div>
+			<div
+				className='w-full h-fit flex flex-col md:flex-row md:justify-around mb-2 py-4 md:py-8 xl:py-12 bg-gradient-to-tl to-almostWhite via-gray from-nav'
 			>
 				<section className='w-full md:w-1/2 lg:w-1/3 h-fit mb-24 flex flex-col px-5 pt-2'>
-					<ul className='list-disc list-inside text-sm md:text-base py-4 px-6 text-black opacity-90'>
+					<ul className='list-disc list-inside text-sm md:text-base xl:text-lg py-4 md:py-10 px-6 text-black opacity-90'>
 						<li className='flex items-center'>
 							<span className='text-orange mr-2'>•</span>Cama matrimonial
 						</li>

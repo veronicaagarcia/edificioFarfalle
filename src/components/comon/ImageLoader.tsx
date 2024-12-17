@@ -6,35 +6,40 @@ interface ImageLoaderProps {
 }
 
 function ImageLoader({ src, alt }: ImageLoaderProps) {
-	const [loading, setLoading] = useState(true)
-
+	const [isLoaded, setIsLoaded] = useState(false)
+	const [error, setError] = useState(false)
+  
 	const handleLoad = () => {
-		setLoading(false)
+	setIsLoaded(true)
 	}
-
-	const handleError = (error: unknown) => {
-		console.error('Error loading image:', error)
-		setLoading(false) // Para indicar que la carga ha terminado
+  
+	const handleError = () => {
+	setError(true)
+	console.error(`Error loading image: ${src}`)
 	}
-
+  
 	return (
-		<div className='relative w-full h-full'>
-			{loading && (
-				<div className='absolute top-0 left-0 w-full h-full flex justify-center items-center bg-orangeDark bg-opacity-50 z-10'>
-					<span>Cargando...</span>
-				</div>
-			)}
-			<img
-				src={src}
-				alt={alt}
-				onLoad={handleLoad}
-				onError={handleError}
-				className={`w-full h-auto ${loading ? 'hidden' : 'block'}`}
-			/>
+	<>
+		{!isLoaded && !error && (
+		<div className="animate-pulse bg-gray-200 h-full w-full absolute top-0 left-0"></div>
+		)}
+		{error && (
+		<div className="bg-red-100 text-red-500 h-full w-full absolute top-0 left-0 flex items-center justify-center">
+			Error al cargar la imagen
 		</div>
+		)}
+		<img
+		src={src}
+		alt={alt}
+		className={`w-full h-full object-cover ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+		onLoad={handleLoad}
+		onError={handleError}
+		/>
+	</>
 	)
-}
-
-export default ImageLoader
+  }
+  
+  export default ImageLoader
+  
 
 // className='w-full h-96 object-cover object-center'

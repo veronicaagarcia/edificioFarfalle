@@ -232,13 +232,13 @@ export function Reservas() {
 				formulario.
 			</p>
 			<section
-				className='flex flex-col md:flex-row mb-4 md:mb-12 py-10 md:p-20 px-3 md:px-28'
-				style={{
-					backgroundImage:
-						'url("https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}
+				className='flex flex-col md:flex-row mb-4 md:mb-12 py-10 md:py-20 md:p-20 xl:py-28 px-3 md:px-28 bg-gradient-to-bl from-nav via-gray to-almostWhite'
+				// style={{
+				// 	backgroundImage:
+				// 		'url("https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+				// 	backgroundSize: 'cover',
+				// 	backgroundPosition: 'center',
+				// }}
 			>
 				<div className='container mx-auto w-11/12 md:w-[60%] lg:w-1/2 mb-8 md:mb-0'>
 					<h3 className='text-lg md:text-xl font-bold text-black text-center mb-4'>
@@ -246,35 +246,35 @@ export function Reservas() {
 					</h3>
 					<p className='text-justify text-black text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg'>
 						<span className='text-black'>1. </span>
-						<span className='text-orange font-bold'>
+						<span className='text-orange font-semibold'>
 							Selecciona tus Fechas:{' '}
 						</span>
 						Elige las fechas de entrada y salida que deseas para tu estancia.
 					</p>
 					<p className='text-justify text-black text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg'>
 						<span className='text-black'>2. </span>
-						<span className=' text-orange font-bold'>
+						<span className=' text-orange font-semibold'>
 							Indica el Número de Personas:{' '}
 						</span>
 						Especifica cuántas personas se alojarán con nosotros.
 					</p>
 					<p className='text-justify text-black text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg'>
 						<span className='text-black'>3. </span>
-						<span className=' text-orange font-bold'>
+						<span className=' text-orange font-semibold'>
 							Elige tu Departamento:{' '}
 						</span>
 						Selecciona el departamento en el que estás interesado.
 					</p>
 					<p className='text-justify text-black text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg'>
 						<span className='text-black'>4. </span>
-						<span className=' text-orange font-bold'>
+						<span className=' text-orange font-semibold'>
 							Envía tu Solicitud:{' '}
 						</span>
 						Haz clic en el botón "Consultar Disponibilidad".
 					</p>
 					<p className='text-justify text-black text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg'>
 						<span className='text-black'>5. </span>
-						<span className=' text-orange font-bold'>
+						<span className=' text-orange font-semibold'>
 							Respuesta de Disponibilidad:{' '}
 						</span>
 						Una vez que envíes el formulario, nuestro equipo revisará la

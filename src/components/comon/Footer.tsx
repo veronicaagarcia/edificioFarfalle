@@ -13,12 +13,12 @@ export function Footer() {
 						</p>
 					</div>
 
-					<div className='w-full sm:w-1/2 md:w-1/5 mb-4'>
+					{/* <div className='w-full sm:w-1/2 md:w-1/5 mb-4'>
 						<h2 className='text-base font-semibold mb-3'>Enlaces Rápidos</h2>
 						<ul className=' text-sm'>
 							<li>
 								<a
-									href='/'
+									href='/edificioFarfalle/'
 									className='text-white hover:underline'
 								>
 									Inicio
@@ -26,7 +26,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='/Departamentos'
+									href='/edificioFarfalle/Departamentos'
 									className='text-white hover:underline'
 								>
 									Departamentos
@@ -34,7 +34,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='/Servicios'
+									href='/edificioFarfalle/Servicios'
 									className='text-white hover:underline'
 								>
 									Servicios
@@ -42,7 +42,7 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='/Contacto'
+									href='/edificioFarfalle/Contacto'
 									className='text-white hover:underline'
 								>
 									Contacto
@@ -50,14 +50,14 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='/Reservas'
+									href='/edificioFarfalle/Reservas'
 									className='text-white hover:underline'
 								>
 									Reservas
 								</a>
 							</li>
 						</ul>
-					</div>
+					</div> */}
 
 					<div className='w-full sm:w-1/2 md:w-1/5 mb-4'>
 						<h2 className='text-base font-semibold mb-3'>Contacto</h2>

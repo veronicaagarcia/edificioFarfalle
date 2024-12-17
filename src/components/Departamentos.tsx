@@ -7,19 +7,21 @@ import 'aos/dist/aos.css';
 
 export function Departamentos() {
 	const pba =
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1Lj1YCFKLMjAkY_5B9zurQj5YIOruWIHA'
+		'/images/PbA.jpg'
 	const pbb =
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1b4pu_FJ-z_JE51hN2cFXq61bzBy-NO2H'
+		'/images/PbB.jpg'
 	const primeroa =
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1KZGSUfsfL_U9xnKvtqMKw0soXe2h6jro'
+		'/images/1A.jpeg'
 	const primerob =
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1O2KRplTXvn4oOtQRJXOBeIYGj5xgM57D'
+		'/images/1B.jpeg'
 	const segundob =
-		'https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1dPclrfbjFC-JZyPYOkK_5nrj7_ESG4TP'
+		'/images/2B.jpeg'
 
 		const animatedRefs = useRef<(HTMLHeadingElement | null)[]>([])
 	
 		useEffect(() => {
+			console.log("Rutas de imágenes:", { pba, pbb, primeroa, primerob, segundob })
+    
 			AOS.init({
 			duration: 1000,
 			easing: 'ease-in-out',
@@ -95,18 +97,18 @@ export function Departamentos() {
 					todo lo que ofrecemos.
 				</p>
 				<div className='mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 px-8 mb-20 '>
-					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-fit max-h-96 border-2 border-nav transition duration-300 transform hover:scale-105'>
+					<div className='bg-white hover:shadow-lg rounded-sm overflow-hidden relative h-fit max-h-96 border-2 hover:border-gray border-slate-900 shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={pba} alt='PB A' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
-								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-nav opacity-95 p-2 rounded-br-lg'>
+								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orange/80 opacity-95 p-2 rounded-br-lg'>
 									Planta Baja A
 								</h3>
 							</div>
 							<div className='p-6 text-center'>
 								<Link
 									to='/edificioFarfalle/Departamentos/Pb-A'
-									className='group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-6 font-medium text-neutral-200 transition hover:bg-black hover:scale-110'
+									className='group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-6 font-medium text-neutral-200 transition hover:bg-slate-950 hover:scale-110'
 								>
 									<span className='text-base font-lato'>Ver</span>
 									<div className='absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]'>
@@ -116,18 +118,18 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-fit max-h-96 border-2 border-nav transition duration-300 transform hover:scale-105'>
+					<div className='bg-white hover:shadow-lg rounded-sm overflow-hidden relative h-fit max-h-96 border-2 hover:border-gray border-slate-900 shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={pbb} alt='PB B' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
-								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-nav opacity-95 p-2 rounded-br-lg'>
+								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orange/80 opacity-95 p-2 rounded-br-lg'>
 									Planta Baja B
 								</h3>
 							</div>
 							<div className='p-6 text-center'>
 								<Link
 									to='/edificioFarfalle/Departamentos/Pb-B'
-									className='group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-6 font-medium text-neutral-200 transition hover:bg-black hover:scale-110'
+									className='group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-6 font-medium text-neutral-200 transition hover:bg-slate-950 hover:scale-110'
 								>
 									<span className='text-base font-lato'>Ver</span>
 									<div className='absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]'>
@@ -137,18 +139,18 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-fit max-h-96 border-2 border-nav transition duration-300 transform hover:scale-105'>
+					<div className='bg-white hover:shadow-lg rounded-sm overflow-hidden relative h-fit max-h-96 border-2 hover:border-gray border-slate-900 shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={primeroa} alt='1 A' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
-								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-nav opacity-95 p-2 rounded-br-lg'>
+								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orange/80 opacity-95 p-2 rounded-br-lg'>
 									Primero A
 								</h3>
 							</div>
 							<div className='p-6 text-center'>
 								<Link
 									to='/edificioFarfalle/Departamentos/1-A'
-									className='group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-6 font-medium text-neutral-200 transition hover:bg-black hover:scale-110'
+									className='group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-6 font-medium text-neutral-200 transition hover:bg-slate-950 hover:scale-110'
 								>
 									<span className='text-base font-lato'>Ver</span>
 									<div className='absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]'>
@@ -158,18 +160,18 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-fit max-h-96 border-2 border-nav transition duration-300 transform hover:scale-105'>
+					<div className='bg-white hover:shadow-lg rounded-sm overflow-hidden relative h-fit max-h-96 border-2 hover:border-gray border-slate-900 shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={primerob} alt='1 B' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
-								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-nav opacity-95 p-2 rounded-br-lg'>
+								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orange/80 opacity-95 p-2 rounded-br-lg'>
 									Primero B
 								</h3>
 							</div>
 							<div className='p-6 text-center'>
 								<Link
 									to='/edificioFarfalle/Departamentos/1-B'
-									className='group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-6 font-medium text-neutral-200 transition hover:bg-black hover:scale-110'
+									className='group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-6 font-medium text-neutral-200 transition hover:bg-slate-950 hover:scale-110'
 								>
 									<span className='text-base font-lato'>Ver</span>
 									<div className='absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]'>
@@ -179,18 +181,18 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white shadow-lg rounded-lg overflow-hidden relative h-fit max-h-96 border-2 border-nav transition duration-300 transform hover:scale-105'>
+					<div className='bg-white hover:shadow-lg rounded-sm overflow-hidden relative h-fit max-h-96 border-2 hover:border-gray border-slate-900 shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={segundob} alt='2 B' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
-								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-nav opacity-95 p-2 rounded-br-lg'>
+								<h3 className='text-lg font-semibold mb-2 text-almostWhite bg-orange/80 opacity-95 p-2 rounded-br-lg'>
 									Segundo B
 								</h3>
 							</div>
 							<div className='p-6 text-center'>
 								<Link
 									to='/edificioFarfalle/Departamentos/2-B'
-									className='group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-6 font-medium text-neutral-200 transition hover:bg-black hover:scale-110'
+									className='group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-6 font-medium text-neutral-200 transition hover:bg-slate-950 hover:scale-110'
 								>
 									<span className='text-base font-lato'>Ver</span>
 									<div className='absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]'>

@@ -167,21 +167,21 @@ export function Contacto() {
 				que pueda tener. Puede contactarnos a través de los siguientes medios:
 			</p>
 			<div
-				className='flex justify-center self-center m-auto items-center w-full h-fit relative mb-8 md:mb-20'
-				style={{
-					backgroundImage:
-						'url("https://images.unsplash.com/photo-1720180320321-2a3d719d14f8?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-					height: '600px',
-				}}
+				className='flex justify-center self-center m-auto items-center w-full h-fit relative mb-8 md:mb-20 bg-gradient-to-br from-nav via-gray to-almostWhite py-12 md:py-20 xl:py-28' 
+				// style={{
+				// 	backgroundImage:
+				// 		'url("https://images.unsplash.com/photo-1720180320321-2a3d719d14f8?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+				// 	backgroundSize: 'cover',
+				// 	backgroundPosition: 'center',
+				// 	height: '600px',
+				// }}
 			>
 				<Card
 					style={{
 						backgroundColor: 'transparent',
 						transition: 'background-color 0.3s',
 					}}
-					className=' py-1 px-2 h-fit rounded-full mx-auto w-2/3 md:w-1/2 hover:shadow-2xl shadow-black '
+					className=' py-1 px-2 h-fit rounded-full mx-auto w-2/3 md:w-1/2 hover:shadow-lg shadow-slate-900 hover:shadow-slate-900 '
 				>
 					<form className='p-4 mx-auto w-11/12 h-80 flex flex-col justify-evenly'>
 						<input
@@ -230,7 +230,7 @@ export function Contacto() {
 							backgroundColor: 'transparent',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0 hover:shadow-md hover:shadow-white hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
+						className='py-0 hover:shadow-md hover:shadow-slate-900 hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
 					>
 						<Link
 							to='https://api.whatsapp.com/send?phone=542216342322&text=Hola%20Mat%C3%ADas!%20Quero%20m%C3%A1s%20info%20sobre%20el%20alquiler%20temporario.'
@@ -249,7 +249,7 @@ export function Contacto() {
 							backgroundColor: 'transparent',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0 hover:shadow-md hover:shadow-white hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
+						className='py-0 hover:shadow-md hover:shadow-slate-900 hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
 					>
 						<Link
 							to='https://www.instagram.com/edificiofarfalle/'
@@ -268,7 +268,7 @@ export function Contacto() {
 							backgroundColor: 'transparent',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0 hover:shadow-md hover:shadow-white hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
+						className='py-0 hover:shadow-md hover:shadow-slate-900 hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
 					>
 						<button
 							onClick={openGoogleMaps}
@@ -287,7 +287,7 @@ export function Contacto() {
 							backgroundColor: 'transparent',
 							transition: 'background-color 0.3s',
 						}}
-						className='py-0 hover:shadow-md hover:shadow-white hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2  '
+						className='py-0 hover:shadow-md hover:shadow-slate-900 hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2  '
 					>
 						<a
 							href='mailto:edificiofarfalle@gmail.com'

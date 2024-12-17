@@ -239,14 +239,14 @@ export function Principal({ isMobile }: PrincipalProps) {
 				</div>
 			</div>
 			<div
-				className='p-6 relative mb-12 md:mb-20'
-				style={{
-					backgroundImage:
-						'url("https://images.unsplash.com/photo-1543157145-f78c636d023d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fGFic3RyYWN0JTIwYmFja2dyb3VuZCUyMGJsYW5jb3N8ZW58MHwwfDB8fHwy")',
+				className='p-6 relative mb-12 md:mb-20 bg-gradient-to-tr from-gray via-nav to-almostWhite'
+				// style={{
+				// 	backgroundImage:
+				// 		'url("https://images.unsplash.com/photo-1543157145-f78c636d023d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fGFic3RyYWN0JTIwYmFja2dyb3VuZCUyMGJsYW5jb3N8ZW58MHwwfDB8fHwy")',
 
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}
+				// 	backgroundSize: 'cover',
+				// 	backgroundPosition: 'center',
+				// }}
 			>
 				<div className='absolute top-0 left-0 w-full h-2 bg-gradient-to-b from-almostWhite to-transparent'></div>
 				<RatingCharts />

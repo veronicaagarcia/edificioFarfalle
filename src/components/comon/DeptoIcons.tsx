@@ -1,6 +1,6 @@
 export function DeptoIcons() {
 	return (
-		<section className=' text-black text-xs md:text-base flex justify-around py-1 mt-8 mb-8'>
+		<section className=' text-slate-900 text-xs md:text-base flex justify-around py-8 md:py-12 xl:py-16 2xl:py-20'>
 			<div className='flex flex-col items-center justify-center'>
 				<svg
 					fill='#402e32'
@@ -11,11 +11,11 @@ export function DeptoIcons() {
 					xmlns='http://www.w3.org/2000/svg'
 					viewBox='0 0 393.338 393.338'
 				>
-					<g id='SVGRepo_bgCarrier' stroke-width='0'></g>
+					<g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
 					<g
 						id='SVGRepo_tracerCarrier'
-						stroke-linecap='round'
-						stroke-linejoin='round'
+						strokeLinecap='round'
+						strokeLinejoin='round'
 					></g>
 					<g id='SVGRepo_iconCarrier'>
 						{' '}
@@ -35,11 +35,11 @@ export function DeptoIcons() {
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
 				>
-					<g id='SVGRepo_bgCarrier' stroke-width='0'></g>
+					<g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
 					<g
 						id='SVGRepo_tracerCarrier'
-						stroke-linecap='round'
-						stroke-linejoin='round'
+						strokeLinecap='round'
+						strokeLinejoin='round'
 					></g>
 					<g id='SVGRepo_iconCarrier'>
 						{' '}
@@ -73,11 +73,11 @@ export function DeptoIcons() {
 					version='1.1'
 					xmlns='http://www.w3.org/2000/svg'
 				>
-					<g id='SVGRepo_bgCarrier' stroke-width='0'></g>
+					<g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
 					<g
 						id='SVGRepo_tracerCarrier'
-						stroke-linecap='round'
-						stroke-linejoin='round'
+						strokeLinecap='round'
+						strokeLinejoin='round'
 					></g>
 					<g id='SVGRepo_iconCarrier'>
 						<path
@@ -98,11 +98,11 @@ export function DeptoIcons() {
 					id='Layer_1'
 					xmlns='http://www.w3.org/2000/svg'
 				>
-					<g id='SVGRepo_bgCarrier' stroke-width='0'></g>
+					<g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
 					<g
 						id='SVGRepo_tracerCarrier'
-						stroke-linecap='round'
-						stroke-linejoin='round'
+						strokeLinecap='round'
+						strokeLinejoin='round'
 					></g>
 					<g id='SVGRepo_iconCarrier'>
 						{' '}

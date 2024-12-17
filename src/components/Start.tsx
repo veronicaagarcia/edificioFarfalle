@@ -95,7 +95,7 @@ export function Start() {
 				<div className='text-orange flex justify-center mt-2'>
 					<button
 						onClick={getStart}
-						className='group relative inline-flex mb-2 h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-4 font-medium text-neutral-200 transition hover:bg-black hover:scale-110'
+						className='group relative inline-flex mb-2 h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-4 font-medium text-neutral-200 transition hover:bg-slate-950 hover:scale-110'
 					>
 						<span className='text-base font-lato'>Ingresar</span>
 						<div className='absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]'>
