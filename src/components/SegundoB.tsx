@@ -15,16 +15,16 @@ export function SegundoB() {
 		{ type: 'video', url: completo },
 		{
 			type: 'image',
-			url: '/images/2B/1.png', 
+			url: '/edificioFarfalle/images/2B/1.png', 
 		},
-		{ type: 'image', url: '/images/2B/3.jpeg' },
-		{ type: 'image', url: '/images/2B/2.JPG' },
-		{ type: 'image', url: '/images/2B/4.jpeg' },
-		{ type: 'image', url: '/images/2B/5.jpeg' },
-		{ type: 'image', url: '/images/2B/6.JPG' },
-		{ type: 'image', url: '/images/2B/7.jpeg' },
-		{ type: 'image', url: '/images/2B/9.jpeg' },
-		{ type: 'image', url: '/images/2B/8.JPG' },
+		{ type: 'image', url: '/edificioFarfalle/images/2B/3.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/2B/2.JPG' },
+		{ type: 'image', url: '/edificioFarfalle/images/2B/4.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/2B/5.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/2B/6.JPG' },
+		{ type: 'image', url: '/edificioFarfalle/images/2B/7.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/2B/9.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/2B/8.JPG' },
 		
 	]
 	const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(

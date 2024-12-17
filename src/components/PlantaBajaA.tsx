@@ -15,15 +15,15 @@ export function PbA() {
 		{ type: 'video', url: completo },
 		{
 			type: 'image',
-			url: '/images/PbA/1.jpg', 
+			url: '/edificioFarfalle/images/PbA/1.jpg', 
 		},
-		{ type: 'image', url: '/images/PbA/2.jpg' },
-		{ type: 'image', url: '/images/PbA/3.jpg' },
-		{ type: 'image', url: '/images/PbA/4.jpg' },
-		{ type: 'image', url: '/images/PbA/5.jpg' },
-		{ type: 'image', url: '/images/PbA/6.jpg' },
-		{ type: 'image', url: '/images/PbA/7.jpg' },
-		{ type: 'image', url: '/images/PbA/8.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbA/2.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbA/3.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbA/4.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbA/5.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbA/6.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbA/7.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbA/8.jpg' },
 	]
 
 	const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(

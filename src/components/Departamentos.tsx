@@ -7,15 +7,15 @@ import 'aos/dist/aos.css';
 
 export function Departamentos() {
 	const pba =
-		'/images/PbA.jpg'
+		'/edificioFarfalle/images/PbA.jpg'
 	const pbb =
-		'/images/PbB.jpg'
+		'/edificioFarfalle/images/PbB.jpg'
 	const primeroa =
-		'/images/1A.jpeg'
+		'/edificioFarfalle/images/1A.jpeg'
 	const primerob =
-		'/images/1B.jpeg'
+		'/edificioFarfalle/images/1B.jpeg'
 	const segundob =
-		'/images/2B.jpeg'
+		'/edificioFarfalle/images/2B.jpeg'
 
 		const animatedRefs = useRef<(HTMLHeadingElement | null)[]>([])
 	

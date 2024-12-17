@@ -14,15 +14,15 @@ export function PrimeroA() {
 		{ type: 'video', url: completo },
 		{
 			type: 'image',
-			url: '/images/1A/1.jpeg', 
+			url: '/edificioFarfalle/images/1A/1.jpeg', 
 		},
-		{ type: 'image', url: '/images/1A/2.jpeg' },
-		{ type: 'image', url: '/images/1A/3.jpeg' },
-		{ type: 'image', url: '/images/1A/4.jpeg' },
-		{ type: 'image', url: '/images/1A/5.jpeg' },
-		{ type: 'image', url: '/images/1A/6.jpeg' },
-		{ type: 'image', url: '/images/1A/7.jpeg' },
-		{ type: 'image', url: '/images/1A/8.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/1A/2.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/1A/3.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/1A/4.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/1A/5.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/1A/6.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/1A/7.jpeg' },
+		{ type: 'image', url: '/edificioFarfalle/images/1A/8.jpeg' },
 
 	]
 

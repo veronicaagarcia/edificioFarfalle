@@ -16,17 +16,17 @@ export function PbB() {
 		{ type: 'video', url: completo },
 		{
 			type: 'image',
-			url: '/images/PbB/1.jpg', 
+			url: '/edificioFarfalle/images/PbB/1.jpg', 
 		},
-		{ type: 'image', url: '/images/PbB/2.jpg' },
-		{ type: 'image', url: '/images/PbB/3.jpg' },
-		{ type: 'image', url: '/images/PbB/4.jpg' },
-		// { type: 'image', url: '/images/PbB/5.jpg' },
-		// { type: 'image', url: '/images/PbB/6.jpg' },
-		{ type: 'image', url: '/images/PbB/7.jpg' },
-		{ type: 'image', url: '/images/PbB/8.jpg' },
-		{ type: 'image', url: '/images/PbB/9.jpg' },
-		{ type: 'image', url: '/images/PbB/10.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbB/2.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbB/3.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbB/4.jpg' },
+		// { type: 'image', url: '/edificioFarfalle/images/PbB/5.jpg' },
+		// { type: 'image', url: '/edificioFarfalle/images/PbB/6.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbB/7.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbB/8.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbB/9.jpg' },
+		{ type: 'image', url: '/edificioFarfalle/images/PbB/10.jpg' },
 		
 	]
 
