@@ -66,7 +66,7 @@ export function Departamentos() {
 				<h2 ref={(el) => (animatedRefs.current[0] = el)}
           data-aos="fade-up" 
           data-aos-duration="1000"
-          data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-nav text-center mb-8'>
+          data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8'>
 					Nuestros Departamentos
 				</h2>
 				<p className='text-justify text-black text-opacity-90 mb-2 px-8  pt-2 md:pt-3 text-base md:text-lg'>
@@ -96,8 +96,8 @@ export function Departamentos() {
 					en los enlaces de cada departamento para ver más detalles y conocer
 					todo lo que ofrecemos.
 				</p>
-				<div className='mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 px-8 mb-20 '>
-					<div className='bg-white hover:shadow-lg rounded-sm overflow-hidden relative h-fit max-h-96 border-2 hover:border-gray border-slate-900 shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
+				<div className='mt-8 grid grid-cols-1 sm:grid-cols-2  gap-12 px-8 mb-20 '>
+					<div className='bg-white hover:shadow-lg overflow-hidden relative h-fit max-h-96 border-2 border-none rounded-sm hover:border-gray shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={pba} alt='PB A' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
@@ -118,7 +118,7 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white hover:shadow-lg rounded-sm overflow-hidden relative h-fit max-h-96 border-2 hover:border-gray border-slate-900 shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
+					<div className='bg-white hover:shadow-lg overflow-hidden relative h-fit max-h-96 border-2 border-none rounded-sm hover:border-gray shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={pbb} alt='PB B' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
@@ -139,7 +139,7 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white hover:shadow-lg rounded-sm overflow-hidden relative h-fit max-h-96 border-2 hover:border-gray border-slate-900 shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
+					<div className='bg-white hover:shadow-lg overflow-hidden relative h-fit max-h-96 border-2 border-none rounded-sm hover:border-gray shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={primeroa} alt='1 A' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
@@ -160,7 +160,7 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white hover:shadow-lg rounded-sm overflow-hidden relative h-fit max-h-96 border-2 hover:border-gray border-slate-900 shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
+					<div className='bg-white hover:shadow-lg overflow-hidden relative h-fit max-h-96 border-2 border-none rounded-sm hover:border-gray shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={primerob} alt='1 B' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>
@@ -181,7 +181,7 @@ export function Departamentos() {
 							</div>
 						</div>
 					</div>
-					<div className='bg-white hover:shadow-lg rounded-sm overflow-hidden relative h-fit max-h-96 border-2 hover:border-gray border-slate-900 shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
+					<div className='bg-white hover:shadow-lg overflow-hidden relative h-fit max-h-96 border-2 border-none rounded-sm hover:border-gray shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={segundob} alt='2 B' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>
 							<div className='self-start'>

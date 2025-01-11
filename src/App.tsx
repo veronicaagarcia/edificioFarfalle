@@ -1,7 +1,6 @@
 import { useRef} from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HelmetWrapper from './components/comon/HelmetWrapper'
-import 'aos/dist/aos.css'
 import { Navbar } from './components/comon/Navbar'
 import { Principal } from './components/Principal'
 import { Departamentos } from './components/Departamentos'
@@ -17,11 +16,11 @@ import { Servicios } from './components/Servicios'
 import { Contacto } from './components/Contacto'
 import { Reservas } from './components/Reservas'
 import './App.css'
+import 'aos/dist/aos.css'
 
 function App() {
 	const isStarted = useFarfalleStore((state) => state.isStarted)
 	const sectionTopRef = useRef(null)
-	// const sectionReservasRef = useRef<HTMLDivElement>(null)
 	const isMobile = useMediaQuery('(max-width:640px)')
 
 	return (
@@ -33,20 +32,17 @@ function App() {
 			{!isStarted ? (
 				<Start />
 			) : (
-				<main className=' h-min-screen h-full overflow-y-scroll w-full min-w-screen scrollbar-hide'>
+				<main className='h-min-screen h-full overflow-y-scroll w-full min-w-screen scrollbar-hide'>
 					<BrowserRouter>
 						<Navbar
 							sectionTopRef={sectionTopRef}
 							isMobile={isMobile}
-							// sectionReservasRef={sectionReservasRef}
 						/>
 						<Routes>
 							<Route
 								path='edificioFarfalle/'
 								element={
 									<Principal
-										// sectionTopRef={sectionTopRef}
-										// sectionReservasRef={sectionReservasRef}
 										isMobile={isMobile}
 									/>
 								}

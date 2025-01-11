@@ -221,7 +221,7 @@ export function Reservas() {
 			<h2 ref={(el) => (animatedRefs.current[0] = el)}
           data-aos="fade-up" 
           data-aos-duration="1000"
-          data-aos-offset="200"  className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-nav text-center mb-8'>
+          data-aos-offset="200"  className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8'>
 				Reservas
 			</h2>
 			<p className='text-justify text-black text-opacity-90 text-base md:text-lg px-3 md:px-28 mb-8 md:mb-20'>

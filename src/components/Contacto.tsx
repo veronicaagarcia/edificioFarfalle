@@ -158,7 +158,7 @@ export function Contacto() {
 			<h2 ref={(el) => (animatedRefs.current[0] = el)}
           data-aos="fade-up" 
           data-aos-duration="1000"
-          data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-nav text-center mb-8'>
+          data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8'>
 				Contáctanos
 			</h2>
 			<p className='text-justify text-black text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 text-base md:text-lg'>
@@ -307,7 +307,7 @@ export function Contacto() {
 			<h3 ref={(el) => (animatedRefs.current[1] = el)}
           data-aos="fade-up" 
           data-aos-duration="1000"
-          data-aos-offset="200"  className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-nav text-center mb-8'>
+          data-aos-offset="200"  className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8'>
 				Nuestra Ubicación
 			</h3>
 			<p className='text-justify text-black text-opacity-90 mb-12 px-3 md:px-28 text-base md:text-lg mt-4 '>

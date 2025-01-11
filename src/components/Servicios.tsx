@@ -12,13 +12,14 @@ import { faVideo } from '@fortawesome/free-solid-svg-icons/faVideo'
 import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons/faCalendarCheck'
 import { faClipboardCheck } from '@fortawesome/free-solid-svg-icons/faClipboardCheck'
 import { Footer } from './comon/Footer'
+import ImageGallery from './ImageGaller'
 
 export function Servicios() {
-	const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/zcomunes.mp4'
+	// const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/zcomunes.mp4'
 	return (
 		<section className='w-full h-full flex flex-col font-thin font-serif italic text-black'>
 			<div
-				className='w-11/12 mx-auto h-fit pb-12 my-4 md:my-16 md:pb-48 md:pl-6 p-4 md:rounded-lg bg-gradient-to-tl from-nav via-gray to-almostWhite'
+				className='w-11/12 mx-auto h-fit pb-12 my-4 md:my-16 md:pb-48 md:pl-6 p-4 md:rounded-lg bg-transparent'
 				// style={{
 				// 	backgroundImage:
 				// 		'url("https://images.unsplash.com/photo-1671716784499-a3d26826d844?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
@@ -26,8 +27,8 @@ export function Servicios() {
 				// 	backgroundPosition: 'center',
 				// }}
 			>
-				<div className='relative h-96'>
-					{/* Video como fondo */}
+				{/* <div className='relative h-96'>
+					
 					<video
 						className='absolute top-0 left-0 w-full md:w-4/12 h-96 object-cover z-0 md:z-20 md:rounded-tl-lg md:rounded-bl-lg'
 						autoPlay
@@ -38,7 +39,7 @@ export function Servicios() {
 						<source src={video} type='video/mp4' />
 					</video>
 					<div className='absolute top-0 left-0 w-full h-full rounded-lg bg-black opacity-40 z-10'></div>
-					{/* Contenido superpuesto */}
+					
 					<div className='absolute top-0 left-0 w-full h-full flex items-center justify-center md:justify-end'>
 						<div className='w-9/12 md:w-1/2 md:mr-24 text-white text-center z-20'>
 							<h3 className='text-base p-6 sm:p-12 md:p-14 border-2 border-nav md:text-xl lg:text-2xl font-medium mb-4 rounded-lg'>
@@ -48,7 +49,15 @@ export function Servicios() {
 							</h3>
 						</div>
 					</div>
-				</div>
+				</div> */}
+				{/* <h2 
+          className='text-lg md:text-xl mt-4 md:mt-8 font-medium text-black text-center mb-8'>
+				Nuestros departamentos están completamente amueblados y
+								equipados con todas las comodidades necesarias para una estadía
+								confortable y placentera
+			</h2> */}
+				{/* Aca unagaleria de imagenes responsive de no mas de 10 fotos */}
+				<ImageGallery />
 
 				<ul className='w-full h-fit mx-auto mt-4 mb-20 flex flex-col justify-center sm:flex-row sm:justify-between pt-8'>
 					<div className='w-full h-auto md:h-600 sm:w-1/4 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90'>

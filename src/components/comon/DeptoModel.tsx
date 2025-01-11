@@ -49,7 +49,7 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
   return (
     <>
       {selectedIndex !== null && (
-        <div className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-80 z-50'>
+        <div className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-slate-900 bg-opacity-80 z-50'>
           <div className='absolute inset-0 flex items-center justify-between md:justify-around p-1'>
             <button
               className='text-nav text-2xl font-bold'
@@ -61,7 +61,7 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
             {isVideo(selectedIndex) ? (
               <video
                 src={videoNames[selectedIndex]}
-                className='max-w-100 w-10/12 md:w-5/12 h-auto max-h-90 border-nav border-2 hover:shadow-lg bg-black mx-1 rounded-md'
+                className='max-w-100 w-auto h-auto max-h-90 border-nav border-2 hover:shadow-lg bg-slate-900 mx-1 rounded-md'
                 controls
                 autoPlay
               />

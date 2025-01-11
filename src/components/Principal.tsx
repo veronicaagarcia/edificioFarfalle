@@ -1,88 +1,120 @@
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import 'react-responsive-carousel/lib/styles/carousel.css'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import { RatingCharts } from './comon/RatingChart'
 import { Footer } from './comon/Footer'
 import AOS from 'aos'
-import 'aos/dist/aos.css';
+import 'aos/dist/aos.css'
 
 interface PrincipalProps {
-	isMobile: boolean
+  isMobile: boolean
 }
 
 export function Principal({ isMobile }: PrincipalProps) {
-	const video = 'https://newfarfalle.s3.sa-east-1.amazonaws.com/principal.mp4'
-	const animatedRefs = useRef<(HTMLHeadingElement | null)[]>([])
-	
-	useEffect(() => {
-		AOS.init({
-		duration: 1000,
-		easing: 'ease-in-out',
-		once: false,
-		offset: 100,
-		})
-	
-		const observer = new IntersectionObserver(
-		(entries) => {
-			entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('aos-animate')
-			} else {
-				entry.target.classList.remove('aos-animate')
-			}
-			})
-		},
-		{
-			root: null,
-			rootMargin: '0px',
-			threshold: 0.1
-		}
-		)
-		animatedRefs.current.forEach((ref) => {
-		if (ref) {
-			observer.observe(ref)
-		}
-		})
-	
-		return () => {
-		animatedRefs.current.forEach((ref) => {
-			if (ref) {
-			observer.unobserve(ref)
-			}
-		})
-		}
-	}, [])
+  const video = '/edificioFarfalle/video.start.mp4'
+  const animatedRefs = useRef<(HTMLHeadingElement | null)[]>([])
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
+  
+  const initAOS = useCallback(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: false,
+      offset: 100,
+    })
+  }, [])
 
-	return (
-		<div className='mx-auto w-full h-full '>
-			<section
-				className={`${
-					isMobile ? ` h-72` : ` h-[500px] `
-				} relative w-full max-w-screen overflow-hidden max-h-[500px] mb-4`}
-			>
-				<video
-					className='w-full object-cover object-center h-[600px] max-h-[600px] transition-shadow'
-					autoPlay
-					playsInline
-					loop
-				>
-					<source src={video} type='video/mp4' />
-				</video>
-				<div className='absolute bottom-0 left-0 w-full h-2 bg-gradient-to-t from-almostWhite to-transparent'></div>
-			</section>
+  useEffect(() => {
+    initAOS()
 
-			<div className='px-3 md:px-28'>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate')
+          } else {
+            entry.target.classList.remove('aos-animate')
+          }
+        })
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      }
+    )
 
-			<h2
-				className={`text-center text-black text-opacity-90 animate-typewriter overflow-hidden border-r-4 border-r-orange-500 mb-8  ${
-					isMobile
-						? `mx-auto pt-2 text-lg whitespace-wrap`
-						: `whitespace-nowrap mx-auto pt-3 text-xl`
-				}`}
-			>
-				Bienvenidos a <span className='text-orange italic'> Edificio Farfalle </span>
-				tu lugar en la ciudad de La Plata
-			</h2>
+    animatedRefs.current.forEach((ref) => {
+      if (ref) {
+        observer.observe(ref)
+      }
+    })
+
+    return () => {
+      animatedRefs.current.forEach((ref) => {
+        if (ref) {
+          observer.unobserve(ref)
+        }
+      })
+    }
+  }, [initAOS])
+
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true)
+  }
+
+  return (
+    <div className='mx-auto w-full h-full md:mt-6'>
+      <section
+        className={`${
+          isMobile ? 'h-72' : 'h-[500px]'
+        } relative w-full max-w-screen overflow-hidden max-h-[500px] mb-4`}
+      >
+        {!isVideoLoaded && (
+          <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+        )}
+		<div className='relative'>
+		<h1
+		ref={(el) => (animatedRefs.current[0] = el)}
+		data-aos="fade-up" 
+		data-aos-duration="1000"
+		data-aos-offset="200" 
+          className={`absolute top-[20%] md:top-[35%] text-center w-full text-white mb-8 ${
+            isMobile
+              ? 'mx-auto pt-2 text-lg whitespace-wrap'
+              : 'whitespace-nowrap mx-auto pt-3 text-4xl'
+          }`}
+        >
+          Bienvenidos a  <span className='text-orange italic'>  Edificio Farfalle  </span> 
+          tu lugar en la ciudad de La Plata
+        </h1>
+        <video
+          className={`w-full object-cover object-center h-[600px] max-h-[600px] transition-opacity duration-300 ${
+            isVideoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          autoPlay
+          playsInline
+          loop
+          muted
+          onLoadedData={handleVideoLoad}
+          poster="/edificioFarfalle/video-poster.jpg"
+        >
+          <source src={video} type='video/mp4' />
+          Tu navegador no soporta el elemento de video.
+        </video>
+		</div>
+        <div className='absolute bottom-0 left-0 w-full h-2 bg-gradient-to-t from-almostWhite to-transparent'></div>
+      </section>
+
+      <div className='px-3 md:px-28'>
+        {/* <h1
+          className={`text-center text-black text-opacity-90 animate-typewriter overflow-hidden border-r-4 border-r-orange-500 mb-8 ${
+            isMobile
+              ? 'mx-auto pt-2 text-lg whitespace-wrap'
+              : 'whitespace-nowrap mx-auto pt-3 text-xl'
+          }`}
+        >
+          Bienvenidos a <span className='text-orange italic'> Edificio Farfalle </span>
+          tu lugar en la ciudad de La Plata
+        </h1> */}
 			<p
 				className={`text-justify text-black text-opacity-90 mb-8 px-4 md:px-8 ${
 					isMobile ? `pt-2 text-base` : `pt-3 text-lg`
@@ -97,12 +129,15 @@ export function Principal({ isMobile }: PrincipalProps) {
 				estadía confortable, buscando brindar calidad y confort en nuestro
 				servicio para que la estadía sea placentera y te sientas como en casa.
 			</p>
-			<h2 ref={(el) => (animatedRefs.current[0] = el)}
+			<h2 
+          ref={(el) => (animatedRefs.current[1] = el)}
           data-aos="fade-up" 
           data-aos-duration="1000"
-          data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-nav text-center mb-8'>
-				¿Por qué elegirnos?
-			</h2>
+          data-aos-offset="200" 
+          className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8'
+        >
+          ¿Por qué elegirnos?
+        </h2>
 			<p
 				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-8 ${
 					isMobile ? `pt-2 text-base` : ` pt-3 text-lg`
@@ -189,10 +224,10 @@ export function Principal({ isMobile }: PrincipalProps) {
 				sea lo más placentera posible. Nuestro personal está siempre dispuesto a
 				ayudarte con cualquier necesidad o consulta que puedas tener.
 			</p>
-			<h2 ref={(el) => (animatedRefs.current[1] = el)}
+			<h2 ref={(el) => (animatedRefs.current[2] = el)}
           data-aos="fade-up" 
           data-aos-duration="1000"
-          data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-nav text-center mb-8'>
+          data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8'>
 				Opiniones y Valoraciones
 			</h2>
 			<p
@@ -239,24 +274,17 @@ export function Principal({ isMobile }: PrincipalProps) {
 				</div>
 			</div>
 			<div
-				className='p-6 relative mb-12 md:mb-20 bg-gradient-to-tr from-gray via-nav to-almostWhite'
-				// style={{
-				// 	backgroundImage:
-				// 		'url("https://images.unsplash.com/photo-1543157145-f78c636d023d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fGFic3RyYWN0JTIwYmFja2dyb3VuZCUyMGJsYW5jb3N8ZW58MHwwfDB8fHwy")',
-
-				// 	backgroundSize: 'cover',
-				// 	backgroundPosition: 'center',
-				// }}
+				className='p-6 relative mb-12 md:mb-20 bg-gradient-to-tr from-slate-950/80 via-nav/80 to-orange/80'
 			>
 				<div className='absolute top-0 left-0 w-full h-2 bg-gradient-to-b from-almostWhite to-transparent'></div>
 				<RatingCharts />
 				<div className='absolute bottom-0 left-0 w-full h-2 bg-gradient-to-t from-almostWhite to-transparent'></div>
 			</div>
 
-			<h2 ref={(el) => (animatedRefs.current[2] = el)}
+			<h2 ref={(el) => (animatedRefs.current[3] = el)}
           data-aos="fade-up" 
           data-aos-duration="1000"
-          data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-nav text-center mb-8'>
+          data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8'>
 				Comparte Tu Experiencia
 			</h2>
 			<p
