@@ -61,7 +61,7 @@ export function Servicios() {
 
 				<ul className='w-full h-fit mx-auto mt-4 mb-20 flex flex-col justify-center sm:flex-row sm:justify-between pt-8'>
 					<div className='w-full h-auto md:h-600 sm:w-1/4 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90'>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 md:mt-5 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 md:mt-5 mb-1'>
 							<FontAwesomeIcon
 								icon={faSquareParking}
 								color='inherit'
@@ -76,7 +76,7 @@ export function Servicios() {
 							</li>
 						</ul>
 
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
 							<FontAwesomeIcon icon={faKitchenSet} color='inherit' size='xl' />
 							<p className='pl-2'>Cocina</p>
 						</li>
@@ -93,7 +93,7 @@ export function Servicios() {
 							</li>
 							<li>Cesto de basura</li>
 						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
 							<FontAwesomeIcon icon={faBath} color='inherit' size='xl' />
 							<p className='pl-2'>Baño</p>
 						</li>
@@ -106,14 +106,14 @@ export function Servicios() {
 						</ul>
 					</div>
 					<div className='w-full h-auto md:h-600 sm:w-1/4 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90'>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 md:mt-5 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 md:mt-5 mb-1'>
 							<WifiRoundedIcon color='inherit' />
 							<p className='pl-2'>Internet</p>
 						</li>
 						<ul className='text-black text-center md:text-start w-full font-thin'>
 							<li>Wifi gratuito en departamentos</li>
 						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
 							<BedRoundedIcon color='inherit' />
 							<p className='pl-2'>Habitación</p>
 						</li>
@@ -125,7 +125,7 @@ export function Servicios() {
 							<li>Veladores</li>
 							<li>Mesa de luz</li>
 						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
 							<WeekendRoundedIcon color='inherit' />
 							<p className='pl-2'>Living/comedor</p>
 						</li>
@@ -135,7 +135,7 @@ export function Servicios() {
 							<li>TV por cable</li>
 							<li>Mesa y sillas (para 4 personas)</li>
 						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
 							<DeckRoundedIcon color='inherit' />
 							<p className='pl-2'>Exteriores </p>
 						</li>
@@ -145,7 +145,7 @@ export function Servicios() {
 						</ul>
 					</div>
 					<div className='w-full h-auto md:h-600 sm:w-1/4 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90'>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 md:mt-5 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 md:mt-5 mb-1'>
 							<FontAwesomeIcon
 								icon={faClipboardCheck}
 								color='inherit'
@@ -157,7 +157,7 @@ export function Servicios() {
 						<ul className='text-black text-center md:text-start w-full font-thin'>
 							<li>A partir de las 14:00 hs</li>
 						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
 							<FontAwesomeIcon
 								icon={faCalendarCheck}
 								color='inherit'
@@ -168,7 +168,7 @@ export function Servicios() {
 						<ul className='text-black text-center md:text-start w-full font-thin'>
 							<li>10:00 hs</li>
 						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
 							<AppsRoundedIcon color='inherit' />
 							<p className='pl-2'>General</p>
 						</li>
@@ -178,14 +178,14 @@ export function Servicios() {
 							<li>Calefacción (Termotanque o Calefón)</li>
 							<li>No se admiten mascotas</li>
 						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
 							<FontAwesomeIcon icon={faVideo} color='inherit' size='lg' />
 							<p className='pl-2'>Seguridad</p>
 						</li>
 						<ul className='text-black text-center md:text-start w-full font-thin'>
 							<li>Cámaras de seguridad en zonas comunes</li>
 						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-10 mb-1'>
+						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
 							<RecordVoiceOverRoundedIcon color='inherit' />
 							<p className='pl-2'>Idiomas</p>
 						</li>

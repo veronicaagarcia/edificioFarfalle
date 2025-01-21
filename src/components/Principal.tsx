@@ -274,7 +274,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 				</div>
 			</div>
 			<div
-				className='p-6 relative mb-12 md:mb-20 bg-gradient-to-tr from-slate-950/80 via-nav/80 to-orange/80'
+				className='p-6 relative mb-12 md:mb-20'
 			>
 				<div className='absolute top-0 left-0 w-full h-2 bg-gradient-to-b from-almostWhite to-transparent'></div>
 				<RatingCharts />

@@ -167,7 +167,7 @@ export function Contacto() {
 				que pueda tener. Puede contactarnos a través de los siguientes medios:
 			</p>
 			<div
-				className='flex justify-center self-center m-auto items-center w-full h-fit relative mb-8 md:mb-20 bg-gradient-to-br from-nav via-gray to-almostWhite py-12 md:py-20 xl:py-28' 
+				className='flex justify-center self-center m-auto items-center w-full h-fit relative mb-8 md:mb-20  py-12 md:py-20 xl:py-28' 
 				// style={{
 				// 	backgroundImage:
 				// 		'url("https://images.unsplash.com/photo-1720180320321-2a3d719d14f8?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
@@ -178,10 +178,10 @@ export function Contacto() {
 			>
 				<Card
 					style={{
-						backgroundColor: 'transparent',
+						backgroundColor: '#0f172a',
 						transition: 'background-color 0.3s',
 					}}
-					className=' py-1 px-2 h-fit rounded-full mx-auto w-2/3 md:w-1/2 hover:shadow-lg shadow-slate-900 hover:shadow-slate-900 '
+					className=' py-1 px-2 h-fit rounded-full mx-auto w-2/3 md:w-1/2 hover:shadow-lg'
 				>
 					<form className='p-4 mx-auto w-11/12 h-80 flex flex-col justify-evenly'>
 						<input
@@ -227,7 +227,7 @@ export function Contacto() {
 				<div className='w-1/5 md:w-1/3 xl:w-[25%] h-60 md:h-72 flex flex-col justify-around mt-4 md:mt-0'>
 					<Card
 						style={{
-							backgroundColor: 'transparent',
+							backgroundColor: '#0f172a',
 							transition: 'background-color 0.3s',
 						}}
 						className='py-0 hover:shadow-md hover:shadow-slate-900 hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
@@ -246,7 +246,7 @@ export function Contacto() {
 					</Card>
 					<Card
 						style={{
-							backgroundColor: 'transparent',
+							backgroundColor: '#0f172a',
 							transition: 'background-color 0.3s',
 						}}
 						className='py-0 hover:shadow-md hover:shadow-slate-900 hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
@@ -265,7 +265,7 @@ export function Contacto() {
 					</Card>
 					<Card
 						style={{
-							backgroundColor: 'transparent',
+							backgroundColor: '#0f172a',
 							transition: 'background-color 0.3s',
 						}}
 						className='py-0 hover:shadow-md hover:shadow-slate-900 hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2 '
@@ -284,7 +284,7 @@ export function Contacto() {
 					</Card>
 					<Card
 						style={{
-							backgroundColor: 'transparent',
+							backgroundColor: '#0f172a',
 							transition: 'background-color 0.3s',
 						}}
 						className='py-0 hover:shadow-md hover:shadow-slate-900 hover:scale-105 px-0  rounded-none md:rounded-full w-fit p-2  '

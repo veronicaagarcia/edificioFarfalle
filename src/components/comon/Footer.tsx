@@ -1,6 +1,6 @@
 export function Footer() {
 	return (
-		<footer className=' bg-slate-950 opacity-95 text-white py-3 md:p-6 lg:p-10 w-full h-fit'>
+		<footer className='bg-slate-950 opacity-95 text-white py-3 md:p-6 lg:p-10 w-full h-fit'>
 			<div className='container mx-auto px-4 md:px-8'>
 				<div className='flex flex-wrap justify-between py-4'>
 					<div className='w-full sm:w-1/2 md:w-1/4 mb-4'>
