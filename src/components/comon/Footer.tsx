@@ -84,7 +84,7 @@ export function Footer() {
 				</div>
 				<div className='mt-2 border-t border-footerLine pt-2 text-center'>
 					<p className='text-xs pt-4'>
-						© 2024 Edificio Farfalle. Todos los derechos reservados.
+						© 2025 Edificio Farfalle. Todos los derechos reservados.
 					</p>
 				</div>
 			</div>

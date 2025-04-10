@@ -154,36 +154,32 @@ export function Contacto() {
 	}
 
 	return (
-		<section className='pt-12 w-full h-full '>
+		<section>
+
+
+		<section className='pt-10 w-full h-full px-3 md:px-28'>
 			<h2 ref={(el) => (animatedRefs.current[0] = el)}
           data-aos="fade-up" 
           data-aos-duration="1000"
           data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8'>
 				Contáctanos
 			</h2>
-			<p className='text-justify text-black text-opacity-90 mb-8 px-3 md:px-28 pt-2 md:pt-3 text-base md:text-lg'>
+			<p className='text-justify text-black text-opacity-90 mb-8 px-4 md:px-0 xl:px-8 pt-2 md:pt-3 text-base md:text-lg'>
 				En <span className='text-orange italic'>Edificio Farfalle</span>, estamos
 				siempre a su disposición para responder cualquier consulta o necesidad
 				que pueda tener. Puede contactarnos a través de los siguientes medios:
 			</p>
 			<div
-				className='flex justify-center self-center m-auto items-center w-full h-fit relative mb-8 md:mb-20  py-12 md:py-20 xl:py-28' 
-				// style={{
-				// 	backgroundImage:
-				// 		'url("https://images.unsplash.com/photo-1720180320321-2a3d719d14f8?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-				// 	backgroundSize: 'cover',
-				// 	backgroundPosition: 'center',
-				// 	height: '600px',
-				// }}
+				className='flex flex-col md:flex-row justify-center md:justify-between self-center m-auto items-center w-full h-fit relative mb-8 md:mb-20 py-6 xl:py-10' 
 			>
 				<Card
 					style={{
 						backgroundColor: '#0f172a',
 						transition: 'background-color 0.3s',
 					}}
-					className=' py-1 px-2 h-fit rounded-full mx-auto w-2/3 md:w-1/2 hover:shadow-lg'
+					className='py-1 px-2 h-fit rounded-full w-full mx-4 md:mx-0 xl:mx-8 md:w-1/2 hover:shadow-lg'
 				>
-					<form className='p-4 mx-auto w-11/12 h-80 flex flex-col justify-evenly'>
+					<form className='p-4 mx-auto w-full h-80 flex flex-col justify-evenly'>
 						<input
 							className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 							id='nombre'
@@ -224,7 +220,7 @@ export function Contacto() {
 						</button>
 					</form>
 				</Card>
-				<div className='w-1/5 md:w-1/3 xl:w-[25%] h-60 md:h-72 flex flex-col justify-around mt-4 md:mt-0'>
+				<div className='w-full md:w-1/3 xl:w-[25%] h-fit md:h-72 flex md:flex-col justify-around mt-4 md:mt-0'>
 					<Card
 						style={{
 							backgroundColor: '#0f172a',
@@ -307,22 +303,22 @@ export function Contacto() {
 			<h3 ref={(el) => (animatedRefs.current[1] = el)}
           data-aos="fade-up" 
           data-aos-duration="1000"
-          data-aos-offset="200"  className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8'>
+          data-aos-offset="200"  className='text-lg md:text-xl mt-4 font-mono font-medium uppercase text-orange/80 text-center mb-8'>
 				Nuestra Ubicación
 			</h3>
-			<p className='text-justify text-black text-opacity-90 mb-12 px-3 md:px-28 text-base md:text-lg mt-4 '>
+			<p className='text-justify text-black text-opacity-90 mb-12 px-4 md:px-0 xl:px-8 text-base md:text-lg mt-4 '>
 				El Farfalle ofrece alojamiento confortable en el corazón de La Plata,
 				ideal tanto para turistas como para viajeros de negocios. Nuestra
 				ubicación estratégica te permite acceder fácilmente a los principales
 				puntos de interés de la ciudad:
 			</p>
-			<div className='h-fit w-10/12 text-black mx-auto flex flex-col items-center rounded-xl mt-8 mb-12 md:mb-20'>
+			<div className='h-fit w-full text-black mx-auto flex flex-col items-center rounded-xl mt-8 mb-12 md:mb-20'>
 				<div className='flex flex-col md:flex-row justify-between mx-auto items-center w-full h-fit'>
 					<div className='w-11/12 md:w-1/2'>
 						{loading ? <CircularProgress color='inherit' /> : <Map />}
 					</div>
-					<div className='text-xs w-full md:w-1/2 p-1 px-5 text-black text-opacity-90 mb-4 text-justify'>
-						<p className='text-base font-medium mb-4'>
+					<div className='text-base w-full md:w-1/2 p-1 px-4 text-black text-opacity-90 mb-4 text-justify'>
+						<p className='font-medium mb-4'>
 							Dirección:{' '}
 							<span className='text-orange'>
 								{' '}
@@ -360,6 +356,7 @@ export function Contacto() {
 					</div>
 				</div>
 			</div>
+			</section>
 			<Footer />
 		</section>
 	)

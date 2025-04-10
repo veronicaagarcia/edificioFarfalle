@@ -62,14 +62,14 @@ export function Departamentos() {
 
 	return (
 		<section className='pt-12 h-full w-full m-auto'>
-			<div className='container mx-auto lg:px-24 mb-12 md:mb-20'>
+			<div className='container mx-auto mb-12 md:mb-20 px-3 md:px-28'>
 				<h2 ref={(el) => (animatedRefs.current[0] = el)}
           data-aos="fade-up" 
           data-aos-duration="1000"
           data-aos-offset="200" className='text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8'>
 					Nuestros Departamentos
 				</h2>
-				<p className='text-justify text-black text-opacity-90 mb-2 px-8  pt-2 md:pt-3 text-base md:text-lg'>
+				<p className='text-justify text-black text-opacity-90 mb-2 px-4 md:px-0 xl:px-8 pt-2 md:pt-3 text-base md:text-lg'>
 					En Edificio Farfalle, ofrecemos una variedad de opciones de
 					alojamiento perfectas para quienes buscan una estancia acogedora y
 					completamente equipada. Nuestros departamentos, con capacidad para
@@ -79,7 +79,7 @@ export function Departamentos() {
 					</span>
 					durante su visita.
 				</p>
-				<p className='text-justify text-black text-opacity-90 px-8 pt-2 md:pt-3 text-base md:text-lg mb-12 md:mb-20'>
+				<p className='text-justify text-black text-opacity-90 px-4 md:px-0 xl:px-8 pt-2 md:pt-3 text-base md:text-lg mb-12 md:mb-20'>
 					Además, incluimos un servicio de cambio de ropa de cama semanal
 					(aplicable para estancias mínimas de una semana), garantizando así la
 					frescura y limpieza que nuestros huéspedes merecen.
@@ -90,13 +90,13 @@ export function Departamentos() {
           data-aos-offset="200" className='text-lg md:mt-4 font-medium text-black text-center px-8 mb-8'>
 					Galería de Imágenes y Videos
 				</h3>
-				<p className='text-justify text-black text-opacity-90 mb-12 px-8 text-base md:text-lg'>
+				<p className='text-justify text-black text-opacity-90 mb-12 px-4 md:px-0 xl:px-8 text-base md:text-lg'>
 					Para ofrecerte una visión más clara de lo que puedes esperar, te
 					invitamos a explorar nuestras galerías de imágenes y videos. Haz clic
 					en los enlaces de cada departamento para ver más detalles y conocer
 					todo lo que ofrecemos.
 				</p>
-				<div className='mt-8 grid grid-cols-1 sm:grid-cols-2  gap-12 px-8 mb-20 '>
+				<div className='mt-8 grid grid-cols-1 sm:grid-cols-2  gap-12 px-4 md:px-0 xl:px-8 mb-20 '>
 					<div className='bg-white hover:shadow-lg overflow-hidden relative h-fit max-h-96 border-2 border-none rounded-sm hover:border-gray shadow-md shadow-slate-900 transition duration-300 transform hover:scale-105'>
 						<ImageLoader src={pba} alt='PB A' />
 						<div className='absolute inset-0 flex flex-col justify-between items-center'>

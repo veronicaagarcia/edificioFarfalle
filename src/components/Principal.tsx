@@ -62,7 +62,7 @@ export function Principal({ isMobile }: PrincipalProps) {
   }
 
   return (
-    <div className='mx-auto w-full h-full md:mt-6'>
+    <div className='mx-auto w-full h-full md:mt-2'>
       <section
         className={`${
           isMobile ? 'h-72' : 'h-[500px]'
@@ -77,10 +77,10 @@ export function Principal({ isMobile }: PrincipalProps) {
 		data-aos="fade-up" 
 		data-aos-duration="1000"
 		data-aos-offset="200" 
-          className={`absolute top-[20%] md:top-[35%] text-center w-full text-white mb-8 ${
+          className={`absolute top-[20%] md:top-[35%] text-center w-full text-white mb-8 whitespace-wrap mx-auto ${
             isMobile
-              ? 'mx-auto pt-2 text-lg whitespace-wrap'
-              : 'whitespace-nowrap mx-auto pt-3 text-4xl'
+              ? 'pt-2 text-lg'
+              : 'pt-3 text-4xl'
           }`}
         >
           Bienvenidos a  <span className='text-orange italic'>  Edificio Farfalle  </span> 
@@ -105,21 +105,10 @@ export function Principal({ isMobile }: PrincipalProps) {
       </section>
 
       <div className='px-3 md:px-28'>
-        {/* <h1
-          className={`text-center text-black text-opacity-90 animate-typewriter overflow-hidden border-r-4 border-r-orange-500 mb-8 ${
-            isMobile
-              ? 'mx-auto pt-2 text-lg whitespace-wrap'
-              : 'whitespace-nowrap mx-auto pt-3 text-xl'
-          }`}
-        >
-          Bienvenidos a <span className='text-orange italic'> Edificio Farfalle </span>
-          tu lugar en la ciudad de La Plata
-        </h1> */}
-			<p
-				className={`text-justify text-black text-opacity-90 mb-8 px-4 md:px-8 ${
-					isMobile ? `pt-2 text-base` : `pt-3 text-lg`
-				}`}
-			>
+		<p className={`text-justify text-black text-opacity-90 mb-8 px-4 md:px-0 xl:px-8 ${
+		isMobile ? `pt-2 text-base` : `pt-3 text-lg`
+		}`}
+		>
 				Ofrecemos una experiencia de alojamiento única en la Ciudad de La Plata.
 				Contamos con opciones flexibles y convenientes para aquellos que buscan
 				alojamiento a corto plazo. Nuestras unidades están diseñadas para
@@ -139,7 +128,7 @@ export function Principal({ isMobile }: PrincipalProps) {
           ¿Por qué elegirnos?
         </h2>
 			<p
-				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-8 ${
+				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-0 xl:px-8 ${
 					isMobile ? `pt-2 text-base` : ` pt-3 text-lg`
 				}`}
 			>
@@ -152,7 +141,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 				principales puntos de interés.
 			</p>
 			<p
-				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-8 ${
+				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-0 xl:px-8 ${
 					isMobile ? ` pt-2 text-base` : ` pt-3 text-lg`
 				}`}
 			>
@@ -163,7 +152,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 				incluyendo cocina completa, Wi-Fi gratuito y TV por cable.
 			</p>
 			<p
-				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-8 ${
+				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-0 xl:px-8 ${
 					isMobile ? ` pt-2 text-base` : ` pt-3 text-lg`
 				}`}
 			>
@@ -173,7 +162,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 				aparcar.
 			</p>
 			<p
-				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-8 ${
+				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-0 xl:px-8 ${
 					isMobile ? ` pt-2 text-base` : ` pt-3 text-lg`
 				}`}
 			>
@@ -182,7 +171,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 				familiar, perfecto para huéspedes de todas las edades.
 			</p>
 			<p
-				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-8 ${
+				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-0 xl:px-8 ${
 					isMobile ? ` pt-2 text-base` : ` pt-3 text-lg`
 				}`}
 			>
@@ -195,7 +184,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 			</p>
 
 			<p
-				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-8 ${
+				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-0 xl:px-8 ${
 					isMobile ? ` pt-2 text-base` : ` pt-3 text-lg`
 				}`}
 			>
@@ -205,7 +194,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 				banco.
 			</p>
 			<p
-				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-8 ${
+				className={`text-justify text-black text-opacity-90 mb-2 px-4 md:px-0 xl:px-8 ${
 					isMobile ? ` pt-2 text-base` : ` pt-3 text-lg`
 				}`}
 			>
@@ -215,7 +204,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 				en que entras.
 			</p>
 			<p
-				className={`text-justify text-black text-opacity-90 mb-12 md:mb-20 px-4 md:px-8 ${
+				className={`text-justify text-black text-opacity-90 mb-12 md:mb-20 px-4 md:px-0 xl:px-8 ${
 					isMobile ? ` pt-2 text-base` : ` pt-3 text-lg`
 				}`}
 			>
@@ -231,7 +220,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 				Opiniones y Valoraciones
 			</h2>
 			<p
-				className={`text-justify text-black text-opacity-90 mb-8 px-4 md:px-8 ${
+				className={`text-justify text-black text-opacity-90 mb-8 px-4 md:px-0 xl:px-8 ${
 					isMobile ? ` pt-2 text-base` : ` pt-3 text-lg`
 				}`}
 			>
@@ -240,13 +229,13 @@ export function Principal({ isMobile }: PrincipalProps) {
 				confirman. Consulta las valoraciones y opiniones de quienes ya han
 				disfrutado de su estancia con nosotros.
 			</p>
-			<div className='flex flex-col md:flex-row'>
+			<div className='flex flex-col md:flex-row px-4 md:px-0 xl:px-8'>
 				<div className='w-full md:w-1/2'>
-					<h3 className='text-lg md:mt-4 font-medium text-black text-start px-4 md:px-8   mb-8'>
+					<h3 className='text-lg md:mt-4 font-medium text-black text-start mb-8'>
 						Booking
 					</h3>
 					<p
-						className={`text-justify text-black text-opacity-90 mb-8 px-4 md:px-8 ${
+						className={`text-justify text-black text-opacity-90 mb-8 md:pr-4 ${
 							isMobile ? ` pt-2 text-base` : ` pt-3 text-lg`
 						}`}
 					>
@@ -258,11 +247,11 @@ export function Principal({ isMobile }: PrincipalProps) {
 					</p>
 				</div>
 				<div className='w-full md:w-1/2 '>
-					<h3 className='text-lg md:mt-4 font-medium text-black text-start px-4 md:px-8 mb-8'>
+					<h3 className='text-lg md:mt-4 font-medium text-black text-start mb-8 md:pl-4'>
 						Airbnb
 					</h3>
 					<p
-						className={`text-justify text-black text-opacity-90 mb-8 px-4 md:px-8 ${
+						className={`text-justify text-black text-opacity-90 mb-8 md:pl-4 ${
 							isMobile ? ` pt-2 text-base` : ` pt-3 text-lg`
 						}`}
 					>
@@ -274,11 +263,9 @@ export function Principal({ isMobile }: PrincipalProps) {
 				</div>
 			</div>
 			<div
-				className='p-6 relative mb-12 md:mb-20'
+				className='p-6 relative mb-10'
 			>
-				<div className='absolute top-0 left-0 w-full h-2 bg-gradient-to-b from-almostWhite to-transparent'></div>
 				<RatingCharts />
-				<div className='absolute bottom-0 left-0 w-full h-2 bg-gradient-to-t from-almostWhite to-transparent'></div>
 			</div>
 
 			<h2 ref={(el) => (animatedRefs.current[3] = el)}
@@ -288,7 +275,7 @@ export function Principal({ isMobile }: PrincipalProps) {
 				Comparte Tu Experiencia
 			</h2>
 			<p
-				className={`text-justify text-black text-opacity-90 mb-8 px-4 md:px-8 ${
+				className={`text-justify text-black text-opacity-90 mb-8 px-4 md:px-0 xl:px-8 ${
 					isMobile ? ` pt-2 text-base` : ` pt-3 text-lg`
 				}`}
 			>
@@ -314,11 +301,11 @@ export function Principal({ isMobile }: PrincipalProps) {
 				</a>
 				.
 			</p>
-			<h3 className='text-lg md:mt-4 font-medium text-black text-start px-4 md:px-8 mb-8'>
+			<h3 className='text-lg md:mt-4 font-medium text-black text-start px-4 md:px-0 xl:px-8 mb-8'>
 				Reserva Hoy
 			</h3>
 			<p
-				className={`text-justify text-black text-opacity-90 mb-12 md:mb-20 px-4 md:px-8 ${
+				className={`text-justify text-black text-opacity-90 mb-12 md:mb-20 px-4 md:px-0 xl:px-8 ${
 					isMobile ? ` text-base` : ` text-lg`
 				}`}
 			>

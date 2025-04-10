@@ -15,11 +15,11 @@ const ImageGallery: React.FC = () => {
 
   const video = '/edificioFarfalle/video.principal.mp4'
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto md:px-4 py-8">
        <div className='relative h-[650px] mb-8'>
 					
 					<video
-						className='absolute top-0 left-0 w-full md:w-1/2 h-[650px] object-cover object-center z-0 md:z-20 md:rounded-tl-lg md:rounded-bl-lg'
+						className='absolute -top-8 md:-top-0 left-0 w-full md:w-1/2 h-[650px] object-cover object-center z-0 md:z-20 md:rounded-tl-lg md:rounded-bl-lg'
 						autoPlay
 						playsInline
 						loop
@@ -46,7 +46,7 @@ const ImageGallery: React.FC = () => {
 						</div>
 					</div>
 				</div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 md:px-0">
         {images.map((image, index) => (
           <div key={index} className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
             <img

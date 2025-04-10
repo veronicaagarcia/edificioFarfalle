@@ -58,7 +58,7 @@ export function Start() {
             <CircularProgress color='inherit' />
           </div>
         )}
-        <div className="w-full md:w-[90%] h-full md:h-[90%] shadow-xl shadow-slate-950/60 m-auto md:rounded-2xl overflow-hidden relative">
+        <div className="w-screen h-screen  overflow-hidden relative">
           <video
             id='farfalleVideo'
             autoPlay
