@@ -24,7 +24,9 @@ function App() {
 	const isMobile = useMediaQuery('(max-width:640px)')
 
 	return (
-		<Card style={{ width: '100vw',height: '100vh' }}>
+		<Card style={{ width: '100%', minHeight: '100vh',
+			display: 'flex',
+			flexDirection: 'column',}}>
 			<HelmetWrapper
 				title='Edificio Farfalle, Alquileres Temporales'
 				description='Descubre una amplia selección de departamentos para alquiler temporal. Encuentra el lugar perfecto para tu estadía con nuestras detalladas imágenes y descripciones. Alquila tu próximo hogar con facilidad y disfruta de ubicaciones exclusivas y confortables. ¡Explora nuestras opciones y reserva hoy mismo!'
@@ -32,7 +34,7 @@ function App() {
 			{!isStarted ? (
 				<Start />
 			) : (
-				<main className='h-min-screen h-full overflow-y-scroll w-full min-w-screen scrollbar-hide'>
+				<main className='h-min-screen h-full overflow-y-scroll w-full min-w-screen scrollbar-hide max-w-screen-2xl mx-auto 2xl:px-4'>
 					<BrowserRouter>
 						<Navbar
 							sectionTopRef={sectionTopRef}

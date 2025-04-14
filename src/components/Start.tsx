@@ -21,7 +21,7 @@ export function Start() {
     paddingLeft: '0',
     margin: 'auto',
     opacity: '0.7',
-    borderRadius: '30px',
+    borderRadius: '20px',
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -58,7 +58,7 @@ export function Start() {
             <CircularProgress color='inherit' />
           </div>
         )}
-        <div className="w-screen h-screen  overflow-hidden relative">
+        <div className="w-screen h-screen overflow-hidden relative">
           <video
             id='farfalleVideo'
             autoPlay

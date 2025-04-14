@@ -1,167 +1,227 @@
-import WifiRoundedIcon from '@mui/icons-material/WifiRounded'
-import BedRoundedIcon from '@mui/icons-material/BedRounded'
-import WeekendRoundedIcon from '@mui/icons-material/WeekendRounded'
-import DeckRoundedIcon from '@mui/icons-material/DeckRounded'
-import RecordVoiceOverRoundedIcon from '@mui/icons-material/RecordVoiceOverRounded'
-import AppsRoundedIcon from '@mui/icons-material/AppsRounded'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSquareParking } from '@fortawesome/free-solid-svg-icons/faSquareParking'
-import { faKitchenSet } from '@fortawesome/free-solid-svg-icons/faKitchenSet'
-import { faBath } from '@fortawesome/free-solid-svg-icons/faBath'
-import { faVideo } from '@fortawesome/free-solid-svg-icons/faVideo'
-import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons/faCalendarCheck'
-import { faClipboardCheck } from '@fortawesome/free-solid-svg-icons/faClipboardCheck'
-import { Footer } from './comon/Footer'
-import ImageGallery from './ImageGaller'
+"use client"
+
+import { useEffect } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faSquareParking,
+  faKitchenSet,
+  faBath,
+  faVideo,
+  faCalendarCheck,
+  faClipboardCheck,
+} from "@fortawesome/free-solid-svg-icons"
+import WifiRoundedIcon from "@mui/icons-material/WifiRounded"
+import BedRoundedIcon from "@mui/icons-material/BedRounded"
+import WeekendRoundedIcon from "@mui/icons-material/WeekendRounded"
+import DeckRoundedIcon from "@mui/icons-material/DeckRounded"
+import RecordVoiceOverRoundedIcon from "@mui/icons-material/RecordVoiceOverRounded"
+import AppsRoundedIcon from "@mui/icons-material/AppsRounded"
+import { Footer } from "./comon/Footer"
+import AOS from "aos"
+import "aos/dist/aos.css"
+import ImageGallery from "./ImageGaller"
+
+// Definir las categorías de servicios para evitar repetición
+const SERVICE_CATEGORIES = [
+  {
+    id: "parking",
+    icon: <FontAwesomeIcon icon={faSquareParking} color="inherit" size="xl" />,
+    title: "Estacionamiento",
+    items: ["Estacionamiento gratuito dentro del edificio (un auto por departamento)"],
+  },
+  {
+    id: "kitchen",
+    icon: <FontAwesomeIcon icon={faKitchenSet} color="inherit" size="xl" />,
+    title: "Cocina",
+    items: [
+      "Horno/ hornalla",
+      "Electrodomésticos (pava eléctrica, tostadora, heladera y microondas)",
+      "Utensilios de cocina (cubiertos, platos, vasos, ollas)",
+      "Elementos de limpieza (Detergente, esponja, virulana, ballerina, trapo de piso, balde)",
+      "Cesto de basura",
+    ],
+  },
+  {
+    id: "bathroom",
+    icon: <FontAwesomeIcon icon={faBath} color="inherit" size="xl" />,
+    title: "Baño",
+    items: ["Ducha", "Bidet", "Papel higiénico", "Jabón", "Cesto de basura"],
+  },
+  {
+    id: "internet",
+    icon: <WifiRoundedIcon color="inherit" />,
+    title: "Internet",
+    items: ["Wifi gratuito en departamentos"],
+  },
+  {
+    id: "bedroom",
+    icon: <BedRoundedIcon color="inherit" />,
+    title: "Habitación",
+    items: ["Cama matrimonial", "Placard", "Aire acondicionado", "Ropa de cama", "Veladores", "Mesa de luz"],
+  },
+  {
+    id: "living",
+    icon: <WeekendRoundedIcon color="inherit" />,
+    title: "Living/comedor",
+    items: [
+      "Sofa cama con carrión (para 2 personas)",
+      "Aire acondicionado",
+      "TV por cable",
+      "Mesa y sillas (para 4 personas)",
+    ],
+  },
+  {
+    id: "exterior",
+    icon: <DeckRoundedIcon color="inherit" />,
+    title: "Exteriores",
+    items: ["Patio común", "Cocheras"],
+  },
+  {
+    id: "checkin",
+    icon: <FontAwesomeIcon icon={faClipboardCheck} color="inherit" size="lg" />,
+    title: "Check in",
+    items: ["A partir de las 14:00 hs"],
+  },
+  {
+    id: "checkout",
+    icon: <FontAwesomeIcon icon={faCalendarCheck} color="inherit" size="lg" />,
+    title: "Check Out",
+    items: ["10:00 hs"],
+  },
+  {
+    id: "general",
+    icon: <AppsRoundedIcon color="inherit" />,
+    title: "General",
+    items: [
+      "Prohibido fumar dentro de los departamentos",
+      "Zona fumadores (zonas comunes del edificio)",
+      "Calefacción (Termotanque o Calefón)",
+      "No se admiten mascotas",
+    ],
+  },
+  {
+    id: "security",
+    icon: <FontAwesomeIcon icon={faVideo} color="inherit" size="lg" />,
+    title: "Seguridad",
+    items: ["Cámaras de seguridad en zonas comunes"],
+  },
+  {
+    id: "languages",
+    icon: <RecordVoiceOverRoundedIcon color="inherit" />,
+    title: "Idiomas",
+    items: ["Español", "Inglés"],
+  },
+]
+
+// Componente para cada categoría de servicio
+function ServiceCategory({
+  icon,
+  title,
+  items,
+  delay = 0,
+}: {
+  icon: JSX.Element
+  title: string
+  items: string[]
+  delay?: number
+}) {
+  return (
+    <div data-aos="fade-up" data-aos-delay={delay}>
+      <li className=" font-lato flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 md:mt-5 mb-1">
+        {icon}
+        <p className="pl-2">{title}</p>
+      </li>
+      <ul className="font-lato text-black text-opacity-90 text-center md:text-start w-full ">
+        {items.map((item, index) => (
+          <li key={index} className="transition-all duration-300 hover:text-orange/80 text-base">
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
 
 export function Servicios() {
-	return (
-		<section className='w-full h-full flex flex-col font-thin font-serif italic text-black'>
-			<div
-				className='w-full mx-auto h-fit pb-12 mb-4 md:my-16 md:pb-48 md:pl-6 md:p-4 md:rounded-lg bg-transparent'
-			>
-				
-				{/* Aca unagaleria de imagenes responsive de no mas de 10 fotos */}
-				<ImageGallery />
+  useEffect(() => {
+    // Inicializar AOS
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: false,
+      offset: 100,
+    })
 
-				<ul className='w-full h-fit mx-auto mt-4 mb-4 md:mb-10 xl:mb-0 flex flex-col justify-center sm:flex-row sm:justify-between pt-6 px-4 md:px-0'>
-					<div className='w-full h-auto md:h-600 sm:w-1/4 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90'>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 md:mt-5 mb-1'>
-							<FontAwesomeIcon
-								icon={faSquareParking}
-								color='inherit'
-								size='xl'
-							/>
-							<p className='pl-2'>Estacionamiento</p>
-						</li>
-						<ul className='text-black text-center md:text-start'>
-							<li>
-								Estacionamiento gratuito dentro del edificio ( un auto por
-								departamento)
-							</li>
-						</ul>
+    return () => {
+      // Limpiar AOS al desmontar
+    }
+  }, [])
 
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
-							<FontAwesomeIcon icon={faKitchenSet} color='inherit' size='xl' />
-							<p className='pl-2'>Cocina</p>
-						</li>
-						<ul className='text-black text-center md:text-start w-full font-thin'>
-							<li>Horno/ hornalla</li>
-							<li>
-								Electrodomésticos (pava eléctrica, tostadora, heladera y
-								microondas)
-							</li>
-							<li>Utensilios de cocina (cubiertos, platos, vasos, ollas)</li>
-							<li>
-								Elementos de limpieza (Detergente, esponja, virulana, ballerina,
-								trapo de piso, balde)
-							</li>
-							<li>Cesto de basura</li>
-						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
-							<FontAwesomeIcon icon={faBath} color='inherit' size='xl' />
-							<p className='pl-2'>Baño</p>
-						</li>
-						<ul className='text-black text-center md:text-start w-full font-thin'>
-							<li>Ducha</li>
-							<li>Bidet</li>
-							<li>Papel higiénico</li>
-							<li>Jabón</li>
-							<li>Cesto de basura</li>
-						</ul>
-					</div>
-					<div className='w-full h-auto md:h-600 sm:w-1/4 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90'>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 md:mt-5 mb-1'>
-							<WifiRoundedIcon color='inherit' />
-							<p className='pl-2'>Internet</p>
-						</li>
-						<ul className='text-black text-center md:text-start w-full font-thin'>
-							<li>Wifi gratuito en departamentos</li>
-						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
-							<BedRoundedIcon color='inherit' />
-							<p className='pl-2'>Habitación</p>
-						</li>
-						<ul className='text-black text-center md:text-start w-full font-thin'>
-							<li>Cama matrimonial</li>
-							<li>Placard</li>
-							<li>Aire acondicionado</li>
-							<li>Ropa de cama</li>
-							<li>Veladores</li>
-							<li>Mesa de luz</li>
-						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
-							<WeekendRoundedIcon color='inherit' />
-							<p className='pl-2'>Living/comedor</p>
-						</li>
-						<ul className='text-black text-center md:text-start w-full font-thin'>
-							<li>Sofa cama con carrión (para 2 personas)</li>
-							<li>Aire acondicionado</li>
-							<li>TV por cable</li>
-							<li>Mesa y sillas (para 4 personas)</li>
-						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
-							<DeckRoundedIcon color='inherit' />
-							<p className='pl-2'>Exteriores </p>
-						</li>
-						<ul className='text-black text-center md:text-start w-full font-thin'>
-							<li>Patio común</li>
-							<li>Cocheras</li>
-						</ul>
-					</div>
-					<div className='w-full h-auto md:h-600 sm:w-1/4 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90'>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 md:mt-5 mb-1'>
-							<FontAwesomeIcon
-								icon={faClipboardCheck}
-								color='inherit'
-								size='lg'
-							/>
+  // Dividir las categorías en tres columnas
+  const firstColumn = SERVICE_CATEGORIES.slice(0, 3)
+  const secondColumn = SERVICE_CATEGORIES.slice(3, 7)
+  const thirdColumn = SERVICE_CATEGORIES.slice(7)
 
-							<p className='pl-2'>Check in</p>
-						</li>
-						<ul className='text-black text-center md:text-start w-full font-thin'>
-							<li>A partir de las 14:00 hs</li>
-						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
-							<FontAwesomeIcon
-								icon={faCalendarCheck}
-								color='inherit'
-								size='lg'
-							/>
-							<p className='pl-2'>Check Out</p>
-						</li>
-						<ul className='text-black text-center md:text-start w-full font-thin'>
-							<li>10:00 hs</li>
-						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
-							<AppsRoundedIcon color='inherit' />
-							<p className='pl-2'>General</p>
-						</li>
-						<ul className='text-black text-center md:text-start w-full font-thin'>
-							<li>Prohibido fumar dentro de los departamentos</li>
-							<li>Zona fumadores (zonas comunes del edificio)</li>
-							<li>Calefacción (Termotanque o Calefón)</li>
-							<li>No se admiten mascotas</li>
-						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
-							<FontAwesomeIcon icon={faVideo} color='inherit' size='lg' />
-							<p className='pl-2'>Seguridad</p>
-						</li>
-						<ul className='text-black text-center md:text-start w-full font-thin'>
-							<li>Cámaras de seguridad en zonas comunes</li>
-						</ul>
-						<li className='font-semibold flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 mb-1'>
-							<RecordVoiceOverRoundedIcon color='inherit' />
-							<p className='pl-2'>Idiomas</p>
-						</li>
-						<ul className='text-black text-center md:text-start w-full font-thin'>
-							<li>Español</li>
-							<li>Inglés</li>
-						</ul>
-					</div>
-				</ul>
-			</div>
-			<Footer />
-		</section>
-	)
+  return (
+    <section className="w-full h-full flex flex-col font-thin font-serif text-black bg-background">
+      <div className="w-full mx-auto h-fit pb-12 mb-4 md:my-16 md:pb-48 lg:pb-24 md:pl-6 md:p-4 md:rounded-lg bg-transparent">
+        {/* Título de la sección */}
+        <h2
+          className="text-lg md:text-xl mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          Nuestros Servicios
+        </h2>
+
+        {/* Galería de imágenes */}
+        <div className="mb-12" data-aos="fade-up" data-aos-delay="200">
+          <ImageGallery />
+        </div>
+
+        {/* Categorías de servicios */}
+        <ul className="w-full h-fit mx-auto mt-4 mb-4 md:mb-10 xl:mb-0 flex flex-col justify-center sm:flex-row sm:justify-between pt-6 px-3 md:px-24 lg:px-28">
+          {/* Primera columna */}
+          <div className="w-full h-auto md:h-600 sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
+            {firstColumn.map((category, index) => (
+              <ServiceCategory
+                key={category.id}
+                icon={category.icon}
+                title={category.title}
+                items={category.items}
+                delay={index * 100}
+              />
+            ))}
+          </div>
+
+          {/* Segunda columna */}
+          <div className="w-full h-auto md:h-600 sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
+            {secondColumn.map((category, index) => (
+              <ServiceCategory
+                key={category.id}
+                icon={category.icon}
+                title={category.title}
+                items={category.items}
+                delay={index * 100}
+              />
+            ))}
+          </div>
+
+          {/* Tercera columna */}
+          <div className="w-full h-auto md:h-600 sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
+            {thirdColumn.map((category, index) => (
+              <ServiceCategory
+                key={category.id}
+                icon={category.icon}
+                title={category.title}
+                items={category.items}
+                delay={index * 100}
+              />
+            ))}
+          </div>
+        </ul>
+      </div>
+      <Footer />
+    </section>
+  )
 }

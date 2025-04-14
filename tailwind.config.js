@@ -16,6 +16,7 @@ export default {
         nav: "#ffac92",
         footer: "#402e32",
         footerLine: "#d3d3d3",
+        background: "#fefcf9"
       },
       fontFamily: {
         'great-vibes': ['Great Vibes', 'cursive'],
