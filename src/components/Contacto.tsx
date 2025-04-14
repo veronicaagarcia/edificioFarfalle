@@ -220,7 +220,10 @@ const validateEmail = (email: string): boolean => {
           data-aos-delay="100"
         >
           En <span className="text-orange italic">Edificio Farfalle</span>, estamos siempre a su disposición para
-          responder cualquier consulta o necesidad que pueda tener. Puede contactarnos a través de los siguientes
+          responder cualquier consulta o necesidad que pueda tener. </p>
+          <p className="text-justify text-black text-opacity-90 mb-8 px-4 md:px-0 xl:px-8 pt-2 md:pt-3 text-base md:text-lg"
+          data-aos="fade-up"
+          data-aos-delay="100">Puede contactarnos a través de los siguientes
           medios:
         </p>
 
@@ -342,8 +345,11 @@ const validateEmail = (email: string): boolean => {
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          El Farfalle ofrece alojamiento confortable en el corazón de La Plata, ideal tanto para turistas como para
-          viajeros de negocios. Nuestra ubicación estratégica te permite acceder fácilmente a los principales puntos de
+          Nuestro edificio ofrece alojamiento confortable en el corazón de La Plata, ideal tanto para turistas como para
+          viajeros de negocios. </p>
+          <p className="text-justify text-black text-opacity-90 mb-12 px-4 md:px-0 xl:px-8 text-base md:text-lg mt-4"
+          data-aos="fade-up"
+          data-aos-delay="100">Nuestra ubicación estratégica te permite acceder fácilmente a los principales puntos de
           interés de la ciudad:
         </p>
 

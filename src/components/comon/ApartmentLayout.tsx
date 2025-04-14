@@ -57,7 +57,7 @@ export function ApartmentLayout({ title, size, media, videoUrl }: ApartmentLayou
             data-aos="fade-up" 
             data-aos-duration="1000"
           >
-            Características del departamento
+            Comodidades del departamento
           </h4>
           
           <ApartmentFeatures />
