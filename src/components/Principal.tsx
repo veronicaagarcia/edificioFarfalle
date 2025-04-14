@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { RatingCharts } from "./comon/RatingChart"
+// import { RatingCharts } from "./comon/RatingChart"
 import { Footer } from "./comon/Footer"
 import AOS from "aos"
 import "aos/dist/aos.css"
@@ -84,7 +84,7 @@ export function Principal({ isMobile }: PrincipalProps) {
     <div className="mx-auto w-full h-full md:mt-2 bg-background">
       {/* Sección de Hero con Video */}
       <section
-        className={`${isMobile ? "h-72" : "h-[500px]"} relative w-full max-w-screen overflow-hidden max-h-[500px] mb-4`}
+        className={`${isMobile ? "h-[450px]" : "h-[500px]"} relative w-full max-w-screen overflow-hidden max-h-[500px] mb-4`}
         ref={(el) => (sectionRefs.current[0] = el)}
       >
         <div className="relative">
@@ -92,7 +92,7 @@ export function Principal({ isMobile }: PrincipalProps) {
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-offset="200"
-            className={`absolute top-[20%] md:top-[35%] text-center w-full text-white mb-8 whitespace-wrap mx-auto z-10 ${
+            className={`absolute top-[30%] md:top-[35%] text-center w-full hover:bg-slate-950/50 text-white mb-8 whitespace-wrap mx-auto z-10 ${
               isMobile ? "pt-2 text-lg" : "pt-3 text-4xl"
             }`}
           >
@@ -165,9 +165,9 @@ export function Principal({ isMobile }: PrincipalProps) {
           </div>
         </div>
 
-        <div className="p-6 relative my-10" data-aos="fade-up">
+        {/* <div className="p-6 relative my-10" data-aos="fade-up">
           <RatingCharts />
-        </div>
+        </div> */}
 
         {/* Sección para compartir experiencia */}
         <SectionTitle title="Comparte Tu Experiencia" ref={(el) => (sectionRefs.current[3] = el)} />

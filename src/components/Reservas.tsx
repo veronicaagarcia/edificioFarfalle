@@ -667,41 +667,41 @@ const validateEmail: ValidateEmailFunction = (email) => {
         className="flex flex-col md:flex-row mb-4 md:mb-12 py-10 md:py-20 md:p-20 xl:py-28 px-3 md:px-28 bg-slate-950/90"
       >
         <div className="container mx-auto w-11/12 md:w-[50%] lg:w-[45%] mb-8 md:mb-0">
-          <h3 className="text-lg md:text-xl font-bold text-white text-center mb-4">¿Cómo Funciona?</h3>
+          <h3 className="text-lg md:text-xl font-semibold text-white text-center mb-4">¿Cómo Funciona?</h3>
 
           <div className="space-y-4">
             <p className="text-justify text-white text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg"  data-aos="fade-up"
         data-aos-delay="100">
               <span className="text-white">1. </span>
-              <span className="text-orange font-semibold">Selecciona tus Fechas: </span>
+              <span className="text-orange font-medium">Selecciona tus Fechas: </span>
               Elige las fechas de entrada y salida que deseas para tu estancia.
             </p>
 
             <p className="text-justify text-white text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg"  data-aos="fade-up"
         data-aos-delay="100">
               <span className="text-white">2. </span>
-              <span className="text-orange font-semibold">Indica el Número de Personas: </span>
+              <span className="text-orange font-medium">Indica el Número de Personas: </span>
               Especifica cuántas personas se alojarán con nosotros.
             </p>
 
             <p className="text-justify text-white text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg"  data-aos="fade-up"
         data-aos-delay="100">
               <span className="text-white">3. </span>
-              <span className="text-orange font-semibold">Elige tu Departamento: </span>
+              <span className="text-orange font-medium">Elige tu Departamento: </span>
               Selecciona el departamento en el que estás interesado.
             </p>
 
             <p className="text-justify text-white text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg"  data-aos="fade-up"
         data-aos-delay="100">
               <span className="text-white">4. </span>
-              <span className="text-orange font-semibold">Envía tu Solicitud: </span>
+              <span className="text-orange font-medium">Envía tu Solicitud: </span>
               Haz clic en el botón "Consultar Disponibilidad".
             </p>
 
             <p className="text-justify text-white text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg"  data-aos="fade-up"
         data-aos-delay="100">
               <span className="text-white">5. </span>
-              <span className="text-orange font-semibold">Respuesta de Disponibilidad: </span>
+              <span className="text-orange font-medium">Respuesta de Disponibilidad: </span>
               Una vez que envíes el formulario, nuestro equipo revisará la disponibilidad de los departamentos en las
               fechas solicitadas. Te responderemos a la brevedad para confirmar si hay disponibilidad y proporcionarte
               los siguientes pasos para completar tu reserva.

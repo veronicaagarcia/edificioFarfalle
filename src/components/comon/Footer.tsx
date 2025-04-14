@@ -215,7 +215,7 @@ export function Footer() {
               href="https://www.google.com/maps/dir/?api=1&destination=1770+Calle+62,+1904+La+Plata,+Argentina"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 bg-nav text-white py-2 px-4 rounded-md hover:bg-orange inline-flex items-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px]"
+              className="mt-4 bg-nav text-slate-950 py-2 px-4 rounded-md hover:bg-orange hover:text-white inline-flex items-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px]"
             >
               <ExternalLink size={16} className="mr-2" />
               Cómo llegar

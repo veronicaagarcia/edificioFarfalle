@@ -276,7 +276,7 @@ const validateEmail = (email: string): boolean => {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="group relative inline-flex mb-4 h-10 items-center justify-center overflow-hidden rounded-md bg-nav px-4 font-medium text-neutral-200 transition hover:bg-orange hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="group relative inline-flex mb-4 h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-4 font-medium text-neutral-200 transition hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={isSubmitting}
               >
                 <span className="relative text-base font-lato flex items-center">

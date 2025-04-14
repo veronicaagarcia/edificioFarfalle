@@ -16,8 +16,7 @@ const ImageGallery: React.FC = () => {
   const video = '/edificioFarfalle/video.principal.mp4'
   return (
     <div className="container mx-auto px-3 md:px-28 py-8">
-       <div className='relative h-[650px] mb-8'>
-					
+       <div className='relative h-[650px] mb-8'>	
 					<video
 						className='absolute -top-8 md:-top-0 left-0 w-full md:w-1/2 h-[650px] object-cover object-center z-0 md:z-20 rounded-lg md:rounded-tl-lg md:rounded-bl-lg'
 						autoPlay
@@ -27,18 +26,10 @@ const ImageGallery: React.FC = () => {
 					>
 						<source src={video} type='video/mp4' />
 					</video>
-					<div className='absolute top-0 left-0 w-full h-full rounded-lg z-10 md:bg-slate-950/90' 
-        //   style={{
-				// 	backgroundImage:
-				// 		'url("/edificioFarfalle/images/services.jpg")',
-				// 	backgroundSize: 'cover',
-				// 	backgroundPosition: 'center',
-				// }}
-        ></div>
 					
 					<div className='absolute top-0 left-0 w-full h-full flex items-center justify-center md:justify-end'>
 						<div className='w-9/12 md:w-1/2 text-white text-center z-20'>
-							<h3 className='text-base p-6 sm:p-12 md:p-10 border-2 border-nav md:text-xl lg:text-2xl font-medium mb-4 rounded-lg bg-slate-950/80 md:bg-transparent w-11/12 mx-auto'>
+							<h3 className='text-base p-6 sm:p-12 md:p-10 border-2 border-nav md:text-xl lg:text-2xl mb-4 rounded-lg bg-slate-950/70 md:bg-transparent w-11/12 mx-auto'>
 								Nuestros departamentos están completamente amueblados y
 								equipados con todas las comodidades necesarias para una estadía
 								confortable y placentera.
