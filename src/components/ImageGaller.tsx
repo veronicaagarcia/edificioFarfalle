@@ -26,6 +26,15 @@ const ImageGallery: React.FC = () => {
 					>
 						<source src={video} type='video/mp4' />
 					</video>
+
+          <div className='absolute top-0 left-0 w-full h-full rounded-lg z-10 md:bg-slate-950/90' 
+        //   style={{
+				// 	backgroundImage:
+				// 		'url("/edificioFarfalle/images/services.jpg")',
+				// 	backgroundSize: 'cover',
+				// 	backgroundPosition: 'center',
+				// }}
+        ></div>
 					
 					<div className='absolute top-0 left-0 w-full h-full flex items-center justify-center md:justify-end'>
 						<div className='w-9/12 md:w-1/2 text-white text-center z-20'>
