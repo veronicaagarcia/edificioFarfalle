@@ -43,7 +43,9 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
   // Detectar si la pantalla es mas ancha que alta
   useEffect(() => {
     const checkScreenDimensions = () => {
-      setIsWideScreen(window.innerWidth > window.innerHeight && window.innerWidth < 1200)
+      // setIsWideScreen(window.innerWidth > window.innerHeight && window.innerWidth < 1200)
+      setIsWideScreen(window.innerWidth > window.innerHeight)
+
     }
 
     checkScreenDimensions()

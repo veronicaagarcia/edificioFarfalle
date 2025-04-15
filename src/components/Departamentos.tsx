@@ -19,31 +19,31 @@ const APARTMENTS: ApartmentCard[] = [
     id: "pba",
     title: "Planta Baja A",
     image: "/edificioFarfalle/images/PbA.jpg",
-    route: "/edificioFarfalle/Departamentos/Pb-A",
+    route: "/Departamentos/Pb-A",
   },
   {
     id: "pbb",
     title: "Planta Baja B",
     image: "/edificioFarfalle/images/PbB.jpg",
-    route: "/edificioFarfalle/Departamentos/Pb-B",
+    route: "/Departamentos/Pb-B",
   },
   {
     id: "1a",
     title: "Primero A",
     image: "/edificioFarfalle/images/1A.jpeg",
-    route: "/edificioFarfalle/Departamentos/1-A",
+    route: "/Departamentos/1-A",
   },
   {
     id: "1b",
     title: "Primero B",
     image: "/edificioFarfalle/images/1B.jpeg",
-    route: "/edificioFarfalle/Departamentos/1-B",
+    route: "/Departamentos/1-B",
   },
   {
     id: "2b",
     title: "Segundo B",
     image: "/edificioFarfalle/images/2B.jpeg",
-    route: "/edificioFarfalle/Departamentos/2-B",
+    route: "/Departamentos/2-B",
   },
 ]
 
