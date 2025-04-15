@@ -84,7 +84,7 @@ export function ContactForm({ onSubmit, formSubmitted }: ContactFormProps) {
   return (
     <form className="p-4 mx-auto w-full h-80 flex flex-col justify-evenly">
       <input
-        className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="nombre"
         type="text"
         value={nombre}

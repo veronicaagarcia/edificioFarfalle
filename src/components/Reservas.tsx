@@ -718,7 +718,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
                     Entrada
                   </label>
                   <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="check-in"
                     type="date"
                     value={checkIn}
@@ -732,7 +732,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
                     Salida
                   </label>
                   <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="check-out"
                     type="date"
                     min={minCheckOutDate}
@@ -749,7 +749,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
                     Adultos
                   </label>
                   <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="adults"
                     type="number"
                     min="1"
@@ -765,7 +765,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
                     Niños
                   </label>
                   <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="children"
                     type="number"
                     min="0"
@@ -784,7 +784,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
                 </label>
                 <div className="relative inline-block w-full">
                   <select
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline cursor-pointer bg-white"
+                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline cursor-pointer bg-white"
                     id="departamento"
                     value={departamento}
                     onChange={(e) => setDepartamento(e.target.value)}
@@ -808,7 +808,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
                   Correo Electrónico
                 </label>
                 <input
-                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="email"
                   value={email}
@@ -821,7 +821,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
 
               <div className="flex items-center justify-center">
                 <button
-                  className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange md:bg-nav px-4 font-medium text-white transition hover:bg-orange hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-4 font-medium text-white transition hover:bg-orange hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
                   type="button"
                   onClick={handleConsultarDisponibilidad}
                   disabled={isSubmitting}

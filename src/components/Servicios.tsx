@@ -179,9 +179,9 @@ export function Servicios() {
         </div>
 
         {/* Categorías de servicios */}
-        <ul className="container mx-auto mt-4 flex flex-col justify-center sm:flex-row sm:justify-between px-3 md:px-20 lg:px-28 xl:mb-8">
+        <ul className="container mx-auto mt-4 flex flex-col justify-center sm:flex-row sm:justify-between px-3 md:px-20 lg:px-28 lg:mb-8">
           {/* Primera columna */}
-          <div className="w-full h-auto md:h-600 sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
+          <div className="w-full h-auto sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
             {firstColumn.map((category, index) => (
               <ServiceCategory
                 key={category.id}
@@ -194,7 +194,7 @@ export function Servicios() {
           </div>
 
           {/* Segunda columna */}
-          <div className="w-full h-auto md:h-600 sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
+          <div className="w-full h-auto sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
             {secondColumn.map((category, index) => (
               <ServiceCategory
                 key={category.id}
@@ -207,7 +207,7 @@ export function Servicios() {
           </div>
 
           {/* Tercera columna */}
-          <div className="w-full h-auto md:h-600 sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
+          <div className="w-full h-auto sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
             {thirdColumn.map((category, index) => (
               <ServiceCategory
                 key={category.id}

@@ -179,25 +179,25 @@ const validateEmail = (email: string): boolean => {
   const CONTACT_BUTTONS = [
     {
       id: "whatsapp",
-      icon: <WhatsAppIcon color="success" fontSize="large" />,
+      icon: <WhatsAppIcon color="inherit" fontSize="large" />,
       link: "https://api.whatsapp.com/send?phone=542216342322&text=Hola%20Mat%C3%ADas!%20Quero%20m%C3%A1s%20info%20sobre%20el%20alquiler%20temporario.",
       ariaLabel: "Contactar por WhatsApp",
     },
     {
       id: "instagram",
-      icon: <InstagramIcon color="error" fontSize="large" />,
+      icon: <InstagramIcon color="inherit" fontSize="large" />,
       link: "https://www.instagram.com/edificiofarfalle/",
       ariaLabel: "Visitar Instagram",
     },
     {
       id: "location",
-      icon: <LocationOnIcon color="info" fontSize="large" />,
+      icon: <LocationOnIcon color="inherit" fontSize="large" />,
       action: openGoogleMaps,
       ariaLabel: "Ver ubicación en Google Maps",
     },
     {
       id: "email",
-      icon: <EmailOutlinedIcon fontSize="large" color="secondary" />,
+      icon: <EmailOutlinedIcon fontSize="large" color="inherit" />,
       link: "mailto:edificiofarfalle@gmail.com",
       ariaLabel: "Enviar correo electrónico",
     },
