@@ -43,8 +43,8 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
   // Detectar si la pantalla es mas ancha que alta
   useEffect(() => {
     const checkScreenDimensions = () => {
-      // setIsWideScreen(window.innerWidth > window.innerHeight && window.innerWidth < 1200)
-      setIsWideScreen(window.innerWidth > window.innerHeight)
+      setIsWideScreen(window.innerWidth > window.innerHeight && window.innerWidth < 1200)
+      // setIsWideScreen(window.innerWidth > window.innerHeight)
 
     }
 
@@ -133,7 +133,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
   return (
     <Card ref={sectionTopRef} id="top" style={cardStyle}>
       <div
-        className={`flex flex-col w-full h-full ${
+        className={`flex flex-col w-full h-full lg:-mt-4 ${
           isMobile ? `justify-center items-start` : `items-center justify-center`
         }`}
         style={logoContainerStyle}

@@ -122,7 +122,7 @@ function App() {
 			{!isStarted ? (
 				<Start />
 			) : (
-				<main className='h-min-screen h-full overflow-y-scroll w-full min-w-screen scrollbar-hide max-w-screen-2xl mx-auto 2xl:px-4'>
+				<main className='h-min-screen h-full overflow-y-scroll w-full min-w-screen scrollbar-hide max-w-screen-2xl mx-auto'>
 					<HashRouter>
 						<Navbar sectionTopRef={sectionTopRef} isMobile={isMobile} />
 						<Routes>
