@@ -8,7 +8,6 @@ import {
   faBath,
   faVideo,
   faCalendarCheck,
-  faClipboardCheck,
 } from "@fortawesome/free-solid-svg-icons"
 import WifiRoundedIcon from "@mui/icons-material/WifiRounded"
 import BedRoundedIcon from "@mui/icons-material/BedRounded"
@@ -57,7 +56,7 @@ const SERVICE_CATEGORIES = [
     id: "bedroom",
     icon: <BedRoundedIcon color="inherit" />,
     title: "Habitación",
-    items: ["Cama matrimonial", "Placard", "Aire acondicionado", "Ropa de cama", "Veladores", "Mesa de luz"],
+    items: ["Cama matrimonial / + cama individual", "Placard", "Aire acondicionado", "Ropa de cama", "Veladores", "Mesa de luz"],
   },
   {
     id: "living",
@@ -67,7 +66,7 @@ const SERVICE_CATEGORIES = [
       "Sofa cama con carrión (para 2 personas)",
       "Aire acondicionado",
       "TV por cable",
-      "Mesa y sillas (para 4 personas)",
+      "Mesa y sillas (para 4/5 personas)",
     ],
   },
   {
@@ -78,7 +77,7 @@ const SERVICE_CATEGORIES = [
   },
   {
     id: "checkin",
-    icon: <FontAwesomeIcon icon={faClipboardCheck} color="inherit" size="lg" />,
+    icon: <FontAwesomeIcon icon={faCalendarCheck} color="inherit" size="lg" />,
     title: "Check in",
     items: ["A partir de las 14:00 hs"],
   },
@@ -127,7 +126,7 @@ function ServiceCategory({
 }) {
   return (
     <div data-aos="fade-up" data-aos-delay={delay}>
-      <li className=" font-lato flex justify-center md:justify-start items-center w-full text-orange/80 mt-10 md:mt-5 mb-1">
+      <li className=" font-lato flex justify-center md:justify-start items-center w-full text-orange/80 mt-5 mb-1">
         {icon}
         <p className="pl-2">{title}</p>
       </li>
@@ -163,11 +162,11 @@ export function Servicios() {
   const thirdColumn = SERVICE_CATEGORIES.slice(7)
 
   return (
-    <section className="w-full h-full flex flex-col font-thin font-serif text-black bg-background">
-      <div className="w-full mx-auto h-fit pb-12 mb-4 md:my-16 md:pb-48 lg:pb-24 md:pl-6 md:p-4 md:rounded-lg bg-transparent">
+    <section className="w-full h-full flex flex-col font-thin font-serif text-black bg-background pt-12">
+      <div className="w-full mx-auto h-fit mb-4 md:mb-16 lg:mb-0 md:rounded-lg bg-transparent">
         {/* Título de la sección */}
         <h2
-          className="text-lg md:text-xl mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8"
+          className="text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-4"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -175,12 +174,12 @@ export function Servicios() {
         </h2>
 
         {/* Galería de imágenes */}
-        <div className="mb-12" data-aos="fade-up" data-aos-delay="200">
+        <div data-aos="fade-up" data-aos-delay="200">
           <ImageGallery />
         </div>
 
         {/* Categorías de servicios */}
-        <ul className="w-full h-fit mx-auto mt-4 mb-4 md:mb-10 xl:mb-0 flex flex-col justify-center sm:flex-row sm:justify-between pt-6 px-3 md:px-24 lg:px-28">
+        <ul className="container mx-auto mt-4 flex flex-col justify-center sm:flex-row sm:justify-between px-3 md:px-20 lg:px-28">
           {/* Primera columna */}
           <div className="w-full h-auto md:h-600 sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
             {firstColumn.map((category, index) => (

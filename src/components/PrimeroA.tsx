@@ -23,5 +23,5 @@ export function PrimeroA() {
     { type: "video", url: completo },
   ]
 
-  return <ApartmentLayout title="Primero A" size="80m²" media={media} videoUrl={completo} />
+  return <ApartmentLayout title="Primero A" size="80m²" media={media} videoUrl={completo} isUpperFloor={true}/>
 }

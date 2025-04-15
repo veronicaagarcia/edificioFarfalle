@@ -92,7 +92,7 @@ export function Departamentos() {
 
   return (
     <section className="pt-12 h-full w-full m-auto bg-background">
-      <div className="container mx-auto mb-12 md:mb-20 px-3 md:px-28">
+      <div className="container mx-auto mb-12 md:mb-20 px-3 md:px-20 lg:px-28">
         <h2
           ref={(el) => (animatedRefs.current[0] = el)}
           data-aos="fade-up"

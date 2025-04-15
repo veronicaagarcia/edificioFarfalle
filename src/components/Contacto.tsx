@@ -204,8 +204,8 @@ const validateEmail = (email: string): boolean => {
   ]
 
   return (
-    <section>
-      <section className="pt-10 w-full h-full px-3 md:px-28 bg-background">
+    <section className="pt-12 h-full w-full m-auto bg-background">
+      <section className="container mx-auto mb-12 md:mb-20 px-3 md:px-20 lg:px-28">
         <h2
           className="text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8"
           data-aos="fade-up"

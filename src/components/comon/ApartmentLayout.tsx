@@ -17,9 +17,10 @@ interface ApartmentLayoutProps {
   size: string
   media: Media[]
   videoUrl: string
+  isUpperFloor?: boolean
 }
 
-export function ApartmentLayout({ title, size, media, videoUrl }: ApartmentLayoutProps) {
+export function ApartmentLayout({ title, size, media, videoUrl, isUpperFloor = false }: ApartmentLayoutProps) {
   const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(null)
 
   const handleMediaClick = useCallback(
@@ -60,7 +61,7 @@ export function ApartmentLayout({ title, size, media, videoUrl }: ApartmentLayou
             Comodidades del departamento
           </h4>
           
-          <ApartmentFeatures />
+          <ApartmentFeatures isUpperFloor={isUpperFloor} />
         </div>
       </div>
       
