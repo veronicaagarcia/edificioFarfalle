@@ -134,14 +134,14 @@ export function Footer() {
             <ul className="text-sm space-y-2">
               <li className="flex items-center transition-transform hover:translate-x-1">
                 <Home size={16} className="mr-2 text-orange/70" />
-                <NavLink to="/edificioFarfalle/" className="text-gray-300 hover:text-orange transition-colors">
+                <NavLink to="/" className="text-gray-300 hover:text-orange transition-colors">
                   Inicio
                 </NavLink>
               </li>
               <li className="flex items-center transition-transform hover:translate-x-1">
                 <Building size={16} className="mr-2 text-orange/70" />
                 <NavLink
-                  to="/edificioFarfalle/Departamentos"
+                  to="/Departamentos"
                   className="text-gray-300 hover:text-orange transition-colors"
                 >
                   Departamentos
@@ -149,19 +149,19 @@ export function Footer() {
               </li>
               <li className="flex items-center transition-transform hover:translate-x-1">
                 <Briefcase size={16} className="mr-2 text-orange/70" />
-                <NavLink to="/edificioFarfalle/Servicios" className="text-gray-300 hover:text-orange transition-colors">
+                <NavLink to="/Servicios" className="text-gray-300 hover:text-orange transition-colors">
                   Servicios
                 </NavLink>
               </li>
               <li className="flex items-center transition-transform hover:translate-x-1">
                 <MessageSquare size={16} className="mr-2 text-orange/70" />
-                <NavLink to="/edificioFarfalle/Contacto" className="text-gray-300 hover:text-orange transition-colors">
+                <NavLink to="/Contacto" className="text-gray-300 hover:text-orange transition-colors">
                   Contacto
                 </NavLink>
               </li>
               <li className="flex items-center transition-transform hover:translate-x-1">
                 <Calendar size={16} className="mr-2 text-orange/70" />
-                <NavLink to="/edificioFarfalle/Reservas" className="text-gray-300 hover:text-orange transition-colors">
+                <NavLink to="/Reservas" className="text-gray-300 hover:text-orange transition-colors">
                   Reservas
                 </NavLink>
               </li>

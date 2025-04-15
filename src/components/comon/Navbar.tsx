@@ -23,11 +23,16 @@ interface NavbarProps {
 }
 
 const departamentosRoutes = [
-  "/edificioFarfalle/Departamentos/Pb-A",
-  "/edificioFarfalle/Departamentos/Pb-B",
-  "/edificioFarfalle/Departamentos/1-A",
-  "/edificioFarfalle/Departamentos/1-B",
-  "/edificioFarfalle/Departamentos/2-B",
+  // "/edificioFarfalle/Departamentos/Pb-A",
+  // "/edificioFarfalle/Departamentos/Pb-B",
+  // "/edificioFarfalle/Departamentos/1-A",
+  // "/edificioFarfalle/Departamentos/1-B",
+  // "/edificioFarfalle/Departamentos/2-B",
+  "/Departamentos/Pb-A",
+  "/Departamentos/Pb-B",
+  "/Departamentos/1-A",
+  "/Departamentos/1-B",
+  "/Departamentos/2-B",
 ]
 
 export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
@@ -58,7 +63,8 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
       const isActive = to ? (exact ? location.pathname === to : location.pathname.startsWith(to)) : false
 
       const isDepartamentosActive = departamentosRoutes.some((route) => location.pathname === route)
-      const isLinkActive = isActive || (to === "/edificioFarfalle/Departamentos" && isDepartamentosActive)
+      // const isLinkActive = isActive || (to === "/edificioFarfalle/Departamentos" && isDepartamentosActive)
+      const isLinkActive = isActive || (to === "/Departamentos" && isDepartamentosActive)
 
       const handleClick = () => {
         setOpenCloseMenu(false)
@@ -178,7 +184,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
               className="text-white hover:text-black font-semibold transition-all duration-300 delay-100"
               activeClassName="text-black"
               exact
-              to="/edificioFarfalle/"
+              to="/"
             >
               Inicio
             </NavLinks>
@@ -186,7 +192,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
               className="text-white hover:text-black font-semibold transition-all duration-300 delay-200"
               activeClassName="text-black"
               exact
-              to="/edificioFarfalle/Departamentos"
+              to="/Departamentos"
             >
               Departamentos
             </NavLinks>
@@ -194,7 +200,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
               className="text-white hover:text-black font-semibold transition-all duration-300 delay-300"
               activeClassName="text-black"
               exact
-              to="/edificioFarfalle/Servicios"
+              to="/Servicios"
             >
               Servicios
             </NavLinks>
@@ -202,7 +208,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
               className="text-white hover:text-black font-semibold transition-all duration-300 delay-400"
               activeClassName="text-black"
               exact
-              to="/edificioFarfalle/Contacto"
+              to="/Contacto"
             >
               Contacto
             </NavLinks>
@@ -210,7 +216,7 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
               className="text-white hover:text-black font-semibold transition-all duration-300 delay-500"
               activeClassName="text-black"
               exact
-              to="/edificioFarfalle/Reservas"
+              to="/Reservas"
             >
               Reservas
             </NavLinks>
@@ -220,31 +226,31 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
         {/* Menú desktop */}
         {!isMobile && (
           <>
-            <NavLinks className={navLinksClass} activeClassName="text-black" exact to="/edificioFarfalle/">
+            <NavLinks className={navLinksClass} activeClassName="text-black" exact to="/">
               Inicio
             </NavLinks>
             <span className="text-white text-xl font-semibold" aria-hidden="true">
               |
             </span>
-            <NavLinks className={navLinksClass} activeClassName="text-black" exact to="/edificioFarfalle/Departamentos">
+            <NavLinks className={navLinksClass} activeClassName="text-black" exact to="/Departamentos">
               Departamentos
             </NavLinks>
             <span className="text-white text-xl font-semibold" aria-hidden="true">
               |
             </span>
-            <NavLinks className={navLinksClass} activeClassName="text-black" exact to="/edificioFarfalle/Servicios">
+            <NavLinks className={navLinksClass} activeClassName="text-black" exact to="/Servicios">
               Servicios
             </NavLinks>
             <span className="text-white text-xl font-semibold" aria-hidden="true">
               |
             </span>
-            <NavLinks className={navLinksClass} activeClassName="text-black" exact to="/edificioFarfalle/Contacto">
+            <NavLinks className={navLinksClass} activeClassName="text-black" exact to="/Contacto">
               Contacto
             </NavLinks>
             <span className="text-white text-xl font-semibold" aria-hidden="true">
               |
             </span>
-            <NavLinks className={navLinksClass} activeClassName="text-black" exact to="/edificioFarfalle/Reservas">
+            <NavLinks className={navLinksClass} activeClassName="text-black" exact to="/Reservas">
               Reservas
             </NavLinks>
           </>
