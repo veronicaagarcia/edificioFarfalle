@@ -1,6 +1,6 @@
 "use client"
 
-import { ApartmentLayout } from "./comon/ApartmentLayout"
+import { ApartmentLayout } from "../components/comon/ApartmentLayout"
 
 interface Media {
   type: "image" | "video"

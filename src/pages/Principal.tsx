@@ -2,12 +2,12 @@
 
 import { useEffect, useRef } from "react"
 // import { RatingCharts } from "./comon/RatingChart"
-import { Footer } from "./comon/Footer"
+import { Footer } from "../components/comon/Footer"
 import AOS from "aos"
 import "aos/dist/aos.css"
-import { LazyVideo } from "./comon/LazyVideo"
-import { SectionTitle } from "./comon/SectionTitle"
-import { FeatureItem } from "./comon/FeatureItem"
+import { LazyVideo } from "../components/comon/LazyVideo"
+import { SectionTitle } from "../components/comon/SectionTitle"
+import { FeatureItem } from "../components/comon/FeatureItem"
 
 interface PrincipalProps {
   isMobile: boolean
@@ -78,10 +78,10 @@ export function Principal({ isMobile }: PrincipalProps) {
     }
   }, [])
 
-  const textClass = `text-justify text-black text-opacity-90 px-4 md:px-0 xl:px-8 ${isMobile ? "text-base" : "text-lg"}`
+  const textClass = `text-justify text-black text-opacity-90 px-4 md:px-0 xl:px-8 text-base xl:text-lg`
 
   return (
-    <div className="mx-auto w-full h-full md:mt-2 bg-background">
+    <div className="mx-auto w-full h-full  bg-background" >
       {/* Sección de Hero con Video */}
       <section
         className={`${isMobile ? "h-[450px]" : "h-[500px]"} relative w-full max-w-screen overflow-hidden max-h-[500px] mb-4`}
@@ -92,13 +92,13 @@ export function Principal({ isMobile }: PrincipalProps) {
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-offset="200"
-            className={`absolute top-[30%] md:top-[35%] text-center w-full hover:bg-slate-950/50 text-white mb-8 whitespace-wrap mx-auto z-10 ${
-              isMobile ? "pt-2 text-lg" : "pt-3 text-4xl"
+            className={`absolute top-[30%] md:top-[35%] text-center w-full text-white mb-8 whitespace-wrap mx-auto z-10 ${
+              isMobile ? "pt-2 text-base" : "pt-3 text-3xl"
             }`}
           >
             Bienvenidos a <span className="text-orange italic">Edificio Farfalle</span>
             <br />
-            tu lugar en la ciudad de La Plata
+            tu lugar en la Ciudad de La Plata
           </h1>
 
           <LazyVideo
@@ -147,8 +147,8 @@ export function Principal({ isMobile }: PrincipalProps) {
 
         <div className="flex flex-col md:flex-row px-4 md:px-0 xl:px-8 gap-6">
           <div className="w-full md:w-1/2 bg-white/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-            <h3 className="text-lg font-medium text-black text-start mb-4">Booking</h3>
-            <p className={`text-justify text-black text-opacity-90 ${isMobile ? "text-base" : "text-lg"}`}>
+            <h3 className="text-base xl:text-lg font-medium text-slate-950 text-start mb-4">Booking</h3>
+            <p className={`text-justify text-black text-opacity-90 text-base xl:text-lg`}>
               Edificio Farfalle tiene una puntuación destacada en Booking.com. Nuestros huéspedes nos han valorado con
               una calificación promedio de
               <span className="font-bold text-orange"> 9.4/10</span>. Agradecemos a todos nuestros visitantes por sus
@@ -156,8 +156,8 @@ export function Principal({ isMobile }: PrincipalProps) {
             </p>
           </div>
           <div className="w-full md:w-1/2 bg-white/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-            <h3 className="text-lg font-medium text-black text-start mb-4">Airbnb</h3>
-            <p className={`text-justify text-black text-opacity-90 ${isMobile ? "text-base" : "text-lg"}`}>
+            <h3 className="text-base xl:text-lg font-medium text-slate-950 text-start mb-4">Airbnb</h3>
+            <p className="text-justify text-black text-opacity-90 text-base xl:text-lg">
               En Airbnb, nuestros huéspedes han otorgado a Edificio Farfalle una impresionante puntuación de{" "}
               <span className="font-bold text-orange">5/5</span>. Estamos muy contentos de recibir sus valoraciones
               positivas que destacan la comodidad de nuestros departamentos y la calidad del servicio que brindamos.

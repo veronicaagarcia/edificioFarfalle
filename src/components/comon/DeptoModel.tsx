@@ -72,7 +72,7 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
   return (
     <>
       {selectedIndex !== null && (
-        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-slate-900 bg-opacity-90 z-50 backdrop-blur-sm">
+        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-slate-950 bg-opacity-90 z-50 backdrop-blur-sm">
           <div className="absolute inset-0 flex items-center justify-between md:justify-around p-1">
             <button
               className="text-white text-2xl font-bold hover:text-orange transition-colors p-4 z-20"
@@ -97,6 +97,7 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
                   controls
                   autoPlay
                   onLoadedData={handleMediaLoad}
+                  muted={true}
                 />
               ) : (
                 <img

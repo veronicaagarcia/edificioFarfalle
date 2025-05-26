@@ -1,6 +1,6 @@
 "use client"
 
-import { ApartmentLayout } from "./comon/ApartmentLayout"
+import { ApartmentLayout } from "../components/comon/ApartmentLayout"
 
 interface Media {
   type: "image" | "video"
@@ -8,7 +8,7 @@ interface Media {
 }
 
 export function PbB() {
-  const completo = "https://newfarfalle.s3.sa-east-1.amazonaws.com/videoPBB.mp4"
+  const completo = "/edificioFarfalle/images/PbB/videopbb.mp4"
 
   const media: Media[] = [
     { type: "image", url: "/edificioFarfalle/images/PbB/1.jpg" },

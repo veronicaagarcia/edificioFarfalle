@@ -15,10 +15,10 @@ import WeekendRoundedIcon from "@mui/icons-material/WeekendRounded"
 import DeckRoundedIcon from "@mui/icons-material/DeckRounded"
 import RecordVoiceOverRoundedIcon from "@mui/icons-material/RecordVoiceOverRounded"
 import AppsRoundedIcon from "@mui/icons-material/AppsRounded"
-import { Footer } from "./comon/Footer"
+import { Footer } from "../components/comon/Footer"
 import AOS from "aos"
 import "aos/dist/aos.css"
-import ImageGallery from "./ImageGaller"
+import ImageGallery from "../components/ImageGaller"
 
 // Definir las categorías de servicios para evitar repetición
 const SERVICE_CATEGORIES = [
@@ -130,9 +130,9 @@ function ServiceCategory({
         {icon}
         <p className="pl-2">{title}</p>
       </li>
-      <ul className="font-lato text-black text-opacity-90 text-center md:text-start w-full ">
+      <ul className="font-lato text-black text-opacity-90 text-center md:text-start w-full">
         {items.map((item, index) => (
-          <li key={index} className="transition-all duration-300 hover:text-orange/80 text-base">
+          <li key={index} className="transition-all duration-300 hover:text-orange/80 text-sm xl:text-lg">
             {item}
           </li>
         ))}
@@ -166,7 +166,7 @@ export function Servicios() {
       <div className="w-full mx-auto h-fit mb-4 md:mb-16 lg:mb-0 md:rounded-lg bg-transparent">
         {/* Título de la sección */}
         <h2
-          className="text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-4"
+          className="text-base xl:text-lg mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-4"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -181,7 +181,7 @@ export function Servicios() {
         {/* Categorías de servicios */}
         <ul className="container mx-auto mt-4 flex flex-col justify-center sm:flex-row sm:justify-between px-3 md:px-20 lg:px-28 lg:mb-8">
           {/* Primera columna */}
-          <div className="w-full h-auto sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
+          <div className="w-full h-auto sm:w-1/3 flex flex-col m-auto text-base xl:text-lg not-italic text-opacity-90 pr-2">
             {firstColumn.map((category, index) => (
               <ServiceCategory
                 key={category.id}
@@ -194,7 +194,7 @@ export function Servicios() {
           </div>
 
           {/* Segunda columna */}
-          <div className="w-full h-auto sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
+          <div className="w-full h-auto sm:w-1/3 flex flex-col m-auto text-base xl:text-lg not-italic text-opacity-90 pl-2">
             {secondColumn.map((category, index) => (
               <ServiceCategory
                 key={category.id}
@@ -207,7 +207,7 @@ export function Servicios() {
           </div>
 
           {/* Tercera columna */}
-          <div className="w-full h-auto sm:w-1/3 flex flex-col m-auto text-base md:text-lg not-italic text-opacity-90 px-2">
+          <div className="w-full h-auto sm:w-1/3 flex flex-col m-auto text-base xl:text-lg not-italic text-opacity-90 pl-2">
             {thirdColumn.map((category, index) => (
               <ServiceCategory
                 key={category.id}

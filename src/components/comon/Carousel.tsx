@@ -28,7 +28,7 @@ export const CustomCarousel: React.FC<CarouselProps> = ({ media, onMediaClick })
 
   const renderThumbnail = useCallback((item: Media, index: number) => {
     return (
-      <div className="h-16 w-24 overflow-hidden rounded-sm">
+      <div className="h-16 w-24 overflow-hidden rounded-sm ">
         {item.type === "image" ? (
           <img
             src={item.url || "/placeholder.svg"}
@@ -62,7 +62,7 @@ export const CustomCarousel: React.FC<CarouselProps> = ({ media, onMediaClick })
   }, [])
 
   return (
-    <div className="w-full lg:w-9/12 mx-auto" data-aos="fade-up" data-aos-duration="1000">
+    <div className="w-full lg:w-6/12 mx-auto" data-aos="fade-up" data-aos-duration="1000">
       <Carousel
         autoPlay
         infiniteLoop

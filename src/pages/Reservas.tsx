@@ -443,7 +443,7 @@
 import { useEffect, useState } from "react"
 import emailjs from "emailjs-com"
 import Swal from "sweetalert2"
-import { Footer } from "./comon/Footer"
+import { Footer } from "../components/comon/Footer"
 import AOS from "aos"
 import "aos/dist/aos.css"
 
@@ -646,7 +646,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
   return (
     <section className="h-full w-full pt-12 bg-background">
       <h2
-        className="text-lg md:text-xl mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8"
+        className="text-base xl:text-lg mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
@@ -654,7 +654,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
       </h2>
 
       <p
-        className="text-justify text-black text-opacity-90 text-base md:text-lg px-6 md:px-28 mb-8 md:mb-20"
+        className="text-justify text-black text-opacity-90 text-base xl:text-lg px-6 md:px-28 mb-8 md:mb-20"
         data-aos="fade-up"
         data-aos-delay="100"
       >
@@ -664,41 +664,41 @@ const validateEmail: ValidateEmailFunction = (email) => {
       </p>
 
       <section
-        className="flex flex-col md:flex-row mb-4 md:mb-12 py-10 md:py-20 md:p-20 xl:py-28 px-3 md:px-28 bg-slate-950/90"
+        className="flex flex-col md:flex-row mb-4 md:mb-12 py-10 md:py-20 md:p-20 xl:py-28 px-3 md:px-28 bg-slate-950/85"
       >
         <div className="container mx-auto w-11/12 md:w-[50%] lg:w-[45%] mb-8 md:mb-0">
-          <h3 className="text-lg md:text-xl font-semibold text-white text-center mb-4">¿Cómo Funciona?</h3>
+          <h3 className="text-base xl:text-lg font-semibold text-white text-center mb-4">¿Cómo Funciona?</h3>
 
-          <div className="space-y-4">
-            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg"  data-aos="fade-up"
+          <div className="space-y-4 text-base xl:text-lg">
+            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3"  data-aos="fade-up"
         data-aos-delay="100">
               <span className="text-white">1. </span>
               <span className="text-orange font-medium">Selecciona tus Fechas: </span>
               Elige las fechas de entrada y salida que deseas para tu estancia.
             </p>
 
-            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg"  data-aos="fade-up"
+            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3"  data-aos="fade-up"
         data-aos-delay="100">
               <span className="text-white">2. </span>
               <span className="text-orange font-medium">Indica el Número de Personas: </span>
               Especifica cuántas personas se alojarán con nosotros.
             </p>
 
-            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg"  data-aos="fade-up"
+            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3"  data-aos="fade-up"
         data-aos-delay="100">
               <span className="text-white">3. </span>
               <span className="text-orange font-medium">Elige tu Departamento: </span>
               Selecciona el departamento en el que estás interesado.
             </p>
 
-            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg"  data-aos="fade-up"
+            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3"  data-aos="fade-up"
         data-aos-delay="100">
               <span className="text-white">4. </span>
               <span className="text-orange font-medium">Envía tu Solicitud: </span>
               Haz clic en el botón "Consultar Disponibilidad".
             </p>
 
-            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 text-base md:pt-3 md:text-lg"  data-aos="fade-up"
+            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3"  data-aos="fade-up"
         data-aos-delay="100">
               <span className="text-white">5. </span>
               <span className="text-orange font-medium">Respuesta de Disponibilidad: </span>
@@ -821,7 +821,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
 
               <div className="flex items-center justify-center">
                 <button
-                  className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-4 font-medium text-white transition hover:bg-orange hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-4 font-medium text-white transition hover:bg-slate-950/85 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
                   type="button"
                   onClick={handleConsultarDisponibilidad}
                   disabled={isSubmitting}
@@ -866,7 +866,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
       </section>
 
       <p
-        className="text-black text-opacity-90 text-base text-center md:text-lg px-3 md:px-28 my-8 md:my-20"
+        className="text-black text-opacity-90 text-base xl:text-lg text-center px-3 md:px-28 my-8 md:my-20"
         data-aos="fade-up"
         data-aos-delay="100"
       >

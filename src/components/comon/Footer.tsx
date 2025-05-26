@@ -1,97 +1,3 @@
-// export function Footer() {
-// 	return (
-// 		<footer className='bg-slate-950 opacity-95 text-white py-3 md:p-6 lg:p-10 w-full h-fit'>
-// 			<div className='container mx-auto px-4 md:px-8'>
-// 				<div className='flex flex-wrap justify-between py-4'>
-// 					<div className='w-full sm:w-1/2 md:w-1/4 mb-4'>
-// 						<h2 className=' text-base font-semibold mb-3'>Sobre Nosotros</h2>
-// 						<p className=' text-sm'>
-// 							Edificio Farfalle ofrece alojamiento cómodo y moderno en La Plata.
-// 							Nos esforzamos por brindar una experiencia de hospedaje
-// 							excepcional con atención personalizada y servicios de alta
-// 							calidad.
-// 						</p>
-// 					</div>
-
-// 					{/* <div className='w-full sm:w-1/2 md:w-1/5 mb-4'>
-// 						<h2 className='text-base font-semibold mb-3'>Enlaces Rápidos</h2>
-// 						<ul className=' text-sm'>
-// 							<li>
-// 								<a
-// 									href='/edificioFarfalle/'
-// 									className='text-white hover:underline'
-// 								>
-// 									Inicio
-// 								</a>
-// 							</li>
-// 							<li>
-// 								<a
-// 									href='/edificioFarfalle/Departamentos'
-// 									className='text-white hover:underline'
-// 								>
-// 									Departamentos
-// 								</a>
-// 							</li>
-// 							<li>
-// 								<a
-// 									href='/edificioFarfalle/Servicios'
-// 									className='text-white hover:underline'
-// 								>
-// 									Servicios
-// 								</a>
-// 							</li>
-// 							<li>
-// 								<a
-// 									href='/edificioFarfalle/Contacto'
-// 									className='text-white hover:underline'
-// 								>
-// 									Contacto
-// 								</a>
-// 							</li>
-// 							<li>
-// 								<a
-// 									href='/edificioFarfalle/Reservas'
-// 									className='text-white hover:underline'
-// 								>
-// 									Reservas
-// 								</a>
-// 							</li>
-// 						</ul>
-// 					</div> */}
-
-// 					<div className='w-full sm:w-1/2 md:w-1/5 mb-4'>
-// 						<h2 className='text-base font-semibold mb-3'>Contacto</h2>
-// 						<p className=' text-sm'>1770 Calle 62, 1900 La Plata, Argentina</p>
-// 						<p className=' text-sm'>Teléfono: +54 221 634-2322</p>
-// 						<p className=' text-sm'>Email: edificiofarfalle@gmail.com</p>
-// 						<p className=' text-sm'>Instagram: @edificiofarfalle</p>
-// 					</div>
-
-// 					<div className='w-full sm:w-1/2 md:w-1/4 mb-4'>
-// 						<h2 className='text-base font-semibold mb-3'>Cómo Llegar</h2>
-// 						<p className=' text-sm'>
-// 							Haz clic en el botón a continuación para obtener direcciones hacia
-// 							el Edificio Farfalle.
-// 						</p>
-// 						<a
-// 							href='https://www.google.com/maps/dir/?api=1&destination=1770+Calle+62,+1904+La+Plata,+Argentina'
-// 							target='_blank'
-// 							className='mt-4 bg-nav text-white py-2 px-4 rounded hover:bg-orange inline-block'
-// 						>
-// 							Cómo llegar
-// 						</a>
-// 					</div>
-// 				</div>
-// 				<div className='mt-2 border-t border-footerLine pt-2 text-center'>
-// 					<p className='text-xs pt-4'>
-// 						© 2025 Edificio Farfalle. Todos los derechos reservados.
-// 					</p>
-// 				</div>
-// 			</div>
-// 		</footer>
-// 	)
-// }
-
 "use client"
 
 import { NavLink } from "react-router-dom"
@@ -112,7 +18,14 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-slate-950 opacity-95 text-white py-6 md:py-10 w-full font-lato">
+    <footer className=" text-white py-6 md:py-10 w-full font-lato" 
+    style={{
+      backgroundColor: "#0f172a",
+      backgroundImage: "url('/edificioFarfalle/backgrund2.png')",
+      backgroundRepeat: "repeat",
+      backgroundSize: "auto",
+      backgroundPosition: "center",
+    }}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-4">
           {/* Sobre Nosotros */}
@@ -215,9 +128,9 @@ export function Footer() {
               href="https://www.google.com/maps/dir/?api=1&destination=1770+Calle+62,+1904+La+Plata,+Argentina"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 bg-nav text-slate-950 py-2 px-4 rounded-md hover:bg-orange hover:text-white inline-flex items-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px]"
+              className="mt-4 bg-orange text-white py-1 px-3 rounded-md hover:bg-nav inline-flex items-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px]"
             >
-              <ExternalLink size={16} className="mr-2" />
+              <ExternalLink size={14} className="mr-1" />
               Cómo llegar
             </a>
           </div>
