@@ -481,40 +481,40 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
             }`}
           >
             <NavLinks
-              className="text-white hover:text-black font-semibold transition-all duration-300 delay-100"
-              activeClassName="!text-black !font-bold"
+              className="text-white hover:text-slate-950 font-semibold transition-all duration-300 delay-100"
+              activeClassName="!text-slate-950 !font-bold"
               exact
               to="/"
             >
               Inicio
             </NavLinks>
             <NavLinks
-              className="text-white hover:text-black font-semibold transition-all duration-300 delay-200"
-              activeClassName="!text-black !font-bold"
+              className="text-white hover:text-slate-950 font-semibold transition-all duration-300 delay-200"
+              activeClassName="!text-slate-950 !font-bold"
               exact
               to="/Departamentos"
             >
               Departamentos
             </NavLinks>
             <NavLinks
-              className="text-white hover:text-black font-semibold transition-all duration-300 delay-300"
-              activeClassName="!text-black !font-bold"
+              className="text-white hover:text-slate-950 font-semibold transition-all duration-300 delay-300"
+              activeClassName="!text-slate-950 !font-bold"
               exact
               to="/Servicios"
             >
               Servicios
             </NavLinks>
             <NavLinks
-              className="text-white hover:text-black font-semibold transition-all duration-300 delay-400"
-              activeClassName="!text-black !font-bold"
+              className="text-white hover:text-slate-950 font-semibold transition-all duration-300 delay-400"
+              activeClassName="!text-slate-950 !font-bold"
               exact
               to="/Contacto"
             >
               Contacto
             </NavLinks>
             <NavLinks
-              className="text-white hover:text-black font-semibold transition-all duration-300 delay-500"
-              activeClassName="!text-black !font-bold"
+              className="text-white hover:text-slate-950 font-semibold transition-all duration-300 delay-500"
+              activeClassName="!text-slate-950 !font-bold"
               exact
               to="/Reservas"
             >
