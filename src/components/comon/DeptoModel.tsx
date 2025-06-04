@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft, faArrowRight, faTimes } from "@fortawesome/free-solid-svg-icons"
+import type { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 interface DeptoModelProps {
   numVideos: number
@@ -80,7 +81,7 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
               disabled={selectedIndex === 0}
               aria-label="Imagen anterior"
             >
-              <FontAwesomeIcon icon={faArrowLeft} className={selectedIndex === 0 ? "opacity-30" : "opacity-100"} />
+              <FontAwesomeIcon icon={faArrowLeft as IconProp} className={selectedIndex === 0 ? "opacity-30" : "opacity-100"} />
             </button>
 
             <div className="relative flex items-center justify-center w-10/12 md:w-5/12 h-auto">
@@ -117,7 +118,7 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
               aria-label="Imagen siguiente"
             >
               <FontAwesomeIcon
-                icon={faArrowRight}
+                icon={faArrowRight as IconProp}
                 className={selectedIndex === imageNames.length + videoNames.length - 1 ? "opacity-30" : "opacity-100"}
               />
             </button>
@@ -128,7 +129,7 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
             onClick={handleExitFullscreen}
             aria-label="Cerrar"
           >
-            <FontAwesomeIcon icon={faTimes} />
+            <FontAwesomeIcon icon={faTimes as IconProp} />
           </button>
 
           <div className="absolute bottom-4 left-0 right-0 text-center text-white">
