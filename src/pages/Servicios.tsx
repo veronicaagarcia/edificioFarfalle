@@ -126,13 +126,13 @@ function ServiceCategory({
 }) {
   return (
     <div data-aos="fade-up" data-aos-delay={delay}>
-      <li className=" font-lato flex justify-center md:justify-start items-center w-full text-orange/80 mt-5 mb-1">
+      <li className="font-lato font-semibold flex justify-center md:justify-start items-center w-full text-orange mt-5 mb-1">
         {icon}
         <p className="pl-2">{title}</p>
       </li>
       <ul className="font-lato text-black text-opacity-90 text-center md:text-start w-full">
         {items.map((item, index) => (
-          <li key={index} className="transition-all duration-300 hover:text-orange/80 text-sm xl:text-lg">
+          <li key={index} className="transition-all duration-300 hover:text-orange text-sm xl:text-lg">
             {item}
           </li>
         ))}
@@ -166,7 +166,7 @@ export function Servicios() {
       <div className="w-full mx-auto h-fit mb-4 md:mb-16 lg:mb-0 md:rounded-lg bg-transparent">
         {/* Título de la sección */}
         <h2
-          className="text-base xl:text-lg mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-4"
+          className="text-base xl:text-lg mt-4 md:mt-8 font-lato font-semibold uppercase text-orange text-center mb-4"
           data-aos="fade-up"
           data-aos-duration="1000"
         >

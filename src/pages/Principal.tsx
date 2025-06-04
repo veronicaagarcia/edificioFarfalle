@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-// import { RatingCharts } from "./comon/RatingChart"
 import { Footer } from "../components/comon/Footer"
 import AOS from "aos"
 import "aos/dist/aos.css"
@@ -165,10 +164,6 @@ export function Principal({ isMobile }: PrincipalProps) {
           </div>
         </div>
 
-        {/* <div className="p-6 relative my-10" data-aos="fade-up">
-          <RatingCharts />
-        </div> */}
-
         {/* Sección para compartir experiencia */}
         <SectionTitle title="Comparte Tu Experiencia" ref={(el) => (sectionRefs.current[3] = el)} />
 
@@ -194,23 +189,6 @@ export function Principal({ isMobile }: PrincipalProps) {
           </a>
           .
         </p>
-
-        {/* Sección de reserva */}
-        {/* <div className="bg-orange/10 p-6 rounded-lg mb-12 md:mb-20" data-aos="fade-up">
-          <h3 className="text-xl font-medium text-black mb-4 text-center">Reserva Hoy</h3>
-          <p className={`text-center text-black text-opacity-90 ${isMobile ? "text-base" : "text-lg"} mb-4`}>
-            Descubre por ti mismo por qué Edificio Farfalle es la elección preferida de tantos viajeros. Reserva hoy y
-            disfruta de una experiencia de alojamiento excepcional en La Plata.
-          </p>
-          <div className="flex justify-center">
-            <a
-              href="/edificioFarfalle/Reservas"
-              className="bg-orange hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300"
-            >
-              Hacer Reserva
-            </a>
-          </div>
-        </div> */}
       </div>
       <Footer />
     </div>

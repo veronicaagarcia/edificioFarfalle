@@ -21,8 +21,8 @@ const HelmetWrapper = ({ title, description }: PropHelmetWrapper) => (
 				property='og:image'
 				content='https://drive.google.com/thumbnail?authuser=0&sz=w500&id=1_La5MTgeMBxoSJ3wPJgtaHSsIJS979Mf'
 			/>
-			<meta property='og:url' content='https://www.tu-sitio-web.com' />
-			{/* ACA VA EL SITIO WEB */}
+			<meta property='og:url' content='https://www.edificiofarfalle.com' />
+			
 		</Helmet>
 	</HelmetProvider>
 )

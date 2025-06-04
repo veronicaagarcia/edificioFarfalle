@@ -208,7 +208,7 @@ const validateEmail = (email: string): boolean => {
     <section className="pt-12 h-full w-full m-auto bg-background">
       <section className="container mx-auto mb-12 md:mb-20 px-3 md:px-20 lg:px-28">
         <h2
-          className="text-base xl:text-lg mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8"
+          className="text-base xl:text-lg mt-4 md:mt-8 font-lato font-semibold uppercase text-orange text-center mb-8"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -335,7 +335,7 @@ const validateEmail = (email: string): boolean => {
 
 
         <h3
-          className="text-base xl:text-lg mt-4 font-mono font-medium uppercase text-orange/80 text-center mb-8"
+          className="text-base xl:text-lg mt-4 font-lato font-semibold uppercase text-orange text-center mb-8"
           data-aos="fade-up"
           data-aos-duration="1000"
         >

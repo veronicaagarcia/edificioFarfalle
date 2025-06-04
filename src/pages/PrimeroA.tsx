@@ -11,15 +11,15 @@ export function PrimeroA() {
   const completo = "/edificioFarfalle/images/1A/video.mp4"
 
   const media: Media[] = [
-    { type: "image", url: "/edificioFarfalle/images/1A/1.jpg" },
-    { type: "image", url: "/edificioFarfalle/images/1A/2.jpg" },
-    { type: "image", url: "/edificioFarfalle/images/1A/3.jpeg" },
-    { type: "image", url: "/edificioFarfalle/images/1A/4.jpeg" },
-    { type: "image", url: "/edificioFarfalle/images/1A/5.jpeg" },
-    { type: "image", url: "/edificioFarfalle/images/1A/6.jpeg" },
-    { type: "image", url: "/edificioFarfalle/images/1A/7.jpeg" },
-    { type: "image", url: "/edificioFarfalle/images/1A/3.jpg" },
-    { type: "image", url: "/edificioFarfalle/images/1A/4.jpg" },
+    { type: "image", url: "/edificioFarfalle/images/1A/1.webp" },
+    { type: "image", url: "/edificioFarfalle/images/1A/2.webp" },
+    { type: "image", url: "/edificioFarfalle/images/1A/3.webp" },
+    { type: "image", url: "/edificioFarfalle/images/1A/4.webp" },
+    { type: "image", url: "/edificioFarfalle/images/1A/5.webp" },
+    { type: "image", url: "/edificioFarfalle/images/1A/6.webp" },
+    { type: "image", url: "/edificioFarfalle/images/1A/7.webp" },
+    { type: "image", url: "/edificioFarfalle/images/1A/31.webp" },
+    { type: "image", url: "/edificioFarfalle/images/1A/41.webp" },
     { type: "video", url: completo },
   ]
 

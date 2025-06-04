@@ -54,7 +54,7 @@ export function Start() {
     <main className='h-full flex flex-col'>
       <div className='relative w-full h-screen flex'>
         {!videoLoaded && !videoError && (
-          <div className='absolute inset-0 flex items-center justify-center w-full h-full bg-orangeDark bg-opacity-50'>
+          <div className='absolute inset-0 flex items-center justify-center w-full h-full bg-orange'>
             <CircularProgress color='inherit' />
           </div>
         )}
@@ -104,9 +104,9 @@ export function Start() {
 				<div className='text-orange flex justify-center mt-2'>
 					<button
 						onClick={getStart}
-						className='group relative inline-flex mb-2 h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-4 font-medium text-white transition hover:bg-slate-950 hover:scale-110'
+						className='group relative inline-flex mb-2 h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-4 font-medium text-white transition hover:bg-black hover:scale-110'
 					>
-						<span className='text-base font-lato'>Ingresar</span>
+						<span className='text-base font-lato'>INGRESAR</span>
 						<div className='absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]'>
 							<div className='relative h-full w-8 bg-white/20'></div>
 						</div>

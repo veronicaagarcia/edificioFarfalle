@@ -18,31 +18,31 @@ const APARTMENTS: ApartmentCard[] = [
   {
     id: "pba",
     title: "Planta Baja A",
-    image: "/edificioFarfalle/images/PbA.jpg",
+    image: "/edificioFarfalle/images/PbA.webp",
     route: "/Departamentos/Pb-A",
   },
   {
     id: "pbb",
     title: "Planta Baja B",
-    image: "/edificioFarfalle/images/PbB.jpg",
+    image: "/edificioFarfalle/images/PbB.webp",
     route: "/Departamentos/Pb-B",
   },
   {
     id: "1a",
     title: "Primero A",
-    image: "/edificioFarfalle/images/1A.jpeg",
+    image: "/edificioFarfalle/images/1A.webp",
     route: "/Departamentos/1-A",
   },
   {
     id: "1b",
     title: "Primero B",
-    image: "/edificioFarfalle/images/1B.jpeg",
+    image: "/edificioFarfalle/images/1B.webp",
     route: "/Departamentos/1-B",
   },
   {
     id: "2b",
     title: "Segundo B",
-    image: "/edificioFarfalle/images/2B.jpeg",
+    image: "/edificioFarfalle/images/2B.webp",
     route: "/Departamentos/2-B",
   },
 ]
@@ -98,16 +98,14 @@ export function Departamentos() {
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-offset="200"
-          className="text-base xl:text-lg mt-4 md:mt-8 font-mono font-medium uppercase text-orange/80 text-center mb-8"
+          className="text-base xl:text-lg mt-4 md:mt-8 font-lato font-semibold uppercase text-orange text-center mb-8"
         >
           Nuestros Departamentos
         </h2>
 
         <div className="bg-white/50 rounded-lg shadow-sm mb-12">
           <p className="text-justify text-black text-opacity-90 mb-4 px-4 md:px-0 xl:px-8 pt-2 md:pt-4 text-base xl:text-lg">
-            En Edificio Farfalle, ofrecemos una variedad de opciones de alojamiento perfectas para quienes buscan una
-            estancia acogedora y completamente equipada. Nuestros departamentos, con capacidad para hasta 4 personas,
-            están diseñados para <span className="text-orange font-semibold">proporcionar el máximo confort </span>
+          En Edificio Farfalle, ofrecemos una variedad de opciones de alojamiento ideales para quienes buscan una estancia confortable y completamente equipada, con departamentos PB A y PB B aptos para hasta 4 personas, y unidades 1 A, 1 B y 2 B aptas para hasta 5 personas, todos diseñados para <span className="text-orange font-semibold">proporcionar el máximo confort </span>
             durante su visita.
           </p>
 
@@ -122,9 +120,9 @@ export function Departamentos() {
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-offset="200"
-          className="text-base xl:text-lg md:mt-4 font-medium text-slate-950 text-center px-8 mb-8"
+          className="text-base xl:text-lg md:mt-4 font-semibold text-orange text-center px-8 mb-8"
         >
-          Galería de Imágenes y Videos
+          Galería
         </h3>
 
         <p className="text-justify text-black text-opacity-90 mb-12 px-4 md:px-0 xl:px-8 text-base xl:text-lg">

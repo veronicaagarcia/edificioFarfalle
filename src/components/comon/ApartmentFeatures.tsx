@@ -4,6 +4,7 @@ import { useMemo } from "react"
 
 // Lista de características para departamentos de Planta Baja
 const GROUND_FLOOR_FEATURES = [
+  "Apto para 4 personas",
   "Cama matrimonial",
   "Sofá cama con carrión para 2 personas",
   "Placard",
@@ -27,13 +28,12 @@ const GROUND_FLOOR_FEATURES = [
 
 // Lista de características para departamentos de Primer y Segundo Piso
 const UPPER_FLOOR_FEATURES = [
-  // Aquí puedes añadir o modificar características específicas
+  "Apto para 5 personas",
   "Cama matrimonial",
   "Sofá cama con carrión para 2 personas",
   "Cama individual",
   "Placard",
   "Baño privado (Ducha, bidet, papel higiénico, jabón)",
-  "Balcón con vista a la calle",  // Característica específica
   "Mesa y sillas (para 5 personas)",
   "Aire Acondicionado (frío/calor) en habitación y comedor",
   "Heladera",
@@ -47,7 +47,7 @@ const UPPER_FLOOR_FEATURES = [
   "Wifi gratuito",
   "TV por cable",
   "Té y café de cortesía",
-  "Espacio adicional para trabajo", // Característica específica
+  "Espacio adicional para trabajo",
 ]
 
 interface ApartmentFeaturesProps {

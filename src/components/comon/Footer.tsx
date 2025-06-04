@@ -21,7 +21,7 @@ export function Footer() {
     <footer className=" text-white py-6 md:py-10 w-full font-lato" 
     style={{
       backgroundColor: "#0f172a",
-      backgroundImage: "url('/edificioFarfalle/backgrund2.png')",
+      backgroundImage: "url('/edificioFarfalle/backgrund.png')",
       backgroundRepeat: "repeat",
       backgroundSize: "auto",
       backgroundPosition: "center",
@@ -128,7 +128,7 @@ export function Footer() {
               href="https://www.google.com/maps/dir/?api=1&destination=1770+Calle+62,+1904+La+Plata,+Argentina"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 bg-orange text-white py-1 px-3 rounded-md hover:bg-nav inline-flex items-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px]"
+              className="mt-4 bg-orange text-white hover:text-black py-2 px-3 rounded-md hover:bg-nav inline-flex items-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px]"
             >
               <ExternalLink size={14} className="mr-1" />
               Cómo llegar

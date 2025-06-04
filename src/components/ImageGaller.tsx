@@ -7,10 +7,10 @@ interface Image {
 
 const ImageGallery: React.FC = () => {
   const images: Image[] = [
-    { src: '/edificioFarfalle/images/services.jpg', alt: 'Imagen 1' },
-    { src: '/edificioFarfalle/images/services2.jpg', alt: 'Imagen 2' },
-    { src: '/edificioFarfalle/images/services3.jpg', alt: 'Imagen 3' },
-    { src: '/edificioFarfalle/images/services4.jpg', alt: 'Imagen 4' },
+    { src: '/edificioFarfalle/images/services.webp', alt: 'Imagen 1' },
+    { src: '/edificioFarfalle/images/services2.webp', alt: 'Imagen 2' },
+    { src: '/edificioFarfalle/images/services3.webp', alt: 'Imagen 3' },
+    { src: '/edificioFarfalle/images/services4.webp', alt: 'Imagen 4' },
   ];
 
   const video = '/edificioFarfalle/video.principal.mp4'
