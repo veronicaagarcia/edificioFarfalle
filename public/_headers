@@ -1,0 +1,69 @@
+# Security and Performance Headers for Netlify
+
+/*
+  # Security Headers
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  
+  # Content Security Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com; frame-src 'none'; object-src 'none'; base-uri 'self';
+  
+  # Performance Headers
+  Cache-Control: public, max-age=31536000, immutable
+
+# Static Assets Cache (1 year)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  
+/icons/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=2592000
+
+# Fonts Cache (1 year)
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# JavaScript and CSS Cache (1 year with immutable)
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Video files (1 month)
+/*.mp4
+  Cache-Control: public, max-age=2592000
+  
+/*.webm
+  Cache-Control: public, max-age=2592000
+
+# HTML files (1 hour)
+/*.html
+  Cache-Control: public, max-age=3600
+  
+# Index page (no cache for dynamic content)
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+  
+# Service Worker (no cache)
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Manifest (1 day)
+/manifest.json
+  Cache-Control: public, max-age=86400
+
+# Sitemap and Robots (1 day)
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+  
+/robots.txt
+  Cache-Control: public, max-age=86400

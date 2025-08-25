@@ -57,7 +57,7 @@ const FEATURES = [
 ]
 
 export function Principal({ isMobile }: PrincipalProps) {
-  const video = "/edificioFarfalle/video.start.mp4"
+  const video = "./video.start.mp4"
   const sectionRefs = useRef<(HTMLElement | null)[]>([])
 
   useEffect(() => {
@@ -102,16 +102,16 @@ export function Principal({ isMobile }: PrincipalProps) {
 
           <LazyVideo
             src={video}
-            poster="/edificioFarfalle/video-poster.jpg"
+            poster="./video-poster.jpg"
             className="w-full object-cover object-center h-[600px] max-h-[600px]"
           />
         </div>
         <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-t from-almostWhite to-transparent"></div>
       </section>
 
-      <div className="px-3 md:px-28">
+      <div className="px-4 md:px-28 py-8">
         {/* Introducción */}
-        <p className={`${textClass} mb-8`}>
+        <p className={`${textClass} mb-12`}>
           Ofrecemos una experiencia de alojamiento única en la Ciudad de La Plata. Contamos con opciones flexibles y
           convenientes para aquellos que buscan alojamiento a corto plazo. Nuestras unidades están diseñadas para
           brindar comodidad y funcionalidad, ya sea para estancias cortas, o para períodos más prolongados. Nuestros
@@ -123,7 +123,7 @@ export function Principal({ isMobile }: PrincipalProps) {
         {/* Sección "¿Por qué elegirnos?" */}
         <SectionTitle title="¿Por qué elegirnos?" ref={(el) => (sectionRefs.current[1] = el)} />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {FEATURES.map((feature, index) => (
             <FeatureItem
               key={index}
@@ -138,13 +138,13 @@ export function Principal({ isMobile }: PrincipalProps) {
         {/* Sección de Opiniones */}
         <SectionTitle title="Opiniones y Valoraciones" ref={(el) => (sectionRefs.current[2] = el)} />
 
-        <p className={`${textClass} mb-8`}>
+        <p className={`${textClass} mb-10`}>
           Nos enorgullece ofrecer una experiencia de alojamiento excepcional. No solo lo decimos nosotros, sino que
           nuestros huéspedes también lo confirman. Consulta las valoraciones y opiniones de quienes ya han disfrutado de
           su estancia con nosotros.
         </p>
 
-        <div className="flex flex-col md:flex-row px-4 md:px-0 xl:px-8 gap-6">
+        <div className="flex flex-col md:flex-row px-4 md:px-0 xl:px-8 gap-8 mb-16">
           <div className="w-full md:w-1/2 bg-white/50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
             <h3 className="text-base xl:text-lg font-medium text-slate-950 text-start mb-4">Booking</h3>
             <p className={`text-justify text-black text-opacity-90 text-base xl:text-lg`}>
@@ -167,14 +167,14 @@ export function Principal({ isMobile }: PrincipalProps) {
         {/* Sección para compartir experiencia */}
         <SectionTitle title="Comparte Tu Experiencia" ref={(el) => (sectionRefs.current[3] = el)} />
 
-        <p className={`${textClass} mb-8`}>
+        <p className={`${textClass} mb-10`}>
           Si ya te has hospedado con nosotros, nos encantaría escuchar tu opinión. Tu feedback nos ayuda a mejorar y a
           seguir ofreciendo una experiencia de calidad. Puedes dejar tu reseña en:{" "}
           <a
             href="https://www.booking.com/hotel/ar/farfalle.es-ar.html#tab-reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-lato text-orange hover:text-orange-600 underline transition-colors"
+            className="font-lato text-orange hover:text-orange-600 underline transition-colors font-medium"
           >
             Booking
           </a>{" "}
@@ -183,7 +183,7 @@ export function Principal({ isMobile }: PrincipalProps) {
             href="https://es-l.airbnb.com/rooms/54102302/reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-lato text-orange hover:text-orange-600 underline transition-colors"
+            className="font-lato text-orange hover:text-orange-600 underline transition-colors font-medium"
           >
             Airbnb
           </a>

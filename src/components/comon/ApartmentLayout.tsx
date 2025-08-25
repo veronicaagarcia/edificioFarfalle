@@ -36,7 +36,7 @@ export function ApartmentLayout({ title, size, media, videoUrl, isUpperFloor = f
 
   return (
     <div className="w-full min-h-screen pt-12 overflow-y-auto bg-background">
-      <div className="py-8 md:py-12 xl:py-16 2xl:py-20">
+      <div className="py-10 md:py-14 xl:py-18 2xl:py-22">
         <h2 
           className="text-base xl:text-lg font-lato font-semibold uppercase text-orange text-center"
           data-aos="fade-up" 
@@ -47,14 +47,14 @@ export function ApartmentLayout({ title, size, media, videoUrl, isUpperFloor = f
         <h3 className="text-base xl:text-lg text-center font-bold text-black opacity-80">{size}</h3>
       </div>
       
-      <div className="w-full mb-8">
+      <div className="w-full mb-12">
         <CustomCarousel media={media} onMediaClick={handleMediaClick} />
       </div>
       
       <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-32">
-        <div className="p-6 md:p-8 lg:p-10 bg-white/50 rounded-lg shadow-sm">
+        <div className="p-8 md:p-10 lg:p-12 bg-white/60 rounded-xl shadow-lg backdrop-blur-sm border border-white/20">
           <h4 
-            className="text-base xl:text-lg mt-4 md:mt-4 font-lato font-semibold uppercase text-orange text-center mb-8"
+            className="text-base xl:text-lg mt-2 md:mt-2 font-lato font-semibold uppercase text-orange text-center mb-10"
             data-aos="fade-up" 
             data-aos-duration="1000"
           >
@@ -71,6 +71,7 @@ export function ApartmentLayout({ title, size, media, videoUrl, isUpperFloor = f
           videoNames={[videoUrl]}
           videoSizeMultiplier={1}
           imageNames={media.filter((item) => item.type === "image").map((item) => item.url)}
+          media={media}
           onClose={handleCloseModal}
           initialIndex={selectedMediaIndex}
         />

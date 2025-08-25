@@ -1,0 +1,39 @@
+# Robots.txt for Edificio Farfalle
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.edificiofarfalle.com/sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block access to admin areas (if any in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.well-known/
+
+# Block unnecessary file types
+Disallow: /*.json$
+Disallow: /*.xml$ 
+Disallow: /sw.js
+Disallow: /manifest.json
+
+# Allow important assets
+Allow: /images/
+Allow: /icons/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.mp4$

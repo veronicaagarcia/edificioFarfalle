@@ -7,13 +7,13 @@ interface Image {
 
 const ImageGallery: React.FC = () => {
   const images: Image[] = [
-    { src: '/edificioFarfalle/images/services.webp', alt: 'Imagen 1' },
-    { src: '/edificioFarfalle/images/services2.webp', alt: 'Imagen 2' },
-    { src: '/edificioFarfalle/images/services3.webp', alt: 'Imagen 3' },
-    { src: '/edificioFarfalle/images/services4.webp', alt: 'Imagen 4' },
+    { src: './images/services.webp', alt: 'Imagen 1' },
+    { src: './images/services2.webp', alt: 'Imagen 2' },
+    { src: './images/services3.webp', alt: 'Imagen 3' },
+    { src: './images/services4.webp', alt: 'Imagen 4' },
   ];
 
-  const video = '/edificioFarfalle/video.principal.mp4'
+  const video = './video.principal.mp4'
   return (
     <div className="container mx-auto px-3 md:px-20 lg:px-28 py-8">
        <div className='relative h-[650px] mb-4'>	

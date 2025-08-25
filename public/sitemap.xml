@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.edificiofarfalle.com/</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.edificiofarfalle.com/images/services.webp</image:loc>
+      <image:title>Edificio Farfalle - Alojamiento Temporal La Plata</image:title>
+      <image:caption>Vista principal del Edificio Farfalle</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Departamentos Main Page -->
+  <url>
+    <loc>https://www.edificiofarfalle.com/#/Departamentos</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.edificiofarfalle.com/images/services2.webp</image:loc>
+      <image:title>Departamentos Disponibles</image:title>
+      <image:caption>Selección de departamentos temporales</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Individual Apartments -->
+  <url>
+    <loc>https://www.edificiofarfalle.com/#/Departamentos/Pb-A</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.edificiofarfalle.com/images/PbA.webp</image:loc>
+      <image:title>Departamento Planta Baja A</image:title>
+      <image:caption>Departamento moderno en planta baja</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.edificiofarfalle.com/#/Departamentos/Pb-B</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.edificiofarfalle.com/images/PbB.webp</image:loc>
+      <image:title>Departamento Planta Baja B</image:title>
+      <image:caption>Departamento equipado en planta baja</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.edificiofarfalle.com/#/Departamentos/1-A</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.edificiofarfalle.com/images/1A.webp</image:loc>
+      <image:title>Departamento Primer Piso A</image:title>
+      <image:caption>Departamento con vista en primer piso</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.edificiofarfalle.com/#/Departamentos/1-B</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.edificiofarfalle.com/images/1B.webp</image:loc>
+      <image:title>Departamento Primer Piso B</image:title>
+      <image:caption>Departamento luminoso en primer piso</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.edificiofarfalle.com/#/Departamentos/2-B</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.edificiofarfalle.com/images/2B.webp</image:loc>
+      <image:title>Departamento Segundo Piso B</image:title>
+      <image:caption>Departamento con vistas panorámicas</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://www.edificiofarfalle.com/#/Servicios</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.edificiofarfalle.com/images/services3.webp</image:loc>
+      <image:title>Servicios del Edificio Farfalle</image:title>
+      <image:caption>Amenities y servicios disponibles</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.edificiofarfalle.com/#/Contacto</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Reservations Page -->
+  <url>
+    <loc>https://www.edificiofarfalle.com/#/Reservas</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.edificiofarfalle.com/images/services4.webp</image:loc>
+      <image:title>Reservas Edificio Farfalle</image:title>
+      <image:caption>Formulario de reservas online</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

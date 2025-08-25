@@ -18,31 +18,31 @@ const APARTMENTS: ApartmentCard[] = [
   {
     id: "pba",
     title: "Planta Baja A",
-    image: "/edificioFarfalle/images/PbA.webp",
+    image: "./images/PbA.webp",
     route: "/Departamentos/Pb-A",
   },
   {
     id: "pbb",
     title: "Planta Baja B",
-    image: "/edificioFarfalle/images/PbB.webp",
+    image: "./images/PbB.webp",
     route: "/Departamentos/Pb-B",
   },
   {
     id: "1a",
     title: "Primero A",
-    image: "/edificioFarfalle/images/1A.webp",
+    image: "./images/1A.webp",
     route: "/Departamentos/1-A",
   },
   {
     id: "1b",
     title: "Primero B",
-    image: "/edificioFarfalle/images/1B.webp",
+    image: "./images/1B.webp",
     route: "/Departamentos/1-B",
   },
   {
     id: "2b",
     title: "Segundo B",
-    image: "/edificioFarfalle/images/2B.webp",
+    image: "./images/2B.webp",
     route: "/Departamentos/2-B",
   },
 ]
@@ -92,7 +92,7 @@ export function Departamentos() {
 
   return (
     <section className="pt-12 h-full w-full m-auto bg-background">
-      <div className="container mx-auto mb-12 md:mb-20 px-3 md:px-20 lg:px-28">
+      <div className="container mx-auto mb-16 md:mb-24 px-4 md:px-20 lg:px-28">
         <h2
           ref={(el) => (animatedRefs.current[0] = el)}
           data-aos="fade-up"
@@ -103,7 +103,7 @@ export function Departamentos() {
           Nuestros Departamentos
         </h2>
 
-        <div className="bg-white/50 rounded-lg shadow-sm mb-12">
+        <div className="bg-white/50 rounded-xl shadow-sm mb-14">
           <p className="text-justify text-black text-opacity-90 mb-4 px-4 md:px-0 xl:px-8 pt-2 md:pt-4 text-base xl:text-lg">
           En Edificio Farfalle, ofrecemos una variedad de opciones de alojamiento ideales para quienes buscan una estancia confortable y completamente equipada, con departamentos PB A y PB B aptos para hasta 4 personas, y unidades 1 A, 1 B y 2 B aptas para hasta 5 personas, todos diseñados para <span className="text-orange font-semibold">proporcionar el máximo confort </span>
             durante su visita.
@@ -120,22 +120,22 @@ export function Departamentos() {
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-offset="200"
-          className="text-base xl:text-lg md:mt-4 font-semibold text-orange text-center px-8 mb-8"
+          className="text-base xl:text-lg md:mt-4 font-semibold text-orange text-center px-8 mb-8 uppercase"
         >
           Galería
         </h3>
 
-        <p className="text-justify text-black text-opacity-90 mb-12 px-4 md:px-0 xl:px-8 text-base xl:text-lg">
+        <p className="text-justify text-black text-opacity-90 mb-14 px-4 md:px-0 xl:px-8 text-base xl:text-lg">
           Para ofrecerte una visión más clara de lo que puedes esperar, te invitamos a explorar nuestras galerías de
           imágenes y videos. Haz clic en los enlaces de cada departamento para ver más detalles y conocer todo lo que
           ofrecemos.
         </p>
 
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 md:px-0 xl:px-8 mb-20">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 px-4 md:px-0 xl:px-8 mb-20">
           {APARTMENTS.map((apartment, index) => (
             <div
               key={apartment.id}
-              className="bg-white overflow-hidden relative h-64 sm:h-80 border-2 border-none rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105"
+              className="bg-white overflow-hidden relative h-72 sm:h-80 md:h-96 border-2 border-none rounded-xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02]"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
@@ -143,7 +143,7 @@ export function Departamentos() {
 
               <div className="absolute inset-0 flex flex-col justify-between items-center">
                 <div className="self-start">
-                  <h3 className="text-base xl:text-lg font-semibold mb-2 text-almostWhite bg-orange/80 opacity-95 p-2 rounded-br-lg">
+                  <h3 className="text-base xl:text-lg font-semibold mb-2 text-white bg-orange/90 backdrop-blur-sm p-3 rounded-br-xl shadow-lg">
                     {apartment.title}
                   </h3>
                 </div>
@@ -151,10 +151,10 @@ export function Departamentos() {
                 <div className="p-6 text-center">
                   <Link
                     to={apartment.route}
-                    className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-orange px-6 font-medium text-neutral-200 transition hover:bg-slate-950 hover:scale-110"
+                    className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-orange px-8 font-medium text-white transition-all duration-300 hover:bg-slate-900 hover:scale-105 shadow-lg backdrop-blur-sm"
                   >
-                    <span className="text-base xl:text-lg">Ver</span>
-                    <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
+                    <span className="text-base xl:text-lg font-semibold">Ver Departamento</span>
+                    <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-700 group-hover:[transform:skew(-12deg)_translateX(100%)]">
                       <div className="relative h-full w-8 bg-white/20"></div>
                     </div>
                   </Link>

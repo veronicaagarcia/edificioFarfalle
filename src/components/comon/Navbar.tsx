@@ -170,13 +170,15 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
         }`}>
         {isMobile && (
           <button
-            className="h-fit w-36 flex justify-end absolute top-0 right-4 z-50"
+            className="h-fit w-36 flex justify-end absolute top-0 right-4 z-50 transition-all duration-200"
             onClick={handleOpenCloseMenu}
             aria-label={openCloseMenu ? "Cerrar menú" : "Abrir menú"}
           >
             <img
               src={openCloseMenu ? close : menu}
-              className={`h-5 w-5 ${openCloseMenu ? "mt-6 text-black opacity-95" : ""}`}
+              className={`h-6 w-6 transition-transform duration-200 p-1 rounded hover:bg-white/20 ${
+                openCloseMenu ? "mt-4 text-black opacity-95" : "hover:scale-105"
+              }`}
               loading="lazy"
               alt={openCloseMenu ? "Cerrar" : "Menú"}
             />
@@ -186,45 +188,45 @@ export function Navbar({ sectionTopRef, isMobile }: NavbarProps) {
         {/* Menú móvil con animación */}
         {isMobile && (
           <div
-            className={`fixed top-0 right-0 h-screen bg-gradient-to-b from-orange via-orange to-nav w-40 z-40 flex flex-col items-end pt-32 px-5 gap-6 transition-transform duration-300 ease-in-out ${
+            className={`fixed top-0 right-0 h-screen bg-gradient-to-b from-orange via-orange to-nav w-40 z-40 flex flex-col items-end pt-28 px-5 gap-5 transition-all duration-300 ease-in-out shadow-lg ${
               openCloseMenu ? "translate-x-0" : "translate-x-full"
             }`}
           >
             <NavLinks
-              className="text-white hover:text-black font-semibold transition-all duration-300 delay-100"
-              activeClassName="!text-black !font-bold"
+              className="text-white hover:text-slate-800 hover:bg-white/15 font-medium transition-all duration-300 delay-100 py-2 px-3 rounded-md text-right w-full"
+              activeClassName="!text-slate-800 !bg-white/25 !font-semibold"
               exact
               to="/"
             >
               Inicio
             </NavLinks>
             <NavLinks
-              className="text-white hover:text-black font-semibold transition-all duration-300 delay-200"
-              activeClassName="!text-black !font-bold"
+              className="text-white hover:text-slate-800 hover:bg-white/15 font-medium transition-all duration-300 delay-200 py-2 px-3 rounded-md text-right w-full"
+              activeClassName="!text-slate-800 !bg-white/25 !font-semibold"
               exact
               to="/Departamentos"
             >
               Departamentos
             </NavLinks>
             <NavLinks
-              className="text-white hover:text-black font-semibold transition-all duration-300 delay-300"
-              activeClassName="!text-black !font-bold"
+              className="text-white hover:text-black hover:bg-white/10 font-semibold transition-all duration-300 delay-300 py-2 px-3 rounded-md text-right w-full"
+              activeClassName="!text-black !bg-white/20 !font-bold"
               exact
               to="/Servicios"
             >
               Servicios
             </NavLinks>
             <NavLinks
-              className="text-white hover:text-black font-semibold transition-all duration-300 delay-400"
-              activeClassName="!text-black !font-bold"
+              className="text-white hover:text-black hover:bg-white/10 font-semibold transition-all duration-300 delay-400 py-2 px-3 rounded-md text-right w-full"
+              activeClassName="!text-black !bg-white/20 !font-bold"
               exact
               to="/Contacto"
             >
               Contacto
             </NavLinks>
             <NavLinks
-              className="text-white hover:text-black font-semibold transition-all duration-300 delay-500"
-              activeClassName="!text-black !font-bold"
+              className="text-white hover:text-black hover:bg-white/10 font-semibold transition-all duration-300 delay-500 py-2 px-3 rounded-md text-right w-full"
+              activeClassName="!text-black !bg-white/20 !font-bold"
               exact
               to="/Reservas"
             >

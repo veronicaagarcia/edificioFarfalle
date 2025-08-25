@@ -28,20 +28,22 @@ export const CustomCarousel: React.FC<CarouselProps> = ({ media, onMediaClick })
 
   const renderThumbnail = useCallback((item: Media, index: number) => {
     return (
-      <div className="h-16 w-24 overflow-hidden rounded-sm ">
+      <div className="h-16 w-24 overflow-hidden rounded-lg shadow-sm">
         {item.type === "image" ? (
           <img
             src={item.url || "/placeholder.svg"}
             alt={`Miniatura ${index + 1}`}
-            className="object-cover h-full w-full transition-transform hover:scale-110"
+            className="object-cover h-full w-full transition-all duration-300 hover:scale-105"
+            loading="lazy"
+            decoding="async"
           />
         ) : (
-          <div className="flex items-center justify-center h-full w-full bg-nav relative">
-            <span className="absolute inset-0 bg-black/30 flex items-center justify-center text-white">
+          <div className="flex items-center justify-center h-full w-full bg-gray-800 relative">
+            <span className="absolute inset-0 flex items-center justify-center bg-black/30 text-white pointer-events-none">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -52,7 +54,7 @@ export const CustomCarousel: React.FC<CarouselProps> = ({ media, onMediaClick })
                 <polygon points="5 3 19 12 5 21 5 3"></polygon>
               </svg>
             </span>
-            <video src={item.url} className="h-full w-full object-cover">
+            <video src={item.url} className="h-full w-full object-contain">
               Tu navegador no soporta el elemento de video.
             </video>
           </div>
@@ -62,7 +64,7 @@ export const CustomCarousel: React.FC<CarouselProps> = ({ media, onMediaClick })
   }, [])
 
   return (
-    <div className="w-full lg:w-6/12 mx-auto" data-aos="fade-up" data-aos-duration="1000">
+    <div className="w-full lg:w-8/12 xl:w-6/12 mx-auto px-4" data-aos="fade-up" data-aos-duration="1000">
       <Carousel
         autoPlay
         infiniteLoop
@@ -71,13 +73,13 @@ export const CustomCarousel: React.FC<CarouselProps> = ({ media, onMediaClick })
         showThumbs={true}
         renderThumbs={() => media.map((item, index) => renderThumbnail(item, index))}
         onClickItem={(index) => onMediaClick(index)}
-        className="rounded-lg overflow-hidden shadow-lg"
+        className="rounded-xl overflow-hidden shadow-xl"
         emulateTouch={true}
         swipeable={true}
         thumbWidth={80}
       >
         {media.map((item, index) => (
-          <div key={index} className="h-[60vh] lg:h-[70vh] cursor-pointer rounded-sm shadow-md relative">
+          <div key={index} className="h-[50vh] lg:h-[60vh] cursor-pointer relative group bg-gray-100">
             {!loadedImages[index] && (
               <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
                 <svg
@@ -101,15 +103,17 @@ export const CustomCarousel: React.FC<CarouselProps> = ({ media, onMediaClick })
                 <img
                   src={item.url || "/placeholder.svg"}
                   alt={`Imagen ${index + 1}`}
-                  className="object-cover h-full w-full rounded-sm shadow-md"
+                  className="object-contain h-full w-full transition-all duration-300 group-hover:scale-105"
                   onLoad={() => handleImageLoad(index)}
+                  loading="lazy"
+                  decoding="async"
                 />
               </LazyLoad>
             ) : (
               <video
                 src={item.url}
                 controls
-                className="h-full w-full object-cover rounded-sm shadow-md"
+                className="h-full w-full object-contain transition-all duration-300 group-hover:scale-105"
                 onLoadedData={() => handleImageLoad(index)}
               >
                 Tu navegador no soporta el elemento de video.

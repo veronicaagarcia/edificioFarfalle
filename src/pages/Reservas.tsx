@@ -147,11 +147,11 @@ const validateEmail: ValidateEmailFunction = (email) => {
 
     try {
       await emailjs.send(
-        "service_ow5tu5w",
-        "template_6c857kn",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_BOOKING,
         {
           from_name: email,
-          to_email: "edificiofarfalle@gmail.com",
+          to_email: import.meta.env.VITE_CONTACT_EMAIL,
           checkIn: checkIn,
           checkOut: checkOut,
           adultos: adultos,
@@ -159,7 +159,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
           departamento: departamento,
           email: email,
         },
-        "0DIH_YtJhCdbknU0z",
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
 
       // Resetear el formulario
@@ -214,12 +214,12 @@ const validateEmail: ValidateEmailFunction = (email) => {
       </h2>
 
       <p
-        className="text-justify text-black text-opacity-90 text-base xl:text-lg px-6 md:px-28 mb-8 md:mb-20"
+        className="text-justify text-black text-opacity-90 text-base xl:text-lg px-6 md:px-28 mb-8 md:mb-20 leading-relaxed"
         data-aos="fade-up"
         data-aos-delay="100"
       >
         ¡Gracias por elegir
-        <span className="text-orange italic"> Edificio Farfalle</span> para tu estancia en La Plata! Para consultar la
+        <span className="text-orange italic font-medium"> Edificio Farfalle</span> para tu estancia en La Plata! Para consultar la
         disponibilidad de nuestros departamentos y realizar una reserva, por favor completa el siguiente formulario.
       </p>
 
@@ -230,36 +230,31 @@ const validateEmail: ValidateEmailFunction = (email) => {
           <h3 className="text-base xl:text-lg font-semibold text-white text-center mb-4">¿Cómo Funciona?</h3>
 
           <div className="space-y-4 text-base xl:text-lg">
-            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3"  data-aos="fade-up"
-        data-aos-delay="100">
+            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
               <span className="text-white">1. </span>
               <span className="text-orange font-medium">Selecciona tus Fechas: </span>
               Elige las fechas de entrada y salida que deseas para tu estancia.
             </p>
 
-            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3"  data-aos="fade-up"
-        data-aos-delay="100">
+            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
               <span className="text-white">2. </span>
               <span className="text-orange font-medium">Indica el Número de Personas: </span>
               Especifica cuántas personas se alojarán con nosotros.
             </p>
 
-            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3"  data-aos="fade-up"
-        data-aos-delay="100">
+            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
               <span className="text-white">3. </span>
               <span className="text-orange font-medium">Elige tu Departamento: </span>
               Selecciona el departamento en el que estás interesado.
             </p>
 
-            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3"  data-aos="fade-up"
-        data-aos-delay="100">
+            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
               <span className="text-white">4. </span>
               <span className="text-orange font-medium">Envía tu Solicitud: </span>
               Haz clic en el botón "Consultar Disponibilidad".
             </p>
 
-            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3"  data-aos="fade-up"
-        data-aos-delay="100">
+            <p className="text-justify text-white text-opacity-90 pb-3 pt-2 md:pt-3 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
               <span className="text-white">5. </span>
               <span className="text-orange font-medium">Respuesta de Disponibilidad: </span>
               Una vez que envíes el formulario, nuestro equipo revisará la disponibilidad de los departamentos en las
@@ -278,7 +273,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
                     Entrada
                   </label>
                   <input
-                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-200"
                     id="check-in"
                     type="date"
                     value={checkIn}
@@ -292,7 +287,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
                     Salida
                   </label>
                   <input
-                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-200"
                     id="check-out"
                     type="date"
                     min={minCheckOutDate}
@@ -309,12 +304,13 @@ const validateEmail: ValidateEmailFunction = (email) => {
                     Adultos
                   </label>
                   <input
-                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-200"
                     id="adults"
                     type="number"
                     min="1"
                     max="5"
                     inputMode="numeric"
+                    placeholder="1"
                     value={adultos}
                     onChange={handleAdultosChange}
                     disabled={isSubmitting}
@@ -325,12 +321,13 @@ const validateEmail: ValidateEmailFunction = (email) => {
                     Niños
                   </label>
                   <input
-                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-200"
                     id="children"
                     type="number"
                     min="0"
                     max="4"
                     inputMode="numeric"
+                    placeholder="0"
                     value={ninos}
                     onChange={handleNinosChange}
                     disabled={isSubmitting}
@@ -344,7 +341,7 @@ const validateEmail: ValidateEmailFunction = (email) => {
                 </label>
                 <div className="relative inline-block w-full">
                   <select
-                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline cursor-pointer bg-white"
+                    className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-200 cursor-pointer bg-white"
                     id="departamento"
                     value={departamento}
                     onChange={(e) => setDepartamento(e.target.value)}
@@ -368,9 +365,10 @@ const validateEmail: ValidateEmailFunction = (email) => {
                   Correo Electrónico
                 </label>
                 <input
-                  className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="appearance-none border border-slate-950 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-200"
                   id="email"
                   type="email"
+                  placeholder="correo@ejemplo.com"
                   value={email}
                   onChange={handleEmailChange}
                   disabled={isSubmitting}
@@ -426,12 +424,12 @@ const validateEmail: ValidateEmailFunction = (email) => {
       </section>
 
       <p
-        className="text-black text-opacity-90 text-base xl:text-lg text-center px-3 md:px-28 my-8 md:my-20"
+        className="text-black text-opacity-90 text-base xl:text-lg text-center px-3 md:px-28 my-8 md:my-20 leading-relaxed"
         data-aos="fade-up"
         data-aos-delay="100"
       >
         Nos aseguraremos de que tu estancia en Edificio Farfalle sea cómoda y placentera.
-        <span className="text-orange"> ¡Esperamos darte la bienvenida pronto!</span>
+        <span className="text-orange font-medium"> ¡Esperamos darte la bienvenida pronto!</span>
       </p>
 
       <Footer />

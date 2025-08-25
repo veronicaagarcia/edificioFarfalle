@@ -11,7 +11,7 @@ export function Start() {
   const [isMuted, setIsMuted] = useState(true)
   const [videoError, setVideoError] = useState(false)
   
-  const video = '/edificioFarfalle/video.start.mp4'
+  const video = './video.start.mp4'
 
   const containerStyle = useMemo(() => ({
     height: 'fit-content',

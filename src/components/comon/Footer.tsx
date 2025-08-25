@@ -21,7 +21,7 @@ export function Footer() {
     <footer className=" text-white py-6 md:py-10 w-full font-lato" 
     style={{
       backgroundColor: "#0f172a",
-      backgroundImage: "url('/edificioFarfalle/backgrund.png')",
+      backgroundImage: "url('./backgrund.png')",
       backgroundRepeat: "repeat",
       backgroundSize: "auto",
       backgroundPosition: "center",
@@ -98,10 +98,10 @@ export function Footer() {
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-orange/70 flex-shrink-0" />
                 <a
-                  href="mailto:edificiofarfalle@gmail.com"
+                  href={`mailto:${import.meta.env.VITE_CONTACT_EMAIL}`}
                   className="text-gray-300 hover:text-orange transition-colors"
                 >
-                  edificiofarfalle@gmail.com
+                  {import.meta.env.VITE_CONTACT_EMAIL}
                 </a>
               </li>
               <li className="flex items-center">

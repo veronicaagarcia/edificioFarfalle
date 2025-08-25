@@ -100,16 +100,16 @@ const validateEmail = (email: string): boolean => {
 
     try {
       await emailjs.send(
-        "service_ow5tu5w",
-        "template_p80tkf5",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT,
         {
           from_name: email,
-          to_email: "edificiofarfalle@gmail.com",
+          to_email: import.meta.env.VITE_CONTACT_EMAIL,
           nombre: nombre,
           message: message,
           email: email,
         },
-        "0DIH_YtJhCdbknU0z",
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
 
       // Resetear el formulario
@@ -199,7 +199,7 @@ const validateEmail = (email: string): boolean => {
     {
       id: "email",
       icon: <EmailOutlinedIcon fontSize="medium" color="warning" />,
-      link: "mailto:edificiofarfalle@gmail.com",
+      link: `mailto:${import.meta.env.VITE_CONTACT_EMAIL}`,
       ariaLabel: "Enviar correo electrónico",
     },
   ]
@@ -216,16 +216,19 @@ const validateEmail = (email: string): boolean => {
         </h2>
 
         <p
-          className="text-justify text-black text-opacity-90 mb-4 px-4 md:px-0 xl:px-8 pt-2 md:pt-3 text-base xl:text-lg"
+          className="text-justify text-black text-opacity-90 mb-4 px-4 md:px-0 xl:px-8 pt-2 md:pt-3 text-base xl:text-lg leading-relaxed"
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          En <span className="text-orange italic">Edificio Farfalle</span>, estamos siempre a su disposición para
-          responder cualquier consulta o necesidad que pueda tener. </p>
-          <p className="text-justify text-black text-opacity-90 mb-8 px-4 md:px-0 xl:px-8 pt-2 md:pt-3 text-base xl:text-lg"
+          En <span className="text-orange italic font-medium">Edificio Farfalle</span>, estamos siempre a su disposición para
+          responder cualquier consulta o necesidad que pueda tener.
+        </p>
+        <p 
+          className="text-justify text-black text-opacity-90 mb-8 px-4 md:px-0 xl:px-8 pt-2 md:pt-3 text-base xl:text-lg leading-relaxed"
           data-aos="fade-up"
-          data-aos-delay="100">Puede contactarnos a través de los siguientes
-          medios:
+          data-aos-delay="150"
+        >
+          Puede contactarnos a través de los siguientes medios:
         </p>
 
         <div
@@ -244,7 +247,7 @@ const validateEmail = (email: string): boolean => {
   >
     <form className="w-full flex flex-col gap-4">
       <input
-        className="appearance-none border border-gray-300 rounded-md w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-300 text-sm"
+        className="appearance-none border border-gray-300 rounded-md w-full py-3 px-4 text-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-200 text-sm"
         id="nombre"
         type="text"
         value={nombre}
@@ -255,19 +258,19 @@ const validateEmail = (email: string): boolean => {
       />
 
       <textarea
-        className="appearance-none border border-gray-300 rounded-md w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-300 resize-none text-sm"
+        className="appearance-none border border-gray-300 rounded-md w-full py-3 px-4 text-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-200 resize-none text-sm"
         id="message"
         value={message}
         onChange={handleMessageChange}
         placeholder="Envía tu consulta aquí..."
         aria-label="Mensaje"
-        rows={4}
+        rows={5}
         disabled={isSubmitting}
       />
       {messageError && <p className="text-red-500 text-sm mt-1">{messageError}</p>}
 
       <input
-        className="appearance-none border border-gray-300 rounded-md w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-300 text-sm"
+        className="appearance-none border border-gray-300 rounded-md w-full py-3 px-4 text-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-200 text-sm"
         id="email"
         type="email"
         value={email}
@@ -343,16 +346,19 @@ const validateEmail = (email: string): boolean => {
         </h3>
 
         <p
-          className="text-justify text-black text-opacity-90 mb-4 px-4 md:px-0 xl:px-8 text-base xl:text-lg mt-4"
+          className="text-justify text-black text-opacity-90 mb-4 px-4 md:px-0 xl:px-8 text-base xl:text-lg mt-4 leading-relaxed"
           data-aos="fade-up"
           data-aos-delay="100"
         >
           Nuestro edificio ofrece alojamiento confortable en el corazón de La Plata, ideal tanto para turistas como para
-          viajeros de negocios. </p>
-          <p className="text-justify text-black text-opacity-90 mb-12 px-4 md:px-0 xl:px-8 text-base xl:text-lg mt-4"
+          viajeros de negocios.
+        </p>
+        <p 
+          className="text-justify text-black text-opacity-90 mb-12 px-4 md:px-0 xl:px-8 text-base xl:text-lg mt-4 leading-relaxed"
           data-aos="fade-up"
-          data-aos-delay="100">Nuestra ubicación estratégica te permite acceder fácilmente a los principales puntos de
-          interés de la ciudad:
+          data-aos-delay="150"
+        >
+          Nuestra ubicación estratégica te permite acceder fácilmente a los principales puntos de interés de la ciudad:
         </p>
 
         <div
@@ -371,7 +377,7 @@ const validateEmail = (email: string): boolean => {
               )}
             </div>
 
-            <div className="text-[12px] w-full md:w-1/2 p-4 text-black text-opacity-90 mb-4 text-justify">
+            <div className="text-sm w-full md:w-1/2 p-4 text-black text-opacity-90 mb-4 text-justify leading-relaxed">
               <p className="font-medium mb-4">
                 Dirección: <span className="text-orange">1770 Calle 62, 1900 La Plata, Argentina</span>
               </p>

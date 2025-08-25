@@ -4,16 +4,22 @@ import { useEffect, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft, faArrowRight, faTimes } from "@fortawesome/free-solid-svg-icons"
 
+interface Media {
+  type: "image" | "video"
+  url: string
+}
+
 interface DeptoModelProps {
   numVideos: number
   videoNames: string[]
   imageNames: string[]
+  media: Media[]
   videoSizeMultiplier: number
   onClose: () => void
   initialIndex?: number | null
 }
 
-export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: DeptoModelProps) {
+export function DeptoModel({ imageNames, videoNames, media, initialIndex, onClose }: DeptoModelProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(initialIndex ?? null)
   const [isLoading, setIsLoading] = useState(true)
 
@@ -24,7 +30,7 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
 
   const handleNextImage = () => {
     setSelectedIndex((prevIndex) => {
-      if (prevIndex !== null && prevIndex < imageNames.length + videoNames.length - 1) {
+      if (prevIndex !== null && prevIndex < media.length - 1) {
         setIsLoading(true)
         return prevIndex + 1
       }
@@ -46,7 +52,7 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
     onClose()
   }
 
-  const isVideo = (index: number) => index < videoNames.length
+  const getCurrentMedia = (index: number) => media[index]
 
   const handleMediaLoad = () => {
     setIsLoading(false)
@@ -90,10 +96,10 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
                 </div>
               )}
 
-              {isVideo(selectedIndex) ? (
+              {getCurrentMedia(selectedIndex)?.type === "video" ? (
                 <video
-                  src={videoNames[selectedIndex]}
-                  className="max-w-[70vw] md:max-w-100 w-auto h-auto max-h-90 border-orange border-2 hover:shadow-lg bg-slate-900 mx-1 rounded-md"
+                  src={getCurrentMedia(selectedIndex)?.url}
+                  className="max-w-[70vw] md:max-w-100 w-auto h-auto max-h-90 hover:shadow-lg bg-slate-900 mx-1 rounded-md object-contain"
                   controls
                   autoPlay
                   onLoadedData={handleMediaLoad}
@@ -101,9 +107,9 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
                 />
               ) : (
                 <img
-                  src={imageNames[selectedIndex - videoNames.length] || "/placeholder.svg"}
-                  alt={`Imagen ${selectedIndex - videoNames.length + 1}`}
-                  className="max-w-100 w-full h-auto max-h-90 border-orange border-2 hover:shadow-lg bg-black mx-1 rounded-md"
+                  src={getCurrentMedia(selectedIndex)?.url || "/placeholder.svg"}
+                  alt={`Imagen ${selectedIndex + 1}`}
+                  className="max-w-100 w-full h-auto max-h-90 hover:shadow-lg bg-black mx-1 rounded-md"
                   loading="lazy"
                   onLoad={handleMediaLoad}
                 />
@@ -113,12 +119,12 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
             <button
               className="text-white text-2xl font-bold hover:text-orange transition-colors p-4 z-20"
               onClick={handleNextImage}
-              disabled={selectedIndex === imageNames.length + videoNames.length - 1}
+              disabled={selectedIndex === media.length - 1}
               aria-label="Imagen siguiente"
             >
               <FontAwesomeIcon
                 icon={faArrowRight}
-                className={selectedIndex === imageNames.length + videoNames.length - 1 ? "opacity-30" : "opacity-100"}
+                className={selectedIndex === media.length - 1 ? "opacity-30" : "opacity-100"}
               />
             </button>
           </div>
@@ -132,7 +138,7 @@ export function DeptoModel({ imageNames, videoNames, initialIndex, onClose }: De
           </button>
 
           <div className="absolute bottom-4 left-0 right-0 text-center text-white">
-            {selectedIndex + 1} / {imageNames.length + videoNames.length}
+            {selectedIndex + 1} / {media.length}
           </div>
         </div>
       )}
